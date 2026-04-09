@@ -1,0 +1,507 @@
+---
+import type { KnownLocale } from '../../types';
+import type { TextSplitterUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as TextSplitterUI;
+---
+
+<div class="ts-container" data-toast={t.toastCopied}>
+
+  <div class="ts-glass-card">
+    <div class="ts-input-group">
+      <label for="ts-input" class="ts-label">{t.labelInput}</label>
+      <div class="ts-textarea-wrap">
+        <textarea
+          id="ts-input"
+          data-input
+          placeholder={t.placeholderInput}
+          spellcheck="false"
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="ts-controls-grid">
+      <div class="ts-control-group">
+        <span class="ts-control-label">{t.labelDelimiter}</span>
+        <div class="ts-delimiter-options">
+          <label class="ts-radio-item">
+            <input type="radio" name="ts-delim" value="comma" checked data-radio />
+            <span class="ts-radio-custom"></span>
+            <span class="ts-control-text">{t.optComma}</span>
+          </label>
+          <label class="ts-radio-item">
+            <input type="radio" name="ts-delim" value="semicolon" data-radio />
+            <span class="ts-radio-custom"></span>
+            <span class="ts-control-text">{t.optSemicolon}</span>
+          </label>
+          <label class="ts-radio-item">
+            <input type="radio" name="ts-delim" value="space" data-radio />
+            <span class="ts-radio-custom"></span>
+            <span class="ts-control-text">{t.optSpace}</span>
+          </label>
+          <label class="ts-radio-item">
+            <input type="radio" name="ts-delim" value="custom" data-radio />
+            <span class="ts-radio-custom"></span>
+            <span class="ts-control-text">{t.optCustom}</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="ts-custom-group ts-hidden" data-custom-group>
+        <label for="ts-custom" class="ts-label">{t.labelCustom}</label>
+        <input
+          id="ts-custom"
+          class="ts-text-input"
+          type="text"
+          data-custom
+          placeholder={t.placeholderCustom}
+        />
+      </div>
+
+      <div class="ts-options-grid">
+        <label class="ts-control-item">
+          <input type="checkbox" data-check="trim" checked />
+          <span class="ts-checkbox-custom"></span>
+          <span class="ts-control-text">{t.optTrim}</span>
+        </label>
+        <label class="ts-control-item">
+          <input type="checkbox" data-check="unique" />
+          <span class="ts-checkbox-custom"></span>
+          <span class="ts-control-text">{t.optUnique}</span>
+        </label>
+        <label class="ts-control-item">
+          <input type="checkbox" data-check="clean" checked />
+          <span class="ts-checkbox-custom"></span>
+          <span class="ts-control-text">{t.optClean}</span>
+        </label>
+        <label class="ts-control-item">
+          <input type="checkbox" data-check="numbered" />
+          <span class="ts-checkbox-custom"></span>
+          <span class="ts-control-text">{t.optNumbered}</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="ts-stats-grid">
+      <div class="ts-stat-item">
+        <span class="ts-stat-value" data-lines>0</span>
+        <span class="ts-stat-label">{t.statLines}</span>
+      </div>
+      <div class="ts-stat-item">
+        <span class="ts-stat-value" data-chars>0</span>
+        <span class="ts-stat-label">{t.statChars}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ts-glass-card">
+    <div class="ts-output-group">
+      <label for="ts-output" class="ts-label">{t.labelOutput}</label>
+      <div class="ts-textarea-wrap">
+        <textarea
+          id="ts-output"
+          data-output
+          readonly
+          placeholder={t.placeholderOutput}
+          spellcheck="false"
+        ></textarea>
+      </div>
+    </div>
+    <div class="ts-action-buttons">
+      <button class="ts-btn ts-btn-primary" data-copy>{t.btnCopy}</button>
+      <button class="ts-btn ts-btn-secondary" data-clear>{t.btnClear}</button>
+    </div>
+  </div>
+
+  <div class="ts-copy-toast" data-toast-el></div>
+</div>
+
+<script>
+  import { resolveDelimiter, splitText } from './logic';
+
+  function getSelectedValue(wrap: HTMLElement): string {
+    return wrap.querySelector<HTMLInputElement>('[data-radio]:checked')?.value ?? 'comma';
+  }
+
+  function syncCustomGroup(wrap: HTMLElement, selected: string) {
+    const customGroup = wrap.querySelector<HTMLElement>('[data-custom-group]');
+    if (selected === 'custom') customGroup?.classList.remove('ts-hidden');
+    else customGroup?.classList.add('ts-hidden');
+  }
+
+  function getChecks(wrap: HTMLElement) {
+    const q = (sel: string) => wrap.querySelector<HTMLInputElement>(sel)?.checked ?? false;
+    return {
+      trim: q('[data-check="trim"]'),
+      unique: q('[data-check="unique"]'),
+      clean: q('[data-check="clean"]'),
+      numbered: q('[data-check="numbered"]'),
+    };
+  }
+
+  function processText(wrap: HTMLElement) {
+    const input = wrap.querySelector<HTMLTextAreaElement>('[data-input]');
+    const output = wrap.querySelector<HTMLTextAreaElement>('[data-output]');
+    const linesEl = wrap.querySelector<HTMLElement>('[data-lines]');
+    const charsEl = wrap.querySelector<HTMLElement>('[data-chars]');
+    if (!input || !output) return;
+    const selected = getSelectedValue(wrap);
+    syncCustomGroup(wrap, selected);
+    const customVal = wrap.querySelector<HTMLInputElement>('[data-custom]')?.value ?? '';
+    const delimiter = resolveDelimiter(selected, customVal);
+    const checks = getChecks(wrap);
+    const result = splitText(input.value, delimiter, {
+      trim: checks.trim,
+      unique: checks.unique,
+      clean: checks.clean,
+      numbered: checks.numbered,
+    });
+    output.value = result;
+    if (linesEl) linesEl.textContent = String(result.trim() ? result.split('\n').length : 0);
+    if (charsEl) charsEl.textContent = String(result.length);
+  }
+
+  function showToast(wrap: HTMLElement) {
+    const toast = wrap.querySelector<HTMLElement>('[data-toast-el]');
+    if (!toast) return;
+    toast.textContent = wrap.dataset.toast ?? 'Copied!';
+    toast.classList.add('ts-toast-visible');
+    setTimeout(() => toast.classList.remove('ts-toast-visible'), 2000);
+  }
+
+  function attachListeners(wrap: HTMLElement) {
+    const input = wrap.querySelector<HTMLTextAreaElement>('[data-input]');
+    const custom = wrap.querySelector<HTMLInputElement>('[data-custom]');
+    const output = wrap.querySelector<HTMLTextAreaElement>('[data-output]');
+    input?.addEventListener('input', () => processText(wrap));
+    custom?.addEventListener('input', () => processText(wrap));
+    wrap.querySelectorAll<HTMLInputElement>('[data-radio]').forEach((r) =>
+      r.addEventListener('change', () => processText(wrap)),
+    );
+    wrap.querySelectorAll<HTMLInputElement>('[data-check]').forEach((c) =>
+      c.addEventListener('change', () => processText(wrap)),
+    );
+    wrap.querySelector('[data-copy]')?.addEventListener('click', () => {
+      if (!output?.value) return;
+      navigator.clipboard.writeText(output.value).then(() => showToast(wrap));
+    });
+    wrap.querySelector('[data-clear]')?.addEventListener('click', () => {
+      if (input) { input.value = ''; processText(wrap); }
+    });
+  }
+
+  function init() {
+    document.querySelectorAll<HTMLElement>('.ts-container').forEach((wrap) => attachListeners(wrap));
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .ts-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1024px) {
+    .ts-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .ts-glass-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    transition: border-color 0.3s ease;
+  }
+
+  .ts-glass-card:hover {
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+
+  .ts-input-group,
+  .ts-output-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .ts-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .ts-textarea-wrap {
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ts-textarea-wrap:focus-within {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+  }
+
+  .ts-textarea-wrap textarea {
+    width: 100%;
+    height: 300px;
+    background: var(--bg-page);
+    border: none;
+    color: var(--text-main);
+    padding: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    resize: none;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .ts-textarea-wrap textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+
+  .ts-controls-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .ts-control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ts-control-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .ts-delimiter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .ts-radio-item,
+  .ts-control-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    user-select: none;
+    color: var(--text-main);
+    font-size: 0.9375rem;
+  }
+
+  .ts-radio-custom,
+  .ts-checkbox-custom {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid var(--border-color);
+    background: var(--bg-page);
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+
+  .ts-checkbox-custom {
+    border-radius: 0.25rem;
+  }
+
+  .ts-radio-item input[type="radio"],
+  .ts-control-item input[type="checkbox"] {
+    display: none;
+  }
+
+  .ts-radio-item input[type="radio"]:checked + .ts-radio-custom,
+  .ts-control-item input[type="checkbox"]:checked + .ts-checkbox-custom {
+    border-color: #8b5cf6;
+    background: #8b5cf6;
+  }
+
+  .ts-radio-custom::after,
+  .ts-checkbox-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease;
+  }
+
+  .ts-radio-custom::after {
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+  }
+
+  .ts-checkbox-custom::after {
+    width: 8px;
+    height: 4px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: translate(-50%, -65%) rotate(-45deg) scale(0);
+  }
+
+  .ts-radio-item input[type="radio"]:checked + .ts-radio-custom::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .ts-control-item input[type="checkbox"]:checked + .ts-checkbox-custom::after {
+    transform: translate(-50%, -65%) rotate(-45deg) scale(1);
+  }
+
+  .ts-control-text {
+    font-size: 0.9375rem;
+    color: var(--text-main);
+  }
+
+  .ts-custom-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .ts-hidden {
+    display: none;
+  }
+
+  .ts-text-input {
+    background: var(--bg-page);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    color: var(--text-main);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+  }
+
+  .ts-text-input:focus {
+    border-color: #8b5cf6;
+  }
+
+  .ts-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .ts-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .ts-stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .ts-stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #8b5cf6;
+    line-height: 1;
+  }
+
+  .ts-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .ts-action-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .ts-btn {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .ts-btn-primary {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+  }
+
+  .ts-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+  }
+
+  .ts-btn-secondary {
+    background: var(--bg-page);
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+  }
+
+  .ts-btn-secondary:hover {
+    color: #8b5cf6;
+    border-color: #8b5cf6;
+  }
+
+  .ts-copy-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: rgba(139, 92, 246, 0.9);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    font-weight: 600;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+  }
+
+  .ts-toast-visible {
+    transform: translateX(-50%) translateY(0);
+  }
+</style>

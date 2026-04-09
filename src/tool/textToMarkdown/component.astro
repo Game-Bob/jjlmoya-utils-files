@@ -1,0 +1,240 @@
+---
+import type { KnownLocale } from '../../types';
+import type { TextToMarkdownUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as TextToMarkdownUI;
+---
+
+<div
+  class="tm-card"
+  data-copied={t.toastCopied}
+>
+  <div class="tm-panels">
+    <div class="tm-panel">
+      <div class="tm-panel-header">
+        <span class="tm-label">{t.labelInput}</span>
+        <button class="tm-btn tm-btn-clear" data-clear title={t.btnClear}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/>
+          </svg>
+          {t.btnClear}
+        </button>
+      </div>
+      <textarea
+        class="tm-textarea tm-input"
+        data-input
+        placeholder={t.placeholderInput}
+        spellcheck="false"
+      ></textarea>
+    </div>
+
+    <div class="tm-panel">
+      <div class="tm-panel-header">
+        <span class="tm-label">{t.labelOutput}</span>
+        <button class="tm-btn tm-btn-copy" data-copy title={t.btnCopy}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          {t.btnCopy}
+        </button>
+      </div>
+      <textarea
+        class="tm-textarea tm-output"
+        data-output
+        placeholder={t.placeholderOutput}
+        readonly
+        spellcheck="false"
+      ></textarea>
+    </div>
+  </div>
+
+  <p class="tm-hint">{t.labelHint}</p>
+  <div class="tm-toast" data-toast></div>
+</div>
+
+<script>
+  import { htmlToMarkdown } from './logic';
+
+  function attachInput(input: HTMLTextAreaElement, output: HTMLTextAreaElement) {
+    input.addEventListener('input', () => {
+      output.value = htmlToMarkdown(input.value);
+    });
+  }
+
+  function attachPaste(input: HTMLTextAreaElement, output: HTMLTextAreaElement) {
+    input.addEventListener('paste', (e: ClipboardEvent) => {
+      const html = e.clipboardData?.getData('text/html');
+      if (!html) return;
+      e.preventDefault();
+      input.value = html;
+      output.value = htmlToMarkdown(html);
+    });
+  }
+
+  function attachClear(input: HTMLTextAreaElement, output: HTMLTextAreaElement, btn: HTMLButtonElement) {
+    btn.addEventListener('click', () => {
+      input.value = '';
+      output.value = '';
+    });
+  }
+
+  function showToast(toast: HTMLElement, msg: string) {
+    toast.textContent = msg;
+    toast.classList.add('tm-toast-visible');
+    setTimeout(() => toast.classList.remove('tm-toast-visible'), 1800);
+  }
+
+  function attachCopy(output: HTMLTextAreaElement, btn: HTMLButtonElement, toast: HTMLElement, copied: string) {
+    btn.addEventListener('click', () => {
+      if (!output.value) return;
+      navigator.clipboard.writeText(output.value);
+      showToast(toast, copied);
+    });
+  }
+
+  function init() {
+    document.querySelectorAll<HTMLElement>('.tm-card').forEach((card) => {
+      const input = card.querySelector<HTMLTextAreaElement>('[data-input]');
+      const output = card.querySelector<HTMLTextAreaElement>('[data-output]');
+      const clearBtn = card.querySelector<HTMLButtonElement>('[data-clear]');
+      const copyBtn = card.querySelector<HTMLButtonElement>('[data-copy]');
+      const toast = card.querySelector<HTMLElement>('[data-toast]');
+      if (!input || !output || !clearBtn || !copyBtn || !toast) return;
+      const copied = card.dataset.copied ?? 'Copied!';
+      attachInput(input, output);
+      attachPaste(input, output);
+      attachClear(input, output, clearBtn);
+      attachCopy(output, copyBtn, toast, copied);
+    });
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .tm-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+  }
+
+  .tm-panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .tm-panels {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .tm-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tm-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 2rem;
+  }
+
+  .tm-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+
+  .tm-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.4rem;
+    background: var(--bg-page);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .tm-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .tm-textarea {
+    width: 100%;
+    min-height: 320px;
+    padding: 0.875rem;
+    background: var(--bg-page);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    color: var(--text-main);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    resize: vertical;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease;
+  }
+
+  .tm-textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  .tm-output {
+    color: var(--text-muted);
+  }
+
+  .tm-hint {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin: 0;
+    padding: 0.625rem 0.875rem;
+    background: var(--bg-page);
+    border: 1px dashed var(--border-color);
+    border-radius: 0.4rem;
+  }
+
+  .tm-toast {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(0.5rem);
+    background: var(--text-main);
+    color: var(--bg-page);
+    padding: 0.5rem 1.25rem;
+    border-radius: 99px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .tm-toast-visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+</style>

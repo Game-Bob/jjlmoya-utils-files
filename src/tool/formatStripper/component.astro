@@ -1,0 +1,303 @@
+---
+import type { FormatStripperUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const tUI = ui as FormatStripperUI;
+---
+
+<div
+  class="fs-wrapper"
+  id="fs-tool"
+  data-toast-copied={tUI.toastCopied}
+  data-toast-cleaned={tUI.toastCleaned}
+>
+  <div class="fs-card">
+    <div class="fs-toolbar">
+      <div class="fs-stats">
+        <span class="fs-stat-badge">
+          <span id="fs-char-count">0</span>
+          <span class="fs-stat-label">{tUI.labelChars}</span>
+        </span>
+        <span class="fs-stat-badge">
+          <span id="fs-word-count">0</span>
+          <span class="fs-stat-label">{tUI.labelWords}</span>
+        </span>
+      </div>
+
+      <div class="fs-actions">
+        <button id="fs-btn-uppercase" class="fs-btn-ghost">
+          <svg viewBox="0 0 24 24" fill="currentcolor">
+            <path d="M12 3L2 21h4l2-5h8l2 5h4L12 3zm-2.5 10L12 6.5l2.5 6.5H9.5z"/>
+          </svg>
+          <span>{tUI.btnUppercase}</span>
+        </button>
+        <button id="fs-btn-lowercase" class="fs-btn-ghost">
+          <svg viewBox="0 0 24 24" fill="currentcolor">
+            <path d="M12 9c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3zM7 9V5H5v4H3v2h6V9H7zm12-4h-4v2h1.5v8H18V7h1V5z"/>
+          </svg>
+          <span>{tUI.btnLowercase}</span>
+        </button>
+        <div class="fs-divider"></div>
+        <button id="fs-btn-copy" class="fs-btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          <span>{tUI.btnCopy}</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="fs-editor-wrap">
+      <textarea
+        id="fs-editor"
+        class="fs-editor"
+        placeholder={tUI.placeholder}
+        spellcheck="false"
+      ></textarea>
+      <div id="fs-toast" class="fs-toast">{tUI.toastCopied}</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function cleanText(text: string): string {
+    return text
+      .replace(/\s+/g, ' ')
+      .replace(/\s+([.,;?!:])/g, '$1')
+      .trim();
+  }
+
+  function updateStats(editor: HTMLTextAreaElement) {
+    const charEl = document.getElementById('fs-char-count');
+    const wordEl = document.getElementById('fs-word-count');
+    const text = editor.value;
+    if (charEl) charEl.textContent = text.length.toString();
+    if (wordEl) wordEl.textContent = text.trim() === '' ? '0' : text.trim().split(/\s+/).length.toString();
+  }
+
+  function showToast(msg: string) {
+    const toast = document.getElementById('fs-toast');
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('fs-toast-visible');
+    setTimeout(() => toast.classList.remove('fs-toast-visible'), 2000);
+  }
+
+  function attachPaste(editor: HTMLTextAreaElement, toastCleaned: string) {
+    editor.addEventListener('paste', (e: ClipboardEvent) => {
+      e.preventDefault();
+      const text = e.clipboardData?.getData('text') ?? '';
+      const cleaned = cleanText(text);
+      const start = editor.selectionStart;
+      const end = editor.selectionEnd;
+      editor.value = editor.value.substring(0, start) + cleaned + editor.value.substring(end);
+      editor.selectionStart = editor.selectionEnd = start + cleaned.length;
+      updateStats(editor);
+      showToast(toastCleaned);
+    });
+  }
+
+  function attachButtons(editor: HTMLTextAreaElement, toastCopied: string) {
+    document.getElementById('fs-btn-uppercase')?.addEventListener('click', () => {
+      editor.value = editor.value.toUpperCase();
+      updateStats(editor);
+    });
+    document.getElementById('fs-btn-lowercase')?.addEventListener('click', () => {
+      editor.value = editor.value.toLowerCase();
+      updateStats(editor);
+    });
+    document.getElementById('fs-btn-copy')?.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(editor.value);
+      showToast(toastCopied);
+    });
+  }
+
+  function init() {
+    const card = document.getElementById('fs-tool');
+    const editor = document.getElementById('fs-editor') as HTMLTextAreaElement | null;
+    if (!editor || !card) return;
+    const toastCopied = card.dataset.toastCopied ?? 'Copied!';
+    const toastCleaned = card.dataset.toastCleaned ?? 'Cleaned!';
+    editor.addEventListener('input', () => updateStats(editor));
+    attachPaste(editor, toastCleaned);
+    attachButtons(editor, toastCopied);
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .fs-wrapper {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .fs-card {
+    background: var(--bg-surface);
+    width: calc(100% - 24px);
+    max-width: 860px;
+    margin: 0 auto;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fs-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-muted);
+  }
+
+  .fs-stats {
+    display: flex;
+    gap: 8px;
+  }
+
+  .fs-stat-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .fs-stat-label {
+    font-weight: 400;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 11px;
+  }
+
+  .fs-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .fs-divider {
+    width: 1px;
+    height: 28px;
+    background: var(--border-color);
+    margin: 0 6px;
+  }
+
+  .fs-btn-ghost {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .fs-btn-ghost:hover {
+    background: var(--bg-surface);
+    color: var(--text-main);
+    border-color: var(--border-color);
+  }
+
+  .fs-btn-ghost svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+
+  .fs-btn-primary {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    background: #10b981;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: filter 0.15s;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  }
+
+  .fs-btn-primary:hover {
+    filter: brightness(1.1);
+  }
+
+  .fs-btn-primary svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  .fs-editor-wrap {
+    position: relative;
+  }
+
+  .fs-editor {
+    width: 100%;
+    min-height: 360px;
+    padding: 28px 32px;
+    background: var(--bg-surface);
+    border: none;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-main);
+    resize: vertical;
+    box-sizing: border-box;
+  }
+
+  .fs-editor:focus {
+    outline: none;
+  }
+
+  .fs-editor::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+  }
+
+  .fs-toast {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    background: var(--text-main);
+    color: var(--bg-surface);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .fs-toast.fs-toast-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

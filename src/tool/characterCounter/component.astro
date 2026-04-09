@@ -1,0 +1,394 @@
+---
+import type { CharacterCounterUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const tUI = ui as CharacterCounterUI;
+---
+
+<div
+  class="cc-wrapper"
+  id="cc-tool"
+  data-unit-sec={tUI.unitSec}
+  data-unit-min={tUI.unitMin}
+  data-number-locale={tUI.numberLocale}
+>
+  <div class="cc-card">
+    <div class="cc-main-stats">
+      <div class="cc-stat cc-stat-chars">
+        <span class="cc-stat-label">{tUI.labelChars}</span>
+        <span class="cc-stat-value" id="cc-chars">0</span>
+      </div>
+      <div class="cc-stat cc-stat-words">
+        <span class="cc-stat-label">{tUI.labelWords}</span>
+        <span class="cc-stat-value" id="cc-words">0</span>
+      </div>
+      <div class="cc-stat cc-stat-lines">
+        <span class="cc-stat-label">{tUI.labelLines}</span>
+        <span class="cc-stat-value" id="cc-lines">0</span>
+      </div>
+      <div class="cc-stat cc-stat-paragraphs">
+        <span class="cc-stat-label">{tUI.labelParagraphs}</span>
+        <span class="cc-stat-value" id="cc-paragraphs">0</span>
+      </div>
+    </div>
+
+    <div class="cc-detail-stats" id="cc-details">
+      <div class="cc-detail">
+        <span class="cc-detail-label">{tUI.labelNoSpaces}</span>
+        <span class="cc-detail-value" id="cc-no-spaces">0</span>
+      </div>
+      <div class="cc-detail">
+        <span class="cc-detail-label">{tUI.labelBytes}</span>
+        <span class="cc-detail-value" id="cc-bytes">0 B</span>
+      </div>
+      <div class="cc-detail">
+        <span class="cc-detail-label">{tUI.labelReading}</span>
+        <span class="cc-detail-value" id="cc-reading">0</span>
+      </div>
+      <div class="cc-detail">
+        <span class="cc-detail-label">{tUI.labelSpeaking}</span>
+        <span class="cc-detail-value" id="cc-speaking">0</span>
+      </div>
+    </div>
+
+    <div class="cc-editor-wrap">
+      <div class="cc-editor-toolbar">
+        <label class="cc-btn-upload">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13.5 3H5.625C5.004 3 4.5 3.504 4.5 4.125v15.75c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9z"/>
+            <path d="M13.5 3v7.5H21"/>
+          </svg>
+          <span>{tUI.labelUpload}</span>
+          <input type="file" id="cc-file-input" class="cc-file-hidden" accept=".txt,.md,.json,.csv,.js,.ts,.html,.css" />
+        </label>
+        <div class="cc-toolbar-right">
+          <button id="cc-btn-copy" class="cc-icon-btn" title={tUI.btnCopyTitle}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2"/>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+          </button>
+          <button id="cc-btn-clear" class="cc-icon-btn" title={tUI.btnClearTitle}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="3 6 5 6 21 6"/>
+              <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+              <path d="M10 11v6M14 11v6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <textarea
+        id="cc-textarea"
+        class="cc-textarea"
+        placeholder={tUI.placeholder}
+        spellcheck="false"
+      ></textarea>
+    </div>
+  </div>
+</div>
+
+<script>
+  function fmt(n: number, locale: string): string {
+    return new Intl.NumberFormat(locale).format(n);
+  }
+
+  function fmtBytes(bytes: number): string {
+    if (bytes === 0) return '0 B';
+    const sizes = ['B', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(1024));
+    return `${parseFloat((bytes / Math.pow(1024, i)).toFixed(2))} ${sizes[i]}`;
+  }
+
+  function fmtTime(minutes: number, unitSec: string, unitMin: string): string {
+    if (minutes < 1) return `${Math.round(minutes * 60)} ${unitSec}`;
+    return `${Math.round(minutes)} ${unitMin}`;
+  }
+
+  function calcStats(text: string) {
+    return {
+      chars: text.length,
+      words: text.trim() === '' ? 0 : text.trim().split(/\s+/).length,
+      lines: text === '' ? 0 : text.split(/\r\n|\r|\n/).length,
+      paragraphs: text === '' ? 0 : text.split(/\n\s*\n/).filter((p) => p.trim().length > 0).length,
+      noSpaces: text.replace(/\s/g, '').length,
+      bytes: new Blob([text]).size,
+    };
+  }
+
+  interface Cfg { locale: string; unitSec: string; unitMin: string; }
+
+  function renderStats(text: string, cfg: Cfg) {
+    const s = calcStats(text);
+    const set = (id: string, val: string) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+    set('cc-chars', fmt(s.chars, cfg.locale));
+    set('cc-words', fmt(s.words, cfg.locale));
+    set('cc-lines', fmt(s.lines, cfg.locale));
+    set('cc-paragraphs', fmt(s.paragraphs, cfg.locale));
+    set('cc-no-spaces', fmt(s.noSpaces, cfg.locale));
+    set('cc-bytes', fmtBytes(s.bytes));
+    set('cc-reading', fmtTime(s.words / 200, cfg.unitSec, cfg.unitMin));
+    set('cc-speaking', fmtTime(s.words / 130, cfg.unitSec, cfg.unitMin));
+    const details = document.getElementById('cc-details');
+    if (details) details.style.opacity = text.length > 0 ? '1' : '0.4';
+  }
+
+  function loadFile(file: File, textarea: HTMLTextAreaElement, cfg: Cfg) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      textarea.value = (e.target?.result as string) ?? '';
+      renderStats(textarea.value, cfg);
+    };
+    reader.readAsText(file);
+  }
+
+  function attachDrop(textarea: HTMLTextAreaElement, cfg: Cfg) {
+    const wrap = textarea.closest('.cc-editor-wrap') as HTMLElement | null;
+    if (!wrap) return;
+    const prevent = (e: Event) => { e.preventDefault(); e.stopPropagation(); };
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach((ev) => wrap.addEventListener(ev, prevent));
+    wrap.addEventListener('drop', (e: DragEvent) => {
+      const file = e.dataTransfer?.files?.[0];
+      if (file) loadFile(file, textarea, cfg);
+    });
+  }
+
+  function attachFileInput(textarea: HTMLTextAreaElement, cfg: Cfg) {
+    const fileInput = document.getElementById('cc-file-input') as HTMLInputElement | null;
+    fileInput?.addEventListener('change', (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0];
+      if (file) loadFile(file, textarea, cfg);
+    });
+  }
+
+  function init() {
+    const tool = document.getElementById('cc-tool');
+    const textarea = document.getElementById('cc-textarea') as HTMLTextAreaElement | null;
+    if (!textarea || !tool) return;
+    const cfg: Cfg = {
+      locale: tool.dataset.numberLocale ?? 'es-ES',
+      unitSec: tool.dataset.unitSec ?? 's',
+      unitMin: tool.dataset.unitMin ?? 'min',
+    };
+    textarea.addEventListener('input', () => renderStats(textarea.value, cfg));
+    document.getElementById('cc-btn-clear')?.addEventListener('click', () => {
+      textarea.value = '';
+      renderStats('', cfg);
+      textarea.focus();
+    });
+    document.getElementById('cc-btn-copy')?.addEventListener('click', () => {
+      void navigator.clipboard.writeText(textarea.value);
+    });
+    attachFileInput(textarea, cfg);
+    attachDrop(textarea, cfg);
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .cc-wrapper {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .cc-card {
+    background: var(--bg-surface);
+    width: calc(100% - 24px);
+    max-width: 860px;
+    margin: 0 auto;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .cc-main-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  @media (min-width: 600px) {
+    .cc-main-stats {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .cc-stat {
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-right: 1px solid var(--border-color);
+  }
+
+  .cc-stat:last-child {
+    border-right: none;
+  }
+
+  .cc-stat-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  .cc-stat-value {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--text-main);
+  }
+
+  .cc-stat-chars .cc-stat-value { color: #3b82f6; }
+  .cc-stat-words .cc-stat-value { color: #10b981; }
+  .cc-stat-lines .cc-stat-value { color: #8b5cf6; }
+  .cc-stat-paragraphs .cc-stat-value { color: #f59e0b; }
+
+  .cc-detail-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-muted);
+    opacity: 0.4;
+    transition: opacity 0.3s;
+  }
+
+  @media (min-width: 600px) {
+    .cc-detail-stats {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .cc-detail {
+    padding: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    border-right: 1px solid var(--border-color);
+  }
+
+  .cc-detail:last-child {
+    border-right: none;
+  }
+
+  .cc-detail-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  .cc-detail-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .cc-editor-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cc-editor-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-muted);
+    gap: 8px;
+  }
+
+  .cc-btn-upload {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    background: var(--bg-surface);
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .cc-btn-upload:hover {
+    color: var(--text-main);
+    border-color: var(--text-muted);
+  }
+
+  .cc-btn-upload svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  .cc-file-hidden {
+    display: none;
+  }
+
+  .cc-toolbar-right {
+    display: flex;
+    gap: 4px;
+  }
+
+  .cc-icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .cc-icon-btn:hover {
+    background: var(--bg-surface);
+    color: var(--text-main);
+    border-color: var(--border-color);
+  }
+
+  .cc-icon-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .cc-textarea {
+    width: 100%;
+    min-height: 320px;
+    padding: 24px;
+    background: var(--bg-surface);
+    border: none;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-main);
+    resize: vertical;
+    box-sizing: border-box;
+  }
+
+  .cc-textarea:focus {
+    outline: none;
+  }
+
+  .cc-textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.5;
+  }
+</style>

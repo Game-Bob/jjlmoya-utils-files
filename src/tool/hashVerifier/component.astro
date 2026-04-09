@@ -1,0 +1,666 @@
+---
+import type { HashVerifierUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const tUI = ui as HashVerifierUI;
+---
+
+<div class="hv-wrapper" id="hv-tool">
+  <div class="hv-card" id="hv-drop-zone">
+
+    <div class="hv-state" id="hv-initial">
+      <div class="hv-icon-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+      </div>
+      <h2 class="hv-title">{tUI.labelTitle}</h2>
+      <p class="hv-subtitle" set:html={tUI.labelSubtitle}></p>
+      <label class="hv-btn-select" for="hv-file-input">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <span>{tUI.btnSelect}</span>
+      </label>
+      <input id="hv-file-input" type="file" class="hv-hidden" />
+      <p class="hv-privacy">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        {tUI.labelPrivacy}
+      </p>
+    </div>
+
+    <div class="hv-state hv-hidden" id="hv-processing">
+      <div class="hv-spinner-wrap">
+        <div class="hv-spinner-track"></div>
+        <div class="hv-spinner"></div>
+        <span class="hv-progress-pct" id="hv-pct">0%</span>
+      </div>
+      <p class="hv-calc-title">{tUI.labelCalculating}</p>
+      <p class="hv-file-info" id="hv-file-info"></p>
+      <div class="hv-progress-bar-wrap">
+        <div class="hv-progress-bar" id="hv-progress-bar"></div>
+      </div>
+    </div>
+
+    <div class="hv-state hv-hidden" id="hv-result">
+      <div class="hv-result-header">
+        <div class="hv-result-title-row">
+          <div class="hv-check-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <div>
+            <p class="hv-success-label">{tUI.labelSuccess}</p>
+            <p class="hv-result-filename" id="hv-result-filename"></p>
+          </div>
+        </div>
+        <button class="hv-btn-another" id="hv-btn-another">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="1 4 1 10 7 10"/>
+            <path d="M3.51 15a9 9 0 1 0 .49-4.97"/>
+          </svg>
+          {tUI.btnAnother}
+        </button>
+      </div>
+
+      <div class="hv-section">
+        <p class="hv-section-label">{tUI.labelHash}</p>
+        <div class="hv-hash-wrap">
+          <div class="hv-hash-output" id="hv-hash-output"></div>
+          <button class="hv-btn-copy" id="hv-btn-copy" title={tUI.btnCopyTitle}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2"/>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="hv-section hv-compare-section">
+        <div class="hv-compare-header">
+          <p class="hv-section-label">{tUI.labelCompare}</p>
+          <span class="hv-status-badge hv-hidden" id="hv-status"></span>
+        </div>
+        <div class="hv-compare-input-wrap">
+          <input
+            type="text"
+            id="hv-compare-input"
+            class="hv-compare-input"
+            placeholder={tUI.placeholderCompare}
+          />
+          <span class="hv-match-icon hv-hidden" id="hv-match-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <span class="hv-mismatch-icon hv-hidden" id="hv-mismatch-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </span>
+        </div>
+        <p class="hv-compare-note"
+          data-verified={tUI.statusVerified}
+          data-corrupt={tUI.statusCorrupt}
+        >{tUI.labelCompareNote}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  import { SHA256, formatFileSize } from './logic';
+
+  const CHUNK = 1024 * 1024 * 2;
+  let currentHash = '';
+
+  function showState(id: string) {
+    ['hv-initial', 'hv-processing', 'hv-result'].forEach((s) => {
+      document.getElementById(s)?.classList.toggle('hv-hidden', s !== id);
+    });
+  }
+
+  function setProgress(pct: number) {
+    const bar = document.getElementById('hv-progress-bar');
+    const label = document.getElementById('hv-pct');
+    if (bar) bar.style.width = `${pct}%`;
+    if (label) label.textContent = `${pct}%`;
+  }
+
+  interface ChunkCtx { file: File; sha: SHA256; offset: number; }
+
+  function processChunk(ctx: ChunkCtx) {
+    const reader = new FileReader();
+    const blob = ctx.file.slice(ctx.offset, ctx.offset + CHUNK);
+    reader.onload = (e) => {
+      ctx.sha.update(new Uint8Array(e.target?.result as ArrayBuffer));
+      ctx.offset += blob.size;
+      setProgress(Math.round((ctx.offset / ctx.file.size) * 100));
+      if (ctx.offset < ctx.file.size) {
+        setTimeout(() => processChunk(ctx), 0);
+      } else {
+        currentHash = ctx.sha.finalize();
+        showResult(ctx.file.name);
+      }
+    };
+    reader.readAsArrayBuffer(blob);
+  }
+
+  function showResult(filename: string) {
+    showState('hv-result');
+    const out = document.getElementById('hv-hash-output');
+    const fn = document.getElementById('hv-result-filename');
+    if (out) out.textContent = currentHash;
+    if (fn) fn.textContent = filename;
+    const ci = document.getElementById('hv-compare-input') as HTMLInputElement | null;
+    if (ci) ci.value = '';
+    clearCompare();
+  }
+
+  function clearCompare() {
+    document.getElementById('hv-status')?.classList.add('hv-hidden');
+    document.getElementById('hv-match-icon')?.classList.add('hv-hidden');
+    document.getElementById('hv-mismatch-icon')?.classList.add('hv-hidden');
+    const ci = document.getElementById('hv-compare-input');
+    ci?.classList.remove('hv-match', 'hv-mismatch');
+  }
+
+  function applyMatch(status: HTMLElement, compareInput: HTMLElement, note: HTMLElement) {
+    status.textContent = note.dataset.verified ?? 'OK';
+    status.className = 'hv-status-badge hv-badge-ok';
+    document.getElementById('hv-match-icon')?.classList.remove('hv-hidden');
+    document.getElementById('hv-mismatch-icon')?.classList.add('hv-hidden');
+    compareInput.classList.add('hv-match');
+    compareInput.classList.remove('hv-mismatch');
+  }
+
+  function applyMismatch(status: HTMLElement, compareInput: HTMLElement, note: HTMLElement) {
+    status.textContent = note.dataset.corrupt ?? 'ERROR';
+    status.className = 'hv-status-badge hv-badge-err';
+    document.getElementById('hv-match-icon')?.classList.add('hv-hidden');
+    document.getElementById('hv-mismatch-icon')?.classList.remove('hv-hidden');
+    compareInput.classList.add('hv-mismatch');
+    compareInput.classList.remove('hv-match');
+  }
+
+  function updateComparison() {
+    const ci = document.getElementById('hv-compare-input') as HTMLInputElement | null;
+    const status = document.getElementById('hv-status');
+    const note = document.getElementById('hv-compare-input')?.closest('.hv-compare-section')?.querySelector('.hv-compare-note') as HTMLElement | null;
+    if (!ci || !status || !note) return;
+    const input = ci.value.trim().toLowerCase().replace(/\s/g, '');
+    if (!input) { clearCompare(); return; }
+    status.classList.remove('hv-hidden');
+    if (input === currentHash.toLowerCase()) {
+      applyMatch(status, ci, note);
+    } else {
+      applyMismatch(status, ci, note);
+    }
+  }
+
+  function handleFile(file: File) {
+    showState('hv-processing');
+    const info = document.getElementById('hv-file-info');
+    if (info) info.textContent = `${file.name} (${formatFileSize(file.size)})`;
+    setProgress(0);
+    processChunk({ file, sha: new SHA256(), offset: 0 });
+  }
+
+  function attachDrop(zone: HTMLElement) {
+    const prevent = (e: Event) => { e.preventDefault(); e.stopPropagation(); };
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach((ev) => zone.addEventListener(ev, prevent));
+    ['dragenter', 'dragover'].forEach((ev) => zone.addEventListener(ev, () => zone.setAttribute('data-drag', 'true')));
+    ['dragleave', 'drop'].forEach((ev) => zone.addEventListener(ev, () => zone.removeAttribute('data-drag')));
+    zone.addEventListener('drop', (e: DragEvent) => {
+      const file = e.dataTransfer?.files?.[0];
+      if (file) handleFile(file);
+    });
+  }
+
+  function init() {
+    const zone = document.getElementById('hv-drop-zone');
+    const fileInput = document.getElementById('hv-file-input') as HTMLInputElement | null;
+    if (!zone || !fileInput) return;
+    attachDrop(zone);
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files?.[0]) handleFile(fileInput.files[0]);
+    });
+    document.getElementById('hv-compare-input')?.addEventListener('input', updateComparison);
+    document.getElementById('hv-btn-copy')?.addEventListener('click', () => {
+      void navigator.clipboard.writeText(currentHash);
+    });
+    document.getElementById('hv-btn-another')?.addEventListener('click', () => {
+      showState('hv-initial');
+      fileInput.value = '';
+      currentHash = '';
+    });
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .hv-wrapper {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .hv-card {
+    background: var(--bg-surface);
+    width: calc(100% - 24px);
+    max-width: 760px;
+    margin: 0 auto;
+    border-radius: 24px;
+    border: 2px dashed var(--border-color);
+    color: var(--text-main);
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hv-card[data-drag] {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.04);
+  }
+
+  .hv-state {
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    min-height: 360px;
+    justify-content: center;
+  }
+
+  .hv-hidden {
+    display: none;
+  }
+
+  .hv-icon-box {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    background: var(--bg-muted);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #10b981;
+  }
+
+  .hv-icon-box svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hv-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 8px 0 0;
+  }
+
+  .hv-subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    max-width: 380px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .hv-btn-select {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: #10b981;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    transition: filter 0.15s, transform 0.15s;
+    margin-top: 8px;
+  }
+
+  .hv-btn-select:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+
+  .hv-btn-select svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hv-privacy {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .hv-privacy svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+  }
+
+  .hv-spinner-wrap {
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+
+  .hv-spinner-track {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 4px solid var(--border-color);
+  }
+
+  .hv-spinner {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: #10b981;
+    animation: hv-spin 0.8s linear infinite;
+  }
+
+  @keyframes hv-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .hv-progress-pct {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #10b981;
+  }
+
+  .hv-calc-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .hv-file-info {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 0;
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .hv-progress-bar-wrap {
+    width: 100%;
+    max-width: 320px;
+    height: 6px;
+    background: var(--bg-muted);
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+  }
+
+  .hv-progress-bar {
+    height: 100%;
+    background: #10b981;
+    border-radius: 3px;
+    transition: width 0.2s;
+    width: 0%;
+  }
+
+  .hv-result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    text-align: left;
+  }
+
+  .hv-result-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hv-check-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #10b981;
+    flex-shrink: 0;
+  }
+
+  .hv-check-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .hv-success-label {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .hv-result-filename {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 2px 0 0;
+  }
+
+  .hv-btn-another {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: color 0.15s, background 0.15s;
+  }
+
+  .hv-btn-another:hover {
+    color: var(--text-main);
+    background: var(--bg-muted);
+  }
+
+  .hv-btn-another svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .hv-state:not(#hv-initial) {
+    text-align: left;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .hv-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hv-section-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .hv-hash-wrap {
+    position: relative;
+  }
+
+  .hv-hash-output {
+    padding: 14px 50px 14px 16px;
+    background: var(--bg-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #10b981;
+    word-break: break-all;
+    line-height: 1.5;
+  }
+
+  .hv-btn-copy {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    padding: 5px;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    transition: color 0.15s;
+  }
+
+  .hv-btn-copy:hover {
+    color: var(--text-main);
+  }
+
+  .hv-btn-copy svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .hv-compare-section {
+    background: var(--bg-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .hv-compare-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .hv-status-badge {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
+
+  .hv-badge-ok {
+    background: rgba(16, 185, 129, 0.12);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+
+  .hv-badge-err {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+
+  .hv-compare-input-wrap {
+    position: relative;
+  }
+
+  .hv-compare-input {
+    width: 100%;
+    padding: 12px 44px 12px 14px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 13px;
+    color: var(--text-main);
+    box-sizing: border-box;
+    transition: border-color 0.15s;
+  }
+
+  .hv-compare-input:focus {
+    outline: none;
+    border-color: #10b981;
+  }
+
+  .hv-compare-input.hv-match {
+    border-color: #10b981;
+  }
+
+  .hv-compare-input.hv-mismatch {
+    border-color: #ef4444;
+  }
+
+  .hv-match-icon,
+  .hv-mismatch-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+  }
+
+  .hv-match-icon {
+    color: #10b981;
+  }
+
+  .hv-mismatch-icon {
+    color: #ef4444;
+  }
+
+  .hv-match-icon svg,
+  .hv-mismatch-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hv-compare-note {
+    font-size: 10px;
+    color: var(--text-muted);
+    margin: 6px 0 0;
+    font-style: italic;
+  }
+</style>

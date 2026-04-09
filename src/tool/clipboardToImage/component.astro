@@ -1,0 +1,346 @@
+---
+import type { ClipboardToImageUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const tUI = ui as ClipboardToImageUI;
+---
+
+<div
+  class="cb-wrapper"
+  id="cb-tool"
+  data-label-ctrl-v={tUI.labelCtrlV}
+  data-label-click-paste={tUI.labelClickPaste}
+  data-btn-clear={tUI.btnClear}
+  data-btn-download={tUI.btnDownload}
+  data-privacy-msg={tUI.privacyMsg}
+>
+  <div class="cb-card">
+    <div id="cb-paste-zone" class="cb-paste-zone" role="button" tabindex="0" aria-label={tUI.labelCtrlV}>
+      <svg class="cb-paste-icon" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+        <path d="M12 11v6"/>
+        <path d="M9 14l3 3 3-3"/>
+      </svg>
+      <p class="cb-label-main" id="cb-label-main">{tUI.labelCtrlV}</p>
+      <p class="cb-label-sub" id="cb-label-sub">{tUI.labelClickPaste}</p>
+    </div>
+
+    <div id="cb-preview" class="cb-preview cb-hidden">
+      <div class="cb-img-wrap">
+        <img id="cb-img" src="" alt="pasted content" class="cb-img" />
+        <span id="cb-dimensions" class="cb-dimensions">0 x 0</span>
+      </div>
+    </div>
+
+    <div id="cb-controls" class="cb-controls cb-hidden">
+      <button id="cb-btn-clear" class="cb-btn-secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="3 6 5 6 21 6"/>
+          <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+          <path d="M10 11v6M14 11v6"/>
+        </svg>
+        <span id="cb-clear-label">{tUI.btnClear}</span>
+      </button>
+      <button id="cb-btn-download" class="cb-btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        <span id="cb-download-label">{tUI.btnDownload}</span>
+      </button>
+    </div>
+
+    <p class="cb-privacy" id="cb-privacy">{tUI.privacyMsg}</p>
+  </div>
+</div>
+
+<script>
+  interface PastedDetail {
+    url: string;
+    blob: Blob;
+    timestamp: Date;
+  }
+
+  let currentBlob: Blob | null = null;
+  let currentTimestamp: Date | null = null;
+
+  function showPreview(detail: PastedDetail) {
+    const img = document.getElementById('cb-img') as HTMLImageElement | null;
+    const preview = document.getElementById('cb-preview');
+    const controls = document.getElementById('cb-controls');
+    const dim = document.getElementById('cb-dimensions');
+
+    if (!img || !preview || !controls) return;
+
+    img.src = detail.url;
+    preview.classList.remove('cb-hidden');
+
+    img.onload = () => {
+      if (dim) dim.textContent = `${img.naturalWidth} x ${img.naturalHeight}`;
+      preview.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
+    controls.classList.remove('cb-hidden');
+    currentBlob = detail.blob;
+    currentTimestamp = detail.timestamp;
+  }
+
+  function clearAll() {
+    const img = document.getElementById('cb-img') as HTMLImageElement | null;
+    const preview = document.getElementById('cb-preview');
+    const controls = document.getElementById('cb-controls');
+
+    if (img) img.src = '';
+    preview?.classList.add('cb-hidden');
+    controls?.classList.add('cb-hidden');
+    currentBlob = null;
+    currentTimestamp = null;
+  }
+
+  function buildFilename(ts: Date): string {
+    const y = ts.getFullYear();
+    const mo = String(ts.getMonth() + 1).padStart(2, '0');
+    const d = String(ts.getDate()).padStart(2, '0');
+    const h = String(ts.getHours()).padStart(2, '0');
+    const mi = String(ts.getMinutes()).padStart(2, '0');
+    const s = String(ts.getSeconds()).padStart(2, '0');
+    return `clipboard-${y}-${mo}-${d}-${h}-${mi}-${s}.png`;
+  }
+
+  function download() {
+    if (!currentBlob || !currentTimestamp) return;
+    const url = URL.createObjectURL(currentBlob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = buildFilename(currentTimestamp);
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function extractImageFromItems(items: DataTransferItemList) {
+    for (const item of items) {
+      if (item.type.startsWith('image/')) {
+        const blob = item.getAsFile();
+        if (blob) {
+          const url = URL.createObjectURL(blob);
+          showPreview({ url, blob, timestamp: new Date() });
+          return;
+        }
+      }
+    }
+  }
+
+  async function readFromClipboard() {
+    const clipboardItems = await navigator.clipboard.read();
+    for (const item of clipboardItems) {
+      const imageType = item.types.find((t) => t.startsWith('image/'));
+      if (imageType) {
+        const blob = await item.getType(imageType);
+        const url = URL.createObjectURL(blob);
+        showPreview({ url, blob, timestamp: new Date() });
+        return;
+      }
+    }
+  }
+
+  function init() {
+    const zone = document.getElementById('cb-paste-zone');
+    const btnClear = document.getElementById('cb-btn-clear');
+    const btnDownload = document.getElementById('cb-btn-download');
+
+    if (!zone) return;
+
+    window.addEventListener('paste', (e: ClipboardEvent) => {
+      if (e.clipboardData?.items) extractImageFromItems(e.clipboardData.items);
+    });
+
+    zone.addEventListener('click', () => { void readFromClipboard(); });
+    zone.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') void readFromClipboard();
+    });
+
+    btnClear?.addEventListener('click', clearAll);
+    btnDownload?.addEventListener('click', download);
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .cb-wrapper {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .cb-card {
+    background: var(--bg-surface);
+    width: calc(100% - 24px);
+    max-width: 720px;
+    margin: 0 auto;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .cb-paste-zone {
+    width: 100%;
+    min-height: 200px;
+    border: 2px dashed var(--border-color);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 40px 24px;
+    text-align: center;
+    transition: border-color 0.2s, background 0.2s;
+    box-sizing: border-box;
+  }
+
+  .cb-paste-zone:hover {
+    border-color: var(--color-accent, #3b82f6);
+    background: rgba(59, 130, 246, 0.04);
+  }
+
+  .cb-paste-zone:focus {
+    outline: 2px solid var(--color-accent, #3b82f6);
+    outline-offset: 2px;
+  }
+
+  .cb-paste-icon {
+    width: 56px;
+    height: 56px;
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  .cb-label-main {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .cb-label-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .cb-preview {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: var(--bg-muted);
+  }
+
+  .cb-img-wrap {
+    position: relative;
+  }
+
+  .cb-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 60vh;
+    object-fit: contain;
+  }
+
+  .cb-dimensions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+  }
+
+  .cb-controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .cb-hidden {
+    display: none;
+  }
+
+  .cb-btn-secondary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--bg-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .cb-btn-secondary:hover {
+    background: var(--border-color);
+  }
+
+  .cb-btn-secondary svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .cb-btn-primary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    background: var(--color-accent, #3b82f6);
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: filter 0.2s, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+
+  .cb-btn-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+
+  .cb-btn-primary svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .cb-privacy {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    margin: 0;
+    line-height: 1.5;
+  }
+</style>

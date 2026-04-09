@@ -1,0 +1,444 @@
+---
+import type { KnownLocale } from '../../types';
+import type { JsonToCsvUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as JsonToCsvUI;
+---
+
+<div
+  class="jc-converter"
+  data-status-waiting={t.statusWaiting}
+  data-status-valid={t.statusValid}
+  data-status-invalid={t.statusInvalid}
+  data-copy-feedback={t.copyFeedback}
+  data-btn-copy-csv={t.btnCopyCsv}
+  data-btn-download-csv={t.btnDownloadCsv}
+>
+  <header class="jc-header">
+    <div class="jc-status">
+      <span class="jc-status-dot" data-jc-dot></span>
+      <span data-jc-label>{t.statusWaiting}</span>
+    </div>
+    <div class="jc-option-strip">
+      <label class="jc-checkbox-label">
+        <input type="checkbox" data-jc-flatten checked />
+        <span>{t.labelFlatten}</span>
+      </label>
+    </div>
+  </header>
+
+  <main class="jc-main-input">
+    <div class="jc-drop-zone" data-jc-drop-zone>
+      <div class="jc-zone-visuals" data-jc-visuals>
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="currentColor" class="jc-zone-icon">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM8 17v-2h8v2H8zm0-4v-2h8v2H8zm0-4V7h5v2H8z" opacity=".3"/>
+          <path d="M13 9V3.5L18.5 9H13zM6 2c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6H6zm2 15v-2h8v2H8zm0-4v-2h8v2H8zm0-4V7h5v2H8z"/>
+        </svg>
+        <span class="jc-zone-label">{t.zoneLabel}</span>
+      </div>
+      <textarea
+        class="jc-json-textarea"
+        data-jc-input
+        placeholder={t.placeholderJson}
+        spellcheck="false"
+      ></textarea>
+    </div>
+  </main>
+
+  <div class="jc-preview jc-hidden" data-jc-preview>
+    <div class="jc-preview-wrapper">
+      <table class="jc-preview-table" data-jc-preview-table></table>
+    </div>
+  </div>
+
+  <footer class="jc-footer">
+    <button class="jc-btn jc-btn-outline jc-hidden" data-jc-copy>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+      <span data-jc-copy-label>{t.btnCopyCsv}</span>
+    </button>
+    <button class="jc-btn jc-btn-primary jc-hidden" data-jc-download>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+      <span>{t.btnDownloadCsv}</span>
+    </button>
+  </footer>
+</div>
+
+<script>
+  import { flattenObject, generateCSV } from './logic';
+
+  function setVisible(el: Element | null, visible: boolean) {
+    if (!visible) el?.classList.add('jc-hidden');
+    else el?.classList.remove('jc-hidden');
+  }
+
+  function getStatusLabel(container: HTMLElement, hasData: boolean, valid: boolean, count: number): string {
+    if (hasData) return `${container.dataset.statusValid ?? ''} (${count})`;
+    if (valid) return container.dataset.statusInvalid ?? '';
+    return container.dataset.statusWaiting ?? '';
+  }
+
+  function renderPreview(container: HTMLElement, data: Record<string, unknown>[]) {
+    const table = container.querySelector<HTMLElement>('[data-jc-preview-table]');
+    if (!table || data.length === 0) return;
+    const headers = Object.keys(data[0]);
+    const rows = data.slice(0, 5);
+    let html = `<thead><tr>${headers.map((h) => `<th>${h}</th>`).join('')}</tr></thead>`;
+    html += `<tbody>${rows.map((row) => `<tr>${headers.map((h) => `<td>${row[h] !== undefined ? row[h] : ''}</td>`).join('')}</tr>`).join('')}</tbody>`;
+    table.innerHTML = html;
+  }
+
+  function updateUI(container: HTMLElement, valid: boolean, data: Record<string, unknown>[]) {
+    const hasData = valid && data.length > 0;
+    container.querySelector('[data-jc-dot]')?.classList.toggle('jc-dot-active', hasData);
+    const label = container.querySelector('[data-jc-label]');
+    if (label) label.textContent = getStatusLabel(container, hasData, valid, data.length);
+    setVisible(container.querySelector('[data-jc-preview]'), hasData);
+    setVisible(container.querySelector('[data-jc-copy]'), hasData);
+    setVisible(container.querySelector('[data-jc-download]'), hasData);
+    setVisible(container.querySelector('[data-jc-visuals]'), !hasData);
+    if (hasData) renderPreview(container, data);
+  }
+
+  function processJSON(container: HTMLElement, text: string, currentData: Record<string, unknown>[][]) {
+    try {
+      const parsed = JSON.parse(text) as unknown;
+      const arr = Array.isArray(parsed)
+        ? (parsed as Record<string, unknown>[])
+        : [parsed as Record<string, unknown>];
+      const shouldFlatten = container.querySelector<HTMLInputElement>('[data-jc-flatten]')?.checked;
+      currentData[0] = shouldFlatten ? arr.map((item) => flattenObject(item)) : arr;
+      updateUI(container, true, currentData[0]);
+    } catch {
+      currentData[0] = [];
+      updateUI(container, false, []);
+    }
+  }
+
+  function attachDownload(container: HTMLElement, currentData: Record<string, unknown>[][]) {
+    container.querySelector('[data-jc-download]')?.addEventListener('click', () => {
+      const csv = generateCSV(currentData[0]);
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `datos_json_${Date.now()}.csv`;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  }
+
+  function attachCopy(container: HTMLElement, currentData: Record<string, unknown>[][]) {
+    const copyLabel = container.querySelector('[data-jc-copy-label]');
+    container.querySelector('[data-jc-copy]')?.addEventListener('click', () => {
+      const csv = generateCSV(currentData[0]);
+      navigator.clipboard.writeText(csv).then(() => {
+        const original = copyLabel?.textContent ?? '';
+        if (copyLabel) copyLabel.textContent = container.dataset.copyFeedback ?? '¡Copiado!';
+        setTimeout(() => { if (copyLabel) copyLabel.textContent = original; }, 2000);
+      });
+    });
+  }
+
+  function attachDrop(container: HTMLElement, currentData: Record<string, unknown>[][], input: HTMLTextAreaElement) {
+    const dropZone = container.querySelector<HTMLElement>('[data-jc-drop-zone]');
+    if (!dropZone) return;
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('jc-dragover'); });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('jc-dragover'));
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('jc-dragover');
+      const file = (e as DragEvent).dataTransfer?.files[0];
+      if (file && file.type === 'application/json') {
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          const text = ev.target?.result as string;
+          input.value = text;
+          processJSON(container, text, currentData);
+        };
+        reader.readAsText(file);
+      }
+    });
+  }
+
+  function attachListeners(container: HTMLElement) {
+    const currentData: Record<string, unknown>[][] = [[]];
+    const input = container.querySelector<HTMLTextAreaElement>('[data-jc-input]');
+    const flattenCheck = container.querySelector<HTMLInputElement>('[data-jc-flatten]');
+
+    input?.addEventListener('input', (e) =>
+      processJSON(container, (e.target as HTMLTextAreaElement).value, currentData),
+    );
+    flattenCheck?.addEventListener('change', () => {
+      if (input?.value) processJSON(container, input.value, currentData);
+    });
+
+    attachDownload(container, currentData);
+    attachCopy(container, currentData);
+    if (input) attachDrop(container, currentData, input);
+  }
+
+  function init() {
+    document.querySelectorAll<HTMLElement>('.jc-converter').forEach((c) => attachListeners(c));
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .jc-converter {
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow:
+      0 20px 50px -12px rgba(6, 182, 212, 0.1),
+      0 0 0 1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .jc-header {
+    padding: 1.5rem 2.5rem;
+    background: var(--bg-page);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .jc-status {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .jc-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #94a3b8;
+    flex-shrink: 0;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .jc-dot-active {
+    background: #22d3ee;
+    box-shadow: 0 0 8px #22d3ee;
+  }
+
+  .jc-option-strip {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .jc-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    user-select: none;
+  }
+
+  .jc-checkbox-label input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    accent-color: #0ea5e9;
+  }
+
+  .jc-main-input {
+    padding: 2.5rem;
+    background: radial-gradient(circle at 0% 0%, rgba(6, 182, 212, 0.03) 0%, transparent 40%);
+  }
+
+  .jc-drop-zone {
+    width: 100%;
+    min-height: 200px;
+    border: 2px dashed var(--border-color);
+    border-radius: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+
+  .jc-drop-zone.jc-dragover {
+    border-color: #0ea5e9;
+    background: rgba(6, 182, 212, 0.05);
+    transform: scale(1.01);
+  }
+
+  .jc-zone-visuals {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    pointer-events: none;
+  }
+
+  .jc-zone-icon {
+    color: #0ea5e9;
+    opacity: 0.3;
+  }
+
+  .jc-zone-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    opacity: 0.7;
+  }
+
+  .jc-json-textarea {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: text;
+    padding: 2rem;
+    font-size: 0.85rem;
+    resize: none;
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    box-sizing: border-box;
+    transition: opacity 0.3s ease;
+  }
+
+  .jc-json-textarea:focus {
+    opacity: 1;
+    background: var(--bg-surface);
+    outline: none;
+  }
+
+  .jc-preview {
+    padding: 0 2.5rem 2.5rem;
+    overflow-x: auto;
+  }
+
+  .jc-preview-wrapper {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background: var(--bg-page);
+  }
+
+  .jc-preview-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.75rem;
+    color: var(--text-main);
+  }
+
+  .jc-preview-table th {
+    background: var(--border-color);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .jc-preview-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    white-space: nowrap;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .jc-footer {
+    padding: 2rem 2.5rem;
+    background: var(--bg-page);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .jc-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 0.875rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+  }
+
+  .jc-btn-primary {
+    background: #0ea5e9;
+    color: white;
+  }
+
+  .jc-btn-primary:hover {
+    background: #6366f1;
+    box-shadow: 0 8px 16px -4px rgba(6, 182, 212, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .jc-btn-outline {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-main);
+  }
+
+  .jc-btn-outline:hover {
+    border-color: #0ea5e9;
+  }
+
+  .jc-hidden {
+    display: none;
+  }
+
+  @media (max-width: 700px) {
+    .jc-footer {
+      flex-direction: column;
+    }
+
+    .jc-btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .jc-header {
+      padding: 1.25rem 1.5rem;
+    }
+
+    .jc-main-input {
+      padding: 1.5rem;
+    }
+
+    .jc-preview {
+      padding: 0 1.5rem 1.5rem;
+    }
+  }
+</style>
