@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { ClipboardToImageUI } from '../ui';
 
 const slug = 'presse-papiers-vers-image';
-const title = 'Presse-papiers vers Image';
+const title = 'Presse papiers vers Image';
 const description =
   "Convertissez le contenu de votre presse-papiers en fichier image téléchargeable instantanément. Processus 100% privé et local : vos captures ne quittent jamais votre navigateur.";
 
@@ -127,7 +127,7 @@ export const content: ToolLocaleContent<ClipboardToImageUI> = {
     },
     {
       type: 'summary',
-      title: 'Avantages du Convertisseur de Presse-papiers',
+      title: 'Avantages du Convertisseur de Presse papiers',
       items: [
         "Confidentialité totale : les images ne quittent jamais votre navigateur.",
         "Rapidité extrême : Ctrl+V et téléchargement en un seul clic.",

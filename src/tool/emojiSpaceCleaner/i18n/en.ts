@@ -1,4 +1,4 @@
-import type { WithContext, FAQPage, SoftwareApplication } from 'schema-dts';
+import type { WithContext, FAQPage, SoftwareApplication, HowTo } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { EmojiSpaceCleanerUI } from '../ui';
 
@@ -45,6 +45,19 @@ const faqSchema: WithContext<FAQPage> = {
   })),
 };
 
+
+const howToSchema: WithContext<HowTo> = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: (typeof howToData !== 'undefined' ? howToData : []).map((step: any) => ({
+    '@type': 'HowToStep',
+    name: step.name,
+    text: step.text,
+  })),
+};
+
 const appSchema: WithContext<SoftwareApplication> = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
@@ -78,7 +91,7 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     },
   ],
   howTo: [],
-  schemas: [faqSchema, appSchema],
+  schemas: [faqSchema, appSchema, howToSchema],
   seo: [
     {
       type: 'title',
@@ -108,7 +121,7 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     },
     {
       type: 'tip',
-      title: 'Maximum Privacy: 100% Browser-Side Processing',
+      title: 'Maximum Privacy: 100% Browser Side Processing',
       html: '<p>Unlike other converters that send your data to remote servers, our utility works entirely on the <strong>client side (Client-Side)</strong>. The text you paste never leaves your computer. All emoji removal and space cleaning happens in your own RAM, ensuring that your confidential or work-related information remains completely private.</p>',
     },
     {

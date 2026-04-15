@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import * as DATA from '../data';
 
 const ENTRIES = [
-  { id: 'filesCategory', i18n: DATA.filesCategory.i18n },
+  { id: 'audiovisualCategory', i18n: DATA.audiovisualCategory.i18n },
 ];
 
 describe('SEO Content Length Validation', () => {

@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { JsonToCsvUI } from '../ui';
 
 const slug = 'conversor-json-a-excel-csv';
-const title = 'Conversor de JSON a Excel y CSV Online - 100% Local y Seguro';
+const title = 'Conversor de JSON a Excel y CSV Online 100% Local y Seguro';
 const description =
   'Transforma archivos JSON complejos en hojas de cálculo de Excel o CSV de forma instantánea. Con aplanamiento automático de objetos y total privacidad local.';
 

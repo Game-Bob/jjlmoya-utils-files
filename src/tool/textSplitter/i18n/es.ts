@@ -1,9 +1,9 @@
-import type { WithContext, FAQPage, SoftwareApplication } from 'schema-dts';
+import type { WithContext, FAQPage, SoftwareApplication, HowTo } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'separador-de-texto';
-const title = 'Separador de Texto Online | Convertidor de Listas a Líneas';
+const title = 'Separador de Texto Online Convertidor de Listas a Líneas';
 const description =
   'Divide listas separadas por comas, espacios o puntos en líneas individuales al instante. Herramienta gratuita para limpiar y organizar datos online.';
 
@@ -45,6 +45,19 @@ const faqSchema: WithContext<FAQPage> = {
   })),
 };
 
+
+const howToSchema: WithContext<HowTo> = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: (typeof howToData !== 'undefined' ? howToData : []).map((step: any) => ({
+    '@type': 'HowToStep',
+    name: step.name,
+    text: step.text,
+  })),
+};
+
 const appSchema: WithContext<SoftwareApplication> = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
@@ -78,7 +91,7 @@ export const content: ToolLocaleContent<TextSplitterUI> = {
     },
   ],
   howTo: [],
-  schemas: [faqSchema, appSchema],
+  schemas: [faqSchema, appSchema, howToSchema],
   seo: [
     {
       type: 'title',

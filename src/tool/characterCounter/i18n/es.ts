@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { CharacterCounterUI } from '../ui';
 
 const slug = 'contador-caracteres';
-const title = 'Contador de Caracteres y Palabras Online | Contador de Letras';
+const title = 'Contador de Caracteres y Palabras Online Contador de Letras';
 const description =
   'Contador de caracteres, palabras, frases y párrafos online. Calcula tiempos de lectura y voz. Herramienta gratuita perfecta para SEO y redes sociales.';
 

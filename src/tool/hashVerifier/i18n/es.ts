@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { HashVerifierUI } from '../ui';
 
 const slug = 'verificador-hash';
-const title = 'Verificador de Hash SHA-256 Online - Seguridad Local';
+const title = 'Verificador de Hash SHA 256 Online Seguridad Local';
 const description =
   'Verifica la integridad de tus archivos calculando su firma SHA-256 de forma 100% local y segura. Compara checksums de ISOs y descargas.';
 

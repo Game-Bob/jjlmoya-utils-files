@@ -1,4 +1,4 @@
-import type { WithContext, FAQPage, SoftwareApplication } from 'schema-dts';
+import type { WithContext, FAQPage, SoftwareApplication, HowTo } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { TextToMarkdownUI } from '../ui';
 
@@ -35,6 +35,19 @@ const faqSchema: WithContext<FAQPage> = {
   })),
 };
 
+
+const howToSchema: WithContext<HowTo> = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description,
+  step: (typeof howToData !== 'undefined' ? howToData : []).map((step: any) => ({
+    '@type': 'HowToStep',
+    name: step.name,
+    text: step.text,
+  })),
+};
+
 const appSchema: WithContext<SoftwareApplication> = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
@@ -64,7 +77,7 @@ export const content: ToolLocaleContent<TextToMarkdownUI> = {
     },
   ],
   howTo: [],
-  schemas: [faqSchema, appSchema],
+  schemas: [faqSchema, appSchema, howToSchema],
   seo: [
     {
       type: 'title',
