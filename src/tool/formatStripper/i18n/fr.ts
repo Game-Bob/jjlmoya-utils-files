@@ -2,46 +2,46 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { FormatStripperUI } from '../ui';
 
-const slug = 'nettoyeur-format';
-const title = 'Nettoyeur de Format de Texte';
+const slug = 'supprimer-formatage-texte';
+const title = 'Supprimer le Formatage de Texte en Ligne Gratuit — Nettoyeur de Styles';
 const description =
-  "Supprimez le formatage parasite de n'importe quel texte copié : espaces doubles, sauts de ligne intempestifs et caractères invisibles. Convertissez en majuscules ou minuscules en un clic.";
+  'Éliminez le gras, l\'italique, les liens et les couleurs de n\'importe quel texte. Convertissez HTML ou Word en texte brut (txt) instantanément avec notre nettoyeur de styles professionnel.';
 
 const faqData = [
   {
-    question: 'Quels types de formatage cet outil supprime-t-il ?',
+    question: 'Comment supprimer le gras et l\'italique d\'un texte ?',
     answer:
-      "Il supprime les espaces doubles, les tabulations, les sauts de ligne redondants et normalise la ponctuation pour qu'il n'y ait pas d'espaces avant les virgules ou les points. Le résultat est un texte brut propre, prêt à être collé dans n'importe quel document.",
+      'Il suffit de coller votre texte dans notre outil. Le système détecte automatiquement les styles et les supprime, ne laissant que les caractères en texte brut, sans aucun enrichissement ni décoration.',
   },
   {
-    question: 'Puis-je normaliser les majuscules et minuscules ?',
+    question: 'Est-ce compatible avec les textes de Microsoft Word ou Google Docs ?',
     answer:
-      "Oui. Les boutons MAJ et min convertissent tout le texte dans la casse souhaitée. C'est utile pour normaliser des titres, des listes de noms ou corriger des textes saisis accidentellement avec la touche Verr Maj activée.",
+      'Oui, c\'est spécialement conçu pour cela. Lors de la copie depuis Word ou Docs, beaucoup de code "poubelle" est transporté. Notre nettoyeur supprime tous ces styles cachés, vous permettant de coller un texte propre dans d\'autres applications.',
   },
   {
-    question: 'Le texte est-il envoyé à un serveur ?',
+    question: 'Puis-je convertir de l\'HTML en texte brut ?',
     answer:
-      "Non. Tout le traitement s'effectue localement dans votre navigateur. Votre contenu ne quitte jamais votre appareil.",
+      'Exactement. Si vous collez un extrait HTML, notre outil supprimera toutes les balises (comme <div>, <a>, <strong>) et ne renverra que le contenu textuel lisible, prêt à être utilisé n\'importe où.',
   },
   {
-    question: 'Comment fonctionne le nettoyage automatique au collage ?',
+    question: 'Est-il sûr de coller des informations confidentielles ?',
     answer:
-      "Lorsque vous collez du texte avec Ctrl+V, l'outil intercepte l'événement et applique le nettoyage avant d'insérer le texte dans l'éditeur. Le texte est propre dès le premier instant, sans aucune étape supplémentaire.",
+      'Tout à fait sûr. Tout le traitement est effectué à 100 % dans votre navigateur. Aucune donnée n\'est envoyée à nos serveurs, garantissant que votre texte reste privé et protégé à tout moment.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Collez le texte',
-    text: "Collez le contenu que vous souhaitez nettoyer dans la zone de texte. Le nettoyage est appliqué automatiquement au collage.",
+    name: 'Copiez votre texte',
+    text: 'Copiez le texte formaté depuis Word, un site web ou un e-mail.',
   },
   {
-    name: 'Appliquez les transformations optionnelles',
-    text: "Si vous devez changer la casse, utilisez les boutons MAJ ou min dans la barre d'outils.",
+    name: 'Collez dans le nettoyeur',
+    text: 'Insérez le contenu dans la zone de saisie. La suppression des styles est automatique.',
   },
   {
     name: 'Copiez le résultat',
-    text: "Cliquez sur le bouton Copier pour envoyer le texte propre dans votre presse-papiers.",
+    text: 'Votre texte est maintenant simple et propre. Copiez-le et utilisez-le où vous le souhaitez sans problèmes de format.',
   },
 ];
 
@@ -82,69 +82,53 @@ export const content: ToolLocaleContent<FormatStripperUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquentes',
+  faqTitle: 'Foire Aux Questions',
   faq: faqData,
-  bibliographyTitle: 'Bibliographie',
-  bibliography: [
-    {
-      name: 'ClipboardEvent.clipboardData — MDN Web Docs',
-      url: 'https://developer.mozilla.org/fr/docs/Web/API/ClipboardEvent/clipboardData',
-    },
-    {
-      name: 'String.prototype.replace() — MDN Web Docs',
-      url: 'https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/replace',
-    },
-  ],
+  bibliographyTitle: '',
+  bibliography: [],
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
     {
       type: 'title',
-      text: 'Le Problème du Texte avec Formatage Parasite',
+      text: 'Que signifie "supprimer le formatage" et pourquoi en avez-vous besoin ?',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: "Lorsque vous copiez du texte depuis un site web, un PDF ou un e-mail et que vous le collez dans Word, Google Docs ou n'importe quel éditeur, vous emportez avec lui un <strong>formatage invisible</strong> : gras, couleurs, polices, tabulations, espaces insécables et sauts de ligne intempestifs. Le résultat est un texte sale qu'il faut nettoyer manuellement caractère par caractère.",
-    },
-    {
-      type: 'paragraph',
-      html: "Ce nettoyeur intercepte le texte au moment du collage et applique automatiquement toutes les normalisations nécessaires : il <strong>réduit les espaces multiples</strong>, supprime les espaces avant les signes de ponctuation et produit un texte brut propre prêt à l'emploi.",
-    },
-    {
-      type: 'stats',
-      items: [
-        { value: '100%', label: 'Privé et Local', icon: 'mdi:shield-check' },
-        { value: '0s', label: 'Nettoyage Instantané', icon: 'mdi:lightning-bolt' },
-        { value: 'Ctrl+V', label: 'Prêt à Coller', icon: 'mdi:content-paste' },
-      ],
-      columns: 3,
+      html: 'Supprimer le formatage est le processus de <strong>transformation du texte enrichi en texte brut</strong> (Plain Text). Lorsque nous copions des informations d\'un site web, d\'un eBook ou d\'un document Word, ce texte transporte des "bagages cachés" : types de polices, tailles, couleurs, liens et styles CSS. Notre outil sert de filtre qui élimine tous ces déchets numériques.',
     },
     {
       type: 'title',
-      text: 'Quand Utiliser un Nettoyeur de Format',
-      level: 3,
+      text: 'Avantages de l\'utilisation d\'un nettoyeur de texte',
+      level: 2,
     },
     {
-      type: 'summary',
-      title: "Cas d'utilisation fréquents",
+      type: 'list',
       items: [
-        "Copier du texte de sites web ou de PDF pour le coller dans des éditeurs ou des e-mails.",
-        "Normaliser des documents rédigés par plusieurs auteurs avec des formats inconsistants.",
-        "Préparer du contenu pour des systèmes n'acceptant pas le format enrichi (CMS, API).",
-        "Convertir du texte en majuscules ou minuscules pour des listes ou des titres.",
-        "Supprimer les tabulations et espaces superflus des exports de tableurs.",
+        '<strong>Compatibilité Universelle :</strong> Le texte brut fonctionne dans n\'importe quel programme, des anciens e-mails aux CMS modernes comme WordPress.',
+        '<strong>Code Propre :</strong> Idéal pour les développeurs qui ont besoin de coller du texte dans leur code sans transporter de balises HTML ou de styles RTF.',
+        '<strong>SEO et Lisibilité :</strong> En supprimant les formats irréguliers, vous vous assurez que votre contenu maintient la cohérence visuelle de votre site.',
+        '<strong>Confidentialité Totale :</strong> Le processus est local. Votre texte ne quitte jamais votre navigateur.',
       ],
+    },
+    {
+      type: 'title',
+      text: 'Suppression du formatage vs Copier-Coller simple',
+      level: 2,
+    },
+    {
+      type: 'paragraph',
+      html: 'Bien souvent, un simple <code>Ctrl + V</code> transporte des formats indésirables qui brisent le design de votre document de destination. L\'utilisation d\'un <strong>suppresseur de format</strong> en ligne vous garantit de ne garder que l\'essence du message, vous permettant d\'appliquer vos propres styles de zéro sans interférence technique.',
     },
   ],
   ui: {
-    labelChars: 'caractères',
-    labelWords: 'mots',
-    btnUppercase: 'MAJ',
-    btnLowercase: 'min',
-    btnCopy: 'Copier',
-    placeholder: 'Collez votre texte ici pour le nettoyer...',
-    toastCopied: 'Copié',
-    toastCleaned: 'Texte nettoyé automatiquement',
+    labelInput: 'Texte source (avec formatage)',
+    labelOutput: 'Texte brut (propre)',
+    placeholderInput: 'Collez ici le texte de Word, Web ou PDF...',
+    placeholderOutput: 'Le texte propre apparaîtra ici...',
+    btnCopy: 'Copier le résultat',
+    btnClear: 'Tout effacer',
+    toastCopied: 'Texte propre copié !',
   },
 };

@@ -2,50 +2,50 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ClipboardToImageUI } from '../ui';
 
-const slug = 'clipboard-to-image';
-const title = 'Clipboard to Image';
+const slug = 'clipboard-to-png';
+const title = 'Clipboard to PNG: Download Screenshots and Images';
 const description =
-  'Convert your clipboard content into a downloadable image file instantly. 100% private and local: your screenshots never leave your browser.';
+  'Online tool to convert clipboard content (screenshots, images) into an instantly downloadable PNG file. 100% private and fast process.';
 
 const faqData = [
   {
     question: 'Is it safe to paste my screenshots here?',
     answer:
-      'Yes, completely. The entire process happens inside your own browser. Clipboard data is never sent to any server, guaranteeing total privacy.',
+      'Yes, it is completely safe. This tool works 100% locally in your browser. Your clipboard data is never sent to any server, ensuring your total privacy.',
   },
   {
-    question: 'What types of images can I paste?',
+    question: 'What types of content can I convert?',
     answer:
-      'You can paste any image you have copied to the clipboard: screenshots, images from web pages, photos copied from other applications, and so on.',
+      'You can paste copied images (screenshots, photos), text that will be converted into a .txt file, or even HTML elements. The most common use is to save quick screenshots as PNG files.',
   },
   {
-    question: 'Why does the paste button not work?',
+    question: 'Why isn\'t the paste button working?',
     answer:
-      'The paste button requires the browser to have permission to access the clipboard. If the browser asks, grant it. If it still does not work, use the keyboard shortcut Ctrl+V (Windows) or Cmd+V (Mac) directly.',
+      'Due to browser security restrictions, sometimes the "Paste" button requires explicit permissions. If it doesn\'t work, you can always use the standard keyboard shortcut: Ctrl+V (Windows) or Cmd+V (Mac).',
   },
   {
-    question: 'What name will the downloaded file have?',
+    question: 'Does it work on mobile devices?',
     answer:
-      'The file is downloaded with a name based on the exact date and time of the paste, for example: clipboard-2024-06-15-14-32-07.png. This makes it easy to organise your screenshots chronologically.',
+      'Yes, you can use your mobile\'s paste function to view content, although the experience is optimized for quick screenshot management on desktop.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Copy an image',
-    text: 'Take a screenshot or copy any image from another application or web page.',
+    name: 'Copy content',
+    text: 'Take a screenshot or copy an image/text from any application.',
   },
   {
-    name: 'Paste into the tool',
-    text: 'Press Ctrl+V anywhere on the page, or click on the paste zone.',
+    name: 'Paste in the area',
+    text: 'Click on the paste area or use the shortcut Ctrl+V / Cmd+V to load the content.',
   },
   {
-    name: 'Check the preview',
-    text: 'The image will appear instantly. You can see its dimensions in the top-right corner.',
+    name: 'Preview',
+    text: 'Verify that the content is correct in the preview area that will appear instantly.',
   },
   {
-    name: 'Download the file',
-    text: 'Click the download button to save the image as a PNG file on your computer.',
+    name: 'Download file',
+    text: 'Press the download button to save the content as a real file on your computer.',
   },
 ];
 
@@ -88,53 +88,56 @@ export const content: ToolLocaleContent<ClipboardToImageUI> = {
   description,
   faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'Bibliography',
-  bibliography: [
-    {
-      name: 'Clipboard API — MDN Web Docs',
-      url: 'https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API',
-    },
-    {
-      name: 'ClipboardEvent — MDN Web Docs',
-      url: 'https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent',
-    },
-  ],
+  bibliographyTitle: '',
+  bibliography: [],
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
     {
       type: 'title',
-      text: 'How to Save a Screenshot as a File Without Any Software',
+      text: 'How to save a clipboard image as a file',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'When you take a screenshot with <strong>Windows + Shift + S</strong> or <strong>Cmd + Shift + 4</strong> on Mac, the image lands in your clipboard but is not saved as a file automatically. This tool solves exactly that: paste, preview, and download in seconds, <strong>with no installation and no data uploaded to any server</strong>.',
-    },
-    {
-      type: 'stats',
-      items: [
-        { value: '100%', label: 'Private & Local', icon: 'mdi:shield-check' },
-        { value: '0 MB', label: 'No Install', icon: 'mdi:download-off' },
-        { value: 'PNG', label: 'Output Format', icon: 'mdi:image' },
-      ],
-      columns: 3,
+      html: 'This free online tool allows you to <strong>convert your clipboard content into an image file</strong> (PNG) instantly. It is the perfect solution when you have taken a screenshot (Windows + Shift + S) or copied an image from a website and need to save it on your computer without opening heavy editors like Photoshop or Paint.',
     },
     {
       type: 'title',
-      text: 'Why Use This Tool',
+      text: 'Why use this clipboard converter?',
+      level: 2,
+    },
+    {
+      type: 'list',
+      items: [
+        '<strong>Speed:</strong> Just press <code>Ctrl + V</code> and download. No intermediate steps.',
+        '<strong>Privacy:</strong> The entire process is done in your browser. Your images <strong>are never uploaded to any server</strong>.',
+        '<strong>Original quality:</strong> We get the raw data from the clipboard, ensuring the downloaded image maintains the highest possible quality.',
+        '<strong>Automatic organization:</strong> Files are downloaded with a name based on the exact date and time, making it easy to organize your captures.',
+      ],
+    },
+    {
+      type: 'title',
+      text: 'Frequently Asked Questions',
+      level: 2,
+    },
+    {
+      type: 'title',
+      text: 'Does it work with screenshots?',
       level: 3,
     },
     {
-      type: 'summary',
-      title: 'Clipboard Converter Advantages',
-      items: [
-        'Total privacy: images never leave your browser.',
-        'Extreme speed: Ctrl+V and download in a single click.',
-        'No installation: works directly in the browser.',
-        'Automatic file names with date and time for better organisation.',
-        'Compatible with screenshots, web images, and any copied image.',
-      ],
+      type: 'paragraph',
+      html: 'Yes, it is ideal for quickly saving screenshots made with the Windows or Mac snipping tool.',
+    },
+    {
+      type: 'title',
+      text: 'What formats does it support?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'Currently, the tool automatically detects and converts any image in the clipboard to PNG format to ensure compatibility and transparency.',
     },
   ],
   ui: {

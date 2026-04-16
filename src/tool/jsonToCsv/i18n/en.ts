@@ -1,56 +1,47 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
+import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { JsonToCsvUI } from '../ui';
 
-const slug = 'json-to-excel-csv-converter';
-const title = 'JSON to Excel & CSV Converter Online 100% Local & Secure';
+const slug = 'json-to-csv-converter';
+const title = 'JSON to CSV Converter Online Free — Export to Excel';
 const description =
-  'Transform complex JSON files into Excel or CSV spreadsheets instantly. With automatic object flattening and complete local privacy.';
+  'Transform your JSON files into CSV tables quickly and easily. Ideal for data analysts who need to open JSON files in Excel or Google Sheets.';
 
 const faqData = [
   {
-    question: 'Is it safe to upload my JSON data here?',
+    question: 'How to convert JSON to CSV for Excel?',
     answer:
-      'This tool is 100% safe and local. Your JSON is processed exclusively in your browser memory (Client-Side). Your data is never sent to any server or stored in the cloud.',
+      'Just paste your JSON code or upload your file to our tool. The system automatically processes the data structure and generates a CSV file that you can download and open directly in Microsoft Excel or Google Sheets.',
   },
   {
-    question: 'How does the tool handle nested objects?',
+    question: 'Is it safe to convert my data on this website?',
     answer:
-      "We use a recursive flattening technique. If you have an object inside another, the converter creates columns with compound names (e.g., 'user.id', 'user.name'), making the entire data hierarchy readable in Excel.",
+      'Yes, 100% safe. The conversion is done entirely in your browser using JavaScript. No data is sent to our servers, ensuring your information remains private and secure.',
   },
   {
-    question: 'Is there a size limit for the JSON file?',
+    question: 'What happens if my JSON is nested?',
     answer:
-      'The limit depends on your device RAM, but files up to 10MB are processed smoothly. For very large files, we recommend splitting the data.',
+      'Our basic converter is optimized for arrays of objects. If you have very deep nesting, the tool will try to flatten the first level of properties to ensure a readable table for Excel.',
   },
   {
-    question: 'Can I import a file from my computer?',
+    question: 'Can I copy the CSV directly instead of downloading it?',
     answer:
-      'Yes, the tool supports drag and drop. Simply drag your .json file onto the dotted area and the content will load automatically.',
-  },
-  {
-    question: 'Is the downloaded file compatible with Excel?',
-    answer:
-      "Yes. We generate a CSV file with a UTF-8 Byte Order Mark (BOM), ensuring that Excel, Google Sheets or Numbers correctly displays special characters without manual import settings.",
+      'Of course. Besides the "Download CSV" button, you have a "Copy result" option to paste the content directly into any text editor or spreadsheet.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Load Data',
-    text: 'Paste your JSON code in the text area or drag a .json file directly from your computer onto the dotted area.',
+    name: 'Paste your JSON',
+    text: 'Insert the JSON code or upload the .json file in the input area.',
   },
   {
-    name: 'Automatic Flattening',
-    text: "Check 'Flatten Objects' if your JSON has nested structures and you want them as individual columns in the spreadsheet.",
+    name: 'Process the data',
+    text: 'The tool automatically identifies the fields and structure to organize them into rows and columns.',
   },
   {
-    name: 'Visual Validation',
-    text: 'Check the preview table that appears below. It shows the first rows to confirm the conversion is correct.',
-  },
-  {
-    name: 'Final Download',
-    text: "Click 'Download Excel (CSV)' to get the ready-to-use file or use 'Copy CSV' to paste it directly into an open spreadsheet.",
+    name: 'Download or copy',
+    text: 'Click on "Download CSV" to save the file or "Copy result" to use it immediately.',
   },
 ];
 
@@ -64,14 +55,13 @@ const faqSchema: WithContext<FAQPage> = {
   })),
 };
 
-const howToSchema: WithContext<HowToThing> = {
+const howToSchema: WithContext<HowTo> = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: title,
   description,
-  step: howToData.map((step, i) => ({
+  step: howToData.map((step) => ({
     '@type': 'HowToStep',
-    position: i + 1,
     name: step.name,
     text: step.text,
   })),
@@ -94,111 +84,58 @@ export const content: ToolLocaleContent<JsonToCsvUI> = {
   description,
   faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'Data Exchange Standards',
+  bibliographyTitle: 'Sources and References',
   bibliography: [
-    {
-      name: 'ECMA-404: The JSON Data Interchange Format',
-      url: 'https://ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf',
-    },
-    {
-      name: 'RFC 4180: Common Format and MIME Type for CSV',
-      url: 'https://datatracker.ietf.org/doc/html/rfc4180',
-    },
-    {
-      name: 'W3C: CSV on the Web (Standardization for Tabular Data)',
-      url: 'https://www.w3.org/TR/tabular-data-model/',
-    },
+    { name: 'RFC 4180: CSV Format Specification', url: 'https://tools.ietf.org/html/rfc4180' },
+    { name: 'ECMA-404: The JSON Data Interchange Standard', url: 'https://www.json.org/json-en.html' },
+    { name: 'Microsoft: Import CSV into Excel', url: 'https://support.microsoft.com/en-us/office/import-or-export-text-txt-or-csv-files-5250ac4c-663c-47ce-937b-339e391393ba' },
   ],
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
     {
       type: 'title',
-      text: 'Guide: Converting JSON to Excel and CSV — Data Optimization',
+      text: 'Why convert JSON to CSV for your data analysis?',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'In the modern digital ecosystem, JSON (JavaScript Object Notation) has become the de facto standard for data exchange between servers and web applications. However, its hierarchical and technical structure often creates barriers for business analysis, accounting, or traditional administrative management. This is where our <strong>JSON to Excel Converter</strong> becomes an indispensable tool.',
-    },
-    {
-      type: 'paragraph',
-      html: 'Our utility transforms raw JSON files into structured, readable spreadsheets in milliseconds. Whether you work with e-commerce APIs, NoSQL databases like MongoDB, or application logs, the ability to flatten nested data and export to CSV or Excel greatly simplifies data-driven decision making.',
+      html: 'JSON is the standard format for modern APIs, but it is not the easiest to analyze humanly. A <strong>JSON to CSV converter</strong> allows you to turn complex structures into rows and columns, facilitating manipulation in powerful tools like <strong>Microsoft Excel</strong>, Numbers, or Google Sheets.',
     },
     {
       type: 'title',
-      text: 'How Does JSON Flattening Work?',
-      level: 3,
+      text: 'Total Privacy: Convert without uploading files',
+      level: 2,
     },
     {
       type: 'paragraph',
-      html: 'One of the biggest challenges when moving from JSON to a table is multidimensionality. JSON allows objects within objects and data arrays. A basic converter would simply ignore these fields or display them as "[object Object]", which is useless for the end user.',
-    },
-    {
-      type: 'tip',
-      title: 'Recursive Flattening',
-      html: '<p>Our tool uses a <strong>recursive flattening</strong> algorithm. A structure like "user.address.street" is automatically converted into an individual column with that name, preserving all original information regardless of how deep the data is nested.</p>',
+      html: 'Most online converters upload your data to a server. Our tool is different: the <strong>conversion is 100% local</strong>. By using JavaScript in your browser, the data never leaves your computer. This is vital if you work with sensitive information, customer lists, or internal company reports.',
     },
     {
       type: 'title',
-      text: 'Benefits of Using Our Online Converter',
+      text: 'Technical Tips for a perfect conversion',
       level: 3,
     },
     {
-      type: 'grid',
-      columns: [
-        {
-          type: 'card',
-          title: 'Free & Instant',
-          html: '<p>No sign-ups or heavy software downloads. All processing happens in your browser, guaranteeing total privacy since your data never leaves your device.</p>',
-        },
-        {
-          type: 'card',
-          title: 'Excel Compatibility',
-          html: '<p>We generate CSV files with a BOM (Byte Order Mark), ensuring Excel correctly recognizes special characters like accents and special symbols.</p>',
-        },
+      type: 'list',
+      items: [
+        'Make sure your JSON is an <strong>array of objects</strong> (e.g., [{}, {}]).',
+        'Verify that all objects have similar properties to keep the CSV columns consistent.',
+        'If you have special characters, our CSV is exported in <strong>UTF-8</strong> to avoid issues in Excel.',
       ],
-    },
-    {
-      type: 'title',
-      text: 'Output Structure and Data Type Mapping',
-      level: 4,
-    },
-    {
-      type: 'table',
-      headers: ['JSON Type', 'Excel/CSV Representation', 'Note'],
-      rows: [
-        ['String', 'Plain Text', 'Double quotes are automatically escaped.'],
-        ['Number', 'Numeric', 'Preserves original decimal precision.'],
-        ['Boolean', 'TRUE / FALSE', 'Converted to uppercase for better filtering.'],
-        ['Null', 'Empty Cell', 'Standard representation for missing data.'],
-        ['Nested Object', 'Separate Column', 'Flattened using dot notation.'],
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Privacy and Security: Your Data Is Safe',
-      level: 3,
-    },
-    {
-      type: 'paragraph',
-      html: 'Unlike other online converters that upload your JSON files to external servers, our utility is <strong>Client-Side Only</strong>. The JavaScript that performs the conversion downloads to your browser and processes the text locally. Your confidential data — financial, personal, or corporate — is secure because it never crosses the network to any third-party server.',
-    },
-    {
-      type: 'tip',
-      title: 'Final Note',
-      html: '<p>Whether you need to audit a technical log, prepare a sales report from an API, or simply explore a .json file, this converter is your best ally. Fast, secure, and professional.</p>',
     },
   ],
   ui: {
-    statusWaiting: 'Waiting for Valid JSON',
-    statusValid: 'Valid JSON',
-    statusInvalid: 'Invalid JSON',
-    labelFlatten: 'Flatten Objects',
-    zoneLabel: 'Paste your JSON here or drag a file',
-    placeholderJson: '[{"id": 1, "name": "John", "details": {"age": 30}}]',
-    btnCopyCsv: 'Copy CSV',
-    btnDownloadCsv: 'Download Excel (CSV)',
-    copyFeedback: 'Copied!',
+    labelInput: 'Source JSON',
+    labelOutput: 'Resulting CSV',
+    placeholderInput: 'Paste your JSON array here (e.g., [{"id": 1, "name": "John"}])',
+    placeholderOutput: 'The generated CSV will appear here...',
+    btnConvert: 'Convert Now',
+    btnDownload: 'Download CSV',
+    btnCopy: 'Copy result',
+    btnClear: 'Clear All',
+    toastCopied: 'CSV copied to clipboard!',
+    toastDownloaded: 'Downloading CSV file...',
+    errorInvalidJson: 'Invalid JSON format. Please check your data.',
   },
 };

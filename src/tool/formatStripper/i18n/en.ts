@@ -2,46 +2,46 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { FormatStripperUI } from '../ui';
 
-const slug = 'format-stripper';
-const title = 'Text Format Stripper';
+const slug = 'strip-text-formatting';
+const title = 'Strip Text Formatting Online Free — Style Cleaner';
 const description =
-  'Remove junk formatting from any copied text: double spaces, stray line breaks, and invisible characters. Convert to upper or lower case with a single click.';
+  'Remove bold, italics, links, and colors from any text. Convert HTML or Word to plain text (txt) instantly with our professional style cleaner.';
 
 const faqData = [
   {
-    question: 'What types of formatting does this tool remove?',
+    question: 'How to remove bold and italics from a text?',
     answer:
-      'It removes double spaces, tabs, redundant line breaks, and normalises punctuation so there are no spaces before commas or full stops. The result is clean plain text, ready to paste into any document.',
+      'Simply paste your text into our tool. The system automatically detects styles and removes them, leaving only the characters in plain text, without any added weight or decoration.',
   },
   {
-    question: 'Can I normalise upper and lower case?',
+    question: 'Is it compatible with text from Microsoft Word or Google Docs?',
     answer:
-      'Yes. The UPPER and lower buttons convert the entire text to the desired case. This is useful for normalising headings, name lists, or correcting text accidentally typed with Caps Lock on.',
+      'Yes, it is specially designed for it. When copying from Word or Docs, a lot of "trash" code is carried over. Our cleaner removes all those hidden styles, allowing you to paste a clean text into other applications.',
   },
   {
-    question: 'Is the text sent to any server?',
+    question: 'Can I convert HTML to plain text?',
     answer:
-      'No. All processing happens locally in your browser. Your content never leaves your device.',
+      'Exactly. If you paste an HTML snippet, our tool will strip all tags (like <div>, <a>, <strong>) and return only the readable text content, ready to be used anywhere.',
   },
   {
-    question: 'How does the automatic clean-up on paste work?',
+    question: 'Is it safe to paste confidential information?',
     answer:
-      'When you paste text with Ctrl+V, the tool intercepts the event and applies the clean-up before inserting the text into the editor. The text is clean from the very first moment without any extra steps.',
+      'Totally safe. All processing is done 100% in your browser. No data is sent to our servers, ensuring that your text remains private and secure at all times.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Paste the text',
-    text: 'Paste the content you want to clean into the text area. Clean-up is applied automatically on paste.',
+    name: 'Copy your text',
+    text: 'Copy the text with format from Word, a website, or an email.',
   },
   {
-    name: 'Apply optional transforms',
-    text: 'If you need to change the case, use the UPPER or lower buttons in the toolbar.',
+    name: 'Paste in the cleaner',
+    text: 'Insert the content in the input area. The removal of styles is automatic.',
   },
   {
     name: 'Copy the result',
-    text: 'Click the Copy button to send the clean text to your clipboard.',
+    text: 'Your text is now plain and clean. Copy it and use it wherever you want without format issues.',
   },
 ];
 
@@ -84,67 +84,51 @@ export const content: ToolLocaleContent<FormatStripperUI> = {
   description,
   faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'Bibliography',
-  bibliography: [
-    {
-      name: 'ClipboardEvent.clipboardData — MDN Web Docs',
-      url: 'https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent/clipboardData',
-    },
-    {
-      name: 'String.prototype.replace() — MDN Web Docs',
-      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace',
-    },
-  ],
+  bibliographyTitle: '',
+  bibliography: [],
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
     {
       type: 'title',
-      text: 'The Problem with Formatted Text',
+      text: 'What does it mean to "strip formatting" and why do you need it?',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'When you copy text from a website, a PDF, or an email and paste it into Word, Google Docs, or any editor, you bring along <strong>invisible formatting</strong>: bold, colours, fonts, tabs, non-breaking spaces, and stray line breaks. The result is dirty text that you have to clean up character by character.',
-    },
-    {
-      type: 'paragraph',
-      html: 'This stripper intercepts the text at the moment of paste and automatically applies all the necessary normalisation: it <strong>collapses multiple spaces</strong>, removes spaces before punctuation marks, and produces clean plain text ready to use.',
-    },
-    {
-      type: 'stats',
-      items: [
-        { value: '100%', label: 'Private & Local', icon: 'mdi:shield-check' },
-        { value: '0s', label: 'Instant Clean-up', icon: 'mdi:lightning-bolt' },
-        { value: 'Ctrl+V', label: 'Paste Ready', icon: 'mdi:content-paste' },
-      ],
-      columns: 3,
+      html: 'Stripping formatting is the process of <strong>transforming rich text into plain text</strong> (Plain Text). When we copy information from a website, an eBook, or a Word document, that text carries "hidden luggage": font types, sizes, colors, links, and CSS styles. Our tool serves as a filter that removes all that digital junk.',
     },
     {
       type: 'title',
-      text: 'When to Use a Format Stripper',
-      level: 3,
+      text: 'Benefits of using a text cleaner',
+      level: 2,
     },
     {
-      type: 'summary',
-      title: 'Common use cases',
+      type: 'list',
       items: [
-        'Copying text from websites or PDFs to paste into text editors or emails.',
-        'Normalising documents with multiple authors and inconsistent formatting.',
-        'Preparing content for systems that do not support rich formatting (CMS, APIs).',
-        'Converting text to upper or lower case for lists or headlines.',
-        'Removing tabs and extra spaces from spreadsheet exports.',
+        '<strong>Universal Compatibility:</strong> Plain text works in any program, from old emails to modern CMS like WordPress.',
+        '<strong>Clean Code:</strong> Ideal for developers who need to paste text into their code without carrying over HTML tags or RTF styles.',
+        '<strong>SEO and Readability:</strong> By removing erratic formats, you ensure that your content maintains the visual consistency of your website.',
+        '<strong>Total Privacy:</strong> The process is local. Your text never leaves your browser.',
       ],
+    },
+    {
+      type: 'title',
+      text: 'Strip formatting vs. Simple Copy-Paste',
+      level: 2,
+    },
+    {
+      type: 'paragraph',
+      html: 'Many times, a simple <code>Ctrl + V</code> carries unwanted formats that break the design of your destination document. Using an online <strong>format remover</strong> ensures that you only keep the essence of the message, allowing you to apply your own styles from scratch without technical interference.',
     },
   ],
   ui: {
-    labelChars: 'chars',
-    labelWords: 'words',
-    btnUppercase: 'UPPER',
-    btnLowercase: 'lower',
-    btnCopy: 'Copy',
-    placeholder: 'Paste your text here to clean it...',
-    toastCopied: 'Copied',
-    toastCleaned: 'Text automatically cleaned',
+    labelInput: 'Source text (with format)',
+    labelOutput: 'Plain text (clean)',
+    placeholderInput: 'Paste here the text from Word, Web, or PDF...',
+    placeholderOutput: 'Clean text will appear here...',
+    btnCopy: 'Copy Result',
+    btnClear: 'Clear All',
+    toastCopied: 'Clean text copied!',
   },
 };

@@ -2,46 +2,46 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { TextToMarkdownUI } from '../ui';
 
-const slug = 'texte-en-markdown';
-const title = 'Convertisseur HTML vers Markdown';
+const slug = 'convertisseur-texte-en-markdown';
+const title = 'Convertisseur de Texte en Markdown en Ligne — Formater des Documents';
 const description =
-  "Convertissez du HTML ou du texte enrichi en Markdown propre instantanément, entièrement dans votre navigateur. Collez du contenu depuis n'importe quel site ou document et obtenez un Markdown prêt à l'emploi sans rien envoyer sur un serveur.";
+  'Transformez rapidement du texte brut en code Markdown. Convertissez paragraphes, titres et listes dans un format compatible avec GitHub, Reddit et les éditeurs MD.';
 
 const faqData = [
   {
-    question: "Qu'est-ce que cet outil convertit exactement ?",
+    question: 'Qu\'est-ce que le Markdown et à quoi sert-il ?',
     answer:
-      "Il convertit du HTML en syntaxe Markdown. Les éléments supportés comprennent les titres (h1–h6), les paragraphes, le gras, l'italique, les liens, les images, les listes ordonnées et non ordonnées, les citations, les blocs de code et les séparateurs horizontaux.",
+      'Le Markdown est un langage de balisage léger utilisé pour formater du texte à l\'aide d\'une syntaxe de texte brut. Il est largement utilisé sur des plateformes comme GitHub, Reddit, Slack et dans les générateurs de sites statiques car il est facile à lire et à écrire.',
   },
   {
-    question: "Puis-je coller du contenu directement depuis une page web ?",
+    question: 'Mon texte est-il en sécurité pendant la conversion ?',
     answer:
-      "Oui. Lorsque vous collez (Ctrl+V) du texte copié depuis un navigateur, l'outil intercepte automatiquement le HTML du presse-papiers et le convertit en Markdown. Vous n'avez pas besoin de copier le code source de la page.",
+      'Oui, 100 % sûr. La conversion est effectuée entièrement dans votre navigateur à l\'aide de JavaScript. Aucune information n\'est envoyée à nos serveurs, garantissant que vos documents restent privés.',
   },
   {
-    question: "Est-il sûr de l'utiliser avec du contenu privé ?",
+    question: 'Comment sont convertis les titres et les listes ?',
     answer:
-      "Totalement. La conversion se produit 100% dans votre navigateur via l'API DOM native. Aucune donnée ne quitte votre appareil.",
+      'Notre outil identifie la structure de base du texte. S\'il détecte des lignes isolées avant des paragraphes, il peut les traiter comme des titres. Les lignes commençant par des tirets ou des chiffres sont formatées comme des listes Markdown standard.',
   },
   {
-    question: "Quand la conversion HTML vers Markdown est-elle utile ?",
+    question: 'Puis-je utiliser cet outil pour des tableaux ou du code complexes ?',
     answer:
-      "Elle est utile pour migrer du contenu vers des outils comme Obsidian, Notion, les README GitHub, Jekyll ou tout système basé sur Markdown. Aussi pratique pour nettoyer la mise en forme de documents ou d'e-mails.",
+      'Cet outil est conçu pour le formatage de texte de base (paragraphes, listes, gras, italique). Pour des structures très complexes comme des tableaux à plusieurs colonnes, un ajustement manuel dans le Markdown généré peut être nécessaire.',
   },
 ];
 
 const howToData = [
   {
-    name: "Collez ou saisissez le HTML",
-    text: "Collez du HTML dans le panneau gauche. Si vous collez du texte copié d'un site web, le HTML est automatiquement extrait du presse-papiers.",
+    name: 'Collez votre texte',
+    text: 'Insérez le texte brut que vous souhaitez formater dans le champ source.',
   },
   {
-    name: "Obtenez le Markdown",
-    text: "Le panneau droit affiche le Markdown converti en temps réel pendant que vous tapez ou collez.",
+    name: 'Conversion automatique',
+    text: 'L\'outil traite le texte et applique la syntaxe Markdown aux différents éléments identifiés.',
   },
   {
-    name: "Copiez le résultat",
-    text: 'Utilisez le bouton "Copier Markdown" pour copier le résultat dans le presse-papiers en un clic.',
+    name: 'Copiez ou téléchargez',
+    text: 'Cliquez sur "Copier le résultat" ou "Télécharger .md" pour obtenir votre fichier formaté.',
   },
 ];
 
@@ -72,7 +72,7 @@ const appSchema: WithContext<SoftwareApplication> = {
   '@type': 'SoftwareApplication',
   name: title,
   description,
-  applicationCategory: 'UtilitiesApplication',
+  applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   inLanguage: 'fr',
@@ -82,69 +82,60 @@ export const content: ToolLocaleContent<TextToMarkdownUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquentes',
+  faqTitle: 'Foire Aux Questions',
   faq: faqData,
-  bibliographyTitle: 'Spécifications et Références',
+  bibliographyTitle: 'Sources et Références',
   bibliography: [
-    {
-      name: 'CommonMark Spec — la spécification Markdown de référence',
-      url: 'https://spec.commonmark.org/',
-    },
-    {
-      name: 'GitHub Flavored Markdown Spec',
-      url: 'https://github.github.com/gfm/',
-    },
-    {
-      name: 'MDN Web Docs : API DOMParser',
-      url: 'https://developer.mozilla.org/fr/docs/Web/API/DOMParser',
-    },
+    { name: 'CommonMark : Spécification standard du Markdown', url: 'https://commonmark.org/' },
+    { name: 'Daring Fireball : Le projet Markdown original', url: 'https://daringfireball.net/projects/markdown/' },
+    { name: 'GitHub Flavored Markdown (GFM)', url: 'https://github.github.com/gfm/' },
   ],
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
     {
       type: 'title',
-      text: 'Pourquoi Convertir du HTML en Markdown',
+      text: 'Pourquoi convertir votre texte en Markdown ?',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: "<strong>Markdown</strong> est le format texte léger le plus utilisé dans la documentation technique, les wikis, les blogs et les dépôts. Convertir du HTML en Markdown vous permet de réutiliser du contenu web dans des outils comme Obsidian, GitHub, Jekyll ou Notion sans perdre la structure d'origine.",
-    },
-    {
-      type: 'stats',
-      items: [
-        { value: '100%', label: 'Privé et Local', icon: 'mdi:incognito' },
-        { value: '0ms', label: 'Latence réseau', icon: 'mdi:lightning-bolt' },
-        { value: '∞', label: 'Sans limite de taille', icon: 'mdi:infinity' },
-      ],
-      columns: 3,
+      html: 'Si vous êtes développeur, blogueur ou rédacteur technique, vous utilisez probablement le <strong>Markdown</strong> quotidiennement. Convertir votre <strong>texte brut en Markdown</strong> vous permet de conserver une structure propre qui s\'exporte facilement en HTML, PDF ou directement vers des plateformes comme WordPress et des générateurs de sites statiques.',
     },
     {
       type: 'title',
-      text: "Cas d'Usage Courants",
+      text: 'Confidentialité Totale : Conversion 100 % Locale',
+      level: 2,
+    },
+    {
+      type: 'paragraph',
+      html: 'La plupart des convertisseurs en ligne traitent votre texte sur leurs serveurs. Notre <strong>convertisseur de texte en Markdown</strong> s\'exécute entièrement dans votre navigateur. Vos données ne quittent jamais votre ordinateur, ce qui le rend idéal pour la rédaction de documents internes, de notes de réunion ou d\'idées personnelles.',
+    },
+    {
+      type: 'title',
+      text: 'Fonctionnalités Phares',
       level: 3,
     },
     {
-      type: 'summary',
-      title: "Situations où cette conversion est précieuse",
+      type: 'list',
       items: [
-        "Migrer des articles d'un CMS ou blog vers un dépôt Markdown.",
-        "Nettoyer la mise en forme de contenus Word, Google Docs ou e-mails.",
-        "Préparer du contenu pour des README GitHub ou de la documentation technique.",
-        "Exporter des pages Notion ou Confluence vers des fichiers Markdown locaux.",
-        "Convertir des e-mails HTML en notes brutes pour Obsidian ou Logseq.",
+        'Identification automatique des <strong>en-têtes et titres</strong>.',
+        'Conversion des <strong>listes à puces et numérotées</strong>.',
+        'Prise en charge du formatage de base comme le <strong>gras et l\'italique</strong>.',
+        'Exportation immédiate en <strong>fichier .md</strong>.',
       ],
     },
   ],
   ui: {
-    labelInput: 'Entrée HTML',
-    labelOutput: 'Sortie Markdown',
-    placeholderInput: "Collez du HTML ici, ou collez du texte copié depuis n'importe quel site...",
-    placeholderOutput: 'Le Markdown apparaîtra ici...',
-    btnClear: 'Effacer',
-    btnCopy: 'Copier Markdown',
-    toastCopied: 'Copié !',
-    labelHint: '* En collant du texte depuis un site web (Ctrl+V), le HTML est automatiquement extrait du presse-papiers.',
+    labelInput: 'Texte Brut',
+    labelOutput: 'Markdown Formaté',
+    placeholderInput: 'Collez votre texte ici...',
+    placeholderOutput: 'Le code Markdown généré apparaîtra ici...',
+    btnConvert: 'Convertir en Markdown',
+    btnDownload: 'Télécharger .md',
+    btnCopy: 'Copier le résultat',
+    btnClear: 'Tout effacer',
+    toastCopied: 'Code Markdown copié !',
+    toastDownloaded: 'Téléchargement du fichier .md...',
   },
 };

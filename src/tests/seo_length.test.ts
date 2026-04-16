@@ -1,9 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import * as DATA from '../data';
+import { ALL_TOOLS } from '../tools';
 
-const ENTRIES = [
-  { id: 'audiovisualCategory', i18n: DATA.audiovisualCategory.i18n },
-];
+const ENTRIES = ALL_TOOLS.map(t => t.entry);
 
 describe('SEO Content Length Validation', () => {
   ENTRIES.forEach((entry) => {

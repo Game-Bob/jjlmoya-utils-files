@@ -2,50 +2,46 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { HashVerifierUI } from '../ui';
 
-const slug = 'hash-verifier';
-const title = 'SHA 256 Hash Verifier';
+const slug = 'verify-file-hash';
+const title = 'Online Hash Verifier — SHA 256, MD5 and SHA 1';
 const description =
-  'Verify the integrity of your files by computing their SHA-256 signature 100% locally and securely. Compare checksums for ISOs, installers, and downloads without uploading anything to any server.';
+  'Calculate and verify the integrity of your files by comparing their SHA256, MD5, or SHA1 digital signature. Ensure your downloads have not been altered.';
 
 const faqData = [
   {
-    question: 'What is a SHA-256 hash?',
+    question: 'How to verify if a file has been modified?',
     answer:
-      'It is a unique digital fingerprint for a file. Regardless of size, the hash always produces exactly 64 hexadecimal characters. If even a single bit of the file changes, the hash changes completely, making it the most reliable integrity check available.',
+      'The safest way is to compare its Hash. A Hash is a unique digital fingerprint. If even a single bit of the file changes, the Hash will be completely different. By comparing the obtained Hash with the one provided by the author, you can guarantee its integrity.',
   },
   {
-    question: 'Is it safe to use this tool with private files?',
+    question: 'Which algorithm is better: MD5 or SHA-256?',
     answer:
-      'Completely. It uses your browser\'s Web Crypto API to compute the hash locally using streaming chunks. The file never leaves your device.',
+      'MD5 is very fast but is considered less secure against intentional attacks. SHA-256 is the current standard for security and is much harder to "forge". For most file integrity checks, SHA-256 is the recommended option.',
   },
   {
-    question: 'What is the point of verifying a download\'s hash?',
+    question: 'Why does the Hash change when I rename the file?',
     answer:
-      'To make sure the file has not been modified by an attacker or corrupted during the download. Linux distributions, security software, and many other programs publish their official hash so you can compare it.',
+      'Actually, renaming a file DOES NOT change its Hash. The Hash is calculated based on the internal content (the bytes) of the file, not its name or creation date. If the Hash changes, it is because the internal data has been modified.',
   },
   {
-    question: 'Can it handle very large files?',
+    question: 'Is my file uploaded to the server to calculate the Hash?',
     answer:
-      'Yes. The tool processes the file in 2 MB chunks (streaming) so you can verify ISOs or multi-gigabyte installers without freezing the browser or exhausting RAM.',
+      'No. Our tool uses the Web Crypto API, which means all calculation is done locally in your browser. Your file never leaves your computer, ensuring 100% privacy and being much faster as no upload is required.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Select the file',
-    text: 'Drag the file you want to verify onto the drop zone, or browse for it with the file picker.',
+    name: 'Select your file',
+    text: 'Drag or select the file you want to verify in the tool.',
   },
   {
-    name: 'Wait for the computation',
-    text: 'The progress bar shows the advance. Large files may take a few seconds.',
+    name: 'Choose the algorithm',
+    text: 'Select SHA-256, MD5, or SHA-1 depending on the signature you have.',
   },
   {
-    name: 'Copy or note the hash',
-    text: 'The computed SHA-256 hash is shown on screen. Copy it with the button on the right.',
-  },
-  {
-    name: 'Compare with the official hash',
-    text: 'Paste the hash published by the software author. Green = intact. Red = corrupted or tampered.',
+    name: 'Compare the results',
+    text: 'Paste the expected Hash and the system will tell you instantly if they match (Success) or if they are different (Error).',
   },
 ];
 
@@ -76,7 +72,7 @@ const appSchema: WithContext<SoftwareApplication> = {
   '@type': 'SoftwareApplication',
   name: title,
   description,
-  applicationCategory: 'SecurityApplication',
+  applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   inLanguage: 'en',
@@ -88,19 +84,19 @@ export const content: ToolLocaleContent<HashVerifierUI> = {
   description,
   faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'Standards and References',
+  bibliographyTitle: 'Sources and References',
   bibliography: [
     {
-      name: 'NIST FIPS 180-4: Secure Hash Standard (SHS)',
-      url: 'https://csrc.nist.gov/publications/detail/fips/180/4/final',
+      name: 'NIST: Hash Functions Standard',
+      url: 'https://csrc.nist.gov/projects/hash-functions',
     },
     {
-      name: 'RFC 6234: US Secure Hash Algorithms (SHA and SHA-based HMAC and HKDF)',
-      url: 'https://datatracker.ietf.org/doc/html/rfc6234',
+      name: 'MDN: Web Crypto API',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API',
     },
     {
-      name: 'SHAttered: first real-world collision attack on SHA-1',
-      url: 'https://shattered.io/',
+      name: 'Wikipedia: Cryptographic Hash Function',
+      url: 'https://en.wikipedia.org/wiki/Cryptographic_hash_function',
     },
   ],
   howTo: howToData,
@@ -108,53 +104,52 @@ export const content: ToolLocaleContent<HashVerifierUI> = {
   seo: [
     {
       type: 'title',
-      text: 'What Is a Hash and Why Should You Verify It',
+      text: 'What is a file Hash and why is it vital for your security?',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'A cryptographic hash is like a fingerprint for a file. <strong>SHA-256</strong> always produces exactly 64 hexadecimal characters regardless of whether the file weighs 1 KB or 50 GB. If anyone modifies even a single bit of the file, the resulting hash is completely different. This makes the hash the most reliable integrity-verification mechanism available.',
+      html: 'A Hash is a <strong>digital fingerprint</strong> unique to each file. It is a alphanumeric string generated by a mathematical algorithm (like SHA-256). Its main feature is that it is "one-way": you can get the Hash from a file, but you cannot reconstruct the file from its Hash.',
     },
     {
-      type: 'stats',
-      items: [
-        { value: '256', label: 'Security bits', icon: 'mdi:shield-lock' },
-        { value: '64', label: 'Hex characters', icon: 'mdi:pound' },
-        { value: '100%', label: 'Private & Local', icon: 'mdi:incognito' },
-      ],
-      columns: 3,
+      type: 'paragraph',
+      html: 'Using an <strong>online hash verifier</strong> is essential when downloading software, ISO images, or sensitive documents. Authors usually publish the MD5 or SHA256 of their files so that you can verify that what you have downloaded is exactly what they uploaded, without corruption or malicious injections.',
     },
     {
       type: 'title',
-      text: 'Use Cases: When to Verify the Hash',
+      text: 'SHA-256 vs MD5: Which one should you use?',
       level: 3,
     },
     {
-      type: 'summary',
-      title: 'Situations where verification matters',
-      items: [
-        'Downloads of Linux distributions (Ubuntu, Debian, Fedora publish their SHA-256 checksums).',
-        'Security software, VPNs, and password managers that publish official hashes.',
-        'Critical backups: confirm that the backup file has not been corrupted.',
-        'Files sent over untrusted networks where integrity may be compromised.',
-        'Software audits: confirm that an executable has not been modified since publication.',
-      ],
+      type: 'paragraph',
+      html: 'The <strong>MD5</strong> algorithm was very popular for years due to its speed, but today it is considered cryptographically insecure as it is susceptible to "collisions". However, it is still used for simple integrity checks (corrupted downloads).',
+    },
+    {
+      type: 'paragraph',
+      html: 'If you seek maximum security, <strong>SHA-256</strong> (part of the SHA-2 family) is the standard recommended by security agencies worldwide. It is virtually impossible for two different files to produce the same SHA-256 Hash.',
+    },
+    {
+      type: 'title',
+      text: 'Total Privacy: Calculation 100% in your browser',
+      level: 3,
+    },
+    {
+      type: 'tip',
+      title: 'No Upload Needed',
+      html: '<p>Our tool uses the power of your computer to process the file. By using the <strong>Web Crypto API</strong>, we don\'t need to "upload" the file to any server. This means you can verify files of several gigabytes in seconds, without consuming your internet bandwidth and ensuring that the content of your files never leaves your device.</p>',
     },
   ],
   ui: {
-    labelTitle: 'Local Hash Verifier',
-    labelSubtitle: 'Drop any file to generate its <strong class="hv-accent">SHA-256</strong> signature instantly.',
-    btnSelect: 'Select File',
-    labelPrivacy: 'Files never leave your device.',
-    labelCalculating: 'Computing Signature...',
-    labelSuccess: 'Computation Successful',
-    btnAnother: 'Verify another',
-    labelHash: 'SHA-256 Hash',
-    btnCopyTitle: 'Copy hash',
-    labelCompare: 'Compare with Original',
-    placeholderCompare: 'Paste the expected hash here...',
-    labelCompareNote: '* Comparison ignores case and whitespace.',
-    statusVerified: 'VERIFIED',
-    statusCorrupt: 'CORRUPT / ERROR',
+    labelFile: 'Select or drag file',
+    labelAlgorithm: 'Select Algorithm',
+    labelExpectedHash: 'Expected Hash (optional)',
+    labelStatus: 'Comparison Status',
+    placeholderHash: 'Paste the hash provided by the author here...',
+    btnCompare: 'Verify Integrity',
+    btnClear: 'Clear All',
+    toastCopied: 'Calculated hash copied!',
+    statusMatch: 'The hashes match! The file is authentic.',
+    statusMismatch: 'The hashes DO NOT match. The file might be corrupted or altered.',
+    statusWaiting: 'Waiting for expected hash to compare...',
   },
 };

@@ -2,46 +2,46 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { TextToMarkdownUI } from '../ui';
 
-const slug = 'text-to-markdown';
-const title = 'HTML to Markdown Converter';
+const slug = 'text-to-markdown-converter';
+const title = 'Online Text to Markdown Converter — Format Documents';
 const description =
-  'Convert HTML or rich text to clean Markdown instantly, entirely in your browser. Paste content from any website or document and get ready-to-use Markdown without sending anything to any server.';
+  'Transform plain text into Markdown code quickly. Convert paragraphs, headers and lists into format compatible with GitHub, Reddit and MD editors.';
 
 const faqData = [
   {
-    question: 'What exactly does this tool convert?',
+    question: 'What is Markdown and what is it for?',
     answer:
-      'It converts HTML to Markdown syntax. Supported elements include headings (h1–h6), paragraphs, bold, italic, links, images, ordered and unordered lists, blockquotes, code blocks, and horizontal rules.',
+      'Markdown is a lightweight markup language used to format text using plain text syntax. It is widely used on platforms like GitHub, Reddit, Slack, and in static site generators because it is easy to read and write.',
   },
   {
-    question: 'Can I paste content directly from a web page?',
+    question: 'Is my text safe during conversion?',
     answer:
-      'Yes. When you paste (Ctrl+V) text copied from a browser, the tool automatically intercepts the HTML from the clipboard and converts it to Markdown. You do not need to copy the page source.',
+      'Yes, 100% safe. The conversion is done entirely in your browser using JavaScript. No information is sent to our servers, ensuring your documents remain private.',
   },
   {
-    question: 'Is it safe to use with private content?',
+    question: 'How are titles and lists converted?',
     answer:
-      'Completely. The conversion happens 100% in your browser using the native DOM API. No data leaves your device.',
+      'Our tool identifies the basic structure of the text. If it detects single lines before paragraphs, it can treat them as headers. Lines starting with dashes or numbers are formatted as standard Markdown lists.',
   },
   {
-    question: 'When is HTML-to-Markdown conversion useful?',
+    question: 'Can I use this for complex tables or code?',
     answer:
-      'It is useful for migrating content to tools like Obsidian, Notion, GitHub READMEs, Jekyll, or any Markdown-based system. Also handy for cleaning up formatting from documents or emails.',
+      'This tool is designed for basic text formatting (paragraphs, lists, bold, italics). For very complex structures such as multi-column tables, manual adjustment in the generated Markdown may be required.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Paste or type the HTML',
-    text: 'Paste HTML into the left panel. If you paste text copied from a website, the HTML is automatically extracted from the clipboard.',
+    name: 'Paste your text',
+    text: 'Insert the plain text you want to format in the source field.',
   },
   {
-    name: 'Get the Markdown',
-    text: 'The right panel shows the converted Markdown in real time as you type or paste.',
+    name: 'Automatic conversion',
+    text: 'The tool processes the text and applies Markdown syntax to the different elements identified.',
   },
   {
-    name: 'Copy the result',
-    text: 'Use the "Copy Markdown" button to copy the result to the clipboard in one click.',
+    name: 'Copy or download',
+    text: 'Click on "Copy result" or "Download .md" to obtain your formatted file.',
   },
 ];
 
@@ -72,7 +72,7 @@ const appSchema: WithContext<SoftwareApplication> = {
   '@type': 'SoftwareApplication',
   name: title,
   description,
-  applicationCategory: 'UtilitiesApplication',
+  applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   inLanguage: 'en',
@@ -84,67 +84,58 @@ export const content: ToolLocaleContent<TextToMarkdownUI> = {
   description,
   faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'Specifications and References',
+  bibliographyTitle: 'Sources and References',
   bibliography: [
-    {
-      name: 'CommonMark Spec — the standard Markdown specification',
-      url: 'https://spec.commonmark.org/',
-    },
-    {
-      name: 'GitHub Flavored Markdown Spec',
-      url: 'https://github.github.com/gfm/',
-    },
-    {
-      name: 'MDN Web Docs: DOMParser API',
-      url: 'https://developer.mozilla.org/en-US/docs/Web/API/DOMParser',
-    },
+    { name: 'CommonMark: Standard Markdown Specification', url: 'https://commonmark.org/' },
+    { name: 'Daring Fireball: Original Markdown project', url: 'https://daringfireball.net/projects/markdown/' },
+    { name: 'GitHub Flavored Markdown (GFM)', url: 'https://github.github.com/gfm/' },
   ],
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
     {
       type: 'title',
-      text: 'Why Convert HTML to Markdown',
+      text: 'Why convert your text to Markdown?',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: '<strong>Markdown</strong> is the most widely used lightweight text format in technical documentation, wikis, blogs, and repositories. Converting HTML to Markdown lets you reuse web content in tools like Obsidian, GitHub, Jekyll, or Notion without losing the original structure.',
-    },
-    {
-      type: 'stats',
-      items: [
-        { value: '100%', label: 'Private & Local', icon: 'mdi:incognito' },
-        { value: '0ms', label: 'Network latency', icon: 'mdi:lightning-bolt' },
-        { value: '∞', label: 'No size limit', icon: 'mdi:infinity' },
-      ],
-      columns: 3,
+      html: 'If you are a developer, blogger, or technical writer, you probably use <strong>Markdown</strong> daily. Converting your <strong>plain text to Markdown</strong> allows you to maintain a clean structure that exports easily to HTML, PDF, or directly to platforms like WordPress and static site generators.',
     },
     {
       type: 'title',
-      text: 'Common Use Cases',
+      text: 'Total Privacy: 100% Local Conversion',
+      level: 2,
+    },
+    {
+      type: 'paragraph',
+      html: 'Most online converters process your text on their servers. Our <strong>text to Markdown converter</strong> runs completely in your browser. Your data never leaves your computer, making it ideal for drafting internal documents, meeting notes, or personal ideas.',
+    },
+    {
+      type: 'title',
+      text: 'Highlighted Features',
       level: 3,
     },
     {
-      type: 'summary',
-      title: 'Situations where this conversion matters',
+      type: 'list',
       items: [
-        'Migrating articles from a CMS or blog to a Markdown repository.',
-        'Cleaning up formatting from Word, Google Docs, or email content.',
-        'Preparing content for GitHub READMEs or technical documentation.',
-        'Exporting Notion or Confluence pages to local Markdown files.',
-        'Converting HTML emails to plain notes for Obsidian or Logseq.',
+        'Automatic identification of <strong>headers and titles</strong>.',
+        'Conversion of <strong>bulleted and numbered lists</strong>.',
+        'Support for basic formatting like <strong>bold and italics</strong>.',
+        'Immediate export to <strong>.md file</strong>.',
       ],
     },
   ],
   ui: {
-    labelInput: 'HTML Input',
-    labelOutput: 'Markdown Output',
-    placeholderInput: 'Paste HTML here, or paste text copied from any website...',
-    placeholderOutput: 'Markdown will appear here...',
-    btnClear: 'Clear',
-    btnCopy: 'Copy Markdown',
-    toastCopied: 'Copied!',
-    labelHint: '* When pasting text from a website (Ctrl+V), the HTML is automatically extracted from the clipboard.',
+    labelInput: 'Plain Text',
+    labelOutput: 'Formatted Markdown',
+    placeholderInput: 'Paste your text here...',
+    placeholderOutput: 'The generated Markdown code will appear here...',
+    btnConvert: 'Convert to Markdown',
+    btnDownload: 'Download .md',
+    btnCopy: 'Copy result',
+    btnClear: 'Clear All',
+    toastCopied: 'Markdown code copied!',
+    toastDownloaded: 'Downloading .md file...',
   },
 };

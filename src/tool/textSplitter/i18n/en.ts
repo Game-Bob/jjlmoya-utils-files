@@ -1,37 +1,47 @@
-import type { WithContext, FAQPage, SoftwareApplication, HowTo } from 'schema-dts';
+import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'text-splitter';
-const title = 'Online Text Splitter List to Lines Converter';
+const title = 'Online Text Splitter — Separate by Paragraphs, Sentences or Length';
 const description =
-  'Split comma-separated, space-separated or custom-delimited lists into individual lines instantly. Free tool to clean and organize data online.';
+  'Split long texts into smaller parts automatically. Choose between separating by number of words, characters, paragraphs, or sentences.';
 
 const faqData = [
   {
-    question: 'How do I split a comma-separated list online?',
+    question: 'How to split text for ChatGPT or AI?',
     answer:
-      'Paste your list in the text box, select "Comma (,)" as the delimiter, and you will automatically get one item per line in the results area.',
+      'Many AIs have character limits per message. With our tool, you can divide your long prompt into smaller parts (for example, every 2000 characters) to send them sequentially without losing information.',
   },
   {
-    question: 'What is a comma-to-line-break converter?',
+    question: 'Is it safe to paste private texts into the splitter?',
     answer:
-      'It is a digital tool that transforms text strings separated by punctuation marks into organized vertical lists, making it easier to process data in spreadsheets or databases.',
+      'Totally safe. The splitting logic runs 100% in your browser using JavaScript. No text is sent to our servers, ensuring your data remains private on your device.',
   },
   {
-    question: 'Can I split text by other characters?',
+    question: 'Is there a limit to the size of the text I can split?',
     answer:
-      'Yes, the tool allows you to use semicolons, spaces, or any other custom character you define manually.',
+      'We do not impose a strict limit, as the processing is done locally. You can split several megabytes of text in seconds, although performance depends on your computer\'s memory.',
   },
   {
-    question: 'Is it safe to process email lists?',
+    question: 'Does it add numbering to the parts?',
     answer:
-      'Absolutely. Being a client-side tool, all processing happens locally in your browser. Your data and private information are never sent to any external server.',
+      'Currently, the tool returns the separate blocks. You can copy them one by one. Many users find this useful for maintaining manual control over how they wend each segment to other applications.',
+  },
+];
+
+const howToData = [
+  {
+    name: 'Paste your text',
+    text: 'Insert the long text you want to divide in the main input area.',
   },
   {
-    question: 'Can the tool remove duplicate entries?',
-    answer:
-      'Yes, it has a specific option to clean the final list of any repeated element, ensuring each line is unique.',
+    name: 'Configure the split',
+    text: 'Choose the method (characters, words, sentences, or paragraphs) and set the maximum value for each part.',
+  },
+  {
+    name: 'Copy the parts',
+    text: 'The tool will show you the generated blocks. Copy the one you need and use it wherever you want.',
   },
 ];
 
@@ -45,13 +55,12 @@ const faqSchema: WithContext<FAQPage> = {
   })),
 };
 
-
 const howToSchema: WithContext<HowTo> = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: title,
   description,
-  step: (typeof howToData !== 'undefined' ? howToData : []).map((step: any) => ({
+  step: howToData.map((step) => ({
     '@type': 'HowToStep',
     name: step.name,
     text: step.text,
@@ -77,93 +86,61 @@ export const content: ToolLocaleContent<TextSplitterUI> = {
   faq: faqData,
   bibliographyTitle: 'Sources and References',
   bibliography: [
-    {
-      name: 'MDN: String.prototype.split()',
-      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split',
-    },
-    {
-      name: 'CSV format and common delimiters guide',
-      url: 'https://en.wikipedia.org/wiki/Comma-separated_values',
-    },
-    {
-      name: 'Managing lists and duplicates in JavaScript',
-      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set',
-    },
+    { name: 'Unicode line breaking algorithm', url: 'https://unicode.org/reports/tr14/' },
+    { name: 'NLP: Sentence splitting techniques', url: 'https://en.wikipedia.org/wiki/Sentence_boundary_disambiguation' },
+    { name: 'LLM context window limits', url: 'https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them' },
   ],
-  howTo: [],
-  schemas: [faqSchema, appSchema, howToSchema],
+  howTo: howToData,
+  schemas: [faqSchema, howToSchema, appSchema],
   seo: [
     {
       type: 'title',
-      text: 'Text Splitter: How to Quickly Split Lists and Commas Into Lines',
+      text: 'Why do you need an online text splitter?',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Have you ever found yourself with an endless list of emails, names, or product codes separated by commas, needing each one on a different line? Manually pressing "Enter" hundreds of times is tedious, error-prone, and frankly a waste of time. Our <strong>online text splitter</strong> has been designed precisely to solve this problem in milliseconds.',
+      html: 'Working with very long texts can be a challenge in the digital age. Whether you are a programmer needing to split code into modules, a writer adapting content for social media, or a user interacting with <strong>Large Language Models (LLMs)</strong> like ChatGPT, a <strong>text splitter</strong> is an essential tool.',
     },
     {
       type: 'title',
-      text: 'Why Use an Online List Splitter?',
-      level: 2,
-    },
-    {
-      type: 'paragraph',
-      html: 'In the world of digital marketing, programming, and data management, it is common to receive information in "dirty" formats. You might export a list from a database and get something like <code>item1, item2, item3</code>. To import that into a spreadsheet like Excel or Google Sheets, or to process it in a script, you often need each element in its own row.',
-    },
-    {
-      type: 'paragraph',
-      html: 'Using a <strong>comma to line break converter</strong> eliminates the manual workload. Whether you have 10 or 10,000 elements, the client-side logic processes the information locally in your browser, ensuring your data never leaves your computer — offering maximum privacy and instant speed.',
-    },
-    {
-      type: 'title',
-      text: 'Benefits of Automating Text Cleaning',
+      text: 'Intelligent Splitting Methods',
       level: 2,
     },
     {
       type: 'list',
       items: [
-        '<strong>Duplicate removal:</strong> If your original list has repeated elements, you can mark them so they only appear once in the final result. Ideal for cleaning email databases.',
-        '<strong>Space trimming:</strong> Automatically removes blank spaces that often remain before or after the delimiter, leaving a clean and professional result.',
-        '<strong>Automatic numbering:</strong> Transforms a simple list into a numbered list ready to copy into a Word document or email.',
-        '<strong>Empty line filtering:</strong> Avoids those annoying blank gaps that appear when there are consecutive delimiters (e.g., <code>item1,,item2</code>).',
+        '<strong>By Characters:</strong> Precise for strictly meeting technical limits.',
+        '<strong>By Words:</strong> Ideal for articles and blogs where a specific length is sought for SEO or readability.',
+        '<strong>By Sentences:</strong> Ensures that ideas are not cut in half, maintaining the context of each block.',
+        '<strong>By Paragraphs:</strong> The best option to keep the logical structure of a complex document.',
       ],
     },
     {
       type: 'title',
-      text: 'Privacy and Security: Your Data Is Safe',
-      level: 2,
+      text: 'Privacy and Speed: Local Processing',
+      level: 3,
     },
     {
       type: 'paragraph',
-      html: 'Unlike other websites that send text to a server for processing, our architecture is 100% <strong>client-side</strong>. This means the processing happens inside your RAM. Nothing is stored in external databases, making it the ideal tool for handling sensitive information like client emails or confidential lists.',
-    },
-    {
-      type: 'tip',
-      title: 'Final Note',
-      html: '<p>If you are looking for a <strong>free text splitter</strong> that is fast and secure, you have come to the right place. Optimize your workflow and let the browser do the dirty work for you.</p>',
+      html: 'Our <strong>online text splitter</strong> does not "upload" your content to any server. Everything is processed instantly in your browser. This means you can work with sensitive documents, contracts, or private emails with the absolute certainty that no one else can see them.',
     },
   ],
   ui: {
-    labelInput: 'Text to Split',
-    labelOutput: 'Result (one item per line)',
-    placeholderInput: 'Paste your comma, space or custom-delimited list here...',
-    placeholderOutput: 'The list will appear here...',
-    labelDelimiter: 'Delimiter',
-    optComma: 'Comma (,)',
-    optSemicolon: 'Semicolon (;)',
-    optSpace: 'Space',
-    optCustom: 'Custom',
-    labelCustom: 'Custom delimiter',
-    placeholderCustom: 'Enter delimiter...',
-    optTrim: 'Trim spaces',
-    optUnique: 'Remove duplicates',
-    optClean: 'Remove empty',
-    optNumbered: 'Number lines',
-    statLines: 'Result lines',
-    statChars: 'Characters',
-    btnCopy: 'Copy List',
-    btnClear: 'Clear',
-    toastCopied: 'Copied to clipboard!',
+    labelInput: 'Original Text',
+    labelOutput: 'Divided Parts',
+    labelMethod: 'Split Method',
+    labelValue: 'Max per part',
+    placeholderInput: 'Paste long text here...',
+    placeholderOutput: 'The divided parts will appear here...',
+    optionChars: 'Characters',
+    optionWords: 'Words',
+    optionSentences: 'Sentences',
+    optionParagraphs: 'Paragraphs',
+    btnSplit: 'Split Text',
+    btnCopy: 'Copy Part',
+    btnClear: 'Clear All',
+    toastCopied: 'Part copied to clipboard!',
+    labelPartsFound: 'Parts generated',
   },
 };
