@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { FormatStripperUI } from '../ui';
 
-const slug = 'strip-text-formatting';
+const slug = 'format-stripper';
 const title = '在线清除文本格式 — 免费样式净化工具';
 const description =
   '移除任何文本中的加粗、斜体、链接和颜色。使用我们的专业样式清除工具，瞬间将 HTML 或 Word 转换为纯文本 (txt)。';

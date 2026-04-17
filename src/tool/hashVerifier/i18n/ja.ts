@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { HashVerifierUI } from '../ui';
 
-const slug = 'verify-file-hash';
+const slug = 'hash-verifier';
 const title = 'オンライン・ハッシュ確認ツール — SHA 256、MD5、SHA 1';
 const description =
   'ファイルのSHA256、MD5、またはSHA1デジタル署名を比較して、整合性を計算・確認します。ダウンロードしたファイルが改ざんされていないか確認しましょう。';

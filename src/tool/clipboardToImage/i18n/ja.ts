@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ClipboardToImageUI } from '../ui';
 
-const slug = 'clipboard-to-png';
+const slug = 'clipboard-to-image';
 const title = 'クリップボードをPNGに変換：スクリーンショットを保存';
 const description =
   'クリップボードの内容（スクリーンショット、画像）を瞬時にダウンロード可能なPNGファイルに変換するオンラインツール。100%プライベートで高速なプロセス。';

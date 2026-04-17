@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, SoftwareApplication, HowTo } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { EmojiSpaceCleanerUI } from '../ui';
 
-const slug = 'emoji-and-double-space-remover';
+const slug = 'emoji-space-cleaner';
 const title = '이모지 및 이중 공백 제거 온라인 무료 도구';
 const description =
   '텍스트를 즉시 정리하세요: WhatsApp 이모지 제거, 다중 공백 정상화, 보이지 않는 문자 삭제로 전문적이고 깔끔한 문서를 만듭니다.';

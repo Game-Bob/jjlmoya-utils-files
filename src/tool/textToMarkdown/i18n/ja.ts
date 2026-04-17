@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { TextToMarkdownUI } from '../ui';
 
-const slug = 'text-to-markdown-converter';
+const slug = 'text-to-markdown';
 const title = 'テキストからMarkdownへの変換ツール オンライン無料 — ドキュメントの書式設定';
 const description =
   'プレーンテキストを素早くMarkdownコードに変換します。段落、見出し、リストをGitHub、Reddit、MDエディタと互換性のある形式に変換可能です。';

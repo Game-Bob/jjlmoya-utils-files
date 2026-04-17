@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { TextToMarkdownUI } from '../ui';
 
-const slug = 'text-to-markdown-converter';
+const slug = 'text-to-markdown';
 const title = 'Online Text to Markdown Converter — Format Documents';
 const description =
   'Transform plain text into Markdown code quickly. Convert paragraphs, headers and lists into format compatible with GitHub, Reddit and MD editors.';

@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { FormatStripperUI } from '../ui';
 
-const slug = 'strip-text-formatting';
+const slug = 'format-stripper';
 const title = 'テキスト書式解除 オンライン無料ツール — スタイルクリーナー';
 const description =
   'テキストから太字、斜体、リンク、色などを完全に除去。HTMLやWordドキュメントを瞬時にプレーンテキスト（txt）に変換するプロフェッショナルなスタイル解除ツール。';

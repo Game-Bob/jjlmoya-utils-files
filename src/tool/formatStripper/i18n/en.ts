@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { FormatStripperUI } from '../ui';
 
-const slug = 'strip-text-formatting';
+const slug = 'format-stripper';
 const title = 'Strip Text Formatting Online Free — Style Cleaner';
 const description =
   'Remove bold, italics, links, and colors from any text. Convert HTML or Word to plain text (txt) instantly with our professional style cleaner.';

@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ClipboardToImageUI } from '../ui';
 
-const slug = 'clipboard-to-png';
+const slug = 'clipboard-to-image';
 const title = '剪贴板转 PNG：下载屏幕截图和图像';
 const description =
   '在线将剪贴板内容（屏幕截图、图像）转换为可立即下载的 PNG 文件的工具。100% 隐私保护且过程极速。';

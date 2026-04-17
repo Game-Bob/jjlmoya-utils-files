@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, SoftwareApplication, HowTo } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { EmojiSpaceCleanerUI } from '../ui';
 
-const slug = 'emoji-and-double-space-remover';
+const slug = 'emoji-space-cleaner';
 const title = '表情符号与双空格在线清除工具 — 免费文本清理助手';
 const description =
   '瞬间清理您的文本：移除 WhatsApp 表情符号、规范化多重空格并删除不可见字符，让您的文档展现专业且整洁的品质。';

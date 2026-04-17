@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { FormatStripperUI } from '../ui';
 
-const slug = 'strip-text-formatting';
+const slug = 'format-stripper';
 const title = '텍스트 서식 지우기 온라인 무료 도구 — 스타일 클리너';
 const description =
   '어떤 텍스트에서든 굵게, 기울임꼴, 링크 및 색상을 제거합니다. HTML이나 Word를 즉시 일반 텍스트(txt)로 변환하는 전문 스타일 클리너입니다.';

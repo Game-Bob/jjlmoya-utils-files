@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { TextToMarkdownUI } from '../ui';
 
-const slug = 'text-to-markdown-converter';
+const slug = 'text-to-markdown';
 const title = '텍스트 Markdown 변환기 온라인 무료 도구 — 문서 서식 지정';
 const description =
   '기본 텍스트를 Markdown 코드로 빠르게 변환하세요. 단락, 헤더 및 목록을 GitHub, Reddit 및 MD 편집기와 호환되는 형식으로 바꿔줍니다.';

@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ClipboardToImageUI } from '../ui';
 
-const slug = 'clipboard-to-png';
+const slug = 'clipboard-to-image';
 const title = 'Clipboard to PNG: Download Screenshots and Images';
 const description =
   'Online tool to convert clipboard content (screenshots, images) into an instantly downloadable PNG file. 100% private and fast process.';

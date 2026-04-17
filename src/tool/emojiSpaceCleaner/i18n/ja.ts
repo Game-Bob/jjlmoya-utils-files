@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, SoftwareApplication, HowTo } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { EmojiSpaceCleanerUI } from '../ui';
 
-const slug = 'emoji-and-double-space-remover';
+const slug = 'emoji-space-cleaner';
 const title = '絵文字・二重スペース削除 オンラインツール';
 const description =
   'テキストを瞬時にクリーンアップ。WhatsAppやSNSの絵文字削除、連続するスペースの正常化、不可視文字の除去を行い、プロフェッショナルで清潔な文書に仕上げます。';

@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { HashVerifierUI } from '../ui';
 
-const slug = 'verify-file-hash';
+const slug = 'hash-verifier';
 const title = '온라인 해시 확인 도구 — SHA 256, MD5 및 SHA 1';
 const description =
   '파일의 SHA256, MD5 또는 SHA1 디지털 서명을 비교하여 무결성을 계산하고 확인하세요. 다운로드한 파일이 변조되지 않았는지 확인할 수 있습니다.';

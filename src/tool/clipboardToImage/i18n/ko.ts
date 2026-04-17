@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { ClipboardToImageUI } from '../ui';
 
-const slug = 'clipboard-to-png';
+const slug = 'clipboard-to-image';
 const title = '클립보드를 PNG로 변환: 스크린샷 및 이미지 다운로드';
 const description =
   '클립보드 내용(스크린샷, 이미지)을 즉시 다운로드 가능한 PNG 파일로 변환하는 온라인 도구입니다. 100% 비공개 및 빠른 프로세스.';
