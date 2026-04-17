@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { FormatStripperUI } from '../ui';
 
-const slug = 'limpiador-de-formato';
+const slug = 'format-stripper';
 const title = 'Limpiador de Formato y Texto Online: Eliminar Basura';
 const description =
   'Limpiador de texto online para normalizar cualquier contenido copiado. Elimina formato basura, espacios dobles y convierte a formatos específicos.';

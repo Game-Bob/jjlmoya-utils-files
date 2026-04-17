@@ -3,6 +3,9 @@ import { ALL_TOOLS } from '../tools';
 import type { ToolLocaleContent } from '../types';
 
 const sharingLocales = ['ja', 'ko', 'zh'];
+const slugExceptions = new Map<string, Set<string>>([
+  ['format-stripper', new Set(['es'])],
+]);
 
 interface ValidateParams {
   toolId: string;
@@ -28,10 +31,17 @@ const validateLocaleSlug = ({
     return;
   }
 
+  const isException = slugExceptions.get(enSlug)?.has(locale) ?? false;
+
   if (sharingLocales.includes(locale)) {
     expect(
       content.slug,
       `Tool "${toolId}" locale "${locale}" must use the same slug as "en" ("${enSlug}").`,
+    ).toBe(enSlug);
+  } else if (isException) {
+    expect(
+      content.slug,
+      `Tool "${toolId}" locale "${locale}" is allowed to share the slug with "en" ("${enSlug}").`,
     ).toBe(enSlug);
   } else {
     expect(
