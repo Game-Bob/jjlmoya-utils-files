@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { JsonToCsvUI } from '../ui';
 
-const slug = 'json-to-csv-converter';
+const slug = 'json-to-excel-csv-converter';
 const title = '在线 JSON 转 CSV 免费工具 — 导出至 Excel';
 const description =
   '快速轻松地将您的 JSON 文件转换为 CSV 表格。非常适合需要在 Excel 或 Google Sheets 中打开 JSON 文件的数据分析师。';

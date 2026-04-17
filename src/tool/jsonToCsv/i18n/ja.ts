@@ -2,7 +2,7 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import type { JsonToCsvUI } from '../ui';
 
-const slug = 'json-to-csv-converter';
+const slug = 'json-to-excel-csv-converter';
 const title = 'JSONからCSVへの変換ツール オンライン無料 — Excelにエクスポート';
 const description =
   'JSONファイルを素早く簡単にCSVテーブルに変換。JSONファイルをExcelやGoogleスプレッドシートで開く必要があるデータアナリストに最適です。';
