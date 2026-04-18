@@ -1,3 +1,4 @@
+import { formatStripper } from './entry';
 export * from './entry';
 export const FORMAT_STRIPPER_TOOL: ToolDefinition = {
   entry: formatStripper,

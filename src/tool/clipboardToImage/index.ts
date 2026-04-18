@@ -1,3 +1,4 @@
+import { clipboardToImage } from './entry';
 export * from './entry';
 export const CLIPBOARD_TO_IMAGE_TOOL: ToolDefinition = {
   entry: clipboardToImage,

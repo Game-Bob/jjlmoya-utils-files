@@ -1,3 +1,4 @@
+import { textToMarkdown } from './entry';
 export * from './entry';
 export const TEXT_TO_MARKDOWN_TOOL: ToolDefinition = {
   entry: textToMarkdown,
