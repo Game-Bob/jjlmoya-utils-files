@@ -15,7 +15,7 @@ export type {
   ToolDefinition,
 } from './types';
 
-export { ALL_TOOLS } from './tools';
+export { ALL_ENTRIES, ALL_TOOLS } from './tools';
 
 export { ClipboardToImageComponent, ClipboardToImageSEO, ClipboardToImageBibliography, CLIPBOARD_TO_IMAGE_TOOL } from './tool/clipboardToImage';
 export { FormatStripperComponent, FormatStripperSEO, FormatStripperBibliography, FORMAT_STRIPPER_TOOL } from './tool/formatStripper';
