@@ -1,7 +1,4 @@
 import type { FilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import ClipboardToImageComponent from './component.astro';
-import ClipboardToImageSEO from './seo.astro';
-import ClipboardToImageBibliography from './bibliography.astro';
 
 import type { ClipboardToImageUI } from './ui';
 
@@ -34,11 +31,10 @@ export const clipboardToImage: FilesToolEntry<ClipboardToImageUI> = {
   },
 };
 
-export { ClipboardToImageComponent, ClipboardToImageSEO, ClipboardToImageBibliography };
 
 export const CLIPBOARD_TO_IMAGE_TOOL: ToolDefinition = {
   entry: clipboardToImage,
-  Component: ClipboardToImageComponent,
-  SEOComponent: ClipboardToImageSEO,
-  BibliographyComponent: ClipboardToImageBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

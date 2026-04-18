@@ -1,7 +1,4 @@
 import type { FilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import TextSplitterComponent from './component.astro';
-import TextSplitterSEO from './seo.astro';
-import TextSplitterBibliography from './bibliography.astro';
 
 import type { TextSplitterUI } from './ui';
 
@@ -34,11 +31,10 @@ export const textSplitter: FilesToolEntry<TextSplitterUI> = {
   },
 };
 
-export { TextSplitterComponent, TextSplitterSEO, TextSplitterBibliography };
 
 export const TEXT_SPLITTER_TOOL: ToolDefinition = {
   entry: textSplitter,
-  Component: TextSplitterComponent,
-  SEOComponent: TextSplitterSEO,
-  BibliographyComponent: TextSplitterBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

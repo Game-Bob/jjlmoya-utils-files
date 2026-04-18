@@ -1,7 +1,4 @@
 import type { FilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import HashVerifierComponent from './component.astro';
-import HashVerifierSEO from './seo.astro';
-import HashVerifierBibliography from './bibliography.astro';
 
 import type { HashVerifierUI } from './ui';
 
@@ -34,11 +31,10 @@ export const hashVerifier: FilesToolEntry<HashVerifierUI> = {
   },
 };
 
-export { HashVerifierComponent, HashVerifierSEO, HashVerifierBibliography };
 
 export const HASH_VERIFIER_TOOL: ToolDefinition = {
   entry: hashVerifier,
-  Component: HashVerifierComponent,
-  SEOComponent: HashVerifierSEO,
-  BibliographyComponent: HashVerifierBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

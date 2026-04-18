@@ -1,7 +1,4 @@
 import type { FilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import JsonToCsvComponent from './component.astro';
-import JsonToCsvSEO from './seo.astro';
-import JsonToCsvBibliography from './bibliography.astro';
 
 import type { JsonToCsvUI } from './ui';
 
@@ -34,11 +31,10 @@ export const jsonToCsv: FilesToolEntry<JsonToCsvUI> = {
   },
 };
 
-export { JsonToCsvComponent, JsonToCsvSEO, JsonToCsvBibliography };
 
 export const JSON_TO_CSV_TOOL: ToolDefinition = {
   entry: jsonToCsv,
-  Component: JsonToCsvComponent,
-  SEOComponent: JsonToCsvSEO,
-  BibliographyComponent: JsonToCsvBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

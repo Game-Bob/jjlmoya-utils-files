@@ -1,7 +1,4 @@
 import type { FilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import TextToMarkdownComponent from './component.astro';
-import TextToMarkdownSEO from './seo.astro';
-import TextToMarkdownBibliography from './bibliography.astro';
 
 import type { TextToMarkdownUI } from './ui';
 
@@ -34,11 +31,10 @@ export const textToMarkdown: FilesToolEntry<TextToMarkdownUI> = {
   },
 };
 
-export { TextToMarkdownComponent, TextToMarkdownSEO, TextToMarkdownBibliography };
 
 export const TEXT_TO_MARKDOWN_TOOL: ToolDefinition = {
   entry: textToMarkdown,
-  Component: TextToMarkdownComponent,
-  SEOComponent: TextToMarkdownSEO,
-  BibliographyComponent: TextToMarkdownBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

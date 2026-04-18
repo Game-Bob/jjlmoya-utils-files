@@ -1,7 +1,4 @@
 import type { FilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import CharacterCounterComponent from './component.astro';
-import CharacterCounterSEO from './seo.astro';
-import CharacterCounterBibliography from './bibliography.astro';
 
 import type { CharacterCounterUI } from './ui';
 
@@ -34,11 +31,10 @@ export const characterCounter: FilesToolEntry<CharacterCounterUI> = {
   },
 };
 
-export { CharacterCounterComponent, CharacterCounterSEO, CharacterCounterBibliography };
 
 export const CHARACTER_COUNTER_TOOL: ToolDefinition = {
   entry: characterCounter,
-  Component: CharacterCounterComponent,
-  SEOComponent: CharacterCounterSEO,
-  BibliographyComponent: CharacterCounterBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

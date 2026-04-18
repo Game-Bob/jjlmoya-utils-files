@@ -1,7 +1,4 @@
 import type { FilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import EmojiSpaceCleanerComponent from './component.astro';
-import EmojiSpaceCleanerSEO from './seo.astro';
-import EmojiSpaceCleanerBibliography from './bibliography.astro';
 
 import type { EmojiSpaceCleanerUI } from './ui';
 
@@ -34,11 +31,10 @@ export const emojiSpaceCleaner: FilesToolEntry<EmojiSpaceCleanerUI> = {
   },
 };
 
-export { EmojiSpaceCleanerComponent, EmojiSpaceCleanerSEO, EmojiSpaceCleanerBibliography };
 
 export const EMOJI_SPACE_CLEANER_TOOL: ToolDefinition = {
   entry: emojiSpaceCleaner,
-  Component: EmojiSpaceCleanerComponent,
-  SEOComponent: EmojiSpaceCleanerSEO,
-  BibliographyComponent: EmojiSpaceCleanerBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

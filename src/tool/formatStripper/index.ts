@@ -1,7 +1,4 @@
 import type { FilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import FormatStripperComponent from './component.astro';
-import FormatStripperSEO from './seo.astro';
-import FormatStripperBibliography from './bibliography.astro';
 
 import type { FormatStripperUI } from './ui';
 
@@ -34,11 +31,10 @@ export const formatStripper: FilesToolEntry<FormatStripperUI> = {
   },
 };
 
-export { FormatStripperComponent, FormatStripperSEO, FormatStripperBibliography };
 
 export const FORMAT_STRIPPER_TOOL: ToolDefinition = {
   entry: formatStripper,
-  Component: FormatStripperComponent,
-  SEOComponent: FormatStripperSEO,
-  BibliographyComponent: FormatStripperBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };
