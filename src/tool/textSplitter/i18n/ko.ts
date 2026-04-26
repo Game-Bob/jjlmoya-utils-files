@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'text-splitter';
-const title = '텍스트 나누기 온라인 무료 도구 - 단락, 문장 또는 길이별 분할';
+const title = '텍스트 나누기 온라인 무료 도구: 단락, 문장 또는 길이별 분할';
 const description =
   '긴 텍스트를 자동으로 작은 부분으로 나눕니다. 단어 수, 글자 수, 단락 또는 문장별 분할 방법 중에서 선택하세요.';
 

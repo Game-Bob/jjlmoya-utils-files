@@ -4,7 +4,7 @@ import type { TextToMarkdownUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'konvertera-text-till-markdown';
-const title = 'Text till Markdown Konverterare Online - Formatera dokument';
+const title = 'Text till Markdown Konverterare Online: Formatera dokument';
 const description =
   'Omvandla snabbt vanlig text till Markdown-kod. Konvertera stycken, rubriker och listor till ett format som är kompatibelt med GitHub, Reddit och MD-redigerare.';
 

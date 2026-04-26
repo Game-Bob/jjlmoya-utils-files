@@ -4,7 +4,7 @@ import type { CharacterCounterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'licznik-znakow';
-const title = 'Licznik Znaków i Słów Online - Liczenie Liter';
+const title = 'Licznik Znaków i Słów Online: Liczenie Liter';
 const description =
   'Online licznik znaków, słów, zdań i akapitów. Oblicz czas czytania i mówienia. Darmowe narzędzie idealne dla SEO i mediów społecznościowych.';
 
@@ -117,8 +117,8 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
       type: 'table',
       headers: ['Element', 'Zalecany limit'],
       rows: [
-        ['Meta Title', '50 - 60 znaków'],
-        ['Meta Description', '150 - 160 znaków'],
+        ['Meta Title', '50: 60 znaków'],
+        ['Meta Description', '150: 160 znaków'],
         ['Google Ads (Nagłówki)', '30 znaków'],
       ]
     },

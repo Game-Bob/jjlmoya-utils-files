@@ -4,7 +4,7 @@ import type { FormatStripperUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'remover-formatacao-de-texto';
-const title = 'Remover Formatação de Texto Online Grátis - Limpador de Estilos';
+const title = 'Remover Formatação de Texto Online Grátis: Limpador de Estilos';
 const description =
   'Elimine negritos, itálicos, links e cores de qualquer texto. Converta HTML ou Word em texto simples (txt) instantaneamente com o nosso limpador de estilos profissional.';
 

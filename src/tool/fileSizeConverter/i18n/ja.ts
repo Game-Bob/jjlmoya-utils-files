@@ -3,8 +3,8 @@ import type { ToolLocaleContent } from '../../../types';
 import type { FileSizeConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
-const slug = 'file-size-converter-japanese';
-const title = 'ファイルサイズ変換・可視化ツール - 2進数と10進数';
+const slug = 'file-size-converter';
+const title = 'ファイルサイズ変換・可視化ツール: 2進数と10進数';
 const description =
   'ファイルサイズの単位を瞬時に変換します。ダウンロードにかかる時間を計算し、デバイス間でのストレージ使用量を可視化します。100%ローカル処理。';
 

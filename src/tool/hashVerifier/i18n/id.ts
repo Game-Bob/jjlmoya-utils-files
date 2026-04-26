@@ -4,7 +4,7 @@ import type { HashVerifierUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'verifikasi-hash-file';
-const title = 'Verifikator Hash Online - SHA 256, MD5 dan SHA 1';
+const title = 'Verifikator Hash Online: SHA 256, MD5 dan SHA 1';
 const description =
   'Hitung dan verifikasi integritas file Anda dengan membandingkan tanda tangan digital SHA256, MD5, atau SHA1. Pastikan unduhan Anda tidak diubah.';
 

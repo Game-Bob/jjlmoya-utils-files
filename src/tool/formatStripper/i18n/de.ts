@@ -4,7 +4,7 @@ import type { FormatStripperUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'textformatierung-entfernen';
-const title = 'Textformatierung online kostenlos entfernen - Stil Reiniger';
+const title = 'Textformatierung online kostenlos entfernen: Stil Reiniger';
 const description =
   'Entfernen Sie Fett- und Kursivdruck, Links und Farben aus jedem Text. Konvertieren Sie HTML oder Word sofort in Reintext (txt) mit unserem professionellen Stil-Reiniger.';
 

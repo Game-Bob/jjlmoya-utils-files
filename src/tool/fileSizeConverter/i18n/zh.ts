@@ -3,8 +3,8 @@ import type { ToolLocaleContent } from '../../../types';
 import type { FileSizeConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
-const slug = 'file-size-converter-chinese';
-const title = '文件大小转换器与可视化工具 - 二进制与十进制';
+const slug = 'file-size-converter';
+const title = '文件大小转换器与可视化工具: 二进制与十进制';
 const description =
   '即时转换文件大小单位。查看下载所需时间，并可视化不同设备上的存储占用情况。100% 本地处理。';
 

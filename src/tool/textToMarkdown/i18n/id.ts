@@ -4,7 +4,7 @@ import type { TextToMarkdownUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'konverter-teks-ke-markdown';
-const title = 'Konverter Teks ke Markdown Online - Format Dokumen';
+const title = 'Konverter Teks ke Markdown Online: Format Dokumen';
 const description =
   'Ubah teks biasa menjadi kode Markdown dengan cepat. Konversi paragraf, header, dan daftar ke dalam format yang kompatibel dengan GitHub, Reddit, dan editor MD.';
 

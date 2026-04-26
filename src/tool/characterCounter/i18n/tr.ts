@@ -4,7 +4,7 @@ import type { CharacterCounterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'karakter-sayaci';
-const title = 'Online Karakter ve Kelime Sayacı - Harf Hesaplama Aracı';
+const title = 'Online Karakter ve Kelime Sayacı: Harf Hesaplama Aracı';
 const description =
   'Online karakter, kelime, cümle ve paragraf sayacı. Okuma ve konuşma sürelerini hesaplayın. SEO ve sosyal medya için mükemmel ücretsiz araç.';
 
@@ -117,8 +117,8 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
       type: 'table',
       headers: ['Öğe', 'Önerilen Sınır'],
       rows: [
-        ['Meta Başlık', '50 - 60 karakter'],
-        ['Meta Açıklama', '150 - 160 karakter'],
+        ['Meta Başlık', '50: 60 karakter'],
+        ['Meta Açıklama', '150: 160 karakter'],
         ['Google Reklamları (Başlıklar)', '30 karakter'],
       ]
     },

@@ -4,7 +4,7 @@ import type { TextToMarkdownUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'conversor-texto-para-markdown';
-const title = 'Conversor de Texto para Markdown Online - Formatar Documentos';
+const title = 'Conversor de Texto para Markdown Online: Formatar Documentos';
 const description =
   'Transforme texto simples em código Markdown rapidamente. Converta parágrafos, cabeçalhos e listas em formato compatível com GitHub, Reddit e editores MD.';
 

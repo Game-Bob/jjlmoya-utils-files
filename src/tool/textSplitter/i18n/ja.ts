@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'text-splitter';
-const title = 'テキスト分割ツール オンライン無料 - 段落、一文、または文字数で分割';
+const title = 'テキスト分割ツール オンライン無料: 段落、一文、または文字数で分割';
 const description =
   '長いテキストを自動的に小さなパーツに分割します。文字数、単語数、段落、または一文ごとの分割方法から選択可能です。';
 

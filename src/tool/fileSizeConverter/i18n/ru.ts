@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { FileSizeConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
-const slug = 'размер-файла-конвертер';
+const slug = 'razmer-faila-konverter';
 const title = 'Конвертер и визуализатор размера файлов — двоичный и десятичный';
 const description =
   'Мгновенно конвертируйте единицы измерения размера файлов. Узнайте время загрузки и визуализируйте использование памяти на устройствах. 100% локальная обработка.';

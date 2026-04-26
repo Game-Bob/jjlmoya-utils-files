@@ -4,7 +4,7 @@ import type { TextToMarkdownUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'tekst-naar-markdown-converter';
-const title = 'Online Tekst naar Markdown Converter - Documenten formatteren';
+const title = 'Online Tekst naar Markdown Converter: Documenten formatteren';
 const description =
   'Transformeer platte tekst snel in Markdown-code. Converteer alinea\'s, koppen en lijsten naar een formaat dat compatibel is met GitHub, Reddit en MD-editors.';
 

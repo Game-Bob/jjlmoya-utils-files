@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'text-splitter';
-const title = 'Online Text Splitter - Separate by Paragraphs, Sentences or Length';
+const title = 'Online Text Splitter: Separate by Paragraphs, Sentences or Length';
 const description =
   'Split long texts into smaller parts automatically. Choose between separating by number of words, characters, paragraphs, or sentences.';
 

@@ -4,7 +4,7 @@ import type { FormatStripperUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'metin-formatini-temizle';
-const title = 'Metin Formatını Temizle Online Ücretsiz - Stil Temizleyici';
+const title = 'Metin Formatını Temizle Online Ücretsiz: Stil Temizleyici';
 const description =
   'Herhangi bir metinden kalın, italik, bağlantı ve renkleri kaldırın. HTML veya Word\'ü profesyonel stil temizleyicimizle anında düz metne (txt) dönüştürün.';
 

@@ -4,7 +4,7 @@ import type { CharacterCounterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'penghitung-karakter';
-const title = 'Penghitung Karakter dan Kata Online - Alat Hitung Huruf';
+const title = 'Penghitung Karakter dan Kata Online: Alat Hitung Huruf';
 const description =
   'Penghitung karakter, kata, kalimat, dan paragraf online. Hitung waktu baca dan bicara. Alat gratis yang sempurna untuk SEO dan media sosial.';
 
@@ -117,8 +117,8 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
       type: 'table',
       headers: ['Elemen', 'Batas yang Disarankan'],
       rows: [
-        ['Meta Title', '50 - 60 karakter'],
-        ['Meta Description', '150 - 160 karakter'],
+        ['Meta Title', '50: 60 karakter'],
+        ['Meta Description', '150: 160 karakter'],
         ['Google Ads (Judul)', '30 karakter'],
       ]
     },

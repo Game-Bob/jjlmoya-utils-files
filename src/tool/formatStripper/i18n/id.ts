@@ -4,7 +4,7 @@ import type { FormatStripperUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'hapus-format-teks';
-const title = 'Hapus Format Teks Online Gratis - Pembersih Gaya';
+const title = 'Hapus Format Teks Online Gratis: Pembersih Gaya';
 const description =
   'Hapus tebal, miring, tautan, dan warna dari teks apa pun. Konversi HTML atau Word ke teks biasa (txt) secara instan dengan pembersih gaya profesional kami.';
 

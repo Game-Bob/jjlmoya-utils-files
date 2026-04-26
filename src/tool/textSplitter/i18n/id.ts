@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'pemecah-teks';
-const title = 'Pemisah Teks Online - Pisahkan Berdasarkan Paragraf, Kalimat, atau Panjang';
+const title = 'Pemisah Teks Online: Pisahkan Berdasarkan Paragraf, Kalimat, atau Panjang';
 const description =
   'Pecah teks panjang menjadi bagian-bagian kecil secara otomatis. Pilih antara pemisahan berdasarkan jumlah kata, karakter, paragraf, atau kalimat.';
 

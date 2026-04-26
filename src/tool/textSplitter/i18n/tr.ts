@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'metin-bolucu';
-const title = 'Online Metin Bölücü - Paragraf, Cümle veya Uzunluğa Göre Ayır';
+const title = 'Online Metin Bölücü: Paragraf, Cümle veya Uzunluğa Göre Ayır';
 const description =
   'Uzun metinleri otomatik olarak daha küçük parçalara bölün. Kelime sayısı, karakter, paragraf veya cümleye göre ayırma seçeneklerinden birini seçin.';
 

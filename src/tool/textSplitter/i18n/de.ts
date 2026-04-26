@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'text-teilen';
-const title = 'Online Text Teiler - Trennen nach Absätzen, Sätzen oder Länge';
+const title = 'Online Text Teiler: Trennen nach Absätzen, Sätzen oder Länge';
 const description =
   'Teilen Sie lange Texte automatisch in kleinere Teile auf. Wählen Sie zwischen der Trennung nach Anzahl der Wörter, Zeichen, Absätze oder Sätze.';
 

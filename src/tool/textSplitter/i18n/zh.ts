@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'text-splitter';
-const title = '在线文本分割工具 - 按段落、句子或长度拆分';
+const title = '在线文本分割工具: 按段落、句子或长度拆分';
 const description =
   '自动将长文本拆分为较小的部分。您可以选择按单词数、字符数、段落或句子进行分割。';
 

@@ -4,7 +4,7 @@ import type { HashVerifierUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'weryfikacja-hash-pliku';
-const title = 'Weryfikator Hash Online - SHA 256, MD5 i SHA 1';
+const title = 'Weryfikator Hash Online: SHA 256, MD5 i SHA 1';
 const description =
   'Oblicz i zweryfikuj integralność swoich plików, porównując ich podpisy cyfrowe SHA256, MD5 lub SHA1. Upewnij się, że Twoje pliki nie zostały zmienione.';
 

@@ -4,7 +4,7 @@ import type { HashVerifierUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'hash-verifier';
-const title = 'Online Hash Verifier - SHA 256, MD5 and SHA 1';
+const title = 'Online Hash Verifier: SHA 256, MD5 and SHA 1';
 const description =
   'Calculate and verify the integrity of your files by comparing their SHA256, MD5, or SHA1 digital signature. Ensure your downloads have not been altered.';
 

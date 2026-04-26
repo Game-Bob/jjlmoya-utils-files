@@ -4,7 +4,7 @@ import type { CharacterCounterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'tekst-teller';
-const title = 'Tekst en Woorden Teller Online - Letters Tellen';
+const title = 'Tekst en Woorden Teller Online: Letters Tellen';
 const description =
   'Online teller voor karakters, woorden, zinnen en paragrafen. Bereken lees- en spreektijden. Gratis tool ideaal voor SEO en sociale media.';
 
@@ -117,8 +117,8 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
       type: 'table',
       headers: ['Element', 'Aanbevolen limiet'],
       rows: [
-        ['Meta Title', '50 - 60 tekens'],
-        ['Meta Description', '150 - 160 tekens'],
+        ['Meta Title', '50: 60 tekens'],
+        ['Meta Description', '150: 160 tekens'],
         ['Google Ads (Koppen)', '30 tekens'],
       ]
     },

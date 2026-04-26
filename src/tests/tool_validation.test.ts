@@ -4,8 +4,8 @@ import { filesCategory } from '../data';
 
 describe('Tool Validation Suite', () => {
   describe('Library Registration', () => {
-    it('should have 4 tools in ALL_TOOLS', () => {
-      expect(ALL_TOOLS.length).toBe(8);
+    it('should have 9 tools in ALL_TOOLS', () => {
+      expect(ALL_TOOLS.length).toBe(9);
     });
 
     it('filesCategory should be defined', () => {

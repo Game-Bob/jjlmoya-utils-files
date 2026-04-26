@@ -4,7 +4,7 @@ import type { FileSizeConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'dateigroessen-konverter';
-const title = 'Dateigrößen-Konverter & Visualisierer - Binär & Dezimal';
+const title = 'Dateigroessenkonverter und Visualisierer: Binär und Dezimal';
 const description =
   'Konvertieren Sie Dateigrößeneinheiten sofort. Berechnen Sie Downloadzeiten und visualisieren Sie die Speicherauslastung auf verschiedenen Geräten. 100 % lokale Verarbeitung.';
 

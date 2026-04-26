@@ -4,7 +4,7 @@ import type { FileSizeConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'konverter-ukuran-file';
-const title = 'Pengonversi & Visualisator Ukuran File - Biner & Desimal';
+const title = 'Pengonversi & Visualisator Ukuran File: Biner & Desimal';
 const description =
   'Konversi satuan ukuran file secara instan. Lihat berapa lama waktu unduhan dan visualisasikan penggunaan penyimpanan di berbagai perangkat. Pemrosesan 100% lokal.';
 

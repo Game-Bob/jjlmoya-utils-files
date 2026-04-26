@@ -3,8 +3,8 @@ import type { ToolLocaleContent } from '../../../types';
 import type { FileSizeConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
-const slug = 'file-size-converter-korean';
-const title = '파일 크기 변환기 및 시각화 도구 - 이진수 및 십진수';
+const slug = 'file-size-converter';
+const title = '파일 크기 변환기 및 시각화 도구: 이진수 및 십진수';
 const description =
   '파일 크기 단위를 즉시 변환하세요. 다운로드 소요 시간을 확인하고 기기별 저장 공간 사용량을 시각화합니다. 100% 로컬 처리.';
 

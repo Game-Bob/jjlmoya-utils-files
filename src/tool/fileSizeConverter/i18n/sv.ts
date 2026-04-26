@@ -4,7 +4,7 @@ import type { FileSizeConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'filstorlek-konverterare';
-const title = 'Filstorlekskonverterare & Visualiserare - Binär & Decimal';
+const title = 'Filstorlekskonverterare & Visualiserare: Binär & Decimal';
 const description =
   'Konvertera filstorleksenheter direkt. Se hur lång tid nedladdningar tar och visualisera lagringsutrymme på olika enheter. 100 % lokal bearbetning.';
 

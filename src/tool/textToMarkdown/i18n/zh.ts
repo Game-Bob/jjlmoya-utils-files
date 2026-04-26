@@ -4,7 +4,7 @@ import type { TextToMarkdownUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'text-to-markdown';
-const title = '在线文本转 Markdown 转换器 - 格式化文档';
+const title = '在线文本转 Markdown 转换器: 格式化文档';
 const description =
   '快速将纯文本转换为 Markdown 代码。将段落、标题和列表转换为兼容 GitHub、Reddit 和 MD 编辑器的格式。';
 

@@ -4,7 +4,7 @@ import type { FileSizeConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'konwerter-rozmiaru-plikow';
-const title = 'Konwerter i Wizualizator Rozmiaru Plików - Binarny i Dziesiętny';
+const title = 'Konwerter i Wizualizator Rozmiaru Plików: Binarny i Dziesiętny';
 const description =
   'Błyskawicznie konwertuj jednostki rozmiaru plików. Sprawdź czas pobierania i wizualizuj zajętość miejsca na różnych urządzeniach. Przetwarzanie 100% lokalne.';
 

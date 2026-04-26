@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'divisor-de-texto';
-const title = 'Divisor de Texto Online - Separar por Parágrafos, Frases ou Comprimento';
+const title = 'Divisor de Texto Online: Separar por Parágrafos, Frases ou Comprimento';
 const description =
   'Divida textos longos em partes menores de forma automática. Escolha entre separar por número de palavras, caracteres, parágrafos ou frases.';
 

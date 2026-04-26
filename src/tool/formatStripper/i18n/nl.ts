@@ -4,7 +4,7 @@ import type { FormatStripperUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'tekst-opmaak-verwijderen';
-const title = 'Tekst Opmaak Verwijderen Online Gratis - Stijlverwijderaar';
+const title = 'Tekst Opmaak Verwijderen Online Gratis: Stijlverwijderaar';
 const description =
   'Verwijder vetgedrukt, cursief, links en kleuren uit elke tekst. Convert HTML of Word direct naar platte tekst (txt) met onze professionele stijlverwijderaar.';
 

@@ -4,7 +4,7 @@ import type { HashVerifierUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'hash-verifier';
-const title = 'オンライン・ハッシュ確認ツール - SHA 256、MD5、SHA 1';
+const title = 'オンライン・ハッシュ確認ツール: SHA 256、MD5、SHA 1';
 const description =
   'ファイルのSHA256、MD5、またはSHA1デジタル署名を比較して、整合性を計算・確認します。ダウンロードしたファイルが改ざんされていないか確認しましょう。';
 

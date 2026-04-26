@@ -4,7 +4,7 @@ import type { FormatStripperUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'usuwanie-formatowania-tekstu';
-const title = 'Usuwanie Formatowania Tekstu Online Za Darmo - Czyściciel Stylów';
+const title = 'Usuwanie Formatowania Tekstu Online Za Darmo: Czyściciel Stylów';
 const description =
   'Usuń pogrubienie, kursywę, linki i kolory z dowolnego tekstu. Konwertuj HTML lub Word na czysty tekst (txt) natychmiast dzięki naszemu profesjonalnemu narzędziu.';
 

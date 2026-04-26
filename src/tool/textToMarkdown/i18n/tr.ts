@@ -4,7 +4,7 @@ import type { TextToMarkdownUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'metin-markdown-donusturucu';
-const title = 'Online Metinden Markdown\'a Dönüştürücü - Doküman Formatla';
+const title = 'Online Metinden Markdown\'a Dönüştürücü: Doküman Formatla';
 const description =
   'Düz metni hızlıca Markdown koduna dönüştürün. Paragrafları, başlıkları ve listeleri GitHub, Reddit ve MD editörleriyle uyumlu formata çevirin.';
 

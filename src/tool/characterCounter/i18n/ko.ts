@@ -99,8 +99,8 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
       type: 'table',
       headers: ['항목', '권장 제한'],
       rows: [
-        ['메타 제목', '50 - 60자'],
-        ['메타 설명', '150 - 160자'],
+        ['메타 제목', '50: 60자'],
+        ['메타 설명', '150: 160자'],
         ['구글 광고(제목)', '30자'],
       ]},
     {

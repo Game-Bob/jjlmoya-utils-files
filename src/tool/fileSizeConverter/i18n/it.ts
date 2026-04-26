@@ -4,7 +4,7 @@ import type { FileSizeConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'convertitore-dimensioni-file';
-const title = 'Convertitore e Visualizzatore Dimensioni File - Binario e Decimale';
+const title = 'Convertitore e Visualizzatore Dimensioni File: Binario e Decimale';
 const description =
   'Converti istantaneamente le unità di misura dei file. Scopri quanto tempo richiedono i download e visualizza l\'occupazione di memoria sui dispositivi. Elaborazione locale al 100%.';
 

@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'diviseur-de-texte';
-const title = 'Diviseur de Texte en Ligne - Séparer par Paragraphes, Phrases ou Longueur';
+const title = 'Diviseur de Texte en Ligne: Séparer par Paragraphes, Phrases ou Longueur';
 const description =
   'Divisez automatiquement de longs textes en parties plus petites. Choisissez entre séparer par nombre de mots, de caractères, de paragraphes ou de phrases.';
 

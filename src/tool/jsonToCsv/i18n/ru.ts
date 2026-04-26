@@ -4,7 +4,7 @@ import type { JsonToCsvUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'konverter-json-v-csv';
-const title = 'Конвертер JSON в CSV онлайн бесплатно - Экспорт в Excel';
+const title = 'Конвертер JSON в CSV онлайн бесплатно: Экспорт в Excel';
 const description =
   'Преобразуйте ваши JSON-файлы в таблицы CSV быстро и легко. Идеально подходит для аналитиков данных, которым нужно открывать JSON-файлы в Excel или Google Sheets.';
 
@@ -95,7 +95,7 @@ export const content: ToolLocaleContent<JsonToCsvUI> = {
     },
     {
       type: 'paragraph',
-      html: 'JSON - это стандартный формат для современных API, но его не всегда легко анализировать человеку. <strong>Конвертер JSON в CSV</strong> позволяет превратить сложные структуры в строки и столбцы, облегчая работу в таких мощных инструментах, как <strong>Microsoft Excel</strong>, Numbers или Google Sheets.'
+      html: 'JSON: это стандартный формат для современных API, но его не всегда легко анализировать человеку. <strong>Конвертер JSON в CSV</strong> позволяет превратить сложные структуры в строки и столбцы, облегчая работу в таких мощных инструментах, как <strong>Microsoft Excel</strong>, Numbers или Google Sheets.'
     },
     {
       type: 'title',

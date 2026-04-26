@@ -4,7 +4,7 @@ import type { CharacterCounterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'character-counter';
-const title = '在线字符计数器与单词计数器 - 字数统计工具';
+const title = '在线字符计数器与单词计数器: 字数统计工具';
 const description =
   '在线实时统计字符数、单词数、行数和段落数。估算阅读时间和演讲时间。非常适合 SEO 和社交媒体优化的免费工具。';
 
@@ -117,8 +117,8 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
       type: 'table',
       headers: ['项目', '建议限制'],
       rows: [
-        ['元标题 (Meta Title)', '30 - 35 个中文字符'],
-        ['元描述 (Meta Description)', '75 - 80 个中文字符'],
+        ['元标题 (Meta Title)', '30: 35 个中文字符'],
+        ['元描述 (Meta Description)', '75: 80 个中文字符'],
         ['Google 广告（标题）', '15 个中文字符'],
       ]
     },

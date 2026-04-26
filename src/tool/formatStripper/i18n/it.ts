@@ -4,7 +4,7 @@ import type { FormatStripperUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'rimuovi-formattazione-testo';
-const title = 'Rimuovi Formattazione Testo Online Gratis - Pulitore di Stili';
+const title = 'Rimuovi Formattazione Testo Online Gratis: Pulitore di Stili';
 const description =
   'Elimina grassetto, corsivo, link e colori da qualsiasi testo. Converti HTML o Word in testo semplice (txt) istantaneamente con il nostro pulitore di stili professionale.';
 

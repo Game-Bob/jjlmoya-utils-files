@@ -4,7 +4,7 @@ import type { HashVerifierUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'dosya-hash-dogrulama';
-const title = 'Online Hash Doğrulayıcı - SHA 256, MD5 ve SHA 1';
+const title = 'Online Hash Doğrulayıcı: SHA 256, MD5 ve SHA 1';
 const description =
   'SHA256, MD5 veya SHA1 dijital imzalarını karşılaştırarak dosyalarınızın bütünlüğünü hesaplayın ve doğrulayın. İndirdiğiniz dosyaların değiştirilmediğinden emin olun.';
 

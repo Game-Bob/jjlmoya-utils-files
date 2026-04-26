@@ -99,8 +99,8 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
       type: 'table',
       headers: ['Element', 'Empfohlener Grenzwert'],
       rows: [
-        ['Meta-Titel', '50 - 60 Zeichen'],
-        ['Meta-Beschreibung', '150 - 160 Zeichen'],
+        ['Meta-Titel', '50: 60 Zeichen'],
+        ['Meta-Beschreibung', '150: 160 Zeichen'],
         ['Google Ads (Überschriften)', '30 Zeichen'],
       ]},
     {

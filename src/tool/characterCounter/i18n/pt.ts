@@ -4,7 +4,7 @@ import type { CharacterCounterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'contador-de-caracteres';
-const title = 'Contador de Caracteres e Palavras Online - Contador de Letras';
+const title = 'Contador de Caracteres e Palavras Online: Contador de Letras';
 const description =
   'Contador de caracteres, palavras, frases e parágrafos online. Calcula tempos de leitura e voz. Ferramenta gratuita perfeita para SEO e redes sociais.';
 
@@ -117,8 +117,8 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
       type: 'table',
       headers: ['Elemento', 'Limite recomendado'],
       rows: [
-        ['Meta Title', '50 - 60 caracteres'],
-        ['Meta Description', '150 - 160 caracteres'],
+        ['Meta Title', '50: 60 caracteres'],
+        ['Meta Description', '150: 160 caracteres'],
         ['Google Ads (Títulos)', '30 caracteres'],
       ]
     },

@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'text-delare';
-const title = 'Textdelare Online - Dela upp efter stycke, mening eller längd';
+const title = 'Textdelare Online: Dela upp efter stycke, mening eller längd';
 const description =
   'Dela upp långa texter i mindre delar automatiskt. Välj mellan att dela upp efter antal ord, tecken, stycken eller meningar.';
 

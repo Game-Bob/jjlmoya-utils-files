@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'tekst-splitser';
-const title = 'Online Tekst Splitser - Scheiden per alinea, zin of lengte';
+const title = 'Online Tekst Splitser: Scheiden per alinea, zin of lengte';
 const description =
   'Splits lange teksten automatisch in kleinere delen. Kies tussen scheiden op aantal woorden, tekens, alinea\'s of zinnen.';
 

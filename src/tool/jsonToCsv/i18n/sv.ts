@@ -4,7 +4,7 @@ import type { JsonToCsvUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'konvertera-json-till-csv';
-const title = 'JSON till CSV Konverterare Online Gratis - Exportera till Excel';
+const title = 'JSON till CSV Konverterare Online Gratis: Exportera till Excel';
 const description =
   'Omvandla dina JSON-filer till CSV-tabeller snabbt och enkelt. Idealiskt för dataanalytiker som behöver öppna JSON-filer i Excel eller Google Sheets.';
 

@@ -4,7 +4,7 @@ import type { HashVerifierUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'hash-verifier';
-const title = '在线文件哈希校验 - SHA 256, MD5 与 SHA 1';
+const title = '在线文件哈希校验: SHA 256, MD5 与 SHA 1';
 const description =
   '通过计算并对比 SHA256、MD5 或 SHA1 数字签名，验证文件的完整性。确保您下载的文件未被篡改。';
 

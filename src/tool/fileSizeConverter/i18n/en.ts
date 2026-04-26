@@ -4,7 +4,7 @@ import type { FileSizeConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'file-size-converter';
-const title = 'File Size Converter & Visualizer - Binary & Decimal';
+const title = 'File Size Converter & Visualizer: Binary & Decimal';
 const description =
   'Convert between file size units instantly. See how long downloads take and visualize storage usage across devices. 100% local processing.';
 

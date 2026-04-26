@@ -4,7 +4,7 @@ import type { FileSizeConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'bestandsgrootte-converter';
-const title = 'Bestandsgrootte Omzetter & Visualisator - Binair & Decimaal';
+const title = 'Bestandsgrootte Omzetter & Visualisator: Binair & Decimaal';
 const description =
   'Zet direct bestandsgrootte-eenheden om. Zie hoe lang downloads duren en visualiseer opslaggebruik op verschillende apparaten. 100% lokale verwerking.';
 
@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Wat is het verschil tussen decimaal (KB) en binair (KiB)?',
     answer:
-      'Decimaal gebruikt machten van 1000 (KB, MB, GB), terwijl binair machten van 1024 (KiB, MiB, GiB) gebruikt. Dit is de reden waarom een "1GB" schijf kleiner lijkt op je computer - fabrikanten gebruiken decimaal, maar besturingssystemen gebruiken binair.',
+      'Decimaal gebruikt machten van 1000 (KB, MB, GB), terwijl binair machten van 1024 (KiB, MiB, GiB) gebruikt. Dit is de reden waarom een "1GB" schijf kleiner lijkt op je computer: fabrikanten gebruiken decimaal, maar besturingssystemen gebruiken binair.',
   },
   {
     question: 'Zijn mijn gegevens veilig bij het gebruik van deze tool?',
@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Kan ik bestanden uploaden om hun grootte te zien?',
     answer:
-      'Ja! Je kunt een bestand rechtstreeks naar het invoerveld slepen, en de tool leest automatisch de grootte uit. Het bestand zelf wordt nooit geüpload - alleen de grootte wordt lokaal gebruikt.',
+      'Ja! Je kunt een bestand rechtstreeks naar het invoerveld slepen, en de tool leest automatisch de grootte uit. Het bestand zelf wordt nooit geüpload: alleen de grootte wordt lokaal gebruikt.',
   },
   {
     question: 'Waarom toont mijn 1TB externe schijf minder ruimte op mijn computer?',
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Alle omzettingen volgen de <strong>NIST-standaarden</strong>: decimaal (SI) gebruikt 1000 als basis, binair (IEC) gebruikt 1024. De berekeningen vinden <strong>100% lokaal</strong> plaats - geen uploads, geen servers, volledige privacy.',
+      html: 'Alle omzettingen volgen de <strong>NIST-standaarden</strong>: decimaal (SI) gebruikt 1000 als basis, binair (IEC) gebruikt 1024. De berekeningen vinden <strong>100% lokaal</strong> plaats: geen uploads, geen servers, volledige privacy.',
     },
   ],
   ui: {

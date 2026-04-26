@@ -4,7 +4,7 @@ import type { CharacterCounterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'compteur-de-caracteres';
-const title = 'Compteur de Caractères et de Mots en Ligne - Outil de Calcul';
+const title = 'Compteur de Caractères et de Mots en Ligne: Outil de Calcul';
 const description =
   'Compteur de caractères, mots, phrases et paragraphes en ligne. Calcule les temps de lecture et de parole. Outil gratuit parfait pour le SEO et les réseaux sociaux.';
 
@@ -117,8 +117,8 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
       type: 'table',
       headers: ['Élément', 'Limite recommandée'],
       rows: [
-        ['Méta titre', '50 - 60 caractères'],
-        ['Méta description', '150 - 160 caractères'],
+        ['Méta titre', '50: 60 caractères'],
+        ['Méta description', '150: 160 caractères'],
         ['Google Ads (Titres)', '30 caractères'],
       ]
     },

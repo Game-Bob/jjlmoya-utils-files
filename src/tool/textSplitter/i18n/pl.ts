@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'dzielenie-tekstu';
-const title = 'Dzielenie Tekstu Online - Rozdzielanie według Akapitów, Zdań lub Długości';
+const title = 'Dzielenie Tekstu Online: Rozdzielanie według Akapitów, Zdań lub Długości';
 const description =
   'Automatycznie dziel długie teksty na mniejsze części. Wybieraj między rozdzielaniem według liczby słów, znaków, akapitów lub zdań.';
 

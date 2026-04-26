@@ -4,7 +4,7 @@ import type { FormatStripperUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'format-stripper';
-const title = 'Strip Text Formatting Online Free - Style Cleaner';
+const title = 'Strip Text Formatting Online Free: Style Cleaner';
 const description =
   'Remove bold, italics, links, and colors from any text. Convert HTML or Word to plain text (txt) instantly with our professional style cleaner.';
 

@@ -4,7 +4,7 @@ import type { JsonToCsvUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'json-to-excel-csv-converter';
-const title = 'JSON CSV 변환기 온라인 무료 - Excel로 내보내기';
+const title = 'JSON CSV 변환기 온라인 무료: Excel로 내보내기';
 const description =
   'JSON 파일을 빠르고 쉽게 CSV 테이블로 변환하세요. JSON 파일을 Excel이나 Google Sheets에서 열어야 하는 데이터 분석가에게 이상적입니다.';
 

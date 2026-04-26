@@ -4,7 +4,7 @@ import type { FormatStripperUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'ta-bort-textformatering';
-const title = 'Ta bort textformatering online gratis - Stilrensare';
+const title = 'Ta bort textformatering online gratis: Stilrensare';
 const description =
   'Ta bort fetstil, kursiv stil, länkar och färger från valfri text. Konvertera HTML eller Word till ren text (txt) direkt med vår professionella stilrensare.';
 

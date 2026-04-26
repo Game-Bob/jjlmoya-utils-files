@@ -4,7 +4,7 @@ import type { FileSizeConverterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'dosya-boyutu-donusturucu';
-const title = 'Dosya Boyutu Dönüştürücü ve Görselleştirici - İkili ve Onluk';
+const title = 'Dosya Boyutu Dönüştürücü ve Görselleştirici: İkili ve Onluk';
 const description =
   'Dosya boyutu birimleri arasında anında dönüştürme yapın. İndirmelerin ne kadar sürdüğünü görün ve cihazlar arasındaki depolama kullanımını görselleştirin. %100 yerel işleme.';
 

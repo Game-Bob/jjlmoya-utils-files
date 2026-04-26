@@ -4,7 +4,7 @@ import type { JsonToCsvUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'json-csv-donusturucu';
-const title = 'Online Ücretsiz JSON CSV Dönüştürücü - Excel\'e Aktar';
+const title = 'Online Ücretsiz JSON CSV Dönüştürücü: Excel\'e Aktar';
 const description =
   'JSON dosyalarınızı hızlı ve kolay bir şekilde CSV tablolarına dönüştürün. JSON dosyalarını Excel veya Google Sheets\'te açması gereken veri analistleri için idealdir.';
 
@@ -95,7 +95,7 @@ export const content: ToolLocaleContent<JsonToCsvUI> = {
     },
     {
       type: 'paragraph',
-      html: 'JSON, modern API\'ler için standart formattır ancak insan tarafından analizi en kolay format değildir. Bir <strong>JSON - CSV dönüştürücü</strong>, karmaşık yapıları satır ve sütunlara dönüştürmenize olanak tanıyarak <strong>Microsoft Excel</strong>, Numbers veya Google Sheets gibi güçlü araçlarda işlem yapmanızı kolaylaştırır.'
+      html: 'JSON, modern API\'ler için standart formattır ancak insan tarafından analizi en kolay format değildir. Bir <strong>JSON: CSV dönüştürücü</strong>, karmaşık yapıları satır ve sütunlara dönüştürmenize olanak tanıyarak <strong>Microsoft Excel</strong>, Numbers veya Google Sheets gibi güçlü araçlarda işlem yapmanızı kolaylaştırır.'
     },
     {
       type: 'title',

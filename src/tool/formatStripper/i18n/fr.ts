@@ -4,7 +4,7 @@ import type { FormatStripperUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'supprimer-formatage-texte';
-const title = 'Supprimer le Formatage de Texte en Ligne Gratuit - Nettoyeur de Styles';
+const title = 'Supprimer le Formatage de Texte en Ligne Gratuit: Nettoyeur de Styles';
 const description =
   'Éliminez le gras, l\'italique, les liens et les couleurs de n\'importe quel texte. Convertissez HTML ou Word en texte brut (txt) instantanément avec notre nettoyeur de styles professionnel.';
 
