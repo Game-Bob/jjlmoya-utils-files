@@ -1,0 +1,324 @@
+---
+import type { KnownLocale } from '../../types';
+import type { FileSizeConverterUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as FileSizeConverterUI;
+---
+
+<div
+  class="fsc-converter"
+  data-input-placeholder={t.inputPlaceholder}
+  data-select-unit={t.selectUnit}
+  data-standard-label={t.standardLabel}
+  data-decimal-option={t.decimalOption}
+  data-binary-option={t.binaryOption}
+  data-conversion-title={t.conversionTitle}
+  data-network-speeds-title={t.networkSpeedsTitle}
+  data-device-storage-title={t.deviceStorageTitle}
+  data-copy-feedback={t.copyFeedback}
+  data-drag-drop-text={t.dragDropText}
+>
+  <header class="fsc-header">
+    <div class="fsc-input-group">
+      <div class="fsc-input-wrapper fsc-input-drop-zone" data-drop-zone>
+        <input
+          type="text"
+          class="fsc-input"
+          placeholder={t.inputPlaceholder}
+          data-input
+          spellcheck="false"
+        />
+      </div>
+      <select class="fsc-unit-select" data-unit-select>
+        <option value="B">Bytes</option>
+        <option value="KB" class="decimal-unit">KB</option>
+        <option value="MB" class="decimal-unit">MB</option>
+        <option value="GB" class="decimal-unit">GB</option>
+        <option value="TB" class="decimal-unit">TB</option>
+        <option value="PB" class="decimal-unit">PB</option>
+        <option value="KiB" class="binary-unit" style="display:none">KiB</option>
+        <option value="MiB" class="binary-unit" style="display:none">MiB</option>
+        <option value="GiB" class="binary-unit" style="display:none">GiB</option>
+        <option value="TiB" class="binary-unit" style="display:none">TiB</option>
+        <option value="PiB" class="binary-unit" style="display:none">PiB</option>
+      </select>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <span style="font-size: 0.875rem; color: var(--text-muted); font-weight: 600;">{t.standardLabel}</span>
+      <div class="fsc-standard-toggle">
+        <button class="fsc-toggle-btn fsc-active" data-standard="decimal">{t.decimalOption}</button>
+        <button class="fsc-toggle-btn" data-standard="binary">{t.binaryOption}</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="fsc-main">
+    <section class="fsc-section">
+      <h3 class="fsc-section-title">{t.conversionTitle}</h3>
+      <div class="fsc-grid" data-conversion-grid></div>
+    </section>
+
+    <section class="fsc-section fsc-hidden" data-network-section>
+      <h3 class="fsc-section-title">{t.networkSpeedsTitle}</h3>
+      <div class="fsc-network-grid" data-network-grid></div>
+    </section>
+
+    <section class="fsc-section fsc-hidden" data-device-section>
+      <h3 class="fsc-section-title">{t.deviceStorageTitle}</h3>
+      <div class="fsc-device-grid" data-device-grid></div>
+    </section>
+  </main>
+</div>
+
+<script>
+  import { parseInput, convertToBytes, convertFromBytes } from './logic';
+
+  const DECIMAL_UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
+  const BINARY_UNITS = ['B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB'];
+
+  function attachStandardToggle(
+    container: HTMLElement,
+    standardBtns: NodeListOf<HTMLButtonElement>,
+    update: () => void
+  ) {
+    const unitSelect = container.querySelector<HTMLSelectElement>('[data-unit-select]');
+
+    standardBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        standardBtns.forEach((b) => b.classList.remove('fsc-active'));
+        btn.classList.add('fsc-active');
+
+        const isDecimal = btn.dataset.standard === 'decimal';
+        if (unitSelect) {
+          unitSelect.querySelectorAll<HTMLOptionElement>('.decimal-unit').forEach((opt) => {
+            opt.style.display = isDecimal ? '' : 'none';
+          });
+          unitSelect.querySelectorAll<HTMLOptionElement>('.binary-unit').forEach((opt) => {
+            opt.style.display = isDecimal ? 'none' : '';
+          });
+          unitSelect.value = isDecimal ? 'KB' : 'KiB';
+        }
+
+        update();
+      });
+    });
+  }
+
+  function getCurrentStandard(container: HTMLElement): string {
+    const active = container.querySelector<HTMLButtonElement>('[data-standard].fsc-active');
+    return active?.dataset.standard || 'decimal';
+  }
+
+  function attachDragDrop(
+    dropZone: HTMLElement,
+    input: HTMLInputElement,
+    unitSelect: HTMLSelectElement,
+    update: () => void
+  ) {
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropZone.classList.add('fsc-dragover');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+      dropZone.classList.remove('fsc-dragover');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('fsc-dragover');
+      const file = (e as DragEvent).dataTransfer?.files[0];
+      if (file) {
+        input.value = (file.size / 1000).toFixed(2);
+        unitSelect.value = 'KB';
+        update();
+      }
+    });
+  }
+
+  function attachBlockListeners(grid: HTMLElement) {
+    grid.querySelectorAll<HTMLElement>('.fsc-block').forEach((block) => {
+      block.addEventListener('click', () => {
+        const text = block.dataset.copy || '';
+        navigator.clipboard.writeText(text).then(() => {
+          block.style.opacity = '0.7';
+          setTimeout(() => {
+            block.style.opacity = '1';
+          }, 200);
+        });
+      });
+    });
+  }
+
+  interface ConversionResult {
+    bytes: number;
+    decimal: Record<string, number>;
+    binary: Record<string, number>;
+  }
+
+  function formatNumber(num: number): string {
+    if (num < 0.0001 && num > 0) return '< 0.0001';
+    if (num < 1) return num.toFixed(5);
+
+    let decimals = 0;
+    if (num < 10) decimals = 2;
+    else if (num < 100) decimals = 1;
+
+    return num.toLocaleString('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+      useGrouping: true
+    });
+  }
+
+  function renderConversions(container: HTMLElement, result: ConversionResult, standard: string) {
+    const grid = container.querySelector<HTMLElement>('[data-conversion-grid]');
+    if (!grid) return;
+
+    const units = standard === 'decimal' ? DECIMAL_UNITS : BINARY_UNITS;
+    const values = standard === 'decimal' ? (result.decimal as Record<string, number>) : (result.binary as Record<string, number>);
+    const unitSelect = container.querySelector<HTMLSelectElement>('[data-unit-select]');
+    const selectedUnit = (unitSelect?.value || 'B').toUpperCase();
+
+    let html = '';
+    units.forEach((unit) => {
+      const value = values[unit] ?? 0;
+      const maxValue = Math.max(...Object.values(values));
+      const percentage = maxValue > 0 ? (value / maxValue) * 100 : 0;
+      const formattedValue = formatNumber(value);
+      const isOrigin = unit === selectedUnit;
+      const blockClass = isOrigin ? 'fsc-block fsc-block-origin' : 'fsc-block';
+      const valueLength = formattedValue.length;
+      const fontSize = valueLength > 12 ? '1rem' : valueLength > 10 ? '1.25rem' : '1.75rem';
+
+      html += `<div class="${blockClass}" data-copy="${formattedValue} ${unit}">
+        <div class="fsc-block-value" style="font-size: ${fontSize};">${formattedValue}</div>
+        <div class="fsc-block-unit">${unit}</div>
+        <div class="fsc-block-bar" style="width: ${percentage}%"></div>
+      </div>`;
+    });
+
+    grid.innerHTML = html;
+    attachBlockListeners(grid);
+  }
+
+  function humanizeTime(seconds: number): string {
+    if (seconds < 1) return '< 1s';
+    if (seconds < 60) return `${Math.round(seconds)}s`;
+    if (seconds < 3600) return `${Math.round(seconds / 60)}m`;
+    if (seconds < 86400) return `${Math.round(seconds / 3600)}h`;
+    const days = Math.floor(seconds / 86400);
+    const hours = Math.floor((seconds % 86400) / 3600);
+    return `${days}d ${hours}h`;
+  }
+
+  function renderNetwork(container: HTMLElement, bytes: number) {
+    const section = container.querySelector<HTMLElement>('[data-network-section]');
+    const grid = container.querySelector<HTMLElement>('[data-network-grid]');
+    if (!section || !grid) return;
+
+    section.classList.remove('fsc-hidden');
+    const SPEEDS = [
+      { name: '3G', mbps: 2 },
+      { name: '4G LTE', mbps: 20 },
+      { name: '5G', mbps: 100 },
+      { name: 'Fiber', mbps: 500 },
+      { name: 'Gigabit', mbps: 1000 },
+    ];
+
+    let html = '';
+    SPEEDS.forEach(({ name, mbps }) => {
+      const bits = bytes * 8;
+      const seconds = bits / (mbps * 1000000);
+      const humanTime = humanizeTime(seconds);
+      html += `<div class="fsc-network-item">
+        <div class="fsc-network-speed">${name}</div>
+        <div class="fsc-network-time">${humanTime}</div>
+      </div>`;
+    });
+
+    grid.innerHTML = html;
+  }
+
+  function renderDevices(container: HTMLElement, bytes: number) {
+    const section = container.querySelector<HTMLElement>('[data-device-section]');
+    const grid = container.querySelector<HTMLElement>('[data-device-grid]');
+    if (!section || !grid) return;
+
+    section.classList.remove('fsc-hidden');
+    const DEVICES = [
+      { name: 'iPhone 15 (256GB)', totalGB: 256 },
+      { name: 'Galaxy S24 (128GB)', totalGB: 128 },
+      { name: '2TB SSD', totalGB: 2000 },
+      { name: '1TB HDD', totalGB: 1000 },
+    ];
+
+    let html = '';
+    DEVICES.forEach(({ name, totalGB }) => {
+      const gb = bytes / (1000 ** 3);
+      const percentage = (gb / totalGB) * 100;
+      const cappedPct = Math.min(percentage, 100);
+      const displayText = percentage > 100 ? `${percentage.toFixed(0)}% (${(percentage / 100).toFixed(1)}x)` : `${percentage.toFixed(1)}%`;
+      const barColor = percentage > 100 ? '#ef4444' : percentage > 80 ? '#f59e0b' : '#06b6d4';
+
+      html += `<div class="fsc-device-item">
+        <div class="fsc-device-name">${name}</div>
+        <div class="fsc-device-usage" style="color: ${percentage > 100 ? '#ef4444' : 'inherit'}">${displayText}</div>
+        <div class="fsc-device-bar"><div class="fsc-device-bar-fill" style="width: ${cappedPct}%; background: ${barColor};"></div></div>
+      </div>`;
+    });
+
+    grid.innerHTML = html;
+  }
+
+  function attachListeners(container: HTMLElement) {
+    const input = container.querySelector<HTMLInputElement>('[data-input]');
+    const unitSelect = container.querySelector<HTMLSelectElement>('[data-unit-select]');
+    const standardBtns = container.querySelectorAll<HTMLButtonElement>('[data-standard]');
+    const dropZone = container.querySelector<HTMLElement>('[data-drop-zone]');
+
+    function update() {
+      const inputValue = input?.value.trim() || '0';
+      const selectedUnit = unitSelect?.value || 'B';
+      let bytes = 0;
+
+      const parsed = parseInput(inputValue + ' ' + selectedUnit);
+      if (parsed) {
+        bytes = convertToBytes(parsed.value, parsed.unit);
+      }
+
+      const standard = getCurrentStandard(container);
+      const result = convertFromBytes(bytes, standard === 'decimal');
+
+      renderConversions(container, { bytes: result.bytes, decimal: result.decimal, binary: result.binary }, standard);
+      if (bytes > 0) {
+        renderNetwork(container, result.bytes);
+        renderDevices(container, result.bytes);
+      }
+    }
+
+    input?.addEventListener('input', update);
+    unitSelect?.addEventListener('change', update);
+    attachStandardToggle(container, standardBtns, update);
+
+    if (dropZone && input && unitSelect) {
+      attachDragDrop(dropZone, input, unitSelect, update);
+    }
+
+    update();
+  }
+
+  function init() {
+    document.querySelectorAll<HTMLElement>('.fsc-converter').forEach((c) => attachListeners(c));
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>

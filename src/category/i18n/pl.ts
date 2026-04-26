@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Codzienne zadania związane z plikami i tekstem — zapisywanie zrzutu ekranu, konwersja formatu, wyodrębnianie tekstu — zwykle wymagają instalacji ciężkiego oprogramowania lub korzystania z usług online, które przesyłają dane na zewnętrzne serwery. Te narzędzia działają <strong>w 100% lokalnie w Twojej przeglądarce</strong>: żadne z Twoich danych nigdy nie opuszcza urządzenia.',
+      html: 'Codzienne zadania związane z plikami i tekstem - zapisywanie zrzutu ekranu, konwersja formatu, wyodrębnianie tekstu - zwykle wymagają instalacji ciężkiego oprogramowania lub korzystania z usług online, które przesyłają dane na zewnętrzne serwery. Te narzędzia działają <strong>w 100% lokalnie w Twojej przeglądarce</strong>: żadne z Twoich danych nigdy nie opuszcza urządzenia.',
     },
     {
       type: 'paragraph',

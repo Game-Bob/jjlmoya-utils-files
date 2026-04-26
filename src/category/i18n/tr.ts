@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Günlük dosya ve metin görevleri — ekran görüntüsü kaydetme, format dönüştürme, metin çıkarma — genellikle ağır yazılım yüklemeyi veya verilerinizi harici sunuculara yükleyen çevrimiçi hizmetleri kullanmayı gerektirir. Bu araçlar <strong>tarayıcınızda %100 yerel olarak</strong> çalışır: verilerinizin hiçbiri cihazınızdan ayrılmaz.',
+      html: 'Günlük dosya ve metin görevleri - ekran görüntüsü kaydetme, format dönüştürme, metin çıkarma - genellikle ağır yazılım yüklemeyi veya verilerinizi harici sunuculara yükleyen çevrimiçi hizmetleri kullanmayı gerektirir. Bu araçlar <strong>tarayıcınızda %100 yerel olarak</strong> çalışır: verilerinizin hiçbiri cihazınızdan ayrılmaz.',
     },
     {
       type: 'paragraph',

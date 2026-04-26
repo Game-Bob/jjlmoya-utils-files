@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: "Les tâches quotidiennes avec des fichiers et du texte — enregistrer une capture d'écran, convertir un format, extraire du texte — nécessitent généralement l'installation d'un logiciel lourd ou le recours à des services en ligne qui envoient vos données sur des serveurs externes. Ces outils fonctionnent <strong>à 100 % localement dans votre navigateur</strong> : aucune de vos données ne quitte votre appareil.",
+      html: "Les tâches quotidiennes avec des fichiers et du texte - enregistrer une capture d'écran, convertir un format, extraire du texte - nécessitent généralement l'installation d'un logiciel lourd ou le recours à des services en ligne qui envoient vos données sur des serveurs externes. Ces outils fonctionnent <strong>à 100 % localement dans votre navigateur</strong> : aucune de vos données ne quitte votre appareil.",
     },
     {
       type: 'paragraph',

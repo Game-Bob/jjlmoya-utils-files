@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Vardagliga fil- och textuppgifter — spara en skärmbild, konvertera ett format, extrahera text — kräver vanligtvis installation av tung programvara eller användning av onlinetjänster som laddar upp dina data till externa servrar. Dessa verktyg fungerar <strong>100% lokalt i din webbläsare</strong>: ingen av dina data lämnar någonsin din enhet.',
+      html: 'Vardagliga fil- och textuppgifter - spara en skärmbild, konvertera ett format, extrahera text - kräver vanligtvis installation av tung programvara eller användning av onlinetjänster som laddar upp dina data till externa servrar. Dessa verktyg fungerar <strong>100% lokalt i din webbläsare</strong>: ingen av dina data lämnar någonsin din enhet.',
     },
     {
       type: 'paragraph',

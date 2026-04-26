@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { TextSplitterUI } from '../ui';
 
 const slug = 'divisor-de-texto';
-const title = 'Divisor de Texto Online — Separar por Parágrafos, Frases ou Comprimento';
+const title = 'Divisor de Texto Online - Separar por Parágrafos, Frases ou Comprimento';
 const description =
   'Divida textos longos em partes menores de forma automática. Escolha entre separar por número de palavras, caracteres, parágrafos ou frases.';
 
@@ -11,31 +11,38 @@ const faqData = [
   {
     question: 'Como dividir texto para o ChatGPT ou IA?',
     answer:
-      'Muitas IAs têm limites de caracteres por mensagem. Com a nossa ferramenta, você pode dividir o seu prompt longo em partes menores (por exemplo, a cada 2000 caracteres) para enviá-las sequencialmente sem perder informação.'},
+      'Muitas IAs têm limites de caracteres por mensagem. Com a nossa ferramenta, você pode dividir o seu prompt longo em partes menores (por exemplo, a cada 2000 caracteres) para enviá-las sequencialmente sem perder informação.'
+  },
   {
     question: 'É seguro colar textos privados no divisor?',
     answer:
-      'Totalmente seguro. A lógica de divisão corre 100% no seu navegador usando JavaScript. Nenhum texto é enviado para os nossos servidores, garantindo que os seus dados permaneçam privados no seu dispositivo.'},
+      'Totalmente seguro. A lógica de divisão corre 100% no seu navegador usando JavaScript. Nenhum texto é enviado para os nossos servidores, garantindo que os seus dados permaneçam privados no seu dispositivo.'
+  },
   {
     question: 'Existe um limite para o tamanho do texto que posso dividir?',
     answer:
-      'Não impomos um limite estrito, já que o processamento é feito localmente. Pode dividir vários megabytes de texto em segundos, embora o desempenho dependa da memória do seu computador.'},
+      'Não impomos um limite estrito, já que o processamento é feito localmente. Pode dividir vários megabytes de texto em segundos, embora o desempenho dependa da memória do seu computador.'
+  },
   {
     question: 'Adiciona numeração às partes?',
     answer:
-      'Atualmente, a ferramenta devolve os blocos separados. Pode copiá-los um a um. Muitos utilizadores consideram isto útil para manter o controlo manual sobre como enviam cada segmento para outras aplicações.'},
+      'Atualmente, a ferramenta devolve os blocos separados. Pode copiá-los um a um. Muitos utilizadores consideram isto útil para manter o controlo manual sobre como enviam cada segmento para outras aplicações.'
+  },
 ];
 
 const howToData = [
   {
     name: 'Cole o seu texto',
-    text: 'Insira o texto longo que deseja dividir na área de entrada principal.'},
+    text: 'Insira o texto longo que deseja dividir na área de entrada principal.'
+  },
   {
     name: 'Configure a divisão',
-    text: 'Escolha o método (caracteres, palavras, frases ou parágrafos) e defina o valor máximo para cada parte.'},
+    text: 'Escolha o método (caracteres, palavras, frases ou parágrafos) e defina o valor máximo para cada parte.'
+  },
   {
     name: 'Copie as partes',
-    text: 'A ferramenta mostrará os blocos gerados. Copie o que precisar e use-o onde desejar.'},
+    text: 'A ferramenta mostrará os blocos gerados. Copie o que precisar e use-o onde desejar.'
+  },
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -44,7 +51,9 @@ const faqSchema: WithContext<FAQPage> = {
   mainEntity: faqData.map((item) => ({
     '@type': 'Question',
     name: item.question,
-    acceptedAnswer: { '@type': 'Answer', text: item.answer }}))};
+    acceptedAnswer: { '@type': 'Answer', text: item.answer }
+  }))
+};
 
 const howToSchema: WithContext<HowTo> = {
   '@context': 'https://schema.org',
@@ -54,7 +63,9 @@ const howToSchema: WithContext<HowTo> = {
   step: howToData.map((step) => ({
     '@type': 'HowToStep',
     name: step.name,
-    text: step.text}))};
+    text: step.text
+  }))
+};
 
 const appSchema: WithContext<SoftwareApplication> = {
   '@context': 'https://schema.org',
@@ -64,7 +75,8 @@ const appSchema: WithContext<SoftwareApplication> = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  inLanguage: 'pt'};
+  inLanguage: 'pt'
+};
 
 export const content: ToolLocaleContent<TextSplitterUI> = {
   slug,
@@ -77,14 +89,17 @@ export const content: ToolLocaleContent<TextSplitterUI> = {
     {
       type: 'title',
       text: 'Por que você precisa de um divisor de texto online?',
-      level: 2},
+      level: 2
+    },
     {
       type: 'paragraph',
-      html: 'Trabalhar com textos muito longos pode ser um desafio na era digital. Quer seja um programador que precisa de dividir código em módulos, um escritor que adapta conteúdo para redes sociais ou um utilizador que interage com <strong>Modelos de Linguagem de Grande Escala (LLMs)</strong> como o ChatGPT, um <strong>divisor de texto</strong> é uma ferramenta essencial.'},
+      html: 'Trabalhar com textos muito longos pode ser um desafio na era digital. Quer seja um programador que precisa de dividir código em módulos, um escritor que adapta conteúdo para redes sociais ou um utilizador que interage com <strong>Modelos de Linguagem de Grande Escala (LLMs)</strong> como o ChatGPT, um <strong>divisor de texto</strong> é uma ferramenta essencial.'
+    },
     {
       type: 'title',
       text: 'Métodos de Divisão Inteligentes',
-      level: 2},
+      level: 2
+    },
     {
       type: 'list',
       items: [
@@ -92,14 +107,17 @@ export const content: ToolLocaleContent<TextSplitterUI> = {
         '<strong>Por Palavras:</strong> Ideal para artigos e blogs onde se procura um comprimento específico para SEO ou legibilidade.',
         '<strong>Por Frases:</strong> Garante que as ideias não são cortadas a meio, mantendo o contexto de cada bloco.',
         '<strong>Por Parágrafos:</strong> A melhor opção para manter a estrutura lógica de um documento complexo.',
-      ]},
+      ]
+    },
     {
       type: 'title',
       text: 'Privacidade e Velocidade: Processamento Local',
-      level: 3},
+      level: 3
+    },
     {
       type: 'paragraph',
-      html: 'O nosso <strong>divisor de texto online</strong> não "carrega" o seu conteúdo para nenhum servidor. Tudo é processado instantaneamente no seu navegador. Isto significa que pode trabalhar com documentos sensíveis, contratos ou e-mails privados com a certeza absoluta de que ninguém mais os pode ver.'},
+      html: 'O nosso <strong>divisor de texto online</strong> não "carrega" o seu conteúdo para nenhum servidor. Tudo é processado instantaneamente no seu navegador. Isto significa que pode trabalhar com documentos sensíveis, contratos ou e-mails privados com a certeza absoluta de que ninguém mais os pode ver.'
+    },
   ],
   ui: {
     labelInput: 'Texto a Separar',
@@ -121,4 +139,6 @@ export const content: ToolLocaleContent<TextSplitterUI> = {
     statChars: 'Caracteres',
     btnCopy: 'Copiar Lista',
     btnClear: 'Limpar',
-    toastCopied: 'Copiado para a área de transferência!'}};
+    toastCopied: 'Copiado para a área de transferência!'
+  }
+};

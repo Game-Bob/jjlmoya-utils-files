@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Las tareas cotidianas con archivos y texto —guardar una captura de pantalla, convertir un formato, extraer texto— suelen requerir instalar software pesado o recurrir a servicios online que suben tus datos a servidores externos. Estas herramientas funcionan de forma <strong>100% local en tu navegador</strong>: ningún dato tuyo sale de tu dispositivo.',
+      html: 'Las tareas cotidianas con archivos y texto -guardar una captura de pantalla, convertir un formato, extraer texto- suelen requerir instalar software pesado o recurrir a servicios online que suben tus datos a servidores externos. Estas herramientas funcionan de forma <strong>100% local en tu navegador</strong>: ningún dato tuyo sale de tu dispositivo.',
     },
     {
       type: 'paragraph',

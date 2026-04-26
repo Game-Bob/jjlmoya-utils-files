@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Tarefas diárias de arquivo e texto — salvar uma captura de tela, converter um formato, extrair texto — geralmente exigem a instalação de software pesado ou o uso de serviços online que enviam seus dados para servidores externos. Essas ferramentas funcionam <strong>100% localmente no seu navegador</strong>: nenhum dos seus dados jamais sai do seu dispositivo.',
+      html: 'Tarefas diárias de arquivo e texto - salvar uma captura de tela, converter um formato, extrair texto - geralmente exigem a instalação de software pesado ou o uso de serviços online que enviam seus dados para servidores externos. Essas ferramentas funcionam <strong>100% localmente no seu navegador</strong>: nenhum dos seus dados jamais sai do seu dispositivo.',
     },
     {
       type: 'paragraph',

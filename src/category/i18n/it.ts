@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Le attività quotidiane con file e testo — salvare uno screenshot, convertire un formato, estrarre testo — richiedono di solito l\'installazione di software pesante o l\'utilizzo di servizi online che caricano i tuoi dati su server esterni. Questi strumenti funzionano <strong>100% localmente nel tuo browser</strong>: nessuno dei tuoi dati lascia mai il tuo dispositivo.',
+      html: 'Le attività quotidiane con file e testo - salvare uno screenshot, convertire un formato, estrarre testo - richiedono di solito l\'installazione di software pesante o l\'utilizzo di servizi online che caricano i tuoi dati su server esterni. Questi strumenti funzionano <strong>100% localmente nel tuo browser</strong>: nessuno dei tuoi dati lascia mai il tuo dispositivo.',
     },
     {
       type: 'paragraph',

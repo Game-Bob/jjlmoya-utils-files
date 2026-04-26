@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Alledaagse bestands- en teksttaken — een schermafbeelding opslaan, een formaat converteren, tekst extraheren — vereisen gewoonlijk het installeren van zware software of het gebruik van onlinediensten die je gegevens naar externe servers uploaden. Deze tools werken <strong>100% lokaal in je browser</strong>: geen van je gegevens verlaat ooit je apparaat.',
+      html: 'Alledaagse bestands- en teksttaken - een schermafbeelding opslaan, een formaat converteren, tekst extraheren - vereisen gewoonlijk het installeren van zware software of het gebruik van onlinediensten die je gegevens naar externe servers uploaden. Deze tools werken <strong>100% lokaal in je browser</strong>: geen van je gegevens verlaat ooit je apparaat.',
     },
     {
       type: 'paragraph',

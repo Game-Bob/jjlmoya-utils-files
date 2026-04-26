@@ -6,10 +6,11 @@ import { hashVerifier } from '../tool/hashVerifier/index';
 import { textToMarkdown } from '../tool/textToMarkdown/index';
 import { emojiSpaceCleaner } from '../tool/emojiSpaceCleaner/index';
 import { textSplitter } from '../tool/textSplitter/index';
+import { fileSizeConverter } from '../tool/fileSizeConverter/index';
 
 export const filesCategory: FilesCategoryEntry = {
   icon: 'mdi:file-multiple',
-  tools: [clipboardToImage, formatStripper, characterCounter, hashVerifier, textToMarkdown, emojiSpaceCleaner, textSplitter],
+  tools: [clipboardToImage, formatStripper, characterCounter, hashVerifier, textToMarkdown, emojiSpaceCleaner, textSplitter, fileSizeConverter],
   i18n: {
     en: () => import('./i18n/en').then((m) => m.content),
     es: () => import('./i18n/es').then((m) => m.content),

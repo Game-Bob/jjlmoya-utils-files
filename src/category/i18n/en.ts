@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Everyday file and text tasks — saving a screenshot, converting a format, extracting text — usually require installing heavy software or using online services that upload your data to external servers. These tools work <strong>100% locally in your browser</strong>: none of your data ever leaves your device.',
+      html: 'Everyday file and text tasks - saving a screenshot, converting a format, extracting text - usually require installing heavy software or using online services that upload your data to external servers. These tools work <strong>100% locally in your browser</strong>: none of your data ever leaves your device.',
     },
     {
       type: 'paragraph',

@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Tugas file dan teks sehari-hari — menyimpan tangkapan layar, mengonversi format, mengekstrak teks — biasanya memerlukan penginstalan perangkat lunak berat atau menggunakan layanan online yang mengunggah data Anda ke server eksternal. Alat-alat ini bekerja <strong>100% secara lokal di browser Anda</strong>: tidak ada data Anda yang pernah meninggalkan perangkat Anda.',
+      html: 'Tugas file dan teks sehari-hari - menyimpan tangkapan layar, mengonversi format, mengekstrak teks - biasanya memerlukan penginstalan perangkat lunak berat atau menggunakan layanan online yang mengunggah data Anda ke server eksternal. Alat-alat ini bekerja <strong>100% secara lokal di browser Anda</strong>: tidak ada data Anda yang pernah meninggalkan perangkat Anda.',
     },
     {
       type: 'paragraph',

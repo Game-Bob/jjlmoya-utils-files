@@ -25,4 +25,5 @@ export { TEXT_TO_MARKDOWN_TOOL } from './tool/textToMarkdown';
 export { EMOJI_SPACE_CLEANER_TOOL } from './tool/emojiSpaceCleaner';
 export { TEXT_SPLITTER_TOOL } from './tool/textSplitter';
 export { JSON_TO_CSV_TOOL } from './tool/jsonToCsv';
+export { FILE_SIZE_CONVERTER_TOOL } from './tool/fileSizeConverter';
 

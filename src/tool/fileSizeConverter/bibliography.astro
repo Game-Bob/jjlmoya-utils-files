@@ -1,0 +1,6 @@
+---
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import { bibliography } from './bibliography';
+---
+
+{bibliography.length > 0 && <SharedBibliography links={bibliography} />}
