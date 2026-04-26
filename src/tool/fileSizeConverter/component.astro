@@ -178,6 +178,12 @@ const t = (ui ?? {}) as FileSizeConverterUI;
     });
   }
 
+  function getFontSize(length: number): string {
+    if (length > 12) return '1rem';
+    if (length > 10) return '1.25rem';
+    return '1.75rem';
+  }
+
   function renderConversions(container: HTMLElement, result: ConversionResult, standard: string) {
     const grid = container.querySelector<HTMLElement>('[data-conversion-grid]');
     if (!grid) return;
@@ -195,8 +201,7 @@ const t = (ui ?? {}) as FileSizeConverterUI;
       const formattedValue = formatNumber(value);
       const isOrigin = unit === selectedUnit;
       const blockClass = isOrigin ? 'fsc-block fsc-block-origin' : 'fsc-block';
-      const valueLength = formattedValue.length;
-      const fontSize = valueLength > 12 ? '1rem' : valueLength > 10 ? '1.25rem' : '1.75rem';
+      const fontSize = getFontSize(formattedValue.length);
 
       html += `<div class="${blockClass}" data-copy="${formattedValue} ${unit}">
         <div class="fsc-block-value" style="font-size: ${fontSize};">${formattedValue}</div>
@@ -247,6 +252,21 @@ const t = (ui ?? {}) as FileSizeConverterUI;
     grid.innerHTML = html;
   }
 
+  function getBarColor(percentage: number): string {
+    if (percentage > 100) return '#ef4444';
+    if (percentage > 80) return '#f59e0b';
+    return '#06b6d4';
+  }
+
+  function getDisplayText(percentage: number): string {
+    if (percentage > 100) return `${percentage.toFixed(0)}% (${(percentage / 100).toFixed(1)}x)`;
+    return `${percentage.toFixed(1)}%`;
+  }
+
+  function getTextColor(percentage: number): string {
+    return percentage > 100 ? '#ef4444' : 'inherit';
+  }
+
   function renderDevices(container: HTMLElement, bytes: number) {
     const section = container.querySelector<HTMLElement>('[data-device-section]');
     const grid = container.querySelector<HTMLElement>('[data-device-grid]');
@@ -265,12 +285,13 @@ const t = (ui ?? {}) as FileSizeConverterUI;
       const gb = bytes / (1000 ** 3);
       const percentage = (gb / totalGB) * 100;
       const cappedPct = Math.min(percentage, 100);
-      const displayText = percentage > 100 ? `${percentage.toFixed(0)}% (${(percentage / 100).toFixed(1)}x)` : `${percentage.toFixed(1)}%`;
-      const barColor = percentage > 100 ? '#ef4444' : percentage > 80 ? '#f59e0b' : '#06b6d4';
+      const displayText = getDisplayText(percentage);
+      const barColor = getBarColor(percentage);
+      const textColor = getTextColor(percentage);
 
       html += `<div class="fsc-device-item">
         <div class="fsc-device-name">${name}</div>
-        <div class="fsc-device-usage" style="color: ${percentage > 100 ? '#ef4444' : 'inherit'}">${displayText}</div>
+        <div class="fsc-device-usage" style="color: ${textColor}">${displayText}</div>
         <div class="fsc-device-bar"><div class="fsc-device-bar-fill" style="width: ${cappedPct}%; background: ${barColor};"></div></div>
       </div>`;
     });
