@@ -14,8 +14,9 @@ import type { UtilitySEOContent } from "@jjlmoya/utils-shared";
 export async function getStaticPaths() {
   const paths = [];
 
-  for (const { entry, Component: lazyComp } of ALL_TOOLS) {
+  for (const { entry, Component: lazyComp, BibliographyComponent: lazyBibliography } of ALL_TOOLS) {
     const { default: Component } = await lazyComp();
+    const { default: BibliographyComponent } = await lazyBibliography();
     const localeEntries = Object.entries(entry.i18n) as [
       KnownLocale,
       () => Promise<ToolLocaleContent>,
@@ -55,7 +56,7 @@ export async function getStaticPaths() {
       ).filter(Boolean) as NavItem[];
       paths.push({
         params: { locale, slug: content.slug },
-        props: { Component, locale, content, localeUrls, allToolsNav, englishSlug },
+        props: { Component, BibliographyComponent, locale, content, localeUrls, allToolsNav, englishSlug },
       });
     }
   }
@@ -72,6 +73,7 @@ interface NavItem {
 
 interface Props {
   Component: unknown;
+  BibliographyComponent: unknown;
   locale: KnownLocale;
   content: ToolLocaleContent;
   localeUrls: Partial<Record<KnownLocale, string>>;
@@ -79,7 +81,7 @@ interface Props {
   englishSlug: string;
 }
 
-const { Component, locale, content, localeUrls, allToolsNav, englishSlug } = Astro.props;
+const { Component, BibliographyComponent, locale, content, localeUrls, allToolsNav, englishSlug } = Astro.props;
 
 const cssFiles = import.meta.glob("../../tool/*/*.css", { query: "?raw", import: "default" });
 const cssKey = Object.keys(cssFiles).find((k) => k.endsWith(`/${englishSlug}.css`));
@@ -136,7 +138,7 @@ const titleBase = words.slice(1).join(" ") || "";
     </section>
 
     <section class="section-bibliography">
-      <Bibliography links={content.bibliography} title={content.ui.bibliographyTitle} />
+      <BibliographyComponent />
     </section>
   </div>
 </PreviewLayout>

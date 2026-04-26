@@ -1,6 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { HashVerifierUI } from '../ui';
+import { bibliography } from '../bibliography';
 
 const slug = 'hash-verifier';
 const title = 'Online Hash Verifier — SHA 256, MD5 and SHA 1';
@@ -11,38 +12,31 @@ const faqData = [
   {
     question: 'How to verify if a file has been modified?',
     answer:
-      'The safest way is to compare its Hash. A Hash is a unique digital fingerprint. If even a single bit of the file changes, the Hash will be completely different. By comparing the obtained Hash with the one provided by the author, you can guarantee its integrity.',
-  },
+      'The safest way is to compare its Hash. A Hash is a unique digital fingerprint. If even a single bit of the file changes, the Hash will be completely different. By comparing the obtained Hash with the one provided by the author, you can guarantee its integrity.'},
   {
     question: 'Which algorithm is better: MD5 or SHA-256?',
     answer:
-      'MD5 is very fast but is considered less secure against intentional attacks. SHA-256 is the current standard for security and is much harder to "forge". For most file integrity checks, SHA-256 is the recommended option.',
-  },
+      'MD5 is very fast but is considered less secure against intentional attacks. SHA-256 is the current standard for security and is much harder to "forge". For most file integrity checks, SHA-256 is the recommended option.'},
   {
     question: 'Why does the Hash change when I rename the file?',
     answer:
-      'Actually, renaming a file DOES NOT change its Hash. The Hash is calculated based on the internal content (the bytes) of the file, not its name or creation date. If the Hash changes, it is because the internal data has been modified.',
-  },
+      'Actually, renaming a file DOES NOT change its Hash. The Hash is calculated based on the internal content (the bytes) of the file, not its name or creation date. If the Hash changes, it is because the internal data has been modified.'},
   {
     question: 'Is my file uploaded to the server to calculate the Hash?',
     answer:
-      'No. Our tool uses the Web Crypto API, which means all calculation is done locally in your browser. Your file never leaves your computer, ensuring 100% privacy and being much faster as no upload is required.',
-  },
+      'No. Our tool uses the Web Crypto API, which means all calculation is done locally in your browser. Your file never leaves your computer, ensuring 100% privacy and being much faster as no upload is required.'},
 ];
 
 const howToData = [
   {
     name: 'Select your file',
-    text: 'Drag or select the file you want to verify in the tool.',
-  },
+    text: 'Drag or select the file you want to verify in the tool.'},
   {
     name: 'Choose the algorithm',
-    text: 'Select SHA-256, MD5, or SHA-1 depending on the signature you have.',
-  },
+    text: 'Select SHA-256, MD5, or SHA-1 depending on the signature you have.'},
   {
     name: 'Compare the results',
-    text: 'Paste the expected Hash and the system will tell you instantly if they match (Success) or if they are different (Error).',
-  },
+    text: 'Paste the expected Hash and the system will tell you instantly if they match (Success) or if they are different (Error).'},
 ];
 
 const faqSchema: WithContext<FAQPage> = {
@@ -51,9 +45,7 @@ const faqSchema: WithContext<FAQPage> = {
   mainEntity: faqData.map((item) => ({
     '@type': 'Question',
     name: item.question,
-    acceptedAnswer: { '@type': 'Answer', text: item.answer },
-  })),
-};
+    acceptedAnswer: { '@type': 'Answer', text: item.answer }}))};
 
 const howToSchema: WithContext<HowTo> = {
   '@context': 'https://schema.org',
@@ -63,9 +55,7 @@ const howToSchema: WithContext<HowTo> = {
   step: howToData.map((step) => ({
     '@type': 'HowToStep',
     name: step.name,
-    text: step.text,
-  })),
-};
+    text: step.text}))};
 
 const appSchema: WithContext<SoftwareApplication> = {
   '@context': 'https://schema.org',
@@ -75,69 +65,45 @@ const appSchema: WithContext<SoftwareApplication> = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'All',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  inLanguage: 'en',
-};
+  inLanguage: 'en'};
 
 export const content: ToolLocaleContent<HashVerifierUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Frequently Asked Questions',
+  bibliography,
   faq: faqData,
-  bibliographyTitle: 'Sources and References',
-  bibliography: [
-    {
-      name: 'NIST: Hash Functions Standard',
-      url: 'https://csrc.nist.gov/projects/hash-functions',
-    },
-    {
-      name: 'MDN: Web Crypto API',
-      url: 'https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API',
-    },
-    {
-      name: 'Wikipedia: Cryptographic Hash Function',
-      url: 'https://en.wikipedia.org/wiki/Cryptographic_hash_function',
-    },
-  ],
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
     {
       type: 'title',
       text: 'What is a file Hash and why is it vital for your security?',
-      level: 2,
-    },
+      level: 2},
     {
       type: 'paragraph',
-      html: 'A Hash is a <strong>digital fingerprint</strong> unique to each file. It is a alphanumeric string generated by a mathematical algorithm (like SHA-256). Its main feature is that it is "one-way": you can get the Hash from a file, but you cannot reconstruct the file from its Hash.',
-    },
+      html: 'A Hash is a <strong>digital fingerprint</strong> unique to each file. It is a alphanumeric string generated by a mathematical algorithm (like SHA-256). Its main feature is that it is "one-way": you can get the Hash from a file, but you cannot reconstruct the file from its Hash.'},
     {
       type: 'paragraph',
-      html: 'Using an <strong>online hash verifier</strong> is essential when downloading software, ISO images, or sensitive documents. Authors usually publish the MD5 or SHA256 of their files so that you can verify that what you have downloaded is exactly what they uploaded, without corruption or malicious injections.',
-    },
+      html: 'Using an <strong>online hash verifier</strong> is essential when downloading software, ISO images, or sensitive documents. Authors usually publish the MD5 or SHA256 of their files so that you can verify that what you have downloaded is exactly what they uploaded, without corruption or malicious injections.'},
     {
       type: 'title',
       text: 'SHA-256 vs MD5: Which one should you use?',
-      level: 3,
-    },
+      level: 3},
     {
       type: 'paragraph',
-      html: 'The <strong>MD5</strong> algorithm was very popular for years due to its speed, but today it is considered cryptographically insecure as it is susceptible to "collisions". However, it is still used for simple integrity checks (corrupted downloads).',
-    },
+      html: 'The <strong>MD5</strong> algorithm was very popular for years due to its speed, but today it is considered cryptographically insecure as it is susceptible to "collisions". However, it is still used for simple integrity checks (corrupted downloads).'},
     {
       type: 'paragraph',
-      html: 'If you seek maximum security, <strong>SHA-256</strong> (part of the SHA-2 family) is the standard recommended by security agencies worldwide. It is virtually impossible for two different files to produce the same SHA-256 Hash.',
-    },
+      html: 'If you seek maximum security, <strong>SHA-256</strong> (part of the SHA-2 family) is the standard recommended by security agencies worldwide. It is virtually impossible for two different files to produce the same SHA-256 Hash.'},
     {
       type: 'title',
       text: 'Total Privacy: Calculation 100% in your browser',
-      level: 3,
-    },
+      level: 3},
     {
       type: 'tip',
       title: 'No Upload Needed',
-      html: '<p>Our tool uses the power of your computer to process the file. By using the <strong>Web Crypto API</strong>, we don\'t need to "upload" the file to any server. This means you can verify files of several gigabytes in seconds, without consuming your internet bandwidth and ensuring that the content of your files never leaves your device.</p>',
-    },
+      html: '<p>Our tool uses the power of your computer to process the file. By using the <strong>Web Crypto API</strong>, we don\'t need to "upload" the file to any server. This means you can verify files of several gigabytes in seconds, without consuming your internet bandwidth and ensuring that the content of your files never leaves your device.</p>'},
   ],
   ui: {
     labelTitle: "Local Hash Verifier",
@@ -153,6 +119,4 @@ export const content: ToolLocaleContent<HashVerifierUI> = {
     placeholderCompare: "Paste the expected hash here...",
     labelCompareNote: "* Comparison ignores case and whitespace.",
     statusVerified: "VERIFIED",
-    statusCorrupt: "CORRUPT / ERROR",
-  },
-};
+    statusCorrupt: "CORRUPT / ERROR"}};
