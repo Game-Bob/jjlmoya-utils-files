@@ -6,7 +6,7 @@ import { bibliography } from '../bibliography';
 const slug = 'suppresseur-emojis-espaces-doubles';
 const title = 'Suppresseur d\'Emojis et d\'Espaces Doubles en Ligne Gratuit';
 const description =
-  'Nettoyez vos textes instantanément : supprimez les emojis WhatsApp, normalisez les espaces multiples et effacez les caractères invisibles pour un rendu professionnel et net.';
+  'Nettoyez vos textes instantanément: supprimez les emojis WhatsApp, normalisez les espaces multiples et effacez les caractères invisibles pour un rendu professionnel et net.';
 
 const faqData = [
   {
@@ -87,7 +87,7 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
       html: 'L\'une des erreurs les plus courantes lors de l\'écriture est d\'appuyer deux fois sur la barre d\'espace par accident. Bien que cela puisse sembler un détail mineur, en <strong>supprimant les doubles espaces</strong>, vous améliorez radicalement l\'esthétique de vos paragraphes. Dans la conception web moderne, la typographie dépend d\'un espacement uniforme pour maintenir le rythme de lecture.'},
     {
       type: 'tip',
-      title: 'Confidentialité Maximale : Traitement 100 % dans votre navigateur',
+      title: 'Confidentialité Maximale: Traitement 100 % dans votre navigateur',
       html: '<p>Contrairement à d\'autres convertisseurs qui envoient vos données à des serveurs distants, notre utilitaire fonctionne entièrement <strong>côté client (Client-Side)</strong>. Le texte que vous collez ne quitte jamais votre ordinateur. Tout le processus de suppression d\'emojis et de nettoyage d\'espaces se produit dans votre propre mémoire RAM, garantissant la confidentialité totale de vos informations.</p>'},
     {
       type: 'paragraph',
@@ -147,7 +147,7 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
       html: '<p>Alors qu\'un minifieur cherche à réduire la taille du fichier en supprimant tout ce qui est inutile pour l\'ordinateur, notre <strong>nettoyeur de texte pour humains</strong> donne la priorité à la lisibilité. Nous ne joignons pas tous les mots, mais respectons la structure grammaticale tout en éliminant les déchets visuels.</p>'},
     {
       type: 'title',
-      text: 'Conclusion : Le standard de nettoyage de texte pour 2026',
+      text: 'Conclusion: Le standard de nettoyage de texte pour 2026',
       level: 3},
     {
       type: 'paragraph',

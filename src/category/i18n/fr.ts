@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: "Les tâches quotidiennes avec des fichiers et du texte - enregistrer une capture d'écran, convertir un format, extraire du texte - nécessitent généralement l'installation d'un logiciel lourd ou le recours à des services en ligne qui envoient vos données sur des serveurs externes. Ces outils fonctionnent <strong>à 100 % localement dans votre navigateur</strong> : aucune de vos données ne quitte votre appareil.",
+      html: "Les tâches quotidiennes avec des fichiers et du texte - enregistrer une capture d'écran, convertir un format, extraire du texte - nécessitent généralement l'installation d'un logiciel lourd ou le recours à des services en ligne qui envoient vos données sur des serveurs externes. Ces outils fonctionnent <strong>à 100 % localement dans votre navigateur</strong>: aucune de vos données ne quitte votre appareil.",
     },
     {
       type: 'paragraph',
@@ -20,7 +20,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'title',
-      text: 'Presse-papiers : du copier-coller au fichier réel',
+      text: 'Presse-papiers: du copier-coller au fichier réel',
       level: 2,
     },
     {
@@ -38,7 +38,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: "Chaque outil de cette catégorie est construit sur un seul principe : <strong>les données ne quittent jamais le navigateur</strong>. Aucune requête vers des serveurs externes, aucun stockage dans le cloud, aucun journal d'activité. Ce que vous collez dans l'outil est traité en mémoire et téléchargé directement sur votre disque, sans intermédiaire.",
+      html: "Chaque outil de cette catégorie est construit sur un seul principe: <strong>les données ne quittent jamais le navigateur</strong>. Aucune requête vers des serveurs externes, aucun stockage dans le cloud, aucun journal d'activité. Ce que vous collez dans l'outil est traité en mémoire et téléchargé directement sur votre disque, sans intermédiaire.",
     },
     {
       type: 'list',

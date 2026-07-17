@@ -45,7 +45,7 @@ const howToSchema: WithContext<HowTo> = {
   '@type': 'HowTo',
   name: title,
   description,
-  step: (typeof howToData !== 'undefined' ? howToData : []).map((step: any) => ({
+  step: (typeof howToData !== 'undefined' ? howToData: []).map((step: any) => ({
     '@type': 'HowToStep',
     name: step.name,
     text: step.text}))};

@@ -27,7 +27,7 @@ const faqData = [
   {
     question: 'Czy mogę skopiować CSV bezpośrednio zamiast go pobierać?',
     answer:
-      'Oczywiście. Oprócz przycisku „Pobierz CSV” masz opcję „Kopiuj wynik”, aby wkleić zawartość bezpośrednio do dowolnego edytora tekstu lub arkusza kalkulacyjnego.'
+      'Oczywiście. Oprócz przycisku \"Pobierz CSV\" masz opcję \"Kopiuj wynik\", aby wkleić zawartość bezpośrednio do dowolnego edytora tekstu lub arkusza kalkulacyjnego.'
   },
 ];
 
@@ -42,7 +42,7 @@ const howToData = [
   },
   {
     name: 'Pobierz lub kopiuj',
-    text: 'Kliknij „Pobierz CSV”, aby zapisać plik, lub „Kopiuj wynik”, aby natychmiast go użyć.'
+    text: 'Kliknij \"Pobierz CSV\", aby zapisać plik, lub \"Kopiuj wynik\", aby natychmiast go użyć.'
   },
 ];
 

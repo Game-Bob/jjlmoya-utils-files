@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Was ist der Unterschied zwischen Dezimal (KB) und Binär (KiB)?',
     answer:
-      'Dezimal verwendet Zehnerpotenzen (KB, MB, GB), während Binär Zweierpotenzen (KiB, MiB, GiB) nutzt. Deshalb erscheint eine „1GB“-Festplatte auf Ihrem Computer kleiner – Hersteller verwenden Dezimal, Betriebssysteme jedoch Binär.',
+      'Dezimal verwendet Zehnerpotenzen (KB, MB, GB), während Binär Zweierpotenzen (KiB, MiB, GiB) nutzt. Deshalb erscheint eine \"1GB\"-Festplatte auf Ihrem Computer kleiner - Hersteller verwenden Dezimal, Betriebssysteme jedoch Binär.',
   },
   {
     question: 'Sind meine Daten bei der Verwendung dieses Tools sicher?',
@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Kann ich Dateien hochladen, um deren Größe zu sehen?',
     answer:
-      'Ja! Sie können eine Datei direkt in das Eingabefeld ziehen, und das Tool liest automatisch deren Größe aus. Die Datei selbst wird niemals hochgeladen – nur die Größeninformation wird lokal verwendet.',
+      'Ja! Sie können eine Datei direkt in das Eingabefeld ziehen, und das Tool liest automatisch deren Größe aus. Die Datei selbst wird niemals hochgeladen - nur die Größeninformation wird lokal verwendet.',
   },
   {
     question: 'Warum zeigt meine externe 1TB-Festplatte auf meinem Computer weniger Platz an?',
@@ -39,7 +39,7 @@ const faqData = [
 const howToData = [
   {
     name: 'Geben Sie eine Dateigröße ein',
-    text: 'Tippen Sie eine Zahl in das Eingabefeld (z. B. „500“ oder „1,5“) und wählen Sie die Einheit (KB, MB, GB usw.).',
+    text: 'Tippen Sie eine Zahl in das Eingabefeld (z. B. \"500\" oder \"1,5\") und wählen Sie die Einheit (KB, MB, GB usw.).',
   },
   {
     name: 'Wählen Sie Ihren Standard',
@@ -104,7 +104,7 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Wenn Sie ein <strong>„1TB“</strong>-Laufwerk kaufen, messen Hersteller dies dezimal (1.000 GB). Ihr Betriebssystem zeigt es jedoch binär an (1.024 Gio = ca. 931 GB). Dieser Unterschied verwirrt viele Nutzer. Ein <strong>Dateigrößen-Konverter</strong> schließt diese Lücke und zeigt Ihnen genau, was Ihre Dateien in jeder Einheit bedeuten.',
+      html: 'Wenn Sie ein <strong>\"1TB\"</strong>-Laufwerk kaufen, messen Hersteller dies dezimal (1.000 GB). Ihr Betriebssystem zeigt es jedoch binär an (1.024 Gio = ca. 931 GB). Dieser Unterschied verwirrt viele Nutzer. Ein <strong>Dateigrößen-Konverter</strong> schließt diese Lücke und zeigt Ihnen genau, was Ihre Dateien in jeder Einheit bedeuten.',
     },
     {
       type: 'title',
@@ -113,7 +113,7 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Zu wissen, dass eine Datei „50MB“ groß ist, bedeutet ohne Kontext wenig. Wie lange dauert der Download über 4G? Wie viel Platz belegt sie auf einem iPhone? Unser Tool liefert sofort Antworten mit Echtzeit-Berechnungen für reale Netzwerke und Geräte.',
+      html: 'Zu wissen, dass eine Datei \"50MB\" groß ist, bedeutet ohne Kontext wenig. Wie lange dauert der Download über 4G? Wie viel Platz belegt sie auf einem iPhone? Unser Tool liefert sofort Antworten mit Echtzeit-Berechnungen für reale Netzwerke und Geräte.',
     },
     {
       type: 'title',
@@ -123,9 +123,9 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     {
       type: 'list',
       items: [
-        'Eine externe „1 TB“-Festplatte hat tatsächlich nur <strong>ca. 931 GiB</strong> (der Herstellertrick)',
+        'Eine externe \"1 TB\"-Festplatte hat tatsächlich nur <strong>ca. 931 GiB</strong> (der Herstellertrick)',
         'Ein 4K-Film (ca. 100GB) dauert über Glasfaser <strong>4 Sekunden</strong>, über 4G jedoch <strong>13 Minuten</strong>',
-        'Ein „256GB“ iPhone speichert weniger, da das Betriebssystem Platz belegt und die Binärrechnung den Unterschied verstärkt',
+        'Ein \"256GB\" iPhone speichert weniger, da das Betriebssystem Platz belegt und die Binärrechnung den Unterschied verstärkt',
       ],
     },
     {
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Alle Konvertierungen folgen den <strong>NIST-Standards</strong>: Dezimal (SI) nutzt die Basis 1000, Binär (IEC) die Basis 1024. Die Berechnungen erfolgen <strong>zu 100 % lokal</strong> – keine Uploads, keine Server, voller Datenschutz.',
+      html: 'Alle Konvertierungen folgen den <strong>NIST-Standards</strong>: Dezimal (SI) nutzt die Basis 1000, Binär (IEC) die Basis 1024. Die Berechnungen erfolgen <strong>zu 100 % lokal</strong> - keine Uploads, keine Server, voller Datenschutz.',
     },
   ],
   ui: {

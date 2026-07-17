@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Apa perbedaan antara desimal (KB) dan biner (KiB)?',
     answer:
-      'Desimal menggunakan pangkat 1000 (KB, MB, GB), sedangkan biner menggunakan pangkat 1024 (KiB, MiB, GiB). Inilah sebabnya mengapa drive "1GB" tampak lebih kecil di komputer Anda—produsen menggunakan desimal, tetapi sistem operasi menggunakan biner.',
+      'Desimal menggunakan pangkat 1000 (KB, MB, GB), sedangkan biner menggunakan pangkat 1024 (KiB, MiB, GiB). Inilah sebabnya mengapa drive "1GB" tampak lebih kecil di komputer Anda-produsen menggunakan desimal, tetapi sistem operasi menggunakan biner.',
   },
   {
     question: 'Apakah data saya aman menggunakan alat ini?',
@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Bisakah saya mengunggah file untuk melihat ukurannya?',
     answer:
-      'Ya! Anda dapat menyeret dan melepas file langsung ke area input, dan alat ini akan secara otomatis membaca ukurannya. File itu sendiri tidak pernah diunggah—hanya ukurannya yang digunakan secara lokal.',
+      'Ya! Anda dapat menyeret dan melepas file langsung ke area input, dan alat ini akan secara otomatis membaca ukurannya. File itu sendiri tidak pernah diunggah-hanya ukurannya yang digunakan secara lokal.',
   },
   {
     question: 'Mengapa drive eksternal 1TB saya menunjukkan ruang yang lebih sedikit di komputer?',
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Semua konversi mengikuti <strong>standar NIST</strong>: desimal (SI) menggunakan basis 1000, biner (IEC) menggunakan 1024. Perhitungan terjadi <strong>100% secara lokal</strong>—tidak ada unggahan, tidak ada server, privasi penuh.',
+      html: 'Semua konversi mengikuti <strong>standar NIST</strong>: desimal (SI) menggunakan basis 1000, biner (IEC) menggunakan 1024. Perhitungan terjadi <strong>100% secara lokal</strong>-tidak ada unggahan, tidak ada server, privasi penuh.',
     },
   ],
   ui: {

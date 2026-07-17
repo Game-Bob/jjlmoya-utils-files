@@ -111,7 +111,7 @@ export const content: ToolLocaleContent<TextSplitterUI> = {
     },
     {
       type: 'title',
-      text: 'Confidentialité et Rapidité : Traitement Local',
+      text: 'Confidentialité et Rapidité: Traitement Local',
       level: 3
     },
     {

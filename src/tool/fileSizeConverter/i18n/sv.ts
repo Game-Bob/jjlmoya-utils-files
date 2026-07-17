@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Vad är skillnaden mellan decimal (KB) och binär (KiB)?',
     answer:
-      'Decimal använder potenser av 1000 (KB, MB, GB), medan binär använder potenser av 1024 (KiB, MiB, GiB). Det är därför en "1GB"-hårddisk ser mindre ut i din dator – tillverkare använder decimal, men operativsystem använder binär.',
+      'Decimal använder potenser av 1000 (KB, MB, GB), medan binär använder potenser av 1024 (KiB, MiB, GiB). Det är därför en "1GB"-hårddisk ser mindre ut i din dator - tillverkare använder decimal, men operativsystem använder binär.',
   },
   {
     question: 'Är mina data säkra när jag använder detta verktyg?',
@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Kan jag ladda upp filer för att se deras storlek?',
     answer:
-      'Ja! Du kan dra och släppa en fil direkt i inmatningsfältet, så läser verktyget automatiskt av dess storlek. Själva filen laddas aldrig upp – endast dess storlek används lokalt.',
+      'Ja! Du kan dra och släppa en fil direkt i inmatningsfältet, så läser verktyget automatiskt av dess storlek. Själva filen laddas aldrig upp - endast dess storlek används lokalt.',
   },
   {
     question: 'Varför visar min externa 1TB-hårddisk mindre utrymme i min dator?',
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Alla konverteringar följer <strong>NIST-standarder</strong>: decimal (SI) använder 1000 som bas, binär (IEC) använder 1024. Beräkningarna sker <strong>100 % lokalt</strong> – inga uppladdningar, inga servrar, full integritet.',
+      html: 'Alla konverteringar följer <strong>NIST-standarder</strong>: decimal (SI) använder 1000 som bas, binär (IEC) använder 1024. Beräkningarna sker <strong>100 % lokalt</strong> - inga uppladdningar, inga servrar, full integritet.',
     },
   ],
   ui: {

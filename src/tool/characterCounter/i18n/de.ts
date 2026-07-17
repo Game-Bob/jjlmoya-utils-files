@@ -4,7 +4,7 @@ import type { CharacterCounterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'zeichenzaehler';
-const title = 'Zeichenzähler und Wortzähler Online – Buchstaben zählen';
+const title = 'Zeichenzähler und Wortzähler Online, Buchstaben zählen';
 const description =
   'Online-Zähler für Zeichen, Wörter, Sätze und Absätze. Berechnet Lese- und Sprechzeiten. Kostenloses Tool, ideal für SEO und soziale Medien.';
 

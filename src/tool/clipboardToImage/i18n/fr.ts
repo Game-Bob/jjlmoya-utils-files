@@ -4,7 +4,7 @@ import type { ClipboardToImageUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'presse-papiers-vers-png';
-const title = 'Presse papiers vers PNG : Télécharger Captures d\'écran';
+const title = 'Presse papiers vers PNG: Télécharger Captures d\'écran';
 const description =
   'Outil en ligne pour convertir le contenu du presse-papiers (captures, images) en un fichier PNG téléchargeable instantanément. Processus 100 % privé et rapide.';
 
@@ -20,7 +20,7 @@ const faqData = [
   {
     question: 'Pourquoi le bouton coller ne fonctionne-t-il pas ?',
     answer:
-      'En raison des restrictions de sécurité des navigateurs, le bouton "Coller" nécessite parfois des autorisations explicites. S\'il ne fonctionne pas, vous pouvez toujours utiliser le raccourci clavier standard : Ctrl+V (Windows) ou Cmd+V (Mac).'},
+      'En raison des restrictions de sécurité des navigateurs, le bouton "Coller" nécessite parfois des autorisations explicites. S\'il ne fonctionne pas, vous pouvez toujours utiliser le raccourci clavier standard: Ctrl+V (Windows) ou Cmd+V (Mac).'},
   {
     question: 'Cela fonctionne-t-il sur les appareils mobiles ?',
     answer:

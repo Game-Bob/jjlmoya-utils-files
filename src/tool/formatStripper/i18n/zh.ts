@@ -17,7 +17,7 @@ const faqData = [
   {
     question: '它兼容 Microsoft Word 或 Google Docs 的文本吗？',
     answer:
-      '是的，它正是为此设计的。从 Word 或 Docs 复制时会携带大量“垃圾代码”。我们的清理器会移除所有这些隐藏样式，让您可以干净地将文本粘贴到其他应用。'
+      '是的，它正是为此设计的。从 Word 或 Docs 复制时会携带大量\"垃圾代码\"。我们的清理器会移除所有这些隐藏样式，让您可以干净地将文本粘贴到其他应用。'
   },
   {
     question: '我可以将 HTML 转换为纯文本吗？',
@@ -89,12 +89,12 @@ export const content: ToolLocaleContent<FormatStripperUI> = {
   seo: [
     {
       type: 'title',
-      text: '什么是“清除格式”，为什么您需要它？',
+      text: '什么是\"清除格式\"，为什么您需要它？',
       level: 2
     },
     {
       type: 'paragraph',
-      html: '清除格式是将<strong>富文本转换为纯文本</strong> (Plain Text) 的过程。当我们从网站、电子书或 Word 文档复制信息时，该文本会携带“隐藏行李”：字体、大小、颜色、链接和 CSS 样式。我们的工具充当过滤器，消除所有这些数字垃圾。'
+      html: '清除格式是将<strong>富文本转换为纯文本</strong> (Plain Text) 的过程。当我们从网站、电子书或 Word 文档复制信息时，该文本会携带\"隐藏行李\"：字体、大小、颜色、链接和 CSS 样式。我们的工具充当过滤器，消除所有这些数字垃圾。'
     },
     {
       type: 'title',

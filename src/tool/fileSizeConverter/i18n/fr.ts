@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Quelle est la différence entre le décimal (ko) et le binaire (Kio) ?',
     answer:
-      'Le système décimal utilise des puissances de 1000 (ko, Mo, Go), tandis que le binaire utilise des puissances de 1024 (Kio, Mio, Gio). C\'est pourquoi un disque de « 1 Go » semble plus petit sur votre ordinateur : les fabricants utilisent le décimal, mais les systèmes d\'exploitation utilisent le binaire.',
+      'Le système décimal utilise des puissances de 1000 (ko, Mo, Go), tandis que le binaire utilise des puissances de 1024 (Kio, Mio, Gio). C\'est pourquoi un disque de \" 1 Go \" semble plus petit sur votre ordinateur: les fabricants utilisent le décimal, mais les systèmes d\'exploitation utilisent le binaire.',
   },
   {
     question: 'Mes données sont-elles en sécurité avec cet outil ?',
@@ -39,7 +39,7 @@ const faqData = [
 const howToData = [
   {
     name: 'Saisissez une taille de fichier',
-    text: 'Tapez un nombre dans le champ de saisie (par exemple, « 500 » ou « 1,5 ») et sélectionnez l\'unité (ko, Mo, Go, etc.).',
+    text: 'Tapez un nombre dans le champ de saisie (par exemple, \" 500 \" ou \" 1,5 \") et sélectionnez l\'unité (ko, Mo, Go, etc.).',
   },
   {
     name: 'Choisissez votre standard',
@@ -104,28 +104,28 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Lorsque vous achetez un disque de <strong>« 1 To »</strong>, les fabricants le mesurent en décimal (1 000 Go). Mais votre système d\'exploitation l\'affiche en binaire (1 024 Gio = environ 931 Go). Cette différence déroute souvent les utilisateurs. Un <strong>convertisseur de taille de fichier</strong> comble cet écart en vous montrant exactement ce que vos fichiers signifient dans n\'importe quelle unité.',
+      html: 'Lorsque vous achetez un disque de <strong>\" 1 To \"</strong>, les fabricants le mesurent en décimal (1 000 Go). Mais votre système d\'exploitation l\'affiche en binaire (1 024 Gio = environ 931 Go). Cette différence déroute souvent les utilisateurs. Un <strong>convertisseur de taille de fichier</strong> comble cet écart en vous montrant exactement ce que vos fichiers signifient dans n\'importe quelle unité.',
     },
     {
       type: 'title',
-      text: 'Contexte réel : Téléchargements et Stockage',
+      text: 'Contexte réel: Téléchargements et Stockage',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Savoir qu\'un fichier fait « 50 Mo » ne signifie rien sans contexte. Combien de temps pour le télécharger en 4G ? Quel espace sur un iPhone ? Notre outil répond instantanément avec des calculs en direct pour les réseaux et appareils réels.',
+      html: 'Savoir qu\'un fichier fait \" 50 Mo \" ne signifie rien sans contexte. Combien de temps pour le télécharger en 4G ? Quel espace sur un iPhone ? Notre outil répond instantanément avec des calculs en direct pour les réseaux et appareils réels.',
     },
     {
       type: 'title',
-      text: 'Le coût caché : Les mathématiques du stockage',
+      text: 'Le coût caché: Les mathématiques du stockage',
       level: 3,
     },
     {
       type: 'list',
       items: [
-        'Un disque externe de « 1 To » fait en réalité <strong>environ 931 Gio</strong> (l\'astuce du fabricant)',
+        'Un disque externe de \" 1 To \" fait en réalité <strong>environ 931 Gio</strong> (l\'astuce du fabricant)',
         'Un film 4K (environ 100 Go) prend <strong>4 secondes</strong> sur la fibre mais <strong>13 minutes</strong> en 4G',
-        'Un iPhone de « 256 Go » stocke moins car l\'OS utilise de l\'espace et le calcul binaire accentue la différence',
+        'Un iPhone de \" 256 Go \" stocke moins car l\'OS utilise de l\'espace et le calcul binaire accentue la différence',
       ],
     },
     {
@@ -135,11 +135,11 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Toutes les conversions suivent les <strong>normes NIST</strong> : le décimal (SI) utilise 1000 comme base, le binaire (IEC) utilise 1024. Les calculs s\'effectuent <strong>100 % localement</strong> — aucun téléchargement, aucun serveur, confidentialité totale.',
+      html: 'Toutes les conversions suivent les <strong>normes NIST</strong>: le décimal (SI) utilise 1000 comme base, le binaire (IEC) utilise 1024. Les calculs s\'effectuent <strong>100 % localement</strong> - aucun téléchargement, aucun serveur, confidentialité totale.',
     },
   ],
   ui: {
-    inputPlaceholder: 'Entrez un nombre (ex : 1,5 ou 500)',
+    inputPlaceholder: 'Entrez un nombre (ex: 1,5 ou 500)',
     selectUnit: 'Unité',
     standardLabel: 'Standard :',
     decimalOption: 'Décimal',

@@ -116,7 +116,7 @@ export const content: ToolLocaleContent<TextSplitterUI> = {
     },
     {
       type: 'paragraph',
-      html: '我们的<strong>在线文本分割器</strong>不会将您的内容“上传”到任何服务器。所有操作都在您的浏览器中即时处理。这意味着您可以处理敏感文档、合同或私密电子邮件，绝对确信没有人能看到它们。'
+      html: '我们的<strong>在线文本分割器</strong>不会将您的内容\"上传\"到任何服务器。所有操作都在您的浏览器中即时处理。这意味着您可以处理敏感文档、合同或私密电子邮件，绝对确信没有人能看到它们。'
     },
   ],
   ui: {

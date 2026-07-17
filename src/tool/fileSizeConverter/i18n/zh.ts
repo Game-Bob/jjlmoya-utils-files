@@ -12,7 +12,7 @@ const faqData = [
   {
     question: '十进制 (KB) 和二进制 (KiB) 有什么区别？',
     answer:
-      '十进制使用 1000 的幂（KB、MB、GB），而二进制使用 1024 的幂（KiB、MiB、GiB）。这就是为什么“1GB”的驱动器在您的电脑中显示容量较小的原因——制造商使用十进制，而操作系统则使用二进制。',
+      '十进制使用 1000 的幂（KB、MB、GB），而二进制使用 1024 的幂（KiB、MiB、GiB）。这就是为什么\"1GB\"的驱动器在您的电脑中显示容量较小的原因-制造商使用十进制，而操作系统则使用二进制。',
   },
   {
     question: '使用此工具时我的数据安全吗？',
@@ -22,7 +22,7 @@ const faqData = [
   {
     question: '我可以上传文件来查看其大小吗？',
     answer:
-      '可以！您可以直接将文件拖放到输入区域，工具会自动读取其大小并填充转换器。文件本身从未被上传——仅在本地使用其大小信息。',
+      '可以！您可以直接将文件拖放到输入区域，工具会自动读取其大小并填充转换器。文件本身从未被上传-仅在本地使用其大小信息。',
   },
   {
     question: '为什么我的 1TB 外置驱动器在电脑中显示的容量较少？',
@@ -39,7 +39,7 @@ const faqData = [
 const howToData = [
   {
     name: '输入文件大小',
-    text: '在输入框中输入数字（例如“500”或“1.5”）并选择单位（KB、MB、GB 等）。',
+    text: '在输入框中输入数字（例如\"500\"或\"1.5\"）并选择单位（KB、MB、GB 等）。',
   },
   {
     name: '选择您的标准',
@@ -104,7 +104,7 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: '当您购买一个 <strong>“1TB”</strong> 的驱动器时，制造商是以十进制（1,000 GB）测量的。但您的操作系统是以二进制（1,024 GiB = 约 931 GB）显示的。这种差异常让用户感到困惑。<strong>文件大小转换器</strong> 弥合了这一差距，向您准确展示文件在任何单位下的含义。',
+      html: '当您购买一个 <strong>\"1TB\"</strong> 的驱动器时，制造商是以十进制（1,000 GB）测量的。但您的操作系统是以二进制（1,024 GiB = 约 931 GB）显示的。这种差异常让用户感到困惑。<strong>文件大小转换器</strong> 弥合了这一差距，向您准确展示文件在任何单位下的含义。',
     },
     {
       type: 'title',
@@ -113,7 +113,7 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: '知道一个文件是“50MB”在没有背景信息的情况下毫无意义。使用 4G 下载需要多久？在 iPhone 上占多少空间？我们的工具通过对真实网络和真实设备的实时计算，即时回答这些问题。',
+      html: '知道一个文件是\"50MB\"在没有背景信息的情况下毫无意义。使用 4G 下载需要多久？在 iPhone 上占多少空间？我们的工具通过对真实网络和真实设备的实时计算，即时回答这些问题。',
     },
     {
       type: 'title',
@@ -123,9 +123,9 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     {
       type: 'list',
       items: [
-        '一个外置的“1 TB”驱动器实际容量约为 <strong>931 GiB</strong>（制造商的营销技巧）',
+        '一个外置的\"1 TB\"驱动器实际容量约为 <strong>931 GiB</strong>（制造商的营销技巧）',
         '一部 4K 电影（约 100GB）在光纤下仅需 <strong>4 秒</strong>，但在 4G 下需要 <strong>13 分钟</strong>',
-        '“256GB”的 iPhone 存储空间较少，因为操作系统占用了空间，且二进制数学加剧了这种差异',
+        '\"256GB\"的 iPhone 存储空间较少，因为操作系统占用了空间，且二进制数学加剧了这种差异',
       ],
     },
     {
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: '所有转换均遵循 <strong>NIST 标准</strong>：十进制 (SI) 使用 1000 为底数，二进制 (IEC) 使用 1024 为底数。计算 <strong>100% 在本地</strong>完成——无上传、无服务器，完全保护隐私。',
+      html: '所有转换均遵循 <strong>NIST 标准</strong>：十进制 (SI) 使用 1000 为底数，二进制 (IEC) 使用 1024 为底数。计算 <strong>100% 在本地</strong>完成-无上传、无服务器，完全保护隐私。',
     },
   ],
   ui: {

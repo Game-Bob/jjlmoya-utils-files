@@ -93,7 +93,7 @@ export const content: ToolLocaleContent<TextSplitterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Die Arbeit mit sehr langen Texten kann im digitalen Zeitalter eine Herausforderung sein. Ob Sie nun ein Programmierer sind, der Code in Module aufteilen muss, ein Autor, der Inhalte für soziale Medien anpasst, oder ein Benutzer, der mit <strong>Large Language Models (LLMs)</strong> wie ChatGPT interagiert – ein <strong>Text-Teiler</strong> ist ein unverzichtbares Werkzeug.'
+      html: 'Die Arbeit mit sehr langen Texten kann im digitalen Zeitalter eine Herausforderung sein. Ob Sie nun ein Programmierer sind, der Code in Module aufteilen muss, ein Autor, der Inhalte für soziale Medien anpasst, oder ein Benutzer, der mit <strong>Large Language Models (LLMs)</strong> wie ChatGPT interagiert - ein <strong>Text-Teiler</strong> ist ein unverzichtbares Werkzeug.'
     },
     {
       type: 'title',

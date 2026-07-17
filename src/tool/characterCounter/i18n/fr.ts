@@ -135,9 +135,9 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
       type: 'table',
       headers: ['Plateforme', 'Limite'],
       rows: [
-        ['Twitter (X)', '280 car. (Idéal : 70-100)'],
+        ['Twitter (X)', '280 car. (Idéal: 70-100)'],
         ['Instagram Bio', '150 caractères'],
-        ['LinkedIn Post', '3000 car. (Idéal : ~1200)'],
+        ['LinkedIn Post', '3000 car. (Idéal: ~1200)'],
       ]
     },
     {
@@ -152,7 +152,7 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Oui, et c\'est une erreur courante de les oublier. Pour un ordinateur, un espace est un octet d\'information au même titre qu\'une lettre "A". Sur des plateformes comme Twitter ou les bases de données SMS, les espaces consomment votre limite. Notre outil vous donne les deux données : "avec espaces" et "sans espaces" (utile pour les traducteurs ou les maquettistes).'
+      html: 'Oui, et c\'est une erreur courante de les oublier. Pour un ordinateur, un espace est un octet d\'information au même titre qu\'une lettre "A". Sur des plateformes comme Twitter ou les bases de données SMS, les espaces consomment votre limite. Notre outil vous donne les deux données: "avec espaces" et "sans espaces" (utile pour les traducteurs ou les maquettistes).'
     },
     {
       type: 'title',
@@ -161,11 +161,11 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Nous utilisons la norme moyenne de lecture pour les adultes : <strong>200-250 mots par minute</strong> (lecture silencieuse). Pour le temps de parole (élocution), nous calculons environ <strong>130-150 mots par minute</strong>, ce qui correspond au rythme d\'une conversation naturelle ou d\'un narrateur de livre audio mesuré.'
+      html: 'Nous utilisons la norme moyenne de lecture pour les adultes: <strong>200-250 mots par minute</strong> (lecture silencieuse). Pour le temps de parole (élocution), nous calculons environ <strong>130-150 mots par minute</strong>, ce qui correspond au rythme d\'une conversation naturelle ou d\'un narrateur de livre audio mesuré.'
     },
     {
       type: 'title',
-      text: 'Confidentialité : Où va mon texte ?',
+      text: 'Confidentialité: Où va mon texte ?',
       level: 3
     },
     {

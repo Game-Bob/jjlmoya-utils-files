@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'dateien-und-text',
   title: 'Dateien und Textwerkzeuge',
-  description: 'Kostenlose Online-Tools für die Arbeit mit Dateien und Text direkt im Browser. Konvertiere die Zwischenablage in herunterladbare Bilder – ohne Installation und mit vollständiger Privatsphäre.',
+  description: 'Kostenlose Online-Tools für die Arbeit mit Dateien und Text direkt im Browser. Konvertiere die Zwischenablage in herunterladbare Bilder - ohne Installation und mit vollständiger Privatsphäre.',
   seo: [
     {
       type: 'title',
@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Alltägliche Datei- und Textaufgaben – einen Screenshot speichern, ein Format konvertieren, Text extrahieren – erfordern normalerweise die Installation schwerer Software oder die Nutzung von Online-Diensten, die deine Daten auf externe Server hochladen. Diese Tools arbeiten <strong>100% lokal in deinem Browser</strong>: Keine deiner Daten verlässt jemals dein Gerät.',
+      html: 'Alltägliche Datei- und Textaufgaben - einen Screenshot speichern, ein Format konvertieren, Text extrahieren - erfordern normalerweise die Installation schwerer Software oder die Nutzung von Online-Diensten, die deine Daten auf externe Server hochladen. Diese Tools arbeiten <strong>100% lokal in deinem Browser</strong>: Keine deiner Daten verlässt jemals dein Gerät.',
     },
     {
       type: 'paragraph',
@@ -38,7 +38,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Jedes Tool in dieser Kategorie basiert auf einem einzigen Prinzip: <strong>Daten verlassen niemals den Browser</strong>. Es gibt keine Anfragen an externe Server, keine Cloud-Speicherung, keine Aktivitätsprotokollierung. Was auch immer du in das Tool einfügst, wird im Arbeitsspeicher verarbeitet und direkt auf deine Festplatte heruntergeladen – ohne Zwischenstationen.',
+      html: 'Jedes Tool in dieser Kategorie basiert auf einem einzigen Prinzip: <strong>Daten verlassen niemals den Browser</strong>. Es gibt keine Anfragen an externe Server, keine Cloud-Speicherung, keine Aktivitätsprotokollierung. Was auch immer du in das Tool einfügst, wird im Arbeitsspeicher verarbeitet und direkt auf deine Festplatte heruntergeladen - ohne Zwischenstationen.',
     },
     {
       type: 'list',

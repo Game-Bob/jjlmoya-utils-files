@@ -93,16 +93,16 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
   seo: [
     {
       type: 'title',
-      text: '数字文本中“精准度”的重要性',
+      text: '数字文本中\"精准度\"的重要性',
       level: 2
     },
     {
       type: 'paragraph',
-      html: '在数字世界中，“语言的精简”至关重要。我们写作不仅是为了给人类阅读，也是为了被算法处理。Google 会在约 60 个字符（英文）或 30 个字（中文）处截断您的标题。Twitter（现 X）限制在 280 个字符。一封有效的销售邮件应在 30 秒内读完。'
+      html: '在数字世界中，\"语言的精简\"至关重要。我们写作不仅是为了给人类阅读，也是为了被算法处理。Google 会在约 60 个字符（英文）或 30 个字（中文）处截断您的标题。Twitter（现 X）限制在 280 个字符。一封有效的销售邮件应在 30 秒内读完。'
     },
     {
       type: 'paragraph',
-      html: '这款<strong>字符与单词计数器工具</strong>不仅是为了给您一个数字，更是为了帮助您优化沟通。通过计算<em>阅读时间</em>或<em>词汇密度</em>等指标，您将从“写文字”转变为“设计内容”。'
+      html: '这款<strong>字符与单词计数器工具</strong>不仅是为了给您一个数字，更是为了帮助您优化沟通。通过计算<em>阅读时间</em>或<em>词汇密度</em>等指标，您将从\"写文字\"转变为\"设计内容\"。'
     },
     {
       type: 'title',
@@ -129,7 +129,7 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
     },
     {
       type: 'paragraph',
-      html: '每个平台都有自己的语言风格和理想长度。即使限制值较高，互动的“黄金位置”通常也较短。'
+      html: '每个平台都有自己的语言风格和理想长度。即使限制值较高，互动的\"黄金位置\"通常也较短。'
     },
     {
       type: 'table',
@@ -152,7 +152,7 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
     },
     {
       type: 'paragraph',
-      html: '是的，忘记空格是常见的错误。对于计算机来说，一个空格和字母“A”一样，都是 1 字节的信息。在 Twitter 或短信数据库等平台上，空格会消耗您的限制。我们的工具提供“计空格”和“不计空格”两种数据。'
+      html: '是的，忘记空格是常见的错误。对于计算机来说，一个空格和字母\"A\"一样，都是 1 字节的信息。在 Twitter 或短信数据库等平台上，空格会消耗您的限制。我们的工具提供\"计空格\"和\"不计空格\"两种数据。'
     },
     {
       type: 'title',

@@ -99,12 +99,12 @@ export const content: ToolLocaleContent<JsonToCsvUI> = {
     },
     {
       type: 'title',
-      text: 'Confidentialité Totale : Convertissez sans télécharger de fichiers',
+      text: 'Confidentialité Totale: Convertissez sans télécharger de fichiers',
       level: 2
     },
     {
       type: 'paragraph',
-      html: 'La plupart des convertisseurs en ligne téléchargent vos données sur un serveur. Notre outil est différent : la <strong>conversion est 100 % locale</strong>. En utilisant JavaScript dans votre navigateur, les données ne quittent jamais votre ordinateur. C\'est vital si vous travaillez avec des informations sensibles, des listes de clients ou des rapports internes à l\'entreprise.'
+      html: 'La plupart des convertisseurs en ligne téléchargent vos données sur un serveur. Notre outil est différent: la <strong>conversion est 100 % locale</strong>. En utilisant JavaScript dans votre navigateur, les données ne quittent jamais votre ordinateur. C\'est vital si vous travaillez avec des informations sensibles, des listes de clients ou des rapports internes à l\'entreprise.'
     },
     {
       type: 'title',

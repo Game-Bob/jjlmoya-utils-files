@@ -95,7 +95,7 @@ export const content: ToolLocaleContent<HashVerifierUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Ein Hash ist ein für jede Datei eindeutiger <strong>digitaler Fingerabdruck</strong>. Es handelt sich um eine alphanumerische Zeichenfolge, die durch einen mathematischen Algorithmus (wie SHA-256) generiert wird. Sein Hauptmerkmal ist, dass er eine „Einbahnstraße“ ist: Sie können den Hash aus einer Datei erhalten, aber Sie können die Datei nicht aus ihrem Hash rekonstruieren.'
+      html: 'Ein Hash ist ein für jede Datei eindeutiger <strong>digitaler Fingerabdruck</strong>. Es handelt sich um eine alphanumerische Zeichenfolge, die durch einen mathematischen Algorithmus (wie SHA-256) generiert wird. Sein Hauptmerkmal ist, dass er eine \"Einbahnstraße\" ist: Sie können den Hash aus einer Datei erhalten, aber Sie können die Datei nicht aus ihrem Hash rekonstruieren.'
     },
     {
       type: 'paragraph',
@@ -108,7 +108,7 @@ export const content: ToolLocaleContent<HashVerifierUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Der <strong>MD5</strong>-Algorithmus war jahrelang aufgrund seiner Geschwindigkeit sehr beliebt, gilt aber heute als kryptografisch unsicher, da er anfällig für „Kollisionen“ ist. Dennoch wird er immer noch für einfache Integritätsprüfungen (beschädigte Downloads) verwendet.'
+      html: 'Der <strong>MD5</strong>-Algorithmus war jahrelang aufgrund seiner Geschwindigkeit sehr beliebt, gilt aber heute als kryptografisch unsicher, da er anfällig für \"Kollisionen\" ist. Dennoch wird er immer noch für einfache Integritätsprüfungen (beschädigte Downloads) verwendet.'
     },
     {
       type: 'paragraph',
@@ -122,7 +122,7 @@ export const content: ToolLocaleContent<HashVerifierUI> = {
     {
       type: 'tip',
       title: 'Kein Upload erforderlich',
-      html: '<p>Unser Tool nutzt die Leistung Ihres Computers, um die Datei zu verarbeiten. Durch die Verwendung der <strong>Web Crypto API</strong> müssen wir die Datei auf keinen Server „hochladen“. Das bedeutet, dass Sie Dateien von mehreren Gigabyte in Sekunden verifizieren können, ohne Ihre Internetbandbreite zu verbrauchen und sicherzustellen, dass der Inhalt Ihrer Dateien niemals Ihr Gerät verlässt.</p>'
+      html: '<p>Unser Tool nutzt die Leistung Ihres Computers, um die Datei zu verarbeiten. Durch die Verwendung der <strong>Web Crypto API</strong> müssen wir die Datei auf keinen Server \"hochladen\". Das bedeutet, dass Sie Dateien von mehreren Gigabyte in Sekunden verifizieren können, ohne Ihre Internetbandbreite zu verbrauchen und sicherzustellen, dass der Inhalt Ihrer Dateien niemals Ihr Gerät verlässt.</p>'
     },
   ],
   ui: {

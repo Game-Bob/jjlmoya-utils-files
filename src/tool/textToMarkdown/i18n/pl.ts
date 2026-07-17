@@ -42,7 +42,7 @@ const howToData = [
   },
   {
     name: 'Kopiuj lub pobierz',
-    text: 'Kliknij „Kopiuj wynik” lub „Pobierz .md”, aby otrzymać sformatowany plik.'
+    text: 'Kliknij \"Kopiuj wynik\" lub \"Pobierz .md\", aby otrzymać sformatowany plik.'
   },
 ];
 

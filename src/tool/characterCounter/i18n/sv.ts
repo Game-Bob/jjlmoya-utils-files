@@ -4,7 +4,7 @@ import type { CharacterCounterUI } from '../ui';
 import { bibliography } from '../bibliography';
 
 const slug = 'teckenraknare';
-const title = 'Teckenräknare och Ordräknare Online – Räkna Bokstäver';
+const title = 'Teckenräknare och Ordräknare Online, Räkna Bokstäver';
 const description =
   'Online-räknare för tecken, ord, meningar och stycken. Beräknar läs- och taltid. Gratis verktyg perfekt för SEO och sociala medier.';
 

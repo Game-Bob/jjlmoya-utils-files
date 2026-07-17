@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Qual é a diferença entre decimal (KB) e binário (KiB)?',
     answer:
-      'O sistema decimal usa potências de 1000 (KB, MB, GB), enquanto o binário usa potencias de 1024 (KiB, MiB, GiB). É por isso que um disco de "1GB" parece menor no seu computador — os fabricantes usam decimal, mas os sistemas operacionais usam binário.',
+      'O sistema decimal usa potências de 1000 (KB, MB, GB), enquanto o binário usa potencias de 1024 (KiB, MiB, GiB). É por isso que um disco de "1GB" parece menor no seu computador - os fabricantes usam decimal, mas os sistemas operacionais usam binário.',
   },
   {
     question: 'Meus dados estão seguros usando esta ferramenta?',
@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Posso carregar arquivos para ver o tamanho deles?',
     answer:
-      'Sim! Você pode arrastar e soltar um arquivo diretamente na área de entrada, e a ferramenta lerá automaticamente o seu tamanho. O arquivo em si nunca é carregado — apenas o seu tamanho é usado localmente.',
+      'Sim! Você pode arrastar e soltar um arquivo diretamente na área de entrada, e a ferramenta lerá automaticamente o seu tamanho. O arquivo em si nunca é carregado - apenas o seu tamanho é usado localmente.',
   },
   {
     question: 'Por que meu disco externo de 1TB mostra menos espaço no meu computador?',
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Todas as conversões seguem os <strong>padrões NIST</strong>: decimal (SI) usa 1000 como base, binário (IEC) usa 1024. Os cálculos acontecem <strong>100% localmente</strong> — sem uploads, sem servidores, privacidade total.',
+      html: 'Todas as conversões seguem os <strong>padrões NIST</strong>: decimal (SI) usa 1000 como base, binário (IEC) usa 1024. Os cálculos acontecem <strong>100% localmente</strong> - sem uploads, sem servidores, privacidade total.',
     },
   ],
   ui: {

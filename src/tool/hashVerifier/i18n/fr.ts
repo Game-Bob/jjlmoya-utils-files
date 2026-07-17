@@ -15,7 +15,7 @@ const faqData = [
       'Le moyen le plus sûr est de comparer son Hash. Un Hash est une empreinte numérique unique. Si ne serait-ce qu\'un bit du fichier change, le Hash sera complètement différent. En comparant le Hash obtenu avec celui fourni par l\'auteur, vous pouvez garantir son intégrité.'
   },
   {
-    question: 'Quel est le meilleur algorithme : MD5 ou SHA-256 ?',
+    question: 'Quel est le meilleur algorithme: MD5 ou SHA-256 ?',
     answer:
       'MD5 est très rapide mais est considéré comme moins sûr contre les attaques intentionnelles. SHA-256 est la norme de sécurité actuelle et est beaucoup plus difficile à "falsifier". Pour la plupart des vérifications d\'intégrité de fichiers, SHA-256 est l\'option recommandée.'
   },
@@ -95,7 +95,7 @@ export const content: ToolLocaleContent<HashVerifierUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Un Hash est une <strong>empreinte numérique</strong> unique à chaque fichier. C\'est une chaîne alphanumérique générée par un algorithme mathématique (comme SHA-256). Sa principale caractéristique est qu\'il est à "sens unique" : vous pouvez obtenir le Hash à partir d\'un fichier, mais vous ne pouvez pas reconstruire le fichier à partir de son Hash.'
+      html: 'Un Hash est une <strong>empreinte numérique</strong> unique à chaque fichier. C\'est une chaîne alphanumérique générée par un algorithme mathématique (comme SHA-256). Sa principale caractéristique est qu\'il est à "sens unique": vous pouvez obtenir le Hash à partir d\'un fichier, mais vous ne pouvez pas reconstruire le fichier à partir de son Hash.'
     },
     {
       type: 'paragraph',
@@ -103,12 +103,12 @@ export const content: ToolLocaleContent<HashVerifierUI> = {
     },
     {
       type: 'title',
-      text: 'SHA-256 vs MD5 : Lequel utiliser ?',
+      text: 'SHA-256 vs MD5: Lequel utiliser ?',
       level: 3
     },
     {
       type: 'paragraph',
-      html: 'L\'algorithme <strong>MD5</strong> a été très populaire pendant des années en raison de sa rapidité, mais il est aujourd\'hui considéré comme non sécurisé cryptographiquement car il est susceptible de subir des « collisions ». Cependant, il est toujours utilisé pour des vérifications d\'intégrité simples (téléchargements corrompus).'
+      html: 'L\'algorithme <strong>MD5</strong> a été très populaire pendant des années en raison de sa rapidité, mais il est aujourd\'hui considéré comme non sécurisé cryptographiquement car il est susceptible de subir des \" collisions \". Cependant, il est toujours utilisé pour des vérifications d\'intégrité simples (téléchargements corrompus).'
     },
     {
       type: 'paragraph',
@@ -116,7 +116,7 @@ export const content: ToolLocaleContent<HashVerifierUI> = {
     },
     {
       type: 'title',
-      text: 'Confidentialité Totale : Calcul 100 % dans votre navigateur',
+      text: 'Confidentialité Totale: Calcul 100 % dans votre navigateur',
       level: 3
     },
     {

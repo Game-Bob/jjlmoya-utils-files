@@ -99,7 +99,7 @@ export const content: ToolLocaleContent<TextToMarkdownUI> = {
     },
     {
       type: 'title',
-      text: 'Confidentialité Totale : Conversion 100 % Locale',
+      text: 'Confidentialité Totale: Conversion 100 % Locale',
       level: 2
     },
     {

@@ -17,7 +17,7 @@ const faqData = [
   {
     question: 'Który algorytm jest lepszy: MD5 czy SHA-256?',
     answer:
-      'MD5 jest bardzo szybki, ale uważany za mniej bezpieczny w obliczu celowych ataków. SHA-256 jest obecnym standardem bezpieczeństwa i znacznie trudniej go „podrobić”. Do większości kontroli integralności plików zalecaną opcją jest SHA-256.'
+      'MD5 jest bardzo szybki, ale uważany za mniej bezpieczny w obliczu celowych ataków. SHA-256 jest obecnym standardem bezpieczeństwa i znacznie trudniej go \"podrobić\". Do większości kontroli integralności plików zalecaną opcją jest SHA-256.'
   },
   {
     question: 'Dlaczego Hash zmienia się po zmianie nazwy pliku?',
@@ -95,7 +95,7 @@ export const content: ToolLocaleContent<HashVerifierUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Hash to <strong>cyfrowy odcisk palca</strong> unikalny dla każdego pliku. Jest to ciąg alfanumeryczny generowany przez algorytm matematyczny (taki jak SHA-256). Jego główną cechą jest to, że jest „jednokierunkowy”: możesz uzyskać Hash z pliku, ale nie możesz zrekonstruować pliku na podstawie jego skrótu.'
+      html: 'Hash to <strong>cyfrowy odcisk palca</strong> unikalny dla każdego pliku. Jest to ciąg alfanumeryczny generowany przez algorytm matematyczny (taki jak SHA-256). Jego główną cechą jest to, że jest \"jednokierunkowy\": możesz uzyskać Hash z pliku, ale nie możesz zrekonstruować pliku na podstawie jego skrótu.'
     },
     {
       type: 'paragraph',
@@ -108,7 +108,7 @@ export const content: ToolLocaleContent<HashVerifierUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Algorytm <strong>MD5</strong> był bardzo popularny przez lata ze względu na swoją szybkość, ale obecnie uważa się go za niebezpieczny pod względem kryptograficznym, ponieważ jest podatny na „kolizje”. Jest jednak nadal używany do prostych kontroli integralności (uszkodzone pliki podczas pobierania).'
+      html: 'Algorytm <strong>MD5</strong> był bardzo popularny przez lata ze względu na swoją szybkość, ale obecnie uważa się go za niebezpieczny pod względem kryptograficznym, ponieważ jest podatny na \"kolizje\". Jest jednak nadal używany do prostych kontroli integralności (uszkodzone pliki podczas pobierania).'
     },
     {
       type: 'paragraph',

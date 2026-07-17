@@ -33,9 +33,10 @@ const t = (ui ?? {}) as FileSizeConverterUI;
           placeholder={t.inputPlaceholder}
           data-input
           spellcheck="false"
+          aria-label={t.inputPlaceholder}
         />
       </div>
-      <select class="fsc-unit-select" data-unit-select>
+      <select class="fsc-unit-select" data-unit-select aria-label={t.selectUnit}>
         <option value="B">Bytes</option>
         <option value="KB" class="decimal-unit">KB</option>
         <option value="MB" class="decimal-unit">MB</option>

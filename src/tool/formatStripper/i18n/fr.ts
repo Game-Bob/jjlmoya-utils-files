@@ -94,7 +94,7 @@ export const content: ToolLocaleContent<FormatStripperUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Supprimer le formatage est le processus de <strong>transformation du texte enrichi en texte brut</strong> (Plain Text). Lorsque nous copions des informations d\'un site web, d\'un eBook ou d\'un document Word, ce texte transporte des "bagages cachés" : types de polices, tailles, couleurs, liens et styles CSS. Notre outil sert de filtre qui élimine tous ces déchets numériques.'
+      html: 'Supprimer le formatage est le processus de <strong>transformation du texte enrichi en texte brut</strong> (Plain Text). Lorsque nous copions des informations d\'un site web, d\'un eBook ou d\'un document Word, ce texte transporte des "bagages cachés": types de polices, tailles, couleurs, liens et styles CSS. Notre outil sert de filtre qui élimine tous ces déchets numériques.'
     },
     {
       type: 'title',

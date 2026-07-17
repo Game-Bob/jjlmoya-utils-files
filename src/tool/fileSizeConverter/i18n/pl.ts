@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Jaka jest różnica między systemem dziesiętnym (KB) a binarnym (KiB)?',
     answer:
-      'System dziesiętny używa potęg 1000 (KB, MB, GB), podczas gdy system binarny używa potęg 1024 (KiB, MiB, GiB). Dlatego dysk „1 GB” wydaje się mniejszy w komputerze – producenci stosują system dziesiętny, ale systemy operacyjne używają binarnego.',
+      'System dziesiętny używa potęg 1000 (KB, MB, GB), podczas gdy system binarny używa potęg 1024 (KiB, MiB, GiB). Dlatego dysk \"1 GB\" wydaje się mniejszy w komputerze - producenci stosują system dziesiętny, ale systemy operacyjne używają binarnego.',
   },
   {
     question: 'Czy moje dane są bezpieczne podczas korzystania z tego narzędzia?',
@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Czy mogę przesłać pliki, aby zobaczyć ich rozmiar?',
     answer:
-      'Tak! Możesz przeciągnąć i upuścić plik bezpośrednio w obszarze wejściowym, a narzędzie automatycznie odczyta jego rozmiar. Sam plik nigdy nie jest przesyłany – lokalnie wykorzystywany jest tylko jego rozmiar.',
+      'Tak! Możesz przeciągnąć i upuścić plik bezpośrednio w obszarze wejściowym, a narzędzie automatycznie odczyta jego rozmiar. Sam plik nigdy nie jest przesyłany - lokalnie wykorzystywany jest tylko jego rozmiar.',
   },
   {
     question: 'Dlaczego mój dysk zewnętrzny 1 TB pokazuje mniej miejsca w komputerze?',
@@ -39,7 +39,7 @@ const faqData = [
 const howToData = [
   {
     name: 'Wprowadź rozmiar pliku',
-    text: 'Wpisz liczbę w polu wejściowym (np. „500” lub „1.5”) i wybierz jednostkę (KB, MB, GB itp.).',
+    text: 'Wpisz liczbę w polu wejściowym (np. \"500\" lub \"1.5\") i wybierz jednostkę (KB, MB, GB itp.).',
   },
   {
     name: 'Wybierz swój standard',
@@ -104,7 +104,7 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Kiedy kupujesz dysk <strong>„1 TB”</strong>, producenci mierzą go w systemie dziesiętnym (1000 GB). Jednak system operacyjny wyświetla go w systemie binarnym (1024 GiB = ok. 931 GB). Ta różnica dezorientuje użytkowników. <strong>Konwerter rozmiaru plików</strong> wypełnia tę lukę, pokazując dokładnie, co oznaczają Twoje pliki w dowolnej jednostce.',
+      html: 'Kiedy kupujesz dysk <strong>\"1 TB\"</strong>, producenci mierzą go w systemie dziesiętnym (1000 GB). Jednak system operacyjny wyświetla go w systemie binarnym (1024 GiB = ok. 931 GB). Ta różnica dezorientuje użytkowników. <strong>Konwerter rozmiaru plików</strong> wypełnia tę lukę, pokazując dokładnie, co oznaczają Twoje pliki w dowolnej jednostce.',
     },
     {
       type: 'title',
@@ -113,7 +113,7 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Informacja, że plik ma „50 MB”, nic nie znaczy bez kontekstu. Ile czasu zajmie pobranie przez 4G? Ile miejsca zajmie na iPhonie? Nasze narzędzie odpowiada na te pytania natychmiast dzięki obliczeniom na żywo dla rzeczywistych sieci i urządzeń.',
+      html: 'Informacja, że plik ma \"50 MB\", nic nie znaczy bez kontekstu. Ile czasu zajmie pobranie przez 4G? Ile miejsca zajmie na iPhonie? Nasze narzędzie odpowiada na te pytania natychmiast dzięki obliczeniom na żywo dla rzeczywistych sieci i urządzeń.',
     },
     {
       type: 'title',
@@ -123,9 +123,9 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     {
       type: 'list',
       items: [
-        'Zewnętrzny dysk „1 TB” to w rzeczywistości <strong>ok. 931 GiB</strong> (sztuczka producenta)',
+        'Zewnętrzny dysk \"1 TB\" to w rzeczywistości <strong>ok. 931 GiB</strong> (sztuczka producenta)',
         'Film 4K (ok. 100 GB) pobiera się <strong>4 sekundy</strong> na światłowodzie, ale <strong>13 minut</strong> przez 4G',
-        'iPhone „256 GB” pomieści mniej, ponieważ system operacyjny zajmuje miejsce, a matematyka binarna pogłębia różnicę',
+        'iPhone \"256 GB\" pomieści mniej, ponieważ system operacyjny zajmuje miejsce, a matematyka binarna pogłębia różnicę',
       ],
     },
     {
@@ -135,7 +135,7 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Wszystkie konwersje są zgodne ze <strong>standardami NIST</strong>: system dziesiętny (SI) używa bazy 1000, binarny (IEC) bazy 1024. Obliczenia odbywają się <strong>w 100% lokalnie</strong> – bez przesyłania danych, bez serwerów, przy pełnej prywatności.',
+      html: 'Wszystkie konwersje są zgodne ze <strong>standardami NIST</strong>: system dziesiętny (SI) używa bazy 1000, binarny (IEC) bazy 1024. Obliczenia odbywają się <strong>w 100% lokalnie</strong> - bez przesyłania danych, bez serwerów, przy pełnej prywatności.',
     },
   ],
   ui: {
