@@ -1,12 +1,12 @@
 import type { FilesCategoryEntry } from '../types';
-import { clipboardToImage } from '../tool/clipboardToImage/index';
-import { formatStripper } from '../tool/formatStripper/index';
-import { characterCounter } from '../tool/characterCounter/index';
-import { hashVerifier } from '../tool/hashVerifier/index';
-import { textToMarkdown } from '../tool/textToMarkdown/index';
-import { emojiSpaceCleaner } from '../tool/emojiSpaceCleaner/index';
-import { textSplitter } from '../tool/textSplitter/index';
-import { fileSizeConverter } from '../tool/fileSizeConverter/index';
+import { clipboardToImage } from '../tool/clipboardToImage/entry';
+import { formatStripper } from '../tool/formatStripper/entry';
+import { characterCounter } from '../tool/characterCounter/entry';
+import { hashVerifier } from '../tool/hashVerifier/entry';
+import { textToMarkdown } from '../tool/textToMarkdown/entry';
+import { emojiSpaceCleaner } from '../tool/emojiSpaceCleaner/entry';
+import { textSplitter } from '../tool/textSplitter/entry';
+import { fileSizeConverter } from '../tool/fileSizeConverter/entry';
 
 export const filesCategory: FilesCategoryEntry = {
   icon: 'mdi:file-multiple',
