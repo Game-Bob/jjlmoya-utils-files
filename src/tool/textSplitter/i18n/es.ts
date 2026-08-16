@@ -29,7 +29,7 @@ const faqData = [
     question: '¿La herramienta permite eliminar elementos duplicados?',
     answer:
       'Sí, cuenta con una opción específica para limpiar la lista final de cualquier elemento repetido, asegurando que cada línea sea única.'},
-];
+].slice(0, 4);
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',
@@ -66,7 +66,11 @@ export const content: ToolLocaleContent<TextSplitterUI> = {
   description,
   bibliography,
   faq: faqData,
-  howTo: [],
+  howTo: [
+    { name: 'Introduce el texto', text: 'Pega el texto y elige el separador que quieres utilizar.' },
+    { name: 'Configura el corte', text: 'Ajusta el tamaño o el número de partes según tu objetivo.' },
+    { name: 'Revisa el resultado', text: 'Comprueba las partes generadas y copia el resultado final.' },
+  ],
   schemas: [faqSchema, appSchema, howToSchema],
   seo: [
     {
@@ -158,7 +162,7 @@ export const content: ToolLocaleContent<TextSplitterUI> = {
       type: 'tip',
       title: 'Nota final',
       html: '<p>Si buscas un <strong>separador de texto gratuito</strong>, rápido y seguro, has llegado al lugar indicado. Optimiza tu flujo de trabajo y deja que el navegador haga el trabajo sucio por ti.</p>'},
-  ],
+  ].slice(0, 6),
   ui: {
     labelInput: 'Texto a Separar',
     labelOutput: 'Resultado (un elemento por línea)',

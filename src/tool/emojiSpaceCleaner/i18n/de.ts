@@ -161,6 +161,10 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'paragraph',
       html: 'Geben Sie sich nicht mit halben Sachen zufrieden. Wählen Sie technische und visuelle Exzellenz. Probieren Sie unseren <strong>Emoji- und Leerzeichen-Reiniger</strong> noch heute aus.'},
+    {
+      type: 'paragraph',
+      html: 'Das Werkzeug verarbeitet den Text lokal und setzt Abstände rund um Emojis einheitlich, ohne den übrigen Inhalt an einen Server zu übertragen.'
+    },
   ],
   ui: {
     labelToggleEmojis: 'Emojis entfernen',

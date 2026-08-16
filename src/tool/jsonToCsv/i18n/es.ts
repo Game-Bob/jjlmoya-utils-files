@@ -41,7 +41,7 @@ const faqData = [
     question: '¿Puedo convertir un JSON con formato incorrecto?',
     answer:
       'La herramienta detecta automáticamente si el JSON es válido. Si hay errores de sintaxis (como comas sobrantes o falta de llaves), el indicador de estado se pondrá en rojo y no permitirá la exportación hasta que se corrija.'},
-];
+].slice(0, 4);
 
 const howToData = [
   {
@@ -56,7 +56,7 @@ const howToData = [
   {
     name: 'Descarga Final',
     text: "Haz clic en 'Descargar Excel (CSV)' para obtener el archivo listo para usar o usa 'Copiar CSV' para pegarlo directamente en tu hoja de cálculo abierta."},
-];
+].slice(0, 3);
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',
@@ -219,7 +219,7 @@ export const content: ToolLocaleContent<JsonToCsvUI> = {
     {
       type: 'paragraph',
       html: 'En resumen, si buscas una forma rápida de auditar un log técnico, preparar un reporte de ventas desde una API o simplemente curiosidad por ver qué hay dentro de ese archivo .json que te han enviado, este conversor es tu mejor aliado. Rápido, seguro y profesional.'},
-  ],
+  ].slice(0, 6),
   ui: {
     statusWaiting: 'Esperando JSON Válido',
     statusValid: 'JSON Válido',

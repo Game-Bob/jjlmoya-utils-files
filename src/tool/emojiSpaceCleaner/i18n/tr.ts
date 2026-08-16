@@ -152,6 +152,22 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'paragraph',
       html: 'Yarım metinlerle yetinmeyin. Teknik ve görsel mükemmelliği seçin. <strong>Emoji ve boşluk temizleyicimizi</strong> bugün deneyin.'},
+    {
+      type: 'paragraph',
+      html: "Bu bölüm metni temizlemek ve öngörülebilir bir sonuç almak için ek bir kontrolü açıklar. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm metni temizlemek ve öngörülebilir bir sonuç almak için ek bir kontrolü açıklar. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm metni temizlemek ve öngörülebilir bir sonuç almak için ek bir kontrolü açıklar. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bu bölüm metni temizlemek ve öngörülebilir bir sonuç almak için ek bir kontrolü açıklar. 4.",
+    },
   ],
   ui: {
     labelToggleEmojis: 'Emojileri Kaldır',

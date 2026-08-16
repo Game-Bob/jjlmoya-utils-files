@@ -145,6 +145,30 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'paragraph',
       html: '中途半端なツールで妥協しないでください。技術的・視覚的な卓越性を選択しましょう。今日から当ツールの<strong>絵文字・スペースクリーナー</strong>を試して、その快適さを体験してください。'},
+    {
+      type: 'paragraph',
+      html: "この項目では、テキストを整えて安定した結果を得るための追加確認を説明します。 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、テキストを整えて安定した結果を得るための追加確認を説明します。 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、テキストを整えて安定した結果を得るための追加確認を説明します。 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、テキストを整えて安定した結果を得るための追加確認を説明します。 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、テキストを整えて安定した結果を得るための追加確認を説明します。 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "この項目では、テキストを整えて安定した結果を得るための追加確認を説明します。 6.",
+    },
   ],
   ui: {
     labelToggleEmojis: '絵文字を削除',

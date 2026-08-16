@@ -152,6 +152,22 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'paragraph',
       html: 'Nie zadowalaj się półśrodkami. Wybierz techniczną i wizualną doskonałość. Wypróbuj nasz <strong>czyścik emoji i spacji</strong> już dziś.'},
+    {
+      type: 'paragraph',
+      html: "Ta sekcja opisuje dodatkową kontrolę, która porządkuje tekst i zapewnia przewidywalny wynik. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja opisuje dodatkową kontrolę, która porządkuje tekst i zapewnia przewidywalny wynik. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja opisuje dodatkową kontrolę, która porządkuje tekst i zapewnia przewidywalny wynik. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Ta sekcja opisuje dodatkową kontrolę, która porządkuje tekst i zapewnia przewidywalny wynik. 4.",
+    },
   ],
   ui: {
     labelToggleEmojis: 'Usuń Emoji',

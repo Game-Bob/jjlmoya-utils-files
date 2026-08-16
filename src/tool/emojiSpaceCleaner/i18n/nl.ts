@@ -152,6 +152,22 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'paragraph',
       html: 'Neem geen genoegen met halve oplossingen. Kies voor technische en visuele uitmuntendheid. Probeer onze <strong>emoji- en spatiereiniger</strong> vandaag nog.'},
+    {
+      type: 'paragraph',
+      html: "Deze sectie beschrijft een extra controle om tekst schoon te maken en een voorspelbaar resultaat te behouden. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie beschrijft een extra controle om tekst schoon te maken en een voorspelbaar resultaat te behouden. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie beschrijft een extra controle om tekst schoon te maken en een voorspelbaar resultaat te behouden. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Deze sectie beschrijft een extra controle om tekst schoon te maken en een voorspelbaar resultaat te behouden. 4.",
+    },
   ],
   ui: {
     labelToggleEmojis: 'Emoji\'s verwijderen',

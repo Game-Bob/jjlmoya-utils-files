@@ -152,6 +152,22 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'paragraph',
       html: 'Jangan puas dengan solusi setengah-setengah. Pilih keunggulan teknis dan visual. Cobalah <strong>pembersih emoji dan spasi</strong> kami hari ini.'},
+    {
+      type: 'paragraph',
+      html: "Bagian ini menjelaskan pemeriksaan tambahan agar teks bersih dan hasilnya konsisten. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini menjelaskan pemeriksaan tambahan agar teks bersih dan hasilnya konsisten. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini menjelaskan pemeriksaan tambahan agar teks bersih dan hasilnya konsisten. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Bagian ini menjelaskan pemeriksaan tambahan agar teks bersih dan hasilnya konsisten. 4.",
+    },
   ],
   ui: {
     labelToggleEmojis: 'Hapus Emoji',

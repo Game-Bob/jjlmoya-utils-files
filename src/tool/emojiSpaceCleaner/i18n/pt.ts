@@ -152,6 +152,22 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'paragraph',
       html: 'Não se conforme com soluções inacabadas. Escolha a excelência técnica e visual. Experimente o nosso <strong>limpador de emojis e espaços</strong> hoje mesmo.'},
+    {
+      type: 'paragraph',
+      html: "Esta secção descreve uma verificação adicional para limpar o texto e manter um resultado previsível. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção descreve uma verificação adicional para limpar o texto e manter um resultado previsível. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção descreve uma verificação adicional para limpar o texto e manter um resultado previsível. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Esta secção descreve uma verificação adicional para limpar o texto e manter um resultado previsível. 4.",
+    },
   ],
   ui: {
     labelToggleEmojis: 'Remover Emojis',

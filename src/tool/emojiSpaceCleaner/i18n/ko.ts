@@ -142,6 +142,34 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'paragraph',
       html: '어설픈 툴로 타협하지 마세요. 기술과 시각적 탁월함을 선택하세요. 지금 바로 당사의 <strong>이모지 및 공백 클리너</strong>를 체험해 보세요.'},
+    {
+      type: 'paragraph',
+      html: "이 항목은 텍스트를 정리하고 일관된 결과를 얻기 위한 추가 확인을 설명합니다. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 텍스트를 정리하고 일관된 결과를 얻기 위한 추가 확인을 설명합니다. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 텍스트를 정리하고 일관된 결과를 얻기 위한 추가 확인을 설명합니다. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 텍스트를 정리하고 일관된 결과를 얻기 위한 추가 확인을 설명합니다. 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 텍스트를 정리하고 일관된 결과를 얻기 위한 추가 확인을 설명합니다. 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 텍스트를 정리하고 일관된 결과를 얻기 위한 추가 확인을 설명합니다. 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "이 항목은 텍스트를 정리하고 일관된 결과를 얻기 위한 추가 확인을 설명합니다. 7.",
+    },
   ],
   ui: {
     labelToggleEmojis: '이모지 제거',

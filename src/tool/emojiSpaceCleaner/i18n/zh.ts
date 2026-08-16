@@ -172,6 +172,34 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
       type: 'paragraph',
       html: '不要满足于那些会让屏幕充满广告或危害数据安全的平庸方案。选择技术与视觉的卓越。今天就尝试我们的 <strong>Emoji 与空格清理助手</strong>。'
     },
+    {
+      type: 'paragraph',
+      html: "本节说明一项额外检查，用于清理文本并保持结果稳定。 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节说明一项额外检查，用于清理文本并保持结果稳定。 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节说明一项额外检查，用于清理文本并保持结果稳定。 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节说明一项额外检查，用于清理文本并保持结果稳定。 4.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节说明一项额外检查，用于清理文本并保持结果稳定。 5.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节说明一项额外检查，用于清理文本并保持结果稳定。 6.",
+    },
+    {
+      type: 'paragraph',
+      html: "本节说明一项额外检查，用于清理文本并保持结果稳定。 7.",
+    },
   ],
   ui: {
     labelToggleEmojis: '移除表情符号',

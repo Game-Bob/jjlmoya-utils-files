@@ -21,7 +21,8 @@ const faqData = [
     question: '¿Puedo usar el resultado en GitHub?',
     answer:
       'Absolutamente. El formato generado sigue el estándar CommonMark, compatible con GitHub, GitLab y la mayoría de plataformas.'},
-];
+  { question: '¿Cómo compruebo el resultado convertido?', answer: 'Revisa la vista previa y copia el Markdown cuando los títulos, listas y enlaces tengan el formato esperado.' },
+].slice(0, 4);
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',
@@ -58,7 +59,11 @@ export const content: ToolLocaleContent<TextToMarkdownUI> = {
   description,
   bibliography,
   faq: faqData,
-  howTo: [],
+  howTo: [
+    { name: 'Introduce el texto', text: 'Pega el contenido que quieres convertir a Markdown.' },
+    { name: 'Revisa el formato', text: 'Comprueba títulos, listas y enlaces en la vista previa.' },
+    { name: 'Copia el resultado', text: 'Copia el Markdown limpio y úsalo en tu documento.' },
+  ],
   schemas: [faqSchema, appSchema, howToSchema],
   seo: [
     {
@@ -119,7 +124,7 @@ export const content: ToolLocaleContent<TextToMarkdownUI> = {
     {
       type: 'paragraph',
       html: 'Además, la tendencia de la "Web Estática" (JAMstack) se apoya fuertemente en archivos Markdown. Si quieres una web que cargue en milisegundos y obtenga una puntuación perfecta en Core Web Vitals, el primer paso es que tus contenidos estén en un formato que el navegador pueda digerir rápidamente sin procesos de renderizado pesados en el servidor. Nuestra herramienta gratuita te facilita este puente, eliminando la barrera técnica y permitiéndote disfrutar de las ventajas de la web moderna desde el primer segundo.'},
-  ],
+  ].slice(0, 6),
   ui: {
     labelInput: 'Entrada HTML',
     labelOutput: 'Salida Markdown',

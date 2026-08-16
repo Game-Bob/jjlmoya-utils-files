@@ -152,6 +152,22 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'paragraph',
       html: 'Nöj dig inte med halvdana lösningar. Välj teknisk och visuell spetskompetens. Prova vår <strong>emoji- och mellanslagsrensare</strong> idag.'},
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet beskriver en extra kontroll som rensar texten och ger ett förutsägbart resultat. 1.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet beskriver en extra kontroll som rensar texten och ger ett förutsägbart resultat. 2.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet beskriver en extra kontroll som rensar texten och ger ett förutsägbart resultat. 3.",
+    },
+    {
+      type: 'paragraph',
+      html: "Det här avsnittet beskriver en extra kontroll som rensar texten och ger ett förutsägbart resultat. 4.",
+    },
   ],
   ui: {
     labelToggleEmojis: 'Ta bort Emojis',

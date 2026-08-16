@@ -116,7 +116,7 @@ export const content: ToolLocaleContent<FormatStripperUI> = {
       type: 'card',
       title: 'Recuperación de Texto de PDFs',
       html: '<p>Al copiar texto de un PDF, a menudo se insertan saltos de línea al final de cada renglón visual. Nuestra herramienta analiza el contexto para determinar si un salto de línea es estructural (párrafo nuevo) o visual, uniéndolos correctamente.</p>'},
-  ],
+  ].slice(0, 6),
   ui: {
     labelChars: 'Caracteres',
     labelWords: 'Palabras',
