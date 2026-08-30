@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'archivos-y-texto',
   title: 'Herramientas para Archivos y Texto',
-  description: 'Herramientas online gratuitas para trabajar con archivos y texto directamente en el navegador. Convierte el portapapeles en imágenes descargables, sin instalaciones y con total privacidad.',
+  description: 'Herramientas online gratuitas para archivos y texto en el navegador. Convierte el portapapeles en imágenes descargables, sin instalación y con procesamiento local.',
   seo: [
     {
       type: 'title',

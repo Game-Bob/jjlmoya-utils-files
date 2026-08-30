@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'dateien-und-text',
   title: 'Dateien und Textwerkzeuge',
-  description: 'Kostenlose Online-Tools für die Arbeit mit Dateien und Text direkt im Browser. Konvertiere die Zwischenablage in herunterladbare Bilder - ohne Installation und mit vollständiger Privatsphäre.',
+  description: 'Kostenlose Online-Tools für Dateien und Text im Browser. Wandle die Zwischenablage in herunterladbare Bilder um, ohne Installation und mit lokaler Verarbeitung.',
   seo: [
     {
       type: 'title',

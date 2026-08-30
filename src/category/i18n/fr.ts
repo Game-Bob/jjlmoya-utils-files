@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'fichiers-et-texte',
   title: 'Outils pour Fichiers et Texte',
-  description: "Outils en ligne gratuits pour travailler avec des fichiers et du texte directement dans votre navigateur. Convertissez votre presse-papiers en images téléchargeables, sans installation et en toute confidentialité.",
+  description: "Outils en ligne gratuits pour fichiers et textes dans votre navigateur. Convertissez le presse-papiers en images téléchargeables, sans installation et avec un traitement local.",
   seo: [
     {
       type: 'title',

@@ -3,7 +3,7 @@ import type { CategoryLocaleContent } from '../../types';
 export const content: CategoryLocaleContent = {
   slug: 'arquivos-e-texto',
   title: 'Ferramentas para Arquivos e Texto',
-  description: 'Ferramentas online gratuitas para trabalhar com arquivos e texto diretamente no navegador. Converta sua área de transferência em imagens para download, sem instalação e com privacidade total.',
+  description: 'Ferramentas online gratuitas para arquivos e texto no navegador. Converta a área de transferência em imagens para download, sem instalação e com processamento local.',
   seo: [
     {
       type: 'title',
