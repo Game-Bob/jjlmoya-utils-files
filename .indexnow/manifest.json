@@ -1,605 +1,605 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-04T11:09:04.579Z",
+  "generatedAt": "2026-09-04T19:06:06.217Z",
   "pages": {
     "https://www.gamebob.dev/de/werkzeuge/kategorien/dateien-und-text/datei-hash-verifizieren/": {
-      "hash": "bc7abc1b5eb2882d58fae2cee59da0ef9729e40d41a1782c2bb16a458976dc46",
+      "hash": "50cde64ef8925217d955cefc483d5b7564c42b28606296248f1b1f8f846d21b4",
       "route": "/de/werkzeuge/kategorien/dateien-und-text/datei-hash-verifizieren/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/dateien-und-text/dateigroessen-konverter/": {
-      "hash": "01577d8b34c495b4647fbcc35383832d7bf025b0033b70be99c45e23a5ff61c1",
+      "hash": "1162aab9259a6a4bb438790691f65169c1936b57ab7eeac15127bc7f1de6f778",
       "route": "/de/werkzeuge/kategorien/dateien-und-text/dateigroessen-konverter/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/dateien-und-text/emoji-und-doppel-leerzeichen-entferner/": {
-      "hash": "98dd1d35da4cc1e31e67e94fcf6116be34072a34c98567269086ff114918cdc4",
+      "hash": "83715369bfb1d8e869bdc493d7519544195dbf3688ce0dbada7c9cc93a3bbc67",
       "route": "/de/werkzeuge/kategorien/dateien-und-text/emoji-und-doppel-leerzeichen-entferner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/dateien-und-text/": {
-      "hash": "3a830ee698bfdfe63d7b1a74296f0b24f5f0110b9d940d9b05d2a92d561ab4b6",
+      "hash": "72c5579c612cb54913504689a620856d25b5c98999c1ea702738827940ad8b13",
       "route": "/de/werkzeuge/kategorien/dateien-und-text/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/dateien-und-text/json-zu-csv-konverter/": {
-      "hash": "d13075376337526c793c63c3c12f45d1f77d553b36a04b30ff12f4f1bb9bb98b",
+      "hash": "1102e5837478433ced8c98b2439e297064b7fd41a1ba0ddc37ae143acaa7ca7f",
       "route": "/de/werkzeuge/kategorien/dateien-und-text/json-zu-csv-konverter/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/dateien-und-text/text-in-markdown-umwandeln/": {
-      "hash": "feb7bac29cead3bfd28366c4ade8e7a70c6ee6904a8167638479910dad5dbcaf",
+      "hash": "1d64f96fbc8a18fa70b895403b75cfabac3b4d4dd548040f6c494d2c08336d15",
       "route": "/de/werkzeuge/kategorien/dateien-und-text/text-in-markdown-umwandeln/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/dateien-und-text/text-teilen/": {
-      "hash": "5f64bb3284b08158f3e41e61ca4c95c6979ec20ebdbaee8b02474ba5c87eecdc",
+      "hash": "e3fe5cb7ebbe60fc815a0edda94fb984e216d8fcc08baf686b20cbefb3cc9367",
       "route": "/de/werkzeuge/kategorien/dateien-und-text/text-teilen/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/dateien-und-text/textformatierung-entfernen/": {
-      "hash": "79ab3cc027898d92ec79086c32ced9baf60a693e7ea86bdb4b2227678e518e10",
+      "hash": "625787fa475cd0414b9417ac46ec8ad22f1f4189e339663761362d8298c982a1",
       "route": "/de/werkzeuge/kategorien/dateien-und-text/textformatierung-entfernen/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/dateien-und-text/zeichenzaehler/": {
-      "hash": "1b3e593013a400c87f3f70ae08c5374d575b14fd44a6c92f4e177376de867aa9",
+      "hash": "584143887f4e162d541bf27c2caaaa04f7c9ba968735ae82d0feb0984ca8208a",
       "route": "/de/werkzeuge/kategorien/dateien-und-text/zeichenzaehler/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/dateien-und-text/zwischenablage-zu-png/": {
-      "hash": "c1171754f4a06070ca6ab59b16676e105a850840138369e1ec6cc67a74a44b96",
+      "hash": "1cb88ad1b2dc4b7de9b8c31c690df047740e951f063aa19c03b0be3cf147a6ad",
       "route": "/de/werkzeuge/kategorien/dateien-und-text/zwischenablage-zu-png/"
     },
     "https://www.gamebob.dev/en/utilities/categories/files-and-text/character-counter/": {
-      "hash": "608a1a887b2b54e5938f19ac8d7858561da46d5615b4640b877084e58f0bd41f",
+      "hash": "1a9726202084c982f45e4d3d7ebbf007aa925600c1aabc5c4a9c4da48fb969e8",
       "route": "/en/utilities/categories/files-and-text/character-counter/"
     },
     "https://www.gamebob.dev/en/utilities/categories/files-and-text/clipboard-to-image/": {
-      "hash": "391932aedb0f1cdaea2a7d16d3cc4be5a0c61d6bdc1566f0001612f613716ae3",
+      "hash": "3aa8c0b46ea5c45686f6e018d905429e46f1f492faf89644f61b2f201f1cc9df",
       "route": "/en/utilities/categories/files-and-text/clipboard-to-image/"
     },
     "https://www.gamebob.dev/en/utilities/categories/files-and-text/emoji-space-cleaner/": {
-      "hash": "68d6af2ff296933ac9e462aebc42eb024c1652dc37279c3b573896b0255bc5ee",
+      "hash": "9e786279f38e1390c2506cc1db4011d10cda262af6b03e7043c79789ae0f935e",
       "route": "/en/utilities/categories/files-and-text/emoji-space-cleaner/"
     },
     "https://www.gamebob.dev/en/utilities/categories/files-and-text/file-size-converter/": {
-      "hash": "3729d1337dcc8ca0aa9a57257d0be506d5116bff9cf09d8a196a4ffc83714762",
+      "hash": "4f18684996dcf1ead3bb34ee0ff909097147522b28f1993b47d6dfc6712cd0b9",
       "route": "/en/utilities/categories/files-and-text/file-size-converter/"
     },
     "https://www.gamebob.dev/en/utilities/categories/files-and-text/format-stripper/": {
-      "hash": "5a527c897f03b0208817c4ba3a564f55c2f012235c3cf5580a7b46ba596c4158",
+      "hash": "a65f5ea758b6cecd77b6f93f0ad32299721ecac2512dd5e60436fa55eb7bfdc7",
       "route": "/en/utilities/categories/files-and-text/format-stripper/"
     },
     "https://www.gamebob.dev/en/utilities/categories/files-and-text/hash-verifier/": {
-      "hash": "e9a99d6c74fd5cd05c10aa9209a548526ea9a48b5621bf87c7b0432e1cc2f3f1",
+      "hash": "ae5e9cef14534b9ac7ec2bf4f8794103d5afe134429b8da4df350148a1649753",
       "route": "/en/utilities/categories/files-and-text/hash-verifier/"
     },
     "https://www.gamebob.dev/en/utilities/categories/files-and-text/": {
-      "hash": "bf107c2ba397edd0571e952512eb54e4c9ddcf3e364e1d6d4edf9811a8ea5e61",
+      "hash": "62198502052d596c8c08c03cf407d1698b3bdc0968a77a1d99482a177f6a91d5",
       "route": "/en/utilities/categories/files-and-text/"
     },
     "https://www.gamebob.dev/en/utilities/categories/files-and-text/json-to-excel-csv-converter/": {
-      "hash": "9d81a4716388248f8da184221e15655b4c60fa52686b882508090194116fdd06",
+      "hash": "cb726e223c4e005ab12641acf48c437820f4a91b327eef3f3737c26ea7990199",
       "route": "/en/utilities/categories/files-and-text/json-to-excel-csv-converter/"
     },
     "https://www.gamebob.dev/en/utilities/categories/files-and-text/text-splitter/": {
-      "hash": "2b44620a4637f1089ef0f5643d1424a58ca25e354559d219d56d2923699e0a4e",
+      "hash": "dbf4e460bc2ae02162e7817c034e590b188fd34b88da41d3b354550276e9f79f",
       "route": "/en/utilities/categories/files-and-text/text-splitter/"
     },
     "https://www.gamebob.dev/en/utilities/categories/files-and-text/text-to-markdown/": {
-      "hash": "2996e351ee2725e4651eda98059d6c87fb982369bab301f90a374bc892633d9e",
+      "hash": "ab843f5a07a53ce0e58edf368da6159e2174c43df69fd166a2a3554547971475",
       "route": "/en/utilities/categories/files-and-text/text-to-markdown/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/fichiers-et-texte/compteur-de-caracteres/": {
-      "hash": "35805b2825073afd6bf0466ead09aedf11801f135f73da581839153db022bc1d",
+      "hash": "8554259d8c113835c51d60c747e279d35f1f4b5c876cece1c34a57cf13f5c91e",
       "route": "/fr/utilitaires/categories/fichiers-et-texte/compteur-de-caracteres/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/fichiers-et-texte/convertisseur-json-en-csv/": {
-      "hash": "e2f284ba29ad6382c3c6ec590c700460fa24c4428fbc9d6963adccf5ddb53a9f",
+      "hash": "1a424d2a2a7e98af9253d975765b937f2d20e83bbaf810d7e4da0235c3e7f7b0",
       "route": "/fr/utilitaires/categories/fichiers-et-texte/convertisseur-json-en-csv/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/fichiers-et-texte/convertisseur-taille-fichier/": {
-      "hash": "d7031726af8ce0355df569c41b636ef66a5c4b6aad79676b1eb94437180ebe4f",
+      "hash": "f1e8dffda02cd58a2957f5b99a4fa4641191a00d0c1d730b9f096ff6399780df",
       "route": "/fr/utilitaires/categories/fichiers-et-texte/convertisseur-taille-fichier/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/fichiers-et-texte/convertisseur-texte-en-markdown/": {
-      "hash": "315196e9575f54b54d78e69f14adf4cb9df2bb827af57a1c7bde2f54205f56ce",
+      "hash": "82e36e823cbca8e0c680a38c79650e1c0a4a5061a4ecfb966d60e9461089004b",
       "route": "/fr/utilitaires/categories/fichiers-et-texte/convertisseur-texte-en-markdown/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/fichiers-et-texte/diviseur-de-texte/": {
-      "hash": "49b9cefa288c19c31e640901779f31b48ab0bfa4f3c902b473d50a45bc47a0e6",
+      "hash": "b917d6924be94eef787d1bf88841ab434c952238eab5b4c5f3cb109ef8076432",
       "route": "/fr/utilitaires/categories/fichiers-et-texte/diviseur-de-texte/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/fichiers-et-texte/": {
-      "hash": "0b5e61d90cd4175e82802a57aea8ef5e8f47427dc4d57cae807179390e0a1c3a",
+      "hash": "7f730629ada05e8be6cd41bcc47d5a1240e82ef47fbb3117a6df60e48e178419",
       "route": "/fr/utilitaires/categories/fichiers-et-texte/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/fichiers-et-texte/presse-papiers-vers-png/": {
-      "hash": "839cd3ec1aab95aca775adb78d3db52b5b4b980c397c01b90799bdd4e6a25b8c",
+      "hash": "f98f0a1f85fd02afaae4eb1e1cddc94b7e4423c7b70174e43f27a861241112ac",
       "route": "/fr/utilitaires/categories/fichiers-et-texte/presse-papiers-vers-png/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/fichiers-et-texte/suppresseur-emojis-espaces-doubles/": {
-      "hash": "fc545fdba042fff543537fbc3497b639f116af1a936f16cbfde7128d5df4d473",
+      "hash": "a90c99846bbdc01534dc5d3ddd1da6bd21c35713fa0ac935155b3c378494601f",
       "route": "/fr/utilitaires/categories/fichiers-et-texte/suppresseur-emojis-espaces-doubles/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/fichiers-et-texte/supprimer-formatage-texte/": {
-      "hash": "168fdcef1799b7c5fb7276586de4373de077bd8fe32a338083355dc0d5ac1806",
+      "hash": "8ad3957f2c1db0db7d398f99f250259c68bd52f4f008b77470cff58dad1756d8",
       "route": "/fr/utilitaires/categories/fichiers-et-texte/supprimer-formatage-texte/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/fichiers-et-texte/verifier-hash-fichier/": {
-      "hash": "0e904e9a6cd600408ca8bf02a329c97ace923cff070a04bef916a30567c27ceb",
+      "hash": "1f5ed16f7ed64aa5c7071086ed65629531de651e9efa11b97d64e12c3e8d84b4",
       "route": "/fr/utilitaires/categories/fichiers-et-texte/verifier-hash-fichier/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/file-dan-teks/hapus-format-teks/": {
-      "hash": "427363df20d32e9d278136179d5521e0c9761e1eccd7882317c1598212d4fbdb",
+      "hash": "9104f9eb7d769fb683173ba3208a74e15f24d439c9db43f920b3cb725befb897",
       "route": "/id/utilitas/kategori/file-dan-teks/hapus-format-teks/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/file-dan-teks/": {
-      "hash": "32ac09ae91dfb9b34780aa9aab0ff538af8ec26a052e8d5e8eb5cc2d1285c671",
+      "hash": "a897baff9414afc9595a057ab8b5367b195cb6fdb3a7cce5bfa06a41651fe72b",
       "route": "/id/utilitas/kategori/file-dan-teks/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/file-dan-teks/konverter-json-ke-csv/": {
-      "hash": "23b3d6b42798df4d181357f8dc7bf460151316f099edcd8701b816edcfb950eb",
+      "hash": "69f63bdd6260f972728814c9af6d988487bd7b4c74f44c126e2c9ce862b82085",
       "route": "/id/utilitas/kategori/file-dan-teks/konverter-json-ke-csv/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/file-dan-teks/konverter-teks-ke-markdown/": {
-      "hash": "c546be5ae9112d4d29944437e5dacb1f4bc967fe737abc0e6fc2256a70aaa29b",
+      "hash": "979ecf181d0b47ed6a934225cd960eddce9003ae20e4cb29d0aa3ae0a4f8d8b3",
       "route": "/id/utilitas/kategori/file-dan-teks/konverter-teks-ke-markdown/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/file-dan-teks/konverter-ukuran-file/": {
-      "hash": "e3dc8450c18f38f3704279a96b91aeae428edf44a046f4a006a43e8366393bb6",
+      "hash": "a3ec8bec05722cca1538f09a8a034ad816789b762c0572b10592788f9818cc48",
       "route": "/id/utilitas/kategori/file-dan-teks/konverter-ukuran-file/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/file-dan-teks/papan-klip-ke-png/": {
-      "hash": "0026fec8ee3f415e77caa973086b34a8db16e5aa42d63f3859f15b0d231d8a58",
+      "hash": "367f1f20cab13e7e797cc7d3625d0faae7d8cd8333e65fe00cb16fbfe009ccb4",
       "route": "/id/utilitas/kategori/file-dan-teks/papan-klip-ke-png/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/file-dan-teks/pemecah-teks/": {
-      "hash": "484ce9d5883cf0ba6a3b05e205f57f43ea188d9a930f73919306c86b3b527703",
+      "hash": "05004b9c8fd49614ad2cec8a42d72e5bae2432fdca9e5645a1af8023663f4fe3",
       "route": "/id/utilitas/kategori/file-dan-teks/pemecah-teks/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/file-dan-teks/penghapus-emoji-dan-spasi-ganda/": {
-      "hash": "5284739406af0c79d1b0d36ded56aa76f2564115244ce890a8a626f4a8ab2aae",
+      "hash": "40218cc45d217b5f5cc4cff419a7bd5fa0dcecdcf097b9dbbcd83b90a7ff4103",
       "route": "/id/utilitas/kategori/file-dan-teks/penghapus-emoji-dan-spasi-ganda/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/file-dan-teks/penghitung-karakter/": {
-      "hash": "ed598527a1fd7b3fbf5065450b6d320c1fcf0ab9e5d0855f533b969de1a7301b",
+      "hash": "b3761c343df95f4c1e5b6f814716303dce64fa6ccff5ec5443a1c091f126d94c",
       "route": "/id/utilitas/kategori/file-dan-teks/penghitung-karakter/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/file-dan-teks/verifikasi-hash-file/": {
-      "hash": "57a831d9e927b39244d94871f794c9744e5ffc7fcdd7940a639a96cf8064e844",
+      "hash": "40668fe940adc8b8713904fa0107c1673396af5c3a895ac005021f2d87b6abd6",
       "route": "/id/utilitas/kategori/file-dan-teks/verifikasi-hash-file/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/file-e-testo/appunti-in-png/": {
-      "hash": "4a4da6c4119a51eae9f5b972686c8d7020c28f80137121e61f1688e31c99a8bc",
+      "hash": "cef6ad144f581b60f9519d40cc488f1ef2376aa8674fbf8eb964653e0be946a8",
       "route": "/it/utilita/categorie/file-e-testo/appunti-in-png/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/file-e-testo/conta-caratteri/": {
-      "hash": "3f43be450b7ba5e5ae429cbc5de7a12c07387ab7ef2d3ca3618ac2b092467fea",
+      "hash": "3466eef73f01cd3b912f0255ad1b319e170f6a65d1b59fbfe9e78fe3f2e4011d",
       "route": "/it/utilita/categorie/file-e-testo/conta-caratteri/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/file-e-testo/convertitore-dimensioni-file/": {
-      "hash": "7dd104d733c8982c3d2712071e825313c9b129eb38a598687e168b07a65f2cb2",
+      "hash": "1b7e85eb3f0d6eba35467acd6e8dc4c4f8f4f6e866fdb143bdeefb4c0a715348",
       "route": "/it/utilita/categorie/file-e-testo/convertitore-dimensioni-file/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/file-e-testo/convertitore-json-in-csv/": {
-      "hash": "ceb03075b6092cbc32304d0e3ce6d9ebe1c5c1e1b757168af27a8aa36db55d31",
+      "hash": "3d483dd5edcdb5cdef35cd208ed26fee92696e7f2985fe48454cbd0d9c5e3acb",
       "route": "/it/utilita/categorie/file-e-testo/convertitore-json-in-csv/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/file-e-testo/convertitore-testo-in-markdown/": {
-      "hash": "ac4fe722edd5d432f2e64869a32b845c431479840d5b0331a054b02b97441405",
+      "hash": "a59839223bafc563bccc3789c91adbba6471084e871cebf62635f78b59f62332",
       "route": "/it/utilita/categorie/file-e-testo/convertitore-testo-in-markdown/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/file-e-testo/divisore-di-testo/": {
-      "hash": "311380ef8615ae990735a7a9751c78ae695ca12f469d30f1d935dfa0635c6168",
+      "hash": "bce543249e488f331437309bea9e65089f97af9115fa563266b255a5902f9c1c",
       "route": "/it/utilita/categorie/file-e-testo/divisore-di-testo/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/file-e-testo/": {
-      "hash": "beeb3b74723b5e9ed9ce7acf284042cbb47b01f09f4e368e369496a1d2d38b7e",
+      "hash": "5de8b169fb345ca26e3abccea277b91563e1341761309ddd36c90493c3230ab0",
       "route": "/it/utilita/categorie/file-e-testo/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/file-e-testo/rimozione-emoji-e-doppi-spazi/": {
-      "hash": "338c758b1809b400657a8a5aad93a85c0e98169978eced2c2a602893d0c897b7",
+      "hash": "9bad6df1e753865c7bdd9b37861a67155fefd637ebb2fa975e0e06136ca8d761",
       "route": "/it/utilita/categorie/file-e-testo/rimozione-emoji-e-doppi-spazi/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/file-e-testo/rimuovi-formattazione-testo/": {
-      "hash": "8ec2cce226e5d9003d9e73f358187ecf06414a8f5bbb0c8678897997c371e773",
+      "hash": "e317b96bbc0ef951cb7f489879645c23e7619b7c9d3f00fc0cf530bcfc0263ef",
       "route": "/it/utilita/categorie/file-e-testo/rimuovi-formattazione-testo/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/file-e-testo/verifica-hash-file/": {
-      "hash": "6066e9bbc2f8b1e3859a06c7029722a857cbd39a2f4835219ae59fd11d21bdbd",
+      "hash": "aadae9dfff6f8205dd0b35d5e654d6a47245d18ff4d895a23ccbd7721a0f4871",
       "route": "/it/utilita/categorie/file-e-testo/verifica-hash-file/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/files-and-text/character-counter/": {
-      "hash": "a3aab882609f1116f493a7e8ab64c65393adae18245056160a6af34e6c12d65a",
+      "hash": "aafbc176b9bf716f5ac8f2fbb5aeaf5081bcea87be220106ed7b506d7e1d3187",
       "route": "/ja/utilities/categories/files-and-text/character-counter/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/files-and-text/clipboard-to-image/": {
-      "hash": "d5b95dd10a0717992636970ae3d1eab5c04f6bea7309f383fea1f33cfad45975",
+      "hash": "f746012a465d452ce0c246d2fb2a7ab7e9bbf03fab5ceab0bea5255eeb30a0f9",
       "route": "/ja/utilities/categories/files-and-text/clipboard-to-image/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/files-and-text/emoji-space-cleaner/": {
-      "hash": "426824ddbd6971b3e00fcf72a1abd182db207ccf9dca572567a3adb023c13f62",
+      "hash": "9f33f7c2ef3427874d397908b057e266295db0cdfe625a49bd9b4472dde5a1d2",
       "route": "/ja/utilities/categories/files-and-text/emoji-space-cleaner/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/files-and-text/file-size-converter/": {
-      "hash": "d4a55510949669447a158308cc3c5a9220c98a324dda00f01dfdadede8da27fb",
+      "hash": "3fc19f6e1b3c5c17cd84fe873065b6b1bf2f81e6f099d3e8962eded1f1e304cd",
       "route": "/ja/utilities/categories/files-and-text/file-size-converter/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/files-and-text/format-stripper/": {
-      "hash": "cd3dacea762219107bbf9279aa1d51500b681ae8885e7a6c6ad339610ab32a37",
+      "hash": "b4984a0557f111c09888a6006c5dea5c0eb441a813ccc5ad94bd5b03ee5708c7",
       "route": "/ja/utilities/categories/files-and-text/format-stripper/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/files-and-text/hash-verifier/": {
-      "hash": "0f2d1c622fc0d8f3a27ccc00120954ac40d48c35c5bad6b06fd8dd6375d90272",
+      "hash": "d49496a24102daa6edf3dd0ec02c1f15af9590642c5fd95d5ba0a96e94ab12c3",
       "route": "/ja/utilities/categories/files-and-text/hash-verifier/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/files-and-text/": {
-      "hash": "1a9d3be6480c84264dcb7aad3a0d01111521de2d661199201d43b4eda869211e",
+      "hash": "061c9210a688463b66a3d441dcc8d38d518a9fe6e1b7e6b4300ac1e706d26934",
       "route": "/ja/utilities/categories/files-and-text/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/files-and-text/json-to-excel-csv-converter/": {
-      "hash": "46d0fa23d2c6261a0c92120596f03b5725d7f05ccf4975ef0ed45cc6e353ba6e",
+      "hash": "979d4dc6842cad70161bea7e2b8622b1d8ab679eb9936a44616f40291da6df98",
       "route": "/ja/utilities/categories/files-and-text/json-to-excel-csv-converter/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/files-and-text/text-splitter/": {
-      "hash": "862df586a69a1ba3a159234e63099a1041a76d88994e3f3e81e9fe57ff16773c",
+      "hash": "404e4e6d377c2e4dfdf546114792228cf6c043e1ef7e57e4e45fd4efc48614f5",
       "route": "/ja/utilities/categories/files-and-text/text-splitter/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/files-and-text/text-to-markdown/": {
-      "hash": "9051798123a3466f459c10326dbf6366d569efc27ff0208e8aa4fe98fe739d8c",
+      "hash": "e0cc481709d3e9c9caaefb5cf10f6d6ceb48f897c1cbfe18124e482fb33854a0",
       "route": "/ja/utilities/categories/files-and-text/text-to-markdown/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/files-and-text/character-counter/": {
-      "hash": "01218ac867d191a5f17779dd342fc938914229b4349af5fbb2da2124278e6d3a",
+      "hash": "ffd9ff80c7f7ab3499f99f3a3b856b7b532e0b5bed1f0a00cccce73bbe4fa011",
       "route": "/ko/utilities/categories/files-and-text/character-counter/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/files-and-text/clipboard-to-image/": {
-      "hash": "4d0b1d3351eb63eefd0f35d0f9533a9ce1050d95456145231f33c01d78feac43",
+      "hash": "b5066adc5a1fd9cd2dc2646005ac2253159aa55068bc0159ffba5ea8a165ef8c",
       "route": "/ko/utilities/categories/files-and-text/clipboard-to-image/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/files-and-text/emoji-space-cleaner/": {
-      "hash": "63c3c2285540a207128c376b0f044e98ebf59c720769d6dbdf9dee951e975ac3",
+      "hash": "e08dd01e3ece8964f8f9191e8ba98350d78d8b181d3aa903f6a0c3673e6fbff2",
       "route": "/ko/utilities/categories/files-and-text/emoji-space-cleaner/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/files-and-text/file-size-converter/": {
-      "hash": "7f0e85cea363c286d5dac1b104703a1725cc4362f2bc8719cc61bc13494057e3",
+      "hash": "8986693b3e6af14b430583dbdc5b2a743040b92eff891a1ac74bfb79048e4b31",
       "route": "/ko/utilities/categories/files-and-text/file-size-converter/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/files-and-text/format-stripper/": {
-      "hash": "74bfe1c5f27b7fc239ad758d8c1e1fd055e8a3f96543b26191acf6cb31298cd4",
+      "hash": "706f1be49173d7da3cfb96c1502d9beef1657ee7d2489a8542e282a59f3a497b",
       "route": "/ko/utilities/categories/files-and-text/format-stripper/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/files-and-text/hash-verifier/": {
-      "hash": "1ac6f7a3cfd8cb2ddf7e91c83890484327c9a019f9306b35b332677609a4c58a",
+      "hash": "c0369b557c28c9d0328cd3cade38111e310de5c75c1e0ad21151252ab78d8f3a",
       "route": "/ko/utilities/categories/files-and-text/hash-verifier/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/files-and-text/": {
-      "hash": "a6fad8c6cf865f257c7784d7901de00d1af8f227f52c548e72dd25156b65a9c8",
+      "hash": "04879199fdbf121d1db7bb93b06b846f7707c70722c49144a2a33901c9b9445a",
       "route": "/ko/utilities/categories/files-and-text/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/files-and-text/json-to-excel-csv-converter/": {
-      "hash": "39e3c4cf15979c4566b7dc77461f36aec795fab79ab275a10adda85e64986d89",
+      "hash": "f9bc3d74147c57ea92c74290e32c10015249089d9738be10c92d90e6b3945c65",
       "route": "/ko/utilities/categories/files-and-text/json-to-excel-csv-converter/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/files-and-text/text-splitter/": {
-      "hash": "dc2e76c4820a64dfcd7f41088ae61813662a8eeb40b776807a14b66e27914d54",
+      "hash": "fb668ed9f6471a9230dbcf788e29bc419908821d5ba5c018557df15ebbf17d83",
       "route": "/ko/utilities/categories/files-and-text/text-splitter/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/files-and-text/text-to-markdown/": {
-      "hash": "e298fba424423f03443fec42aa44544927846e203ec264600df451df693b0350",
+      "hash": "e2ecc0cb4310b21398961fb62484b39e9a477856f767ada5519bbad2e51d256c",
       "route": "/ko/utilities/categories/files-and-text/text-to-markdown/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/bestanden-en-tekst/bestands-hash-verifieren/": {
-      "hash": "4ac0653675bdef7acd1db1fb78321ac2a0d17bcbb0b161bf6aa43db43d12a4b3",
+      "hash": "53cbd916f20144cb1099a1ed94151950bca0a29ea0f557def484f913fd5778cd",
       "route": "/nl/hulpmiddelen/categorieen/bestanden-en-tekst/bestands-hash-verifieren/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/bestanden-en-tekst/bestandsgrootte-converter/": {
-      "hash": "a770c8c1e9e0a70d44d9c5055889eb2df0f38e30c5e1ac9bc6621d774bf8265d",
+      "hash": "48660cc36dbd41208347c173b8d2098557cf5d832b9b26c00d0282a39c373b0b",
       "route": "/nl/hulpmiddelen/categorieen/bestanden-en-tekst/bestandsgrootte-converter/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/bestanden-en-tekst/emoji-en-dubbele-spaties-verwijderen/": {
-      "hash": "386563139175cafd2c6563a3a47e4ad6dc1052012f95e1934262ff33805917f0",
+      "hash": "30a5fe6470b737b3f4155a5ff1a00ea37c3ce97ba3a10f5af3c55c43a042250a",
       "route": "/nl/hulpmiddelen/categorieen/bestanden-en-tekst/emoji-en-dubbele-spaties-verwijderen/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/bestanden-en-tekst/": {
-      "hash": "45fce9c84ad31d1b4474de5569b995d6551f1769ed68032f2e2aa988c47a30fd",
+      "hash": "d504b6cd6f8eb77050ef92f0497b9ad6f1a672c4ae264acb43cfde8b41d4d9ff",
       "route": "/nl/hulpmiddelen/categorieen/bestanden-en-tekst/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/bestanden-en-tekst/json-naar-csv-converter/": {
-      "hash": "7ef30024df3beeb2c13887e9616ae06fe62a3c05aec98da35cb19ad1d94c511d",
+      "hash": "c74908263f09c458b3d5e37a20c906cce0f9479d3e01d283a8c543aa0a901341",
       "route": "/nl/hulpmiddelen/categorieen/bestanden-en-tekst/json-naar-csv-converter/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/bestanden-en-tekst/klembord-naar-png/": {
-      "hash": "092d707b23f2a418e0a2ac487bfc707b4d7e0ea3b391c7e9c065a4ade774d178",
+      "hash": "50eb907dc96e6752ca7e87f902d082ec0d87dc620e61e185dab7cbd9e3272c31",
       "route": "/nl/hulpmiddelen/categorieen/bestanden-en-tekst/klembord-naar-png/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/bestanden-en-tekst/tekst-naar-markdown-converter/": {
-      "hash": "4f41c665efeebf63bd0b1c2b4fd205b68653f3893df40efa54bc8b7992b1a085",
+      "hash": "1f333c6491a8eb777a73b0ecab62cb1bcbe513b0bc2312c10f63db715257942a",
       "route": "/nl/hulpmiddelen/categorieen/bestanden-en-tekst/tekst-naar-markdown-converter/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/bestanden-en-tekst/tekst-opmaak-verwijderen/": {
-      "hash": "13c940c3607abc4005a6fd7cc146d54ce8e6c86332699c47bd2bc6415f495ec3",
+      "hash": "cd5e7d8b9c5620fc87a3a854d417d73dc2e17b7866825e4407c794e5a630a678",
       "route": "/nl/hulpmiddelen/categorieen/bestanden-en-tekst/tekst-opmaak-verwijderen/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/bestanden-en-tekst/tekst-splitser/": {
-      "hash": "9cc81a9fd8f0b70b6a9d1defd9dcf693cce70055763de911cb985f8a97fc03fe",
+      "hash": "7bf8c645f8e6af5eb289a912db09daf81bcb1dcc4c7dde6640f1b6b50041ccf8",
       "route": "/nl/hulpmiddelen/categorieen/bestanden-en-tekst/tekst-splitser/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/bestanden-en-tekst/tekst-teller/": {
-      "hash": "5eb2a29a0c87df4019ffa6d188cef1dc918acbebc4d877bdc288ebfbcee6fb75",
+      "hash": "ae73fd699f0c5c9644256015a10bc70aa39d8c3d48454e07ae81891db8055bf7",
       "route": "/nl/hulpmiddelen/categorieen/bestanden-en-tekst/tekst-teller/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/pliki-i-tekst/dzielenie-tekstu/": {
-      "hash": "6409deca6701348d6c90420f8e860537def9ebd860830adb0a7c793a56abfa19",
+      "hash": "c96de03d95497495d0ca608d43a32bae95b23976b2a3640eab89e2dc47bcce13",
       "route": "/pl/narzedzia/kategorie/pliki-i-tekst/dzielenie-tekstu/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/pliki-i-tekst/": {
-      "hash": "140101a3c8424de800efd561c01359830b10feb8e74cbec348f5bc04dbb02917",
+      "hash": "65296e916a9b11d23aab6a7a08cfccb8aa6928ec87462f87df2e4a63a4edfb19",
       "route": "/pl/narzedzia/kategorie/pliki-i-tekst/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/pliki-i-tekst/konwerter-json-na-csv/": {
-      "hash": "17afcac814769faf967bf19d47aea172f6cbaed73d9e874126bb385ea2a5ab4d",
+      "hash": "42f8535087e765f355d7942c0e361059b8b404cd0a7016deec84b4c42b205e06",
       "route": "/pl/narzedzia/kategorie/pliki-i-tekst/konwerter-json-na-csv/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/pliki-i-tekst/konwerter-rozmiaru-plikow/": {
-      "hash": "2bc668928c51cf880855a25bf0e5539d6304d8a3ea55d566736c548be3274898",
+      "hash": "14f128a5a59f76323c777681a3872a98cf41706ad92ce8193ce64c0769c459f3",
       "route": "/pl/narzedzia/kategorie/pliki-i-tekst/konwerter-rozmiaru-plikow/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/pliki-i-tekst/konwerter-tekstu-na-markdown/": {
-      "hash": "a799ccd40d6c3652bdf82752bc3f40728fb55639e67afa55e5c42657994aacda",
+      "hash": "66d399defdc88ddd5bf49939c22ebb3688af244845a5717e66674e694350d0c9",
       "route": "/pl/narzedzia/kategorie/pliki-i-tekst/konwerter-tekstu-na-markdown/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/pliki-i-tekst/licznik-znakow/": {
-      "hash": "42bcb5e2e6b196b7c581312545eb457a74c75d6b34ae0ec808d2f537cafd2706",
+      "hash": "6cafc1ef0e95d9b17963b4858c446ec2d4f2d0d789051059dfab30742394ff25",
       "route": "/pl/narzedzia/kategorie/pliki-i-tekst/licznik-znakow/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/pliki-i-tekst/schowek-pod-png/": {
-      "hash": "751bf0dd3a2b2993ec91bbc587a1bf34ad860a558b5d841cac9197935d08a99e",
+      "hash": "001fa28978833d8c228d6a045a4b86fedb15f917bcd33afd8ad3792d53392db8",
       "route": "/pl/narzedzia/kategorie/pliki-i-tekst/schowek-pod-png/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/pliki-i-tekst/usuwanie-emoji-i-podwojnych-spacji/": {
-      "hash": "aeb27820d3685407556cd94f4d69259815e04d529056391f7e6d027935f57736",
+      "hash": "203602d31f30ff473f06e8757361ac245f390590063eb8fc41baa8600d3f2465",
       "route": "/pl/narzedzia/kategorie/pliki-i-tekst/usuwanie-emoji-i-podwojnych-spacji/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/pliki-i-tekst/usuwanie-formatowania-tekstu/": {
-      "hash": "cf8f76eb22e09c36fa74a8067592d1003a5cde511ac6cf152a970e5f179196cb",
+      "hash": "fc77f4dc619e145b57e7d7e8cfbb60545ffbc6fa61bee1b5e3e70ff380dc0f94",
       "route": "/pl/narzedzia/kategorie/pliki-i-tekst/usuwanie-formatowania-tekstu/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/pliki-i-tekst/weryfikacja-hash-pliku/": {
-      "hash": "154ed61bbb25a0af21e87fd0a1fdc542a2a1dcd0316def1b59580fcf97fc2680",
+      "hash": "528fa3e7e29c8b211de70ec6354938317472fe7541ef6e6e17a51abc73e552a3",
       "route": "/pl/narzedzia/kategorie/pliki-i-tekst/weryfikacja-hash-pliku/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/arquivos-e-texto/area-de-transferencia-para-png/": {
-      "hash": "c85cbee42bfc687d48d132bca5fa3d7ead24f4b5be05d7f5d9919c602160e56b",
+      "hash": "3c74aa526ce83eea5be6b012608fc3009105f530f7ab6ef002b1dd88e26321ec",
       "route": "/pt/utilidades/categorias/arquivos-e-texto/area-de-transferencia-para-png/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/arquivos-e-texto/contador-de-caracteres/": {
-      "hash": "25dff0212a57b052ecc9ac24221ab7342d2a30b80b4e5a92b27cff2e3b19212d",
+      "hash": "967f25fd225326259f9ee3eb00626593016512659e09e18596a8059d8cd9a4ea",
       "route": "/pt/utilidades/categorias/arquivos-e-texto/contador-de-caracteres/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/arquivos-e-texto/conversor-json-para-csv/": {
-      "hash": "3c0565a0ef324a5da7a5b6c1333a86bc29eb6bb7c6bdf969310991ef915be7ea",
+      "hash": "add2cbb7bce498eb96e946c0f32f12bdb7a77a1715d24fc7403f11dd26b473d9",
       "route": "/pt/utilidades/categorias/arquivos-e-texto/conversor-json-para-csv/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/arquivos-e-texto/conversor-tamanho-arquivo/": {
-      "hash": "6685ee7b7475dc14ea021fd8cb2199cec8a1732d054093d0ce6e179d7290c865",
+      "hash": "f14e2bd23a3b681010bc5b07dde8240bf3cbf8a4c86f88a543512953b7e4bf60",
       "route": "/pt/utilidades/categorias/arquivos-e-texto/conversor-tamanho-arquivo/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/arquivos-e-texto/conversor-texto-para-markdown/": {
-      "hash": "5ef10a23b6e2cfbaf3e3dbea2bab38c4ced07aad34570253a6f5c4b4a58757c6",
+      "hash": "2f65d9736ceb7f39c7f28cac910670c2d22311c6603d72fbf3986e518eb2c67c",
       "route": "/pt/utilidades/categorias/arquivos-e-texto/conversor-texto-para-markdown/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/arquivos-e-texto/divisor-de-texto/": {
-      "hash": "018904d344a7bc7c8e95d6d306e63849d81ee2ea86c93ae885281fd20f49e247",
+      "hash": "759ffe6b636e394009c0827f71d7331b27b15bf78defcb13dd7db2acf038f4ce",
       "route": "/pt/utilidades/categorias/arquivos-e-texto/divisor-de-texto/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/arquivos-e-texto/": {
-      "hash": "37ca9a2d274bbbb34831676b7af0e70ff4419cfc013fdc6655211e75f6d6521c",
+      "hash": "27ea27fe8d72545bbcbc17b4ac88ad154dc57b5a472d5ee7677009c6bb1667ae",
       "route": "/pt/utilidades/categorias/arquivos-e-texto/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/arquivos-e-texto/removedor-de-emojis-e-espacos-duplos/": {
-      "hash": "fc48d12e9ac5cf5f503403daec68ccf85b1028691c09cb7b52f06866dcb93b28",
+      "hash": "66c79f9690ea039d0f6e3eb72ba8b4ab38e1cba370dbc0ac8dea977446b9c0b2",
       "route": "/pt/utilidades/categorias/arquivos-e-texto/removedor-de-emojis-e-espacos-duplos/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/arquivos-e-texto/remover-formatacao-de-texto/": {
-      "hash": "9910edc1a5c31ba9c1dbb3016e91435e543dd2fc13aceae199043a127f5149b9",
+      "hash": "ce1acd00931d4cf52d0e08dcf27b41d0feae5dbc2969a1f3a0a11f63d65a58b9",
       "route": "/pt/utilidades/categorias/arquivos-e-texto/remover-formatacao-de-texto/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/arquivos-e-texto/verificar-hash-arquivo/": {
-      "hash": "a60a7b23fa1ccdc39d3d5b85b570b8cd29993666359303f85cf872fda9fad801",
+      "hash": "3b02db92bc9ba8c82991b177f6c9296d4e87cc48919a1c15abd220c2c89e2d84",
       "route": "/pt/utilidades/categorias/arquivos-e-texto/verificar-hash-arquivo/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/fayly-i-tekst/buffer-v-png/": {
-      "hash": "ec128ed80caf9eee9fc9f08769dfbf5f7c3972aeb9dc268961b6025c8f833077",
+      "hash": "d49958061586a66818de6620119bb92b55c996bf6d3d2f4fe01a9381cf0b061e",
       "route": "/ru/instrumenty/kategorii/fayly-i-tekst/buffer-v-png/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/fayly-i-tekst/": {
-      "hash": "ceecb8255578138c4c242d144e8c2bca84a1c0febca05ee896ea3b11bb90f055",
+      "hash": "111709fa912eca436982828ccb7d9c25d67b333928d1875adb15db46859bcdfa",
       "route": "/ru/instrumenty/kategorii/fayly-i-tekst/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/fayly-i-tekst/konverter-json-v-csv/": {
-      "hash": "1ebbbe8ea68bb3caac9561b196a376cdb774a7a0fc28118e656d20d8466c65f9",
+      "hash": "d95da058be0ee835ebc22954a2bd99107e3f5748abc7b88a684d278637d32932",
       "route": "/ru/instrumenty/kategorii/fayly-i-tekst/konverter-json-v-csv/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/fayly-i-tekst/konverter-teksta-v-markdown/": {
-      "hash": "bfe891616ff2375b4d32597657d60cfb5bddc68854d67d90a022f137fe7a5dbe",
+      "hash": "3af580370cd58135c5f301ac4bd37ec7125f4aaf741408a8fe3e1cb8f821ceed",
       "route": "/ru/instrumenty/kategorii/fayly-i-tekst/konverter-teksta-v-markdown/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/fayly-i-tekst/razdelitel-teksta/": {
-      "hash": "64c22365d89358980b3eb65917194c14c1eba9693f6f78aa7b5b93fc2c72a64b",
+      "hash": "2141e9134b3aa125d31abb7643b28c7fbe44dd68c8302f68e58e082676823419",
       "route": "/ru/instrumenty/kategorii/fayly-i-tekst/razdelitel-teksta/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/fayly-i-tekst/razmer-faila-konverter/": {
-      "hash": "cc33c8d3bb1295a86b59974051148cc46e93828f2459dd52cdf1adb695c081f6",
+      "hash": "0d39a9348e3451a8059f5c981f4897c4e7adfcc66e70fe7dcadd61ec053eda6c",
       "route": "/ru/instrumenty/kategorii/fayly-i-tekst/razmer-faila-konverter/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/fayly-i-tekst/schetchik-simvolov/": {
-      "hash": "822c39ad84e5f487a375c5eb2891d6e54a1eac2c61e1d563115061b81df8d2a2",
+      "hash": "7a59c211030f46337f943a153a6372ac455bfb32526a89c35bae65468ce34623",
       "route": "/ru/instrumenty/kategorii/fayly-i-tekst/schetchik-simvolov/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/fayly-i-tekst/udalenie-emodzi-i-dvoynyh-probelov/": {
-      "hash": "2d0ae9e11f6b74d428a17cb5e54e873c9ff5379cf9bd4ed23e3059b2ac6c161f",
+      "hash": "57215ef57bde0bc6c1ddf05b4153ec2a070455f653df0a8447ac14563d86de96",
       "route": "/ru/instrumenty/kategorii/fayly-i-tekst/udalenie-emodzi-i-dvoynyh-probelov/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/fayly-i-tekst/udalit-formatirovanie-teksta/": {
-      "hash": "bfddcb0b6598e11da6548470ae39c218cf6f4278ea4b8cdb630c4a4628bc5722",
+      "hash": "e99855cb8ff3578db8fcfc036cbad75ceea263957752e7ebdcf97ab8ebbf9190",
       "route": "/ru/instrumenty/kategorii/fayly-i-tekst/udalit-formatirovanie-teksta/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/fayly-i-tekst/verifikatsiya-hash-fayla/": {
-      "hash": "fd1eb8b929803f10e3bf1a21d42d1cb9fbc4db8a9d44ea00127af54be3ecdac3",
+      "hash": "22cb3c41b45b45f3d1d9eb2cc33186806e23b3f45f6b422544d05a5127703de1",
       "route": "/ru/instrumenty/kategorii/fayly-i-tekst/verifikatsiya-hash-fayla/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/filer-och-text/filstorlek-konverterare/": {
-      "hash": "d69843dbebd491579acf72941678b546cc5a4e9e725fb3d3273afc811dccdaa8",
+      "hash": "0fe1e2812bbc5f30a082b397e2d8f2e549893ad6e6925994e5870d3074f90387",
       "route": "/sv/verktyg/kategorier/filer-och-text/filstorlek-konverterare/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/filer-och-text/": {
-      "hash": "392c9f40efdf01f32ce106777b53f7525eaea6f7c442764a8fa5c97b0eca5264",
+      "hash": "1c34e47814b999f2388ebf61f7db7506cef1ba0dbd22556f5683e7101065a417",
       "route": "/sv/verktyg/kategorier/filer-och-text/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/filer-och-text/konvertera-json-till-csv/": {
-      "hash": "3b27ccbedd7f0742898c486a76c0e25d6191bdb86ee8dc22b6df13265ad3b8dc",
+      "hash": "6e2ee62dbb58af0ede8a17c3d6496033b10a63762a4ac8f6553a16c37ccf0120",
       "route": "/sv/verktyg/kategorier/filer-och-text/konvertera-json-till-csv/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/filer-och-text/konvertera-text-till-markdown/": {
-      "hash": "c18d2200d1bb17bc980679262ffd881ec1ebef102a10f04de852ada24fd24f8d",
+      "hash": "0a9f8dd2671a3a1eb3578d7a9a0f007cf4d12e65a5b5f5f0e787c316e9b23e73",
       "route": "/sv/verktyg/kategorier/filer-och-text/konvertera-text-till-markdown/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/filer-och-text/ta-bort-textformatering/": {
-      "hash": "0520f5ae51c4920fd17721e88956879800e264d60977aef48110cbc0d476386e",
+      "hash": "6c0d8b42b032e79d11beaf00af7571ec133c149e4ff9c9abe04c87326bc6bd32",
       "route": "/sv/verktyg/kategorier/filer-och-text/ta-bort-textformatering/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/filer-och-text/tabort-emojis-och-dubbla-mellanslag/": {
-      "hash": "87cabebc412a3435b201f7c4f5b9604a929f5209680283a399241f4a6c89a592",
+      "hash": "6f0180bd63135d65bd5be8bc06b7617c7526bc3865be9262d8cb671598d0cd4d",
       "route": "/sv/verktyg/kategorier/filer-och-text/tabort-emojis-och-dubbla-mellanslag/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/filer-och-text/teckenraknare/": {
-      "hash": "c1aaabd7c5569d9f4dd7580716ccc8c97ed9fda0d3387de1df8139284afe54b7",
+      "hash": "d3532869b6f05b2f0adeb6e976ed7b1a020c3f5c8a46562523104cad54951a69",
       "route": "/sv/verktyg/kategorier/filer-och-text/teckenraknare/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/filer-och-text/text-delare/": {
-      "hash": "0307ebc84720d1a3587c0c8d65c43e4d20c080b0a8c17e85af08d4707b86688c",
+      "hash": "97ce731f8bb04e447907a04e1e09f2883b044f107076d48ed2efb5d98fd927b9",
       "route": "/sv/verktyg/kategorier/filer-och-text/text-delare/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/filer-och-text/urklipp-till-png/": {
-      "hash": "f5e0c0226e2ea2abb7c9fca3914fd676bd4fd4beaca8137e01d9092f51b756aa",
+      "hash": "b861f2657573d6e80af3977588aae92716caf976a1cf013351d884ddd10ea98c",
       "route": "/sv/verktyg/kategorier/filer-och-text/urklipp-till-png/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/filer-och-text/verifiera-fil-hash/": {
-      "hash": "200ffb82b76038bbb2a3c5acc31bee93a561ddd361d548ad89aa49b95cc164fa",
+      "hash": "a52fb6c8feffe2a0d99a6011a1e0760cf71e19da9eb1b755969365eaa1467a49",
       "route": "/sv/verktyg/kategorier/filer-och-text/verifiera-fil-hash/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/dosyalar-ve-metin/dosya-boyutu-donusturucu/": {
-      "hash": "f91a140ee905b55ecf6a69dabceea2dfdd31d7bb095d012f08e13da1a726946c",
+      "hash": "aba76243f32ce6a0b5ffecbdd85650194f1ee9410b69342ec1f56acdc71c741a",
       "route": "/tr/araclar/kategoriler/dosyalar-ve-metin/dosya-boyutu-donusturucu/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/dosyalar-ve-metin/dosya-hash-dogrulama/": {
-      "hash": "47b300d619cb49c594ebf741235cc72f64e3326ed11b7f37696c9b514e4cfd0c",
+      "hash": "41e2771540f058f092b9de6eec3c3f788d289fdde9223f23e74d22d9fee22428",
       "route": "/tr/araclar/kategoriler/dosyalar-ve-metin/dosya-hash-dogrulama/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/dosyalar-ve-metin/emoji-ve-tek-bosluk-temizleyici/": {
-      "hash": "1212f8a6ad616c5106783996a7587adc7bc5b03f83e5bfcd705f31155ecc995a",
+      "hash": "37f7c18399511136f21c2797e5a6e3bd3eca914302480938cada54247aaed80d",
       "route": "/tr/araclar/kategoriler/dosyalar-ve-metin/emoji-ve-tek-bosluk-temizleyici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/dosyalar-ve-metin/": {
-      "hash": "54af227866d2e178f6a4a070389a52dd7ca489d6768499841ec050cbe27218f2",
+      "hash": "3d8fbac00a0445cf87ebf09f99ef6b066d15c011ad13e857501adcf2a584f6d2",
       "route": "/tr/araclar/kategoriler/dosyalar-ve-metin/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/dosyalar-ve-metin/json-csv-donusturucu/": {
-      "hash": "753eec8ec95d2d3b71548f0ddba1c937c6ec7b86052ab30fe21d46a6434db60d",
+      "hash": "a7d9fc792480fd0436dda41a58e1b59e7edcf1320e57876255745499d763a3a8",
       "route": "/tr/araclar/kategoriler/dosyalar-ve-metin/json-csv-donusturucu/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/dosyalar-ve-metin/karakter-sayaci/": {
-      "hash": "06cf41fab694aabcd58cf98f334419de14cc144081e80c6096ff24e28198ad03",
+      "hash": "3b8ff92efc180faec641e87447cd0c54d493b2c6b9bb1116500337b101588c0d",
       "route": "/tr/araclar/kategoriler/dosyalar-ve-metin/karakter-sayaci/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/dosyalar-ve-metin/metin-bolucu/": {
-      "hash": "b39ebdff94b162f6c8c51d788f3f008ac74f706741ff8e1306365765da66a206",
+      "hash": "599d3d6850365323e3bb7eeba9b8bd017aadf5aeaa0f8e2a37b937c12c9da306",
       "route": "/tr/araclar/kategoriler/dosyalar-ve-metin/metin-bolucu/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/dosyalar-ve-metin/metin-formatini-temizle/": {
-      "hash": "b6dc342a4df279cf37e1af3716af1b9b00434ac3f53494ce97aec8808d439765",
+      "hash": "74b2238d1ddbf222b1aa4b89c35fd1f4d31ed6d20f8611fb4017ef14a23b59ea",
       "route": "/tr/araclar/kategoriler/dosyalar-ve-metin/metin-formatini-temizle/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/dosyalar-ve-metin/metin-markdown-donusturucu/": {
-      "hash": "b6c7114c2e3354f4fe20b175600a26ad8cb3911a9cf190fcbeeeb077d43cd632",
+      "hash": "7a0222b40ad8604cdcfcd97f5b6c014af81df434c9a7a8e01ffc2072ddfc051c",
       "route": "/tr/araclar/kategoriler/dosyalar-ve-metin/metin-markdown-donusturucu/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/dosyalar-ve-metin/panoyu-pngye-donustur/": {
-      "hash": "6c3e52295e7c2e54106450d37d02c6e61c006aaaa73fcbf1fa8f9dff580903df",
+      "hash": "4bdf19cda49dbf7604a5abbc1a98a7796fe0e96653dc602c2e1b422bff62687f",
       "route": "/tr/araclar/kategoriler/dosyalar-ve-metin/panoyu-pngye-donustur/"
     },
     "https://www.jjlmoya.es/utilidades/categorias/archivos-y-texto/": {
-      "hash": "4f2285a8ab9fe8f18d074b23e993166a7115ec8d87714521fc883ff6d8f52c5c",
+      "hash": "384696f36e69dee1b79e16ff67c682e75e415f91ff6219699bc34a59761c55f9",
       "route": "/utilidades/categorias/archivos-y-texto/"
     },
     "https://www.jjlmoya.es/utilidades/clipboard/": {
-      "hash": "0500c18f5ed5ad32f716e8f110ea9f996dfb47f057c9f9073762b7d550a1fdc8",
+      "hash": "2d44d018a11ed01b71511f68e8ef1b8ac6ee853fa9ec4e260169a5c40c8564e5",
       "route": "/utilidades/clipboard/"
     },
     "https://www.jjlmoya.es/utilidades/contador-caracteres/": {
-      "hash": "ab51682f1dc0c24ee61e2e463a02f7a395bb4985d3384d5602bef692b8d95a70",
+      "hash": "fa80c9e1c4aa0f6ecea421f968afc2c73a17b3309eaaa5dff6a108df52037b1d",
       "route": "/utilidades/contador-caracteres/"
     },
     "https://www.jjlmoya.es/utilidades/conversor-json-a-excel-csv/": {
-      "hash": "16327c9ed0c01db7a4f1241e1a2b9c378c5a5cd2e672131c03ecb3f5c7324ae7",
+      "hash": "1a939a724316420cb1c1c76292adc5bf9bf6f4678aa079c6693af3900d8f6aae",
       "route": "/utilidades/conversor-json-a-excel-csv/"
     },
     "https://www.jjlmoya.es/utilidades/convertidor-tamano-archivo/": {
-      "hash": "17ed23ab757411e4e21e1f61a164379659ac91205964ce5c9c17ba6d855d5357",
+      "hash": "3da858cd432e44c6b8e886c35ea2a0797f4d741b0f95ca47ed95184ea5217ce4",
       "route": "/utilidades/convertidor-tamano-archivo/"
     },
     "https://www.jjlmoya.es/utilidades/eliminador-emojis-espacios-dobles/": {
-      "hash": "df6c028a8bad9ae885a4d8612f8e137d5e6450a9446e93e9d4bf3c0315c309e0",
+      "hash": "868173bf3f22193669bfa54c2ec65f5ac58f7ddcfe6c1854d70c432eecf95e26",
       "route": "/utilidades/eliminador-emojis-espacios-dobles/"
     },
     "https://www.jjlmoya.es/utilidades/format-stripper/": {
-      "hash": "a36e0f8e783648132b0a0ccbe2746249c0ba976b7530373a829c3efcb510c168",
+      "hash": "93421cf7e33526c9448a791deb2097792ea1f8360636d69a43ed32a5a3a43ec5",
       "route": "/utilidades/format-stripper/"
     },
     "https://www.jjlmoya.es/utilidades/separador-de-texto/": {
-      "hash": "5d059c9184a19938fd1bc55980528e11e7a7771368a1d008a219db7095b23c23",
+      "hash": "7c34f84643d41b07841bf3dfd4690e4cdfd64b495e4c9aa73536ef73a811d9da",
       "route": "/utilidades/separador-de-texto/"
     },
     "https://www.jjlmoya.es/utilidades/texto-a-markdown/": {
-      "hash": "e8ae7b494a18b9856bf828d46de7cd19f1bebebf73794e8aeedaa289929d9bac",
+      "hash": "d238ba9fdff80f5924eef28e0c7e391ba6afd23be268ea0ed5f8d8d9215e37af",
       "route": "/utilidades/texto-a-markdown/"
     },
     "https://www.jjlmoya.es/utilidades/verificador-hash/": {
-      "hash": "8fd0883293262a90715a535f7e76690b4cce4948a3b986df07f020d0a673e338",
+      "hash": "22627b273a23d14ca266b8e4f8edf408fa7945b1a1dd912b294b66d9358e9d36",
       "route": "/utilidades/verificador-hash/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/files-and-text/character-counter/": {
-      "hash": "8d1b1c6658c8a2b42711876f0c27274e3562746ba115b42cc0fc8f05c59bab85",
+      "hash": "696046596aa3b1d9bb7815fb12f0d4beeae99c8e1301f1c58324f37639372759",
       "route": "/zh/utilities/categories/files-and-text/character-counter/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/files-and-text/clipboard-to-image/": {
-      "hash": "3011711f4ba3c6b8a5da777b9412d8f532675cec44cd873201521dcd36944fd7",
+      "hash": "9f0e3af04723edcf61aa83d951b18bc7994a036a61dca0f932b7f618543edc56",
       "route": "/zh/utilities/categories/files-and-text/clipboard-to-image/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/files-and-text/emoji-space-cleaner/": {
-      "hash": "af2e9e9f254a7c4f2e04f14b9827e5b66408842d6edf6ecda7f6b4a5b6c78218",
+      "hash": "78c0f93952b5e5ea6b09a16ddb5c18e6c83c2bb95c53334c108e4348d2d6e661",
       "route": "/zh/utilities/categories/files-and-text/emoji-space-cleaner/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/files-and-text/file-size-converter/": {
-      "hash": "bf6a65b9714504736c1737388536a53603264865149eb85315e6ee669fbacd3b",
+      "hash": "b3757d122b565e8f290a8f55ad44edafc311c586d9baa907130459b84a2d3c75",
       "route": "/zh/utilities/categories/files-and-text/file-size-converter/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/files-and-text/format-stripper/": {
-      "hash": "4bacdcefb32307a3dd4d52b087571c04270aa8e765642789cb8b4f1cfaa0a421",
+      "hash": "23a77786046d4cbd99e9bf732b01a5e0904439418f96e5b4fdd8a414c1df940e",
       "route": "/zh/utilities/categories/files-and-text/format-stripper/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/files-and-text/hash-verifier/": {
-      "hash": "71493c3f6351c2ed6ff3bfb5d56cd137565cc60b39ae4b88ab8dd6a7d6a3660c",
+      "hash": "9509a608fd791b5c5efa8d22b5b3a2f6cf372d50651c5b8450264b9f4f1526c2",
       "route": "/zh/utilities/categories/files-and-text/hash-verifier/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/files-and-text/": {
-      "hash": "60fa27fdd088f451d10dc3508344bf982d4da223c05e2b368163f16cf47f1940",
+      "hash": "847e73dccd3820fd027b6348f450b65275901fbbb5b9fc41e7a95c7b08b9e87a",
       "route": "/zh/utilities/categories/files-and-text/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/files-and-text/json-to-excel-csv-converter/": {
-      "hash": "2c370e7c36d57abd4b2013bb6e078b0199fd3e340a7610398242cd26254c6f85",
+      "hash": "52a38b76a0c5a0558ca93aca3d279b1c76ba689b9637402ff071e83a23cc7d76",
       "route": "/zh/utilities/categories/files-and-text/json-to-excel-csv-converter/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/files-and-text/text-splitter/": {
-      "hash": "639e607de1882c9ef318f04200b3d5bd9f6bd4cab5fe442217a70ad1a0bf417b",
+      "hash": "f922cdae0801126305f668a06a562dd6eb45da37f16f1c5e399d1ae72c96173a",
       "route": "/zh/utilities/categories/files-and-text/text-splitter/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/files-and-text/text-to-markdown/": {
-      "hash": "c52f866bc5a9f30518b9d94124221ed0c6a81849a7346c4e2422c7933f79f319",
+      "hash": "bf411ebd044d0fbf7fd46e33e6a66e494953367ad9e957f48a71f791cdef0b44",
       "route": "/zh/utilities/categories/files-and-text/text-to-markdown/"
     }
   }
