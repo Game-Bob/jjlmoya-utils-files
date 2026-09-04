@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { characterCounter } from './entry';
 export * from './entry';
 export const CHARACTER_COUNTER_TOOL: ToolDefinition = {

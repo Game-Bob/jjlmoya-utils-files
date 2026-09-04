@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { textSplitter } from './entry';
 export * from './entry';
 export const TEXT_SPLITTER_TOOL: ToolDefinition = {

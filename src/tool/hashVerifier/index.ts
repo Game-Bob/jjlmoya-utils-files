@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { hashVerifier } from './entry';
 export * from './entry';
 export const HASH_VERIFIER_TOOL: ToolDefinition = {

@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { formatStripper } from './entry';
 export * from './entry';
 export const FORMAT_STRIPPER_TOOL: ToolDefinition = {

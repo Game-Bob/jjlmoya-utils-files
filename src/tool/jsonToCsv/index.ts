@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { jsonToCsv } from './entry';
 export * from './entry';
 export const JSON_TO_CSV_TOOL: ToolDefinition = {

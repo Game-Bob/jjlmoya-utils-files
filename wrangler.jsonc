@@ -1,0 +1,120 @@
+{
+    "$schema": "./node_modules/wrangler/config-schema.json",
+    "name": "gamebob-utilities-files",
+    "main": "src/worker.ts",
+    "compatibility_date": "2026-07-22",
+    "workers_dev": false,
+    "preview_urls": true,
+    "routes": [
+        {
+            "pattern": "www.jjlmoya.es/utilidades/categorias/archivos-y-texto*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/contador-caracteres*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/clipboard*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/eliminador-emojis-espacios-dobles*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/convertidor-tamano-archivo*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/format-stripper*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/verificador-hash*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/conversor-json-a-excel-csv*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/separador-de-texto*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.jjlmoya.es/utilidades/texto-a-markdown*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
+            "pattern": "www.gamebob.dev/en/utilities/categories/files-and-text*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/fr/utilitaires/categories/fichiers-et-texte*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/de/werkzeuge/kategorien/dateien-und-text*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/it/utilita/categorie/file-e-testo*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/pt/utilidades/categorias/arquivos-e-texto*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/nl/hulpmiddelen/categorieen/bestanden-en-tekst*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/sv/verktyg/kategorier/filer-och-text*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/pl/narzedzia/kategorie/pliki-i-tekst*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/id/utilitas/kategori/file-dan-teks*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/tr/araclar/kategoriler/dosyalar-ve-metin*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/ru/instrumenty/kategorii/fayly-i-tekst*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/ja/utilities/categories/files-and-text*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/ko/utilities/categories/files-and-text*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/zh/utilities/categories/files-and-text*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.gamebob.dev/_utilities/files/*",
+            "zone_name": "gamebob.dev"
+        },
+        {
+            "pattern": "www.jjlmoya.es/_utilities/files/*",
+            "zone_name": "jjlmoya.es"
+        }
+    ],
+    "assets": {
+        "directory": "./dist",
+        "binding": "ASSETS",
+        "html_handling": "force-trailing-slash",
+        "not_found_handling": "404-page"
+    }
+}

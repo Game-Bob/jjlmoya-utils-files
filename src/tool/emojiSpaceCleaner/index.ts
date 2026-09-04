@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { emojiSpaceCleaner } from './entry';
 export * from './entry';
 export const EMOJI_SPACE_CLEANER_TOOL: ToolDefinition = {
