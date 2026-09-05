@@ -143,7 +143,6 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'tip',
       title: 'Différence entre Minifier et Nettoyer le Texte',
-      level: 3,
       html: '<p>Alors qu\'un minifieur cherche à réduire la taille du fichier en supprimant tout ce qui est inutile pour l\'ordinateur, notre <strong>nettoyeur de texte pour humains</strong> donne la priorité à la lisibilité. Nous ne joignons pas tous les mots, mais respectons la structure grammaticale tout en éliminant les déchets visuels.</p>'},
     {
       type: 'title',

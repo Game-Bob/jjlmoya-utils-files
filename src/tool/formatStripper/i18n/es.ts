@@ -40,7 +40,7 @@ const howToData = [
   {
     name: 'Copiar texto limpio',
     text: 'Usa el botón de copiar para llevarte el texto sin formato a tu documento de destino.'},
-];
+].slice(0, 3);
 
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',
@@ -76,6 +76,7 @@ export const content: ToolLocaleContent<FormatStripperUI> = {
   description,
   bibliography,
   faq: faqData,
+  howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
     {
@@ -116,7 +117,7 @@ export const content: ToolLocaleContent<FormatStripperUI> = {
       type: 'card',
       title: 'Recuperación de Texto de PDFs',
       html: '<p>Al copiar texto de un PDF, a menudo se insertan saltos de línea al final de cada renglón visual. Nuestra herramienta analiza el contexto para determinar si un salto de línea es estructural (párrafo nuevo) o visual, uniéndolos correctamente.</p>'},
-  ].slice(0, 6),
+  ].slice(0, 6) as ToolLocaleContent<FormatStripperUI>['seo'],
   ui: {
     labelChars: 'Caracteres',
     labelWords: 'Palabras',

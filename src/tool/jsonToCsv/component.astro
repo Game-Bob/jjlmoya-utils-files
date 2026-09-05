@@ -86,7 +86,9 @@ const t = (ui ?? {}) as JsonToCsvUI;
   function renderPreview(container: HTMLElement, data: Record<string, unknown>[]) {
     const table = container.querySelector<HTMLElement>('[data-jc-preview-table]');
     if (!table || data.length === 0) return;
-    const headers = Object.keys(data[0]);
+    const firstRow = data[0];
+    if (!firstRow) return;
+    const headers = Object.keys(firstRow);
     const rows = data.slice(0, 5);
     let html = `<thead><tr>${headers.map((h) => `<th>${h}</th>`).join('')}</tr></thead>`;
     html += `<tbody>${rows.map((row) => `<tr>${headers.map((h) => `<td>${row[h] !== undefined ? row[h] : ''}</td>`).join('')}</tr>`).join('')}</tbody>`;
@@ -122,7 +124,7 @@ const t = (ui ?? {}) as JsonToCsvUI;
 
   function attachDownload(container: HTMLElement, currentData: Record<string, unknown>[][]) {
     container.querySelector('[data-jc-download]')?.addEventListener('click', () => {
-      const csv = generateCSV(currentData[0]);
+      const csv = generateCSV(currentData[0] ?? []);
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
@@ -137,10 +139,10 @@ const t = (ui ?? {}) as JsonToCsvUI;
   function attachCopy(container: HTMLElement, currentData: Record<string, unknown>[][]) {
     const copyLabel = container.querySelector('[data-jc-copy-label]');
     container.querySelector('[data-jc-copy]')?.addEventListener('click', () => {
-      const csv = generateCSV(currentData[0]);
+      const csv = generateCSV(currentData[0] ?? []);
       navigator.clipboard.writeText(csv).then(() => {
         const original = copyLabel?.textContent ?? '';
-        if (copyLabel) copyLabel.textContent = container.dataset.copyFeedback ?? '¡Copiado!';
+        if (copyLabel) copyLabel.textContent = container.dataset.copyFeedback ?? '';
         setTimeout(() => { if (copyLabel) copyLabel.textContent = original; }, 2000);
       });
     });
@@ -191,4 +193,3 @@ const t = (ui ?? {}) as JsonToCsvUI;
   document.addEventListener('astro:page-load', init);
   init();
 </script>
-

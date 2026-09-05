@@ -149,6 +149,5 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     deviceStorageTitle: '设备存储占用',
     copyFeedback: '已复制！',
     dragDropText: '将文件拖放到此处以读取其大小',
-    fileTooBig: '文件过大',
   },
 };

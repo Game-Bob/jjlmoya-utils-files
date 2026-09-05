@@ -140,7 +140,6 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'tip',
       title: 'Perbedaan antara Minifying dan Cleaning Teks',
-      level: 3,
       html: '<p>Sementara minifier berupaya mengurangi ukuran file dengan menghapus semua yang tidak diperlukan oleh komputer, <strong>pembersih teks untuk manusia</strong> kami memprioritaskan keterbacaan. Kami tidak menyatukan semua kata, tetapi menghormati struktur tata bahasa sambil menghilangkan sampah visual.</p>'},
     {
       type: 'title',

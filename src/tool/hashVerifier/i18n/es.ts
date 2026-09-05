@@ -170,7 +170,7 @@ export const content: ToolLocaleContent<HashVerifierUI> = {
     {
       type: 'paragraph',
       html: 'Sí. Gracias al procesamiento por "bloques" que implementamos en esta herramienta, puedes procesar archivos de 10GB o más sin saturar la RAM de tu navegador, ya que el archivo nunca se carga por completo en memoria.'},
-  ].slice(0, 8),
+  ].slice(0, 8) as ToolLocaleContent<HashVerifierUI>['seo'],
   ui: {
     labelTitle: 'Verificador de Hash Local',
     labelSubtitle: 'Suelta cualquier archivo para generar su firma <strong class="hv-accent">SHA-256</strong> al instante.',

@@ -131,6 +131,7 @@ export const content: ToolLocaleContent<TextToMarkdownUI> = {
     btnCopy: 'Salin hasil',
     btnClear: 'Bersihkan Semua',
     toastCopied: 'Kode Markdown disalin!',
-    toastDownloaded: 'Mengunduh file .md...'
+    toastDownloaded: 'Mengunduh file .md...',
+    labelHint: 'Tempelkan konten dan periksa Markdown hasil konversi langsung di browser Anda.',
   }
 };

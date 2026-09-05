@@ -149,7 +149,6 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'tip',
       title: 'Unterschied zwischen Minifizieren und Textreinigung',
-      level: 3,
       html: '<p>Während ein Minifizierer versucht, die Dateigröße zu reduzieren, indem er alles Unnötige für den Computer entfernt, priorisiert unser <strong>Textreiniger für Menschen</strong> die Lesbarkeit. Wir verbinden nicht alle Wörter, sondern respektieren die grammatikalische Struktur, während wir visuellen Müll entfernen.</p>'},
     {
       type: 'title',

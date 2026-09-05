@@ -77,6 +77,7 @@ export const content: ToolLocaleContent<ClipboardToImageUI> = {
   description,
   bibliography,
   faq: faqData,
+  howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
     {

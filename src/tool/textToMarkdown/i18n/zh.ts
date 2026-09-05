@@ -131,6 +131,7 @@ export const content: ToolLocaleContent<TextToMarkdownUI> = {
     btnCopy: '复制结果',
     btnClear: '全部清空',
     toastCopied: 'Markdown 代码已复制！',
-    toastDownloaded: '正在下载 .md 文件...'
+    toastDownloaded: '正在下载 .md 文件...',
+    labelHint: '粘贴内容并直接在浏览器中查看转换后的 Markdown。',
   }
 };

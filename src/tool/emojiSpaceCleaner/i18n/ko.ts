@@ -130,7 +130,6 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'tip',
       title: '미니파이(압축)와 텍스트 클리닝의 차이',
-      level: 3,
       html: '<p>미니파이가 컴퓨터를 위해 불필요한 것을 모두 삭제하여 파일 크기를 줄이는 것이 목적이라면, 당사의 <strong>인간용 텍스트 클리너</strong>는 가독성을 우선시합니다. 단어를 모두 붙여버리는 것이 아니라 문법 구조를 존중하면서 시각적인 쓰레기를 제거합니다.</p>'},
     {
       type: 'title',

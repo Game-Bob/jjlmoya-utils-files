@@ -25,6 +25,10 @@ export class SHA256 {
     0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2,
   ]);
 
+  private static at(values: Uint32Array, index: number): number {
+    return values[index] ?? 0;
+  }
+
   private static rr(n: number, shift: number): number {
     return (n >>> shift) | (n << (32 - shift));
   }
@@ -32,32 +36,39 @@ export class SHA256 {
   private expandWords(block: Uint8Array): Uint32Array {
     const w = new Uint32Array(64);
     for (let i = 0; i < 16; i++) {
-      w[i] = (block[i * 4] << 24) | (block[i * 4 + 1] << 16) | (block[i * 4 + 2] << 8) | block[i * 4 + 3];
+      w[i] = ((block[i * 4] ?? 0) << 24) | ((block[i * 4 + 1] ?? 0) << 16) | ((block[i * 4 + 2] ?? 0) << 8) | (block[i * 4 + 3] ?? 0);
     }
     for (let i = 16; i < 64; i++) {
-      const s0 = SHA256.rr(w[i - 15], 7) ^ SHA256.rr(w[i - 15], 18) ^ (w[i - 15] >>> 3);
-      const s1 = SHA256.rr(w[i - 2], 17) ^ SHA256.rr(w[i - 2], 19) ^ (w[i - 2] >>> 10);
-      w[i] = (w[i - 16] + s0 + w[i - 7] + s1) | 0;
+      const s0 = SHA256.rr(SHA256.at(w, i - 15), 7) ^ SHA256.rr(SHA256.at(w, i - 15), 18) ^ (SHA256.at(w, i - 15) >>> 3);
+      const s1 = SHA256.rr(SHA256.at(w, i - 2), 17) ^ SHA256.rr(SHA256.at(w, i - 2), 19) ^ (SHA256.at(w, i - 2) >>> 10);
+      w[i] = (SHA256.at(w, i - 16) + s0 + SHA256.at(w, i - 7) + s1) | 0;
     }
     return w;
   }
 
   private compress(w: Uint32Array): void {
-    let [a, b, c, d, e, f, g, h] = this.h;
+    let a = SHA256.at(this.h, 0);
+    let b = SHA256.at(this.h, 1);
+    let c = SHA256.at(this.h, 2);
+    let d = SHA256.at(this.h, 3);
+    let e = SHA256.at(this.h, 4);
+    let f = SHA256.at(this.h, 5);
+    let g = SHA256.at(this.h, 6);
+    let h = SHA256.at(this.h, 7);
     for (let i = 0; i < 64; i++) {
       const S1 = SHA256.rr(e, 6) ^ SHA256.rr(e, 11) ^ SHA256.rr(e, 25);
       const ch = (e & f) ^ (~e & g);
-      const temp1 = (h + S1 + ch + SHA256.K[i] + w[i]) | 0;
+      const temp1 = (h + S1 + ch + SHA256.at(SHA256.K, i) + SHA256.at(w, i)) | 0;
       const S0 = SHA256.rr(a, 2) ^ SHA256.rr(a, 13) ^ SHA256.rr(a, 22);
       const maj = (a & b) ^ (a & c) ^ (b & c);
       const temp2 = (S0 + maj) | 0;
       h = g; g = f; f = e; e = (d + temp1) | 0;
       d = c; c = b; b = a; a = (temp1 + temp2) | 0;
     }
-    this.h[0] = (this.h[0] + a) | 0; this.h[1] = (this.h[1] + b) | 0;
-    this.h[2] = (this.h[2] + c) | 0; this.h[3] = (this.h[3] + d) | 0;
-    this.h[4] = (this.h[4] + e) | 0; this.h[5] = (this.h[5] + f) | 0;
-    this.h[6] = (this.h[6] + g) | 0; this.h[7] = (this.h[7] + h) | 0;
+    this.h[0] = (SHA256.at(this.h, 0) + a) | 0; this.h[1] = (SHA256.at(this.h, 1) + b) | 0;
+    this.h[2] = (SHA256.at(this.h, 2) + c) | 0; this.h[3] = (SHA256.at(this.h, 3) + d) | 0;
+    this.h[4] = (SHA256.at(this.h, 4) + e) | 0; this.h[5] = (SHA256.at(this.h, 5) + f) | 0;
+    this.h[6] = (SHA256.at(this.h, 6) + g) | 0; this.h[7] = (SHA256.at(this.h, 7) + h) | 0;
   }
 
   private transform(block: Uint8Array): void {

@@ -163,14 +163,14 @@ const t = (ui ?? {}) as TextSplitterUI;
       numbered: checks.numbered,
     });
     output.value = result;
-    if (linesEl) linesEl.textContent = String(result.trim() ? result.split('\n').length : 0);
+      if (linesEl) linesEl.textContent = String(result.trim() ? result.split(String.fromCharCode(10)).length : 0);
     if (charsEl) charsEl.textContent = String(result.length);
   }
 
   function showToast(wrap: HTMLElement) {
     const toast = wrap.querySelector<HTMLElement>('[data-toast-el]');
     if (!toast) return;
-    toast.textContent = wrap.dataset.toast ?? 'Copied!';
+      toast.textContent = wrap.dataset.toast ?? '';
     toast.classList.add('ts-toast-visible');
     setTimeout(() => toast.classList.remove('ts-toast-visible'), 2000);
   }
@@ -203,4 +203,3 @@ const t = (ui ?? {}) as TextSplitterUI;
   document.addEventListener('astro:page-load', init);
   init();
 </script>
-

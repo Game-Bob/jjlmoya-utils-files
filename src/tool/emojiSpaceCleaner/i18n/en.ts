@@ -152,7 +152,6 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'tip',
       title: 'Difference between Minifying and Cleaning Text',
-      level: 3,
       html: '<p>While a minifier seeks to reduce file size by removing everything unnecessary for the computer, our <strong>text cleaner for humans</strong> prioritizes readability. We do not join all words, but respect the grammatical structure while removing visual junk. It is the perfect intermediate tool between raw text and final editorial content.</p>'},
     {
       type: 'title',

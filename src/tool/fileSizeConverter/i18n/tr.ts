@@ -149,6 +149,5 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     deviceStorageTitle: 'Cihaz Depolama Etkisi',
     copyFeedback: 'Kopyalandı!',
     dragDropText: 'Boyutunu okumak için bir dosyayı buraya bırakın',
-    fileTooBig: 'Dosya çok büyük',
   },
 };

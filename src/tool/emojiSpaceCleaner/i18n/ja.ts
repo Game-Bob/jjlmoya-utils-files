@@ -133,7 +133,6 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'tip',
       title: 'ミニファイ（圧縮）とテキストクリーニングの違い',
-      level: 3,
       html: '<p>ミニファイがコンピュータのために不要なものをすべて削除してファイルサイズを縮小することを目指すのに対し、当ツールの<strong>人間用テキストクリーナー</strong>は読みやすさを最優先します。言葉をすべて繋げるのではなく、文法構造を尊重しながら視覚的なゴミを取り除きます。</p>'},
     {
       type: 'title',

@@ -45,10 +45,7 @@ const howToSchema: WithContext<HowTo> = {
   '@type': 'HowTo',
   name: title,
   description,
-  step: (typeof howToData !== 'undefined' ? howToData: []).map((step: any) => ({
-    '@type': 'HowToStep',
-    name: step.name,
-    text: step.text}))};
+  step: []};
 
 const appSchema: WithContext<SoftwareApplication> = {
   '@context': 'https://schema.org',
@@ -162,7 +159,7 @@ export const content: ToolLocaleContent<TextSplitterUI> = {
       type: 'tip',
       title: 'Nota final',
       html: '<p>Si buscas un <strong>separador de texto gratuito</strong>, rápido y seguro, has llegado al lugar indicado. Optimiza tu flujo de trabajo y deja que el navegador haga el trabajo sucio por ti.</p>'},
-  ].slice(0, 6),
+  ].slice(0, 6) as ToolLocaleContent<TextSplitterUI>['seo'],
   ui: {
     labelInput: 'Texto a Separar',
     labelOutput: 'Resultado (un elemento por línea)',

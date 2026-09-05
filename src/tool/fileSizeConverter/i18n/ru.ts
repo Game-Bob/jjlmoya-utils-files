@@ -149,6 +149,5 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     deviceStorageTitle: 'Влияние на память устройства',
     copyFeedback: 'Скопировано!',
     dragDropText: 'Перетащите файл сюда, чтобы узнать его размер',
-    fileTooBig: 'Файл слишком большой',
   },
 };

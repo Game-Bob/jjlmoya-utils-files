@@ -7,10 +7,11 @@ import { textToMarkdown } from '../tool/textToMarkdown/entry';
 import { emojiSpaceCleaner } from '../tool/emojiSpaceCleaner/entry';
 import { textSplitter } from '../tool/textSplitter/entry';
 import { fileSizeConverter } from '../tool/fileSizeConverter/entry';
+import { markdownToRichText } from '../tool/markdownToRichText/entry';
 
 export const filesCategory: FilesCategoryEntry = {
   icon: 'mdi:file-multiple',
-  tools: [clipboardToImage, formatStripper, characterCounter, hashVerifier, textToMarkdown, emojiSpaceCleaner, textSplitter, fileSizeConverter],
+  tools: [clipboardToImage, formatStripper, characterCounter, hashVerifier, textToMarkdown, emojiSpaceCleaner, textSplitter, fileSizeConverter, markdownToRichText],
   i18n: {
     en: () => import('./i18n/en').then((m) => m.content),
     es: () => import('./i18n/es').then((m) => m.content),

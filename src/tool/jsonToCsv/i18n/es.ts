@@ -1,4 +1,4 @@
-import type { WithContext, FAQPage, HowToThing, SoftwareApplication } from 'schema-dts';
+import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 import type { JsonToCsvUI } from '../ui';
 import { bibliography } from '../bibliography';
@@ -66,7 +66,7 @@ const faqSchema: WithContext<FAQPage> = {
     name: item.question,
     acceptedAnswer: { '@type': 'Answer', text: item.answer }}))};
 
-const howToSchema: WithContext<HowToThing> = {
+const howToSchema: WithContext<HowTo> = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: title,
@@ -219,7 +219,7 @@ export const content: ToolLocaleContent<JsonToCsvUI> = {
     {
       type: 'paragraph',
       html: 'En resumen, si buscas una forma rápida de auditar un log técnico, preparar un reporte de ventas desde una API o simplemente curiosidad por ver qué hay dentro de ese archivo .json que te han enviado, este conversor es tu mejor aliado. Rápido, seguro y profesional.'},
-  ].slice(0, 6),
+  ].slice(0, 6) as ToolLocaleContent<JsonToCsvUI>['seo'],
   ui: {
     statusWaiting: 'Esperando JSON Válido',
     statusValid: 'JSON Válido',

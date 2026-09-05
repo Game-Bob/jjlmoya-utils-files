@@ -38,10 +38,7 @@ const howToSchema: WithContext<HowTo> = {
   '@type': 'HowTo',
   name: title,
   description,
-  step: (typeof howToData !== 'undefined' ? howToData: []).map((step: any) => ({
-    '@type': 'HowToStep',
-    name: step.name,
-    text: step.text}))};
+  step: []};
 
 const appSchema: WithContext<SoftwareApplication> = {
   '@context': 'https://schema.org',
@@ -124,7 +121,7 @@ export const content: ToolLocaleContent<TextToMarkdownUI> = {
     {
       type: 'paragraph',
       html: 'Además, la tendencia de la "Web Estática" (JAMstack) se apoya fuertemente en archivos Markdown. Si quieres una web que cargue en milisegundos y obtenga una puntuación perfecta en Core Web Vitals, el primer paso es que tus contenidos estén en un formato que el navegador pueda digerir rápidamente sin procesos de renderizado pesados en el servidor. Nuestra herramienta gratuita te facilita este puente, eliminando la barrera técnica y permitiéndote disfrutar de las ventajas de la web moderna desde el primer segundo.'},
-  ].slice(0, 6),
+  ].slice(0, 6) as ToolLocaleContent<TextToMarkdownUI>['seo'],
   ui: {
     labelInput: 'Entrada HTML',
     labelOutput: 'Salida Markdown',

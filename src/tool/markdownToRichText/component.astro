@@ -1,0 +1,69 @@
+---
+import type { KnownLocale } from '../../types';
+import type { MarkdownToRichTextUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const t = (ui ?? {}) as MarkdownToRichTextUI;
+---
+
+<div
+  class="mr-card"
+  data-empty={t.emptyPreview}
+  data-copied={t.toastCopied}
+  data-copy-error={t.toastCopyError}
+  data-restored={t.toastRestored}
+  data-warning={t.warningMessage}
+>
+  <div class="mr-toolbar">
+    <div class="mr-toolbar-copy">
+      <span class="mr-kicker">{t.labelKicker}</span>
+      <span class="mr-hint">{t.labelHint}</span>
+    </div>
+    <div class="mr-actions">
+      <button type="button" class="mr-button mr-button-quiet" data-example>{t.btnExample}</button>
+      <button type="button" class="mr-button mr-button-quiet" data-clear>{t.btnClear}</button>
+    </div>
+  </div>
+
+  <div class="mr-workbench">
+    <section class="mr-source mr-panel" aria-labelledby="mr-source-label">
+      <div class="mr-panel-heading">
+        <span id="mr-source-label" class="mr-label">{t.labelInput}</span>
+        <span class="mr-panel-index">01</span>
+      </div>
+      <textarea class="mr-input" data-input spellcheck="false" aria-label={t.labelInput} placeholder={t.placeholderInput}>{t.exampleMarkdown}</textarea>
+    </section>
+
+    <section class="mr-preview mr-panel" aria-labelledby="mr-preview-label">
+      <div class="mr-panel-heading">
+        <span id="mr-preview-label" class="mr-label">{t.labelPreview}</span>
+        <div class="mr-preview-actions">
+          <span class="mr-panel-index">02</span>
+          <button type="button" class="mr-button mr-button-primary" data-copy disabled>{t.btnCopy}</button>
+        </div>
+      </div>
+      <article class="mr-document" data-preview aria-live="polite"></article>
+    </section>
+  </div>
+
+  <div class="mr-footer">
+    <div class="mr-stats" aria-live="polite">
+      <span><strong data-blocks>0</strong> {t.labelBlocks}</span>
+      <span><strong data-words>0</strong> {t.labelWords}</span>
+      <span class="mr-warning-stat" data-warning-stat hidden><strong data-warnings>0</strong> {t.labelWarnings}</span>
+    </div>
+    <p class="mr-status" data-status role="status"></p>
+  </div>
+</div>
+
+<script>
+  import { initMarkdownToRichText } from './client';
+
+  document.addEventListener('astro:page-load', initMarkdownToRichText);
+  initMarkdownToRichText();
+</script>

@@ -1,0 +1,14 @@
+---
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import { getBibliography } from './bibliography';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+}
+
+const { locale = 'en' } = Astro.props as Props;
+const links = getBibliography(locale);
+---
+
+{links.length > 0 && <SharedBibliography links={links} />}

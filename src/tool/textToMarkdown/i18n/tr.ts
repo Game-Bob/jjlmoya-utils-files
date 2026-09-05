@@ -131,6 +131,7 @@ export const content: ToolLocaleContent<TextToMarkdownUI> = {
     btnCopy: 'Sonucu kopyala',
     btnClear: 'Hepsini Temizle',
     toastCopied: 'Markdown kodu kopyalandı!',
-    toastDownloaded: '.md dosyası indiriliyor...'
+    toastDownloaded: '.md dosyası indiriliyor...',
+    labelHint: 'İçeriği yapıştırın ve dönüştürülen Markdown metnini doğrudan tarayıcınızda inceleyin.',
   }
 };

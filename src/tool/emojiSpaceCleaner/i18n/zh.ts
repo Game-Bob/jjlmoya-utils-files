@@ -156,7 +156,6 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'tip',
       title: '压缩 (Minify) 与清理 (Cleaning) 文本的区别',
-      level: 3,
       html: '<p>压缩工具旨在通过删除计算机不需要的所有内容来减小文件体积，而我们的<strong>人性化文本清理器</strong>则优先考虑可读性。我们不会将所有单词连在一起，而是在尊重语法结构的同时消除视觉垃圾。</p>'
     },
     {

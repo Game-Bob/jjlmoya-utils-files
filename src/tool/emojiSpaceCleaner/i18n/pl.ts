@@ -140,7 +140,6 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'tip',
       title: 'Różnica między minifikacją a czyszczeniem tekstu',
-      level: 3,
       html: '<p>Podczas gdy minifikator dąży do zmniejszenia rozmiaru pliku poprzez usunięcie wszystkiego, co niepotrzebne dla komputera, nasz <strong>czyścik tekstu dla ludzi</strong> priorytetowo traktuje czytelność. Nie łączymy wszystkich słów, lecz szanujemy strukturę gramatyczną, usuwając śmieci wizualne.</p>'},
     {
       type: 'title',

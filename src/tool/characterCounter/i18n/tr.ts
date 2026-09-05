@@ -89,6 +89,7 @@ export const content: ToolLocaleContent<CharacterCounterUI> = {
   description,
   bibliography,
   faq: faqData,
+  howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
     {

@@ -149,6 +149,5 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     deviceStorageTitle: 'Dampak Penyimpanan Perangkat',
     copyFeedback: 'Disalin!',
     dragDropText: 'Lepaskan file di sini untuk membaca ukurannya',
-    fileTooBig: 'File terlalu besar',
   },
 };

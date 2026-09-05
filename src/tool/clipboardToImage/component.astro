@@ -82,7 +82,7 @@ const tUI = ui as ClipboardToImageUI;
     preview.classList.remove('cb-hidden');
 
     img.onload = () => {
-      if (dim) dim.textContent = `${img.naturalWidth} x ${img.naturalHeight}`;
+    if (dim) dim.textContent = `${img.naturalWidth} × ${img.naturalHeight}`;
       preview.scrollIntoView({ behavior: 'smooth', block: 'center' });
     };
 
@@ -174,4 +174,3 @@ const tUI = ui as ClipboardToImageUI;
   document.addEventListener('astro:page-load', init);
   init();
 </script>
-

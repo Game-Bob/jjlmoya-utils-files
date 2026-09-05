@@ -19,7 +19,9 @@ export function flattenObject(
 
 export function generateCSV(data: Record<string, unknown>[]): string {
   if (data.length === 0) return '';
-  const headers = Object.keys(data[0]);
+  const firstRow = data[0];
+  if (!firstRow) return '';
+  const headers = Object.keys(firstRow);
   const csvRows: string[] = [];
 
   csvRows.push(headers.map((h) => `"${h.replace(/"/g, '""')}"`).join(','));

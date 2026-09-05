@@ -140,7 +140,6 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'tip',
       title: 'Differenza tra Minificare e Pulire il Testo',
-      level: 3,
       html: '<p>Mentre un minificatore cerca di ridurre le dimensioni del file eliminando tutto ciò che non è necessario per il computer, il nostro <strong>pulitore di testo per umani</strong> dà la priorità alla leggibilità. Non uniamo tutte le parole, ma rispettiamo la struttura grammaticale eliminando i rifiuti visivi.</p>'},
     {
       type: 'title',

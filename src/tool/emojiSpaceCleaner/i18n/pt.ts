@@ -140,7 +140,6 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'tip',
       title: 'Diferença entre Minificar e Limpar Texto',
-      level: 3,
       html: '<p>Enquanto um minificador procura reduzir o tamanho do arquivo removendo tudo o que é desnecessário para o computador, o nosso <strong>limpador de texto para humanos</strong> prioriza a legibilidade. Não unimos todas as palavras, mas respeitamos a estrutura gramatical enquanto eliminamos o lixo visual.</p>'},
     {
       type: 'title',

@@ -5,7 +5,7 @@ function childrenToMd(node: Node): string {
 }
 
 function headingToMd(node: Element): string {
-  const level = parseInt(node.tagName[1], 10);
+  const level = parseInt(node.tagName.slice(1), 10);
   return `${'#'.repeat(level)} ${childrenToMd(node).trim()}\n\n`;
 }
 

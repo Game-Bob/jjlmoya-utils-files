@@ -175,7 +175,7 @@ const tUI = ui as HashVerifierUI;
   }
 
   function applyMatch(status: HTMLElement, compareInput: HTMLElement, note: HTMLElement) {
-    status.textContent = note.dataset.verified ?? 'OK';
+      status.textContent = note.dataset.verified ?? '';
     status.className = 'hv-status-badge hv-badge-ok';
     document.getElementById('hv-match-icon')?.classList.remove('hv-hidden');
     document.getElementById('hv-mismatch-icon')?.classList.add('hv-hidden');
@@ -184,7 +184,7 @@ const tUI = ui as HashVerifierUI;
   }
 
   function applyMismatch(status: HTMLElement, compareInput: HTMLElement, note: HTMLElement) {
-    status.textContent = note.dataset.corrupt ?? 'ERROR';
+      status.textContent = note.dataset.corrupt ?? '';
     status.className = 'hv-status-badge hv-badge-err';
     document.getElementById('hv-match-icon')?.classList.add('hv-hidden');
     document.getElementById('hv-mismatch-icon')?.classList.remove('hv-hidden');
@@ -248,4 +248,3 @@ const tUI = ui as HashVerifierUI;
   document.addEventListener('astro:page-load', init);
   init();
 </script>
-

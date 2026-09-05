@@ -131,6 +131,7 @@ export const content: ToolLocaleContent<TextToMarkdownUI> = {
     btnCopy: 'Ergebnis kopieren',
     btnClear: 'Alles leeren',
     toastCopied: 'Markdown-Code kopiert!',
-    toastDownloaded: '.md-Datei wird heruntergeladen...'
+    toastDownloaded: '.md-Datei wird heruntergeladen...',
+    labelHint: 'Fügt den Inhalt ein und prüft das Ergebnis direkt im Browser.',
   }
 };

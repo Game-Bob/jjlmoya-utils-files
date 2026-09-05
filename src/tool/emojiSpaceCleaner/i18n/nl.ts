@@ -140,7 +140,6 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'tip',
       title: 'Verschil tussen Minificeren en Tekstreinigen',
-      level: 3,
       html: '<p>Terwijl een minifier probeert de bestandsgrootte te verkleinen door alles te verwijderen wat onnodig is voor de computer, geeft onze <strong>tekstreiniger voor mensen</strong> prioriteit aan leesbaarheid. We voegen niet alle woorden samen, maar respecteren de grammaticale structuur terwijl we visuele rommel verwijderen.</p>'},
     {
       type: 'title',

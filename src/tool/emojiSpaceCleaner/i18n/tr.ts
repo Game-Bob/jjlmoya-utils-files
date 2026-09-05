@@ -140,7 +140,6 @@ export const content: ToolLocaleContent<EmojiSpaceCleanerUI> = {
     {
       type: 'tip',
       title: 'Minimize Etmek ve Metin Temizlemek Arasındaki Fark',
-      level: 3,
       html: '<p>Bir minimize edici bilgisayar için gereksiz olan her şeyi kaldırarak dosya boyutunu küçültmeye çalışırken, bizim <strong>insanlar için metin temizleyicimiz</strong> okunabilirliğe öncelik verir. Tüm kelimeleri birleştirmiyoruz, gramer yapısına saygı duyarak görsel çöpleri temizliyoruz.</p>'},
     {
       type: 'title',

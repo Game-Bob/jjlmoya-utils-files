@@ -149,6 +149,5 @@ export const content: ToolLocaleContent<FileSizeConverterUI> = {
     deviceStorageTitle: 'Impact op Opslag',
     copyFeedback: 'Gekopieerd!',
     dragDropText: 'Sleep een bestand hierheen om de grootte te lezen',
-    fileTooBig: 'Bestand is te groot',
   },
 };

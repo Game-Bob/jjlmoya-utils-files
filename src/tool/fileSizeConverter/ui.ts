@@ -9,5 +9,4 @@ export interface FileSizeConverterUI extends Record<string, string> {
   deviceStorageTitle: string;
   copyFeedback: string;
   dragDropText: string;
-  fileTooBig: string;
 }
