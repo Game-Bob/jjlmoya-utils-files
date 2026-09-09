@@ -1,0 +1,96 @@
+---
+import type { KnownLocale } from '../../types';
+import type { BatchFileNameNormalizerUI } from './ui';
+
+interface Props {
+  locale?: KnownLocale;
+  ui?: Record<string, unknown>;
+}
+
+const { ui } = Astro.props;
+const copy = (ui ?? {}) as BatchFileNameNormalizerUI;
+---
+
+<div class="bfn-card" data-batch-file-name-normalizer data-ui={JSON.stringify(copy)}>
+  <div class="bfn-command-bar">
+    <p class="bfn-selection-count"><strong data-file-count>0</strong> {copy.selectedFiles}</p>
+    <div class="bfn-command-actions">
+      <button class="bfn-button bfn-button-quiet" type="button" data-example>{copy.exampleButton}</button>
+      <button class="bfn-button bfn-button-quiet" type="button" data-clear>{copy.clearButton}</button>
+    </div>
+  </div>
+
+  <div class="bfn-desk">
+    <section class="bfn-source" data-dropzone aria-label={copy.dropFiles}>
+      <div class="bfn-section-mark"><span>01</span><span>{copy.chooseFiles}</span></div>
+      <input class="bfn-file-input" type="file" multiple data-file-input />
+      <button class="bfn-drop-action" type="button" data-choose>
+        <span class="bfn-drop-icon" aria-hidden="true">+</span>
+        <span>{copy.dropFiles}</span>
+      </button>
+      <ul class="bfn-file-list" data-file-list aria-live="polite"></ul>
+    </section>
+
+    <div class="bfn-transform-rail" aria-hidden="true">
+      <span class="bfn-rail-line"></span>
+      <span class="bfn-rail-arrow">&#8594;</span>
+      <span class="bfn-rail-line"></span>
+    </div>
+
+    <section class="bfn-rules" aria-labelledby="bfn-rules-title">
+      <div class="bfn-section-mark"><span>02</span><span id="bfn-rules-title">{copy.rulesTitle}</span></div>
+      <div class="bfn-rule-grid">
+        <label class="bfn-field">
+          <span>{copy.findLabel}</span>
+          <input type="text" data-option data-find placeholder={copy.findPlaceholder} />
+        </label>
+        <label class="bfn-field">
+          <span>{copy.replaceLabel}</span>
+          <input type="text" data-option data-replace placeholder={copy.replacePlaceholder} />
+        </label>
+        <label class="bfn-field">
+          <span>{copy.prefixLabel}</span>
+          <input type="text" data-option data-prefix placeholder={copy.prefixPlaceholder} />
+        </label>
+        <label class="bfn-field">
+          <span>{copy.suffixLabel}</span>
+          <input type="text" data-option data-suffix placeholder={copy.suffixPlaceholder} />
+        </label>
+      </div>
+      <fieldset class="bfn-numbering">
+        <legend>{copy.numberingLabel}</legend>
+        <div class="bfn-numbering-options">
+          <label><input type="radio" name="bfn-numbering" value="none" data-numbering checked /> <span>{copy.numberingNone}</span></label>
+          <label><input type="radio" name="bfn-numbering" value="prefix" data-numbering /> <span>{copy.numberingPrefix}</span></label>
+          <label><input type="radio" name="bfn-numbering" value="suffix" data-numbering /> <span>{copy.numberingSuffix}</span></label>
+        </div>
+        <div class="bfn-number-details">
+          <label class="bfn-field"><span>{copy.numberStartLabel}</span><input type="number" min="0" max="999999" data-option data-number-start value="1" /></label>
+          <label class="bfn-field"><span>{copy.paddingLabel}</span><input type="number" min="1" max="8" data-option data-number-padding value="2" /></label>
+          <label class="bfn-field"><span>{copy.separatorLabel}</span><input type="text" maxlength="4" data-option data-number-separator value="_" placeholder={copy.separatorPlaceholder} /></label>
+        </div>
+      </fieldset>
+      <label class="bfn-check"><input type="checkbox" data-option data-preserve-extension checked /> <span>{copy.preserveExtension}</span></label>
+    </section>
+  </div>
+
+  <section class="bfn-manifest" aria-labelledby="bfn-manifest-title">
+    <div class="bfn-manifest-heading">
+      <div class="bfn-section-mark"><span>03</span><span id="bfn-manifest-title">{copy.previewTitle}</span></div>
+      <div class="bfn-manifest-actions">
+        <button class="bfn-button bfn-button-quiet" type="button" data-copy>{copy.copyButton}</button>
+        <button class="bfn-button bfn-button-primary" type="button" data-download disabled>{copy.downloadButton}</button>
+      </div>
+    </div>
+    <div class="bfn-summary" data-summary aria-live="polite"></div>
+    <div class="bfn-preview" data-preview aria-live="polite"></div>
+  </section>
+  <p class="bfn-message" data-status role="status"></p>
+</div>
+
+<script>
+  import { initBatchFileNameNormalizer } from './controller';
+
+  document.addEventListener('astro:page-load', initBatchFileNameNormalizer);
+  initBatchFileNameNormalizer();
+</script>

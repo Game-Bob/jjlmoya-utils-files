@@ -27,3 +27,4 @@ export { TEXT_SPLITTER_TOOL } from './tool/textSplitter';
 export { JSON_TO_CSV_TOOL } from './tool/jsonToCsv';
 export { FILE_SIZE_CONVERTER_TOOL } from './tool/fileSizeConverter';
 export { MARKDOWN_TO_RICH_TEXT_TOOL } from './tool/markdownToRichText';
+export { BATCH_FILE_NAME_NORMALIZER_TOOL } from './tool/batchFileNameNormalizer';

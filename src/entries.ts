@@ -29,4 +29,5 @@ import { textSplitter } from './tool/textSplitter/entry';
 import { textToMarkdown } from './tool/textToMarkdown/entry';
 import { fileSizeConverter } from './tool/fileSizeConverter/entry';
 import { markdownToRichText } from './tool/markdownToRichText/entry';
-export const ALL_ENTRIES = [characterCounter, clipboardToImage, emojiSpaceCleaner, formatStripper, hashVerifier, jsonToCsv, textSplitter, textToMarkdown, fileSizeConverter, markdownToRichText];
+import { batchFileNameNormalizer } from './tool/batchFileNameNormalizer/entry';
+export const ALL_ENTRIES = [characterCounter, clipboardToImage, emojiSpaceCleaner, formatStripper, hashVerifier, jsonToCsv, textSplitter, textToMarkdown, fileSizeConverter, markdownToRichText, batchFileNameNormalizer];

@@ -39,7 +39,7 @@ export function parseInput(input: string): { value: number; unit: string } | nul
 export function convertToBytes(value: number, unit: string): number {
   const normalizedUnit = unit.toUpperCase();
   const binaryUnit = Object.keys(BINARY_FACTORS).find((key) => key.toUpperCase() === normalizedUnit);
-  return value * (DECIMAL_FACTORS[normalizedUnit] ?? (binaryUnit ? BINARY_FACTORS[binaryUnit] : 1));
+  return value * (DECIMAL_FACTORS[normalizedUnit] ?? (binaryUnit ? BINARY_FACTORS[binaryUnit]! : 1));
 }
 
 export function convertFromBytes(bytes: number, _isDecimal: boolean): ConversionResult {

@@ -13,6 +13,9 @@ if (!categoryImageMatch) {
 }
 
 const [, imageUrlRoot, categoryImage, assetVersion] = categoryImageMatch;
+if (!imageUrlRoot || !categoryImage || !assetVersion) {
+  throw new Error(`Unexpected CATEGORY_OG_IMAGE captures: ${CATEGORY_OG_IMAGE}`);
+}
 const assetRoot = join(process.cwd(), 'public', imageUrlRoot.slice(1));
 const categorySlug = basename(categoryImage, '.webp');
 
